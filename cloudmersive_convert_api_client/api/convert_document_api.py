@@ -44,7 +44,7 @@ class ConvertDocumentApi(object):
 
         :param async bool
         :param file input_file: Input file to perform the operation on. (required)
-        :return: file
+        :return: object
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -66,7 +66,7 @@ class ConvertDocumentApi(object):
 
         :param async bool
         :param file input_file: Input file to perform the operation on. (required)
-        :return: file
+        :return: object
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -107,7 +107,7 @@ class ConvertDocumentApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/pdf'])  # noqa: E501
+            ['application/octet-stream'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
@@ -124,7 +124,7 @@ class ConvertDocumentApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='file',  # noqa: E501
+            response_type='object',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -143,7 +143,7 @@ class ConvertDocumentApi(object):
 
         :param async bool
         :param file input_file: Input file to perform the operation on. (required)
-        :return: file
+        :return: object
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -165,7 +165,7 @@ class ConvertDocumentApi(object):
 
         :param async bool
         :param file input_file: Input file to perform the operation on. (required)
-        :return: file
+        :return: object
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -206,7 +206,7 @@ class ConvertDocumentApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/pdf'])  # noqa: E501
+            ['application/octet-stream'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
@@ -223,7 +223,7 @@ class ConvertDocumentApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='file',  # noqa: E501
+            response_type='object',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -242,7 +242,7 @@ class ConvertDocumentApi(object):
 
         :param async bool
         :param file input_file: Input file to perform the operation on. (required)
-        :return: file
+        :return: object
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -264,7 +264,7 @@ class ConvertDocumentApi(object):
 
         :param async bool
         :param file input_file: Input file to perform the operation on. (required)
-        :return: file
+        :return: object
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -305,7 +305,7 @@ class ConvertDocumentApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/pdf'])  # noqa: E501
+            ['application/octet-stream'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
@@ -322,7 +322,7 @@ class ConvertDocumentApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='file',  # noqa: E501
+            response_type='object',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -341,7 +341,7 @@ class ConvertDocumentApi(object):
 
         :param async bool
         :param file input_file: Input file to perform the operation on. (required)
-        :return: file
+        :return: object
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -363,7 +363,7 @@ class ConvertDocumentApi(object):
 
         :param async bool
         :param file input_file: Input file to perform the operation on. (required)
-        :return: file
+        :return: object
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -404,7 +404,7 @@ class ConvertDocumentApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/csv'])  # noqa: E501
+            ['application/octet-stream'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
@@ -421,7 +421,7 @@ class ConvertDocumentApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='file',  # noqa: E501
+            response_type='object',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -440,7 +440,7 @@ class ConvertDocumentApi(object):
 
         :param async bool
         :param file input_file: Input file to perform the operation on. (required)
-        :return: file
+        :return: object
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -462,7 +462,7 @@ class ConvertDocumentApi(object):
 
         :param async bool
         :param file input_file: Input file to perform the operation on. (required)
-        :return: file
+        :return: object
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -503,7 +503,7 @@ class ConvertDocumentApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/pdf'])  # noqa: E501
+            ['application/octet-stream'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
@@ -520,7 +520,7 @@ class ConvertDocumentApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='file',  # noqa: E501
+            response_type='object',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),

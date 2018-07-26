@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **convert_data_xml_to_json**
-> object convert_data_xml_to_json()
+> object convert_data_xml_to_json(input_file)
 
 XML to JSON conversion
 
@@ -85,17 +85,21 @@ configuration.api_key['Apikey'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = cloudmersive_convert_api_client.ConvertDataApi(cloudmersive_convert_api_client.ApiClient(configuration))
+input_file = '/path/to/file.txt' # file | Input file to perform the operation on.
 
 try:
     # XML to JSON conversion
-    api_response = api_instance.convert_data_xml_to_json()
+    api_response = api_instance.convert_data_xml_to_json(input_file)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConvertDataApi->convert_data_xml_to_json: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **input_file** | **file**| Input file to perform the operation on. | 
 
 ### Return type
 
@@ -107,7 +111,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: multipart/form-data
  - **Accept**: application/json, text/json, application/xml, text/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

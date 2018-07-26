@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **convert_image_image_format_convert**
-> file convert_image_image_format_convert(format1, format2, input_file)
+> object convert_image_image_format_convert(format1, format2, input_file)
 
 Image format conversion
 
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**file**](file.md)
+**object**
 
 ### Authorization
 

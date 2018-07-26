@@ -84,12 +84,14 @@ Class | Method | HTTP request | Description
 *ConvertImageApi* | [**convert_image_image_format_convert**](docs/ConvertImageApi.md#convert_image_image_format_convert) | **POST** /convert/image/{format1}/to/{format2} | Image format conversion
 *ConvertTemplateApi* | [**convert_template_apply_html_template**](docs/ConvertTemplateApi.md#convert_template_apply_html_template) | **POST** /convert/template/html/apply | Apply HTML template
 *ConvertWebApi* | [**convert_web_html_to_pdf**](docs/ConvertWebApi.md#convert_web_html_to_pdf) | **POST** /convert/web/html/to/pdf | Convert HTML string to PDF
+*ConvertWebApi* | [**convert_web_md_to_html**](docs/ConvertWebApi.md#convert_web_md_to_html) | **POST** /convert/web/md/to/html | Convert Markdown to HTML
 *ConvertWebApi* | [**convert_web_url_to_pdf**](docs/ConvertWebApi.md#convert_web_url_to_pdf) | **POST** /convert/web/url/to/pdf | Convert a URL to PDF
 *ConvertWebApi* | [**convert_web_url_to_screenshot**](docs/ConvertWebApi.md#convert_web_url_to_screenshot) | **POST** /convert/web/url/to/screenshot | Take screenshot of URL
 
 
 ## Documentation For Models
 
+ - [HtmlMdResult](docs/HtmlMdResult.md)
  - [HtmlTemplateApplicationRequest](docs/HtmlTemplateApplicationRequest.md)
  - [HtmlTemplateApplicationResponse](docs/HtmlTemplateApplicationResponse.md)
  - [HtmlTemplateOperation](docs/HtmlTemplateOperation.md)

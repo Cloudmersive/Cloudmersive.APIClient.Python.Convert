@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **convert_document_autodetect_to_pdf**
-> file convert_document_autodetect_to_pdf(input_file)
+> object convert_document_autodetect_to_pdf(input_file)
 
 Convert Document to PDF
 
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**file**](file.md)
+**object**
 
 ### Authorization
 
@@ -61,12 +61,12 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
- - **Accept**: application/pdf
+ - **Accept**: application/octet-stream
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **convert_document_docx_to_pdf**
-> file convert_document_docx_to_pdf(input_file)
+> object convert_document_docx_to_pdf(input_file)
 
 Word DOCX to PDF
 
@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**file**](file.md)
+**object**
 
 ### Authorization
 
@@ -115,12 +115,12 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
- - **Accept**: application/pdf
+ - **Accept**: application/octet-stream
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **convert_document_pptx_to_pdf**
-> file convert_document_pptx_to_pdf(input_file)
+> object convert_document_pptx_to_pdf(input_file)
 
 PowerPoint PPTX to PDF
 
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**file**](file.md)
+**object**
 
 ### Authorization
 
@@ -169,12 +169,12 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
- - **Accept**: application/pdf
+ - **Accept**: application/octet-stream
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **convert_document_xlsx_to_csv**
-> file convert_document_xlsx_to_csv(input_file)
+> object convert_document_xlsx_to_csv(input_file)
 
 Excel XLSX to CSV
 
@@ -214,7 +214,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**file**](file.md)
+**object**
 
 ### Authorization
 
@@ -223,12 +223,12 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
- - **Accept**: application/csv
+ - **Accept**: application/octet-stream
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **convert_document_xlsx_to_pdf**
-> file convert_document_xlsx_to_pdf(input_file)
+> object convert_document_xlsx_to_pdf(input_file)
 
 Excel XLSX to PDF
 
@@ -268,7 +268,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**file**](file.md)
+**object**
 
 ### Authorization
 
@@ -277,7 +277,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
- - **Accept**: application/pdf
+ - **Accept**: application/octet-stream
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

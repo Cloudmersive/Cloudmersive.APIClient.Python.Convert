@@ -15,6 +15,7 @@
 from __future__ import absolute_import
 
 # import models into model package
+from cloudmersive_convert_api_client.models.html_md_result import HtmlMdResult
 from cloudmersive_convert_api_client.models.html_template_application_request import HtmlTemplateApplicationRequest
 from cloudmersive_convert_api_client.models.html_template_application_response import HtmlTemplateApplicationResponse
 from cloudmersive_convert_api_client.models.html_template_operation import HtmlTemplateOperation
