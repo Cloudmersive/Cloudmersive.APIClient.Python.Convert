@@ -242,7 +242,7 @@ class ConvertWebApi(object):
 
         :param async bool
         :param ScreenshotRequest input: URL to PDF request parameters (required)
-        :return: object
+        :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -264,7 +264,7 @@ class ConvertWebApi(object):
 
         :param async bool
         :param ScreenshotRequest input: URL to PDF request parameters (required)
-        :return: object
+        :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -322,7 +322,7 @@ class ConvertWebApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='str',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -341,7 +341,7 @@ class ConvertWebApi(object):
 
         :param async bool
         :param ScreenshotRequest input: Screenshot request parameters (required)
-        :return: object
+        :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -363,7 +363,7 @@ class ConvertWebApi(object):
 
         :param async bool
         :param ScreenshotRequest input: Screenshot request parameters (required)
-        :return: object
+        :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -421,7 +421,7 @@ class ConvertWebApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='str',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
