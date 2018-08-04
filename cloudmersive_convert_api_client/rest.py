@@ -222,6 +222,7 @@ class RESTClientObject(object):
 	            if six.PY3:
 	                r.data = r.data.decode('utf8')
             except:
+                r.data = r.read()
             	logger.debug("binary response")
 
             # log response body
