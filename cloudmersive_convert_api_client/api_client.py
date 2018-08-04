@@ -157,7 +157,9 @@ class ApiClient(object):
         return_data = response_data
         if _preload_content:
             # deserialize response data
-            if response_type:
+            if response_data.getheader("content-type") == "application/octet-stream":
+                response_data = response_data
+            elif response_type:
                 return_data = self.deserialize(response_data, response_type)
             else:
                 return_data = None
