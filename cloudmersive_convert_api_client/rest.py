@@ -43,7 +43,7 @@ class RESTResponse(io.IOBase):
         if self.getheader("content-type") == "application/octet-stream":
             self.data = resp.read()
         else:
-            resp.data
+            self.data = resp.data
 
     def getheaders(self):
         """Returns a dictionary of the response headers."""
