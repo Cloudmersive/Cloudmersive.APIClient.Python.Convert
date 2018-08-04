@@ -223,7 +223,8 @@ class RESTClientObject(object):
 	                r.data = r.data.decode('utf8')
             except:
                 r.data = r.read()
-            	logger.debug("binary response")
+            
+            logger.debug("binary response")
 
             # log response body
             logger.debug("response body: %s", r.data)
