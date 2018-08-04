@@ -39,7 +39,11 @@ class RESTResponse(io.IOBase):
         self.urllib3_response = resp
         self.status = resp.status
         self.reason = resp.reason
-        self.data = resp.data
+
+        if self.getheader("content-type") == "application/octet-stream":
+            self.data = bytes(resp.data)
+        else
+            self.data = resp.data
 
         # if self.getheader("content-type") == "application/octet-stream":
         #     self.data = resp.read()
