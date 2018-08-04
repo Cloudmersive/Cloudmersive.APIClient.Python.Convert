@@ -222,14 +222,14 @@ class RESTClientObject(object):
 
             # In the python 3, the response.data is bytes.
             # we need to decode it to string.
-            try:
-	            if six.PY3:
-	                r.data = r.data.decode('utf8')
-            except:
-                logger.debug("binary response") #r.data = r.urllib3_response.read()
+            # try:
+	        #     if six.PY3:
+	        #         r.data = r.data.decode('utf8')
+            # except:
+            #     logger.debug("binary response") #r.data = r.urllib3_response.read()
 
-            # log response body
-            logger.debug("response body: %s", r.data)
+            # # log response body
+            # logger.debug("response body: %s", r.data)
 
         if not 200 <= r.status <= 299:
             raise ApiException(http_resp=r)
