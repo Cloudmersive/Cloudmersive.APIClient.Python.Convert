@@ -39,7 +39,11 @@ class RESTResponse(io.IOBase):
         self.urllib3_response = resp
         self.status = resp.status
         self.reason = resp.reason
-        self.data = resp.data
+
+        if self.getheader("content-type") == "application/octet-stream":
+            self.data = resp.read()
+        else:
+            resp.data
 
     def getheaders(self):
         """Returns a dictionary of the response headers."""
@@ -222,9 +226,7 @@ class RESTClientObject(object):
 	            if six.PY3:
 	                r.data = r.data.decode('utf8')
             except:
-                r.data = r.urllib3_response.read()
-            
-            logger.debug("binary response")
+                logger.debug("binary response") #r.data = r.urllib3_response.read()
 
             # log response body
             logger.debug("response body: %s", r.data)
