@@ -41,16 +41,6 @@ class RESTResponse(io.IOBase):
         self.reason = resp.reason
         self.data = resp.data
 
-        # if self.getheader("content-type") == "application/octet-stream":
-        #     self.data = bytes(resp.data)
-        # else:
-        #     self.data = resp.data
-
-        # if self.getheader("content-type") == "application/octet-stream":
-        #     self.data = resp.read()
-        # else:
-        #     self.data = resp.data
-
     def getheaders(self):
         """Returns a dictionary of the response headers."""
         return self.urllib3_response.getheaders()
@@ -228,14 +218,11 @@ class RESTClientObject(object):
 
             # In the python 3, the response.data is bytes.
             # we need to decode it to string.
-            # try:
-	        #     if six.PY3:
-	        #         r.data = r.data.decode('utf8')
-            # except:
-            #     logger.debug("binary response") #r.data = r.urllib3_response.read()
+            if six.PY3:
+                r.data = r.data.decode('utf8')
 
-            # # log response body
-            # logger.debug("response body: %s", r.data)
+            # log response body
+            logger.debug("response body: %s", r.data)
 
         if not 200 <= r.status <= 299:
             raise ApiException(http_resp=r)
