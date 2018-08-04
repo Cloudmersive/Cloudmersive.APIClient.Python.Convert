@@ -42,7 +42,7 @@ class RESTResponse(io.IOBase):
 
         if self.getheader("content-type") == "application/octet-stream":
             self.data = bytes(resp.data)
-        else
+        else:
             self.data = resp.data
 
         # if self.getheader("content-type") == "application/octet-stream":
