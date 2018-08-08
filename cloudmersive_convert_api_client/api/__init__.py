@@ -8,3 +8,4 @@ from cloudmersive_convert_api_client.api.convert_document_api import ConvertDocu
 from cloudmersive_convert_api_client.api.convert_image_api import ConvertImageApi
 from cloudmersive_convert_api_client.api.convert_template_api import ConvertTemplateApi
 from cloudmersive_convert_api_client.api.convert_web_api import ConvertWebApi
+from cloudmersive_convert_api_client.api.merge_document_api import MergeDocumentApi
