@@ -132,8 +132,206 @@ class ConvertDocumentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def convert_document_csv_to_xlsx(self, input_file, **kwargs):  # noqa: E501
+        """CSV to Excel XLSX  # noqa: E501
+
+        Convert CSV file to Office Excel XLSX Workbooks file format.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.convert_document_csv_to_xlsx(input_file, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.convert_document_csv_to_xlsx_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_csv_to_xlsx_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_csv_to_xlsx_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """CSV to Excel XLSX  # noqa: E501
+
+        Convert CSV file to Office Excel XLSX Workbooks file format.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.convert_document_csv_to_xlsx_with_http_info(input_file, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file']  # noqa: E501
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_csv_to_xlsx" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_csv_to_xlsx`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/csv/to/xlsx', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def convert_document_doc_to_docx(self, input_file, **kwargs):  # noqa: E501
+        """Word DOC (97-03) to DOCX  # noqa: E501
+
+        Convert/upgrade Office Word (97-2003 Format) Documents (doc) to the modern DOCX format  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.convert_document_doc_to_docx(input_file, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.convert_document_doc_to_docx_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_doc_to_docx_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_doc_to_docx_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Word DOC (97-03) to DOCX  # noqa: E501
+
+        Convert/upgrade Office Word (97-2003 Format) Documents (doc) to the modern DOCX format  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.convert_document_doc_to_docx_with_http_info(input_file, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file']  # noqa: E501
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_doc_to_docx" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_doc_to_docx`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/doc/to/docx', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def convert_document_doc_to_pdf(self, input_file, **kwargs):  # noqa: E501
-        """Word DOC (97-2003) to PDF  # noqa: E501
+        """Word DOC (97-03) to PDF  # noqa: E501
 
         Convert Office Word (97-2003 Format) Documents (doc) to standard PDF  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -155,7 +353,7 @@ class ConvertDocumentApi(object):
             return data
 
     def convert_document_doc_to_pdf_with_http_info(self, input_file, **kwargs):  # noqa: E501
-        """Word DOC (97-2003) to PDF  # noqa: E501
+        """Word DOC (97-03) to PDF  # noqa: E501
 
         Convert Office Word (97-2003 Format) Documents (doc) to standard PDF  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -330,8 +528,107 @@ class ConvertDocumentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def convert_document_pdf_to_png_array(self, input_file, **kwargs):  # noqa: E501
+        """PDF to PNG Array  # noqa: E501
+
+        Convert PDF document to PNG array, one image per page.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.convert_document_pdf_to_png_array(input_file, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: PdfToPngResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.convert_document_pdf_to_png_array_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_pdf_to_png_array_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_pdf_to_png_array_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """PDF to PNG Array  # noqa: E501
+
+        Convert PDF document to PNG array, one image per page.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.convert_document_pdf_to_png_array_with_http_info(input_file, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: PdfToPngResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file']  # noqa: E501
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_pdf_to_png_array" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_pdf_to_png_array`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/pdf/to/png', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='PdfToPngResult',  # noqa: E501
+            auth_settings=auth_settings,
+            async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def convert_document_ppt_to_pdf(self, input_file, **kwargs):  # noqa: E501
-        """PowerPoint PPT (97-2003) to PDF  # noqa: E501
+        """PowerPoint PPT (97-03) to PDF  # noqa: E501
 
         Convert Office PowerPoint (97-2003) Documents (ppt) to standard PDF  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -353,7 +650,7 @@ class ConvertDocumentApi(object):
             return data
 
     def convert_document_ppt_to_pdf_with_http_info(self, input_file, **kwargs):  # noqa: E501
-        """PowerPoint PPT (97-2003) to PDF  # noqa: E501
+        """PowerPoint PPT (97-03) to PDF  # noqa: E501
 
         Convert Office PowerPoint (97-2003) Documents (ppt) to standard PDF  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -415,6 +712,105 @@ class ConvertDocumentApi(object):
 
         return self.api_client.call_api(
             '/convert/ppt/to/pdf', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def convert_document_ppt_to_pptx(self, input_file, **kwargs):  # noqa: E501
+        """PowerPoint PPT (97-03) to PPTX  # noqa: E501
+
+        Convert/upgrade Office PowerPoint (97-2003) Documents (ppt) to modern PPTX  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.convert_document_ppt_to_pptx(input_file, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.convert_document_ppt_to_pptx_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_ppt_to_pptx_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_ppt_to_pptx_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """PowerPoint PPT (97-03) to PPTX  # noqa: E501
+
+        Convert/upgrade Office PowerPoint (97-2003) Documents (ppt) to modern PPTX  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.convert_document_ppt_to_pptx_with_http_info(input_file, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file']  # noqa: E501
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_ppt_to_pptx" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_ppt_to_pptx`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/ppt/to/pptx', 'POST',
             path_params,
             query_params,
             header_params,
@@ -529,7 +925,7 @@ class ConvertDocumentApi(object):
             collection_formats=collection_formats)
 
     def convert_document_xls_to_pdf(self, input_file, **kwargs):  # noqa: E501
-        """Excel XLS (97-2003) to PDF  # noqa: E501
+        """Excel XLS (97-03) to PDF  # noqa: E501
 
         Convert Office Excel (97-2003) Workbooks (xls) to standard PDF.  Converts all worksheets in the workbook to PDF.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -551,7 +947,7 @@ class ConvertDocumentApi(object):
             return data
 
     def convert_document_xls_to_pdf_with_http_info(self, input_file, **kwargs):  # noqa: E501
-        """Excel XLS (97-2003) to PDF  # noqa: E501
+        """Excel XLS (97-03) to PDF  # noqa: E501
 
         Convert Office Excel (97-2003) Workbooks (xls) to standard PDF.  Converts all worksheets in the workbook to PDF.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -620,6 +1016,105 @@ class ConvertDocumentApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='object',  # noqa: E501
+            auth_settings=auth_settings,
+            async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def convert_document_xls_to_xlsx(self, input_file, **kwargs):  # noqa: E501
+        """Excel XLS (97-03) to XLSX  # noqa: E501
+
+        Convert/upgrade Office Excel (97-2003) Workbooks (xls) to modern XLSX format.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.convert_document_xls_to_xlsx(input_file, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.convert_document_xls_to_xlsx_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_xls_to_xlsx_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_xls_to_xlsx_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Excel XLS (97-03) to XLSX  # noqa: E501
+
+        Convert/upgrade Office Excel (97-2003) Workbooks (xls) to modern XLSX format.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.convert_document_xls_to_xlsx_with_http_info(input_file, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file']  # noqa: E501
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_xls_to_xlsx" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_xls_to_xlsx`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/xls/to/xlsx', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),

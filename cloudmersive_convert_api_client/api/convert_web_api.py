@@ -33,6 +33,105 @@ class ConvertWebApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
+    def convert_web_html_to_docx(self, input_request, **kwargs):  # noqa: E501
+        """HTML to DOCX  # noqa: E501
+
+        Convert HTML to Office Word Document (DOCX) format  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.convert_web_html_to_docx(input_request, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param HtmlToOfficeRequest input_request: (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.convert_web_html_to_docx_with_http_info(input_request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_web_html_to_docx_with_http_info(input_request, **kwargs)  # noqa: E501
+            return data
+
+    def convert_web_html_to_docx_with_http_info(self, input_request, **kwargs):  # noqa: E501
+        """HTML to DOCX  # noqa: E501
+
+        Convert HTML to Office Word Document (DOCX) format  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.convert_web_html_to_docx_with_http_info(input_request, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param HtmlToOfficeRequest input_request: (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_request']  # noqa: E501
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_web_html_to_docx" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_request' is set
+        if ('input_request' not in params or
+                params['input_request'] is None):
+            raise ValueError("Missing the required parameter `input_request` when calling `convert_web_html_to_docx`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'input_request' in params:
+            body_params = params['input_request']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/html/to/docx', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def convert_web_html_to_pdf(self, input, **kwargs):  # noqa: E501
         """Convert HTML string to PDF  # noqa: E501
 
