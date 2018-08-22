@@ -11,4 +11,5 @@ from cloudmersive_convert_api_client.api.convert_template_api import ConvertTemp
 from cloudmersive_convert_api_client.api.convert_web_api import ConvertWebApi
 from cloudmersive_convert_api_client.api.edit_document_api import EditDocumentApi
 from cloudmersive_convert_api_client.api.merge_document_api import MergeDocumentApi
+from cloudmersive_convert_api_client.api.validate_document_api import ValidateDocumentApi
 from cloudmersive_convert_api_client.api.viewer_tools_api import ViewerToolsApi

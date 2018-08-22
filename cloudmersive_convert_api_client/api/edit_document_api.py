@@ -132,6 +132,600 @@ class EditDocumentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def edit_document_docx_get_headers_and_footers(self, req_config, **kwargs):  # noqa: E501
+        """Get content of a footer from a DOCX  # noqa: E501
+
+        Returns the footer content from a Word Document (DOCX) format file  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.edit_document_docx_get_headers_and_footers(req_config, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param GetDocxHeadersAndFootersRequest req_config: (required)
+        :return: GetDocxHeadersAndFootersResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.edit_document_docx_get_headers_and_footers_with_http_info(req_config, **kwargs)  # noqa: E501
+        else:
+            (data) = self.edit_document_docx_get_headers_and_footers_with_http_info(req_config, **kwargs)  # noqa: E501
+            return data
+
+    def edit_document_docx_get_headers_and_footers_with_http_info(self, req_config, **kwargs):  # noqa: E501
+        """Get content of a footer from a DOCX  # noqa: E501
+
+        Returns the footer content from a Word Document (DOCX) format file  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.edit_document_docx_get_headers_and_footers_with_http_info(req_config, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param GetDocxHeadersAndFootersRequest req_config: (required)
+        :return: GetDocxHeadersAndFootersResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['req_config']  # noqa: E501
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method edit_document_docx_get_headers_and_footers" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'req_config' is set
+        if ('req_config' not in params or
+                params['req_config'] is None):
+            raise ValueError("Missing the required parameter `req_config` when calling `edit_document_docx_get_headers_and_footers`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'req_config' in params:
+            body_params = params['req_config']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/edit/docx/get-headers-and-footers', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='GetDocxHeadersAndFootersResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def edit_document_docx_get_styles(self, req_config, **kwargs):  # noqa: E501
+        """Get styles from a DOCX  # noqa: E501
+
+        Returns the styles defined in the Word Document (DOCX) format file  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.edit_document_docx_get_styles(req_config, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param GetDocxStylesRequest req_config: (required)
+        :return: GetDocxStylesResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.edit_document_docx_get_styles_with_http_info(req_config, **kwargs)  # noqa: E501
+        else:
+            (data) = self.edit_document_docx_get_styles_with_http_info(req_config, **kwargs)  # noqa: E501
+            return data
+
+    def edit_document_docx_get_styles_with_http_info(self, req_config, **kwargs):  # noqa: E501
+        """Get styles from a DOCX  # noqa: E501
+
+        Returns the styles defined in the Word Document (DOCX) format file  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.edit_document_docx_get_styles_with_http_info(req_config, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param GetDocxStylesRequest req_config: (required)
+        :return: GetDocxStylesResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['req_config']  # noqa: E501
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method edit_document_docx_get_styles" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'req_config' is set
+        if ('req_config' not in params or
+                params['req_config'] is None):
+            raise ValueError("Missing the required parameter `req_config` when calling `edit_document_docx_get_styles`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'req_config' in params:
+            body_params = params['req_config']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/edit/docx/get-styles', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='GetDocxStylesResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def edit_document_docx_get_tables(self, req_config, **kwargs):  # noqa: E501
+        """Get tables in DOCX  # noqa: E501
+
+        Returns all the table objects in an Office Word Document (docx)  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.edit_document_docx_get_tables(req_config, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param GetDocxTablesRequest req_config: (required)
+        :return: GetDocxTablesResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.edit_document_docx_get_tables_with_http_info(req_config, **kwargs)  # noqa: E501
+        else:
+            (data) = self.edit_document_docx_get_tables_with_http_info(req_config, **kwargs)  # noqa: E501
+            return data
+
+    def edit_document_docx_get_tables_with_http_info(self, req_config, **kwargs):  # noqa: E501
+        """Get tables in DOCX  # noqa: E501
+
+        Returns all the table objects in an Office Word Document (docx)  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.edit_document_docx_get_tables_with_http_info(req_config, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param GetDocxTablesRequest req_config: (required)
+        :return: GetDocxTablesResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['req_config']  # noqa: E501
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method edit_document_docx_get_tables" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'req_config' is set
+        if ('req_config' not in params or
+                params['req_config'] is None):
+            raise ValueError("Missing the required parameter `req_config` when calling `edit_document_docx_get_tables`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'req_config' in params:
+            body_params = params['req_config']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/edit/docx/get-tables', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='GetDocxTablesResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def edit_document_docx_insert_image(self, req_config, **kwargs):  # noqa: E501
+        """Insert image into a DOCX  # noqa: E501
+
+        Set the footer in a Word Document (DOCX)  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.edit_document_docx_insert_image(req_config, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param DocxInsertImageRequest req_config: (required)
+        :return: DocxInsertImageResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.edit_document_docx_insert_image_with_http_info(req_config, **kwargs)  # noqa: E501
+        else:
+            (data) = self.edit_document_docx_insert_image_with_http_info(req_config, **kwargs)  # noqa: E501
+            return data
+
+    def edit_document_docx_insert_image_with_http_info(self, req_config, **kwargs):  # noqa: E501
+        """Insert image into a DOCX  # noqa: E501
+
+        Set the footer in a Word Document (DOCX)  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.edit_document_docx_insert_image_with_http_info(req_config, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param DocxInsertImageRequest req_config: (required)
+        :return: DocxInsertImageResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['req_config']  # noqa: E501
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method edit_document_docx_insert_image" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'req_config' is set
+        if ('req_config' not in params or
+                params['req_config'] is None):
+            raise ValueError("Missing the required parameter `req_config` when calling `edit_document_docx_insert_image`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'req_config' in params:
+            body_params = params['req_config']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/edit/docx/insert-image', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='DocxInsertImageResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def edit_document_docx_insert_table(self, req_config, **kwargs):  # noqa: E501
+        """Insert a new table into a DOCX  # noqa: E501
+
+        Adds a new table into a DOCX and returns the result  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.edit_document_docx_insert_table(req_config, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param InsertDocxTablesRequest req_config: (required)
+        :return: InsertDocxTablesResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.edit_document_docx_insert_table_with_http_info(req_config, **kwargs)  # noqa: E501
+        else:
+            (data) = self.edit_document_docx_insert_table_with_http_info(req_config, **kwargs)  # noqa: E501
+            return data
+
+    def edit_document_docx_insert_table_with_http_info(self, req_config, **kwargs):  # noqa: E501
+        """Insert a new table into a DOCX  # noqa: E501
+
+        Adds a new table into a DOCX and returns the result  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.edit_document_docx_insert_table_with_http_info(req_config, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param InsertDocxTablesRequest req_config: (required)
+        :return: InsertDocxTablesResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['req_config']  # noqa: E501
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method edit_document_docx_insert_table" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'req_config' is set
+        if ('req_config' not in params or
+                params['req_config'] is None):
+            raise ValueError("Missing the required parameter `req_config` when calling `edit_document_docx_insert_table`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'req_config' in params:
+            body_params = params['req_config']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/edit/docx/insert-table', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InsertDocxTablesResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def edit_document_docx_remove_headers_and_footers(self, req_config, **kwargs):  # noqa: E501
+        """Remove headers and footers from DOCX  # noqa: E501
+
+        Remove all headers, or footers, or both from a Word Document (DOCX)  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.edit_document_docx_remove_headers_and_footers(req_config, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param RemoveDocxHeadersAndFootersRequest req_config: (required)
+        :return: RemoveDocxHeadersAndFootersResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.edit_document_docx_remove_headers_and_footers_with_http_info(req_config, **kwargs)  # noqa: E501
+        else:
+            (data) = self.edit_document_docx_remove_headers_and_footers_with_http_info(req_config, **kwargs)  # noqa: E501
+            return data
+
+    def edit_document_docx_remove_headers_and_footers_with_http_info(self, req_config, **kwargs):  # noqa: E501
+        """Remove headers and footers from DOCX  # noqa: E501
+
+        Remove all headers, or footers, or both from a Word Document (DOCX)  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.edit_document_docx_remove_headers_and_footers_with_http_info(req_config, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param RemoveDocxHeadersAndFootersRequest req_config: (required)
+        :return: RemoveDocxHeadersAndFootersResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['req_config']  # noqa: E501
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method edit_document_docx_remove_headers_and_footers" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'req_config' is set
+        if ('req_config' not in params or
+                params['req_config'] is None):
+            raise ValueError("Missing the required parameter `req_config` when calling `edit_document_docx_remove_headers_and_footers`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'req_config' in params:
+            body_params = params['req_config']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/edit/docx/remove-headers-and-footers', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='RemoveDocxHeadersAndFootersResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def edit_document_docx_replace(self, req_config, **kwargs):  # noqa: E501
         """Replace string in DOCX  # noqa: E501
 
@@ -217,6 +811,303 @@ class EditDocumentApi(object):
 
         return self.api_client.call_api(
             '/convert/edit/docx/replace-all', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def edit_document_docx_set_footer(self, req_config, **kwargs):  # noqa: E501
+        """Set the footer in a DOCX  # noqa: E501
+
+        Set the footer in a Word Document (DOCX)  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.edit_document_docx_set_footer(req_config, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param DocxSetFooterRequest req_config: (required)
+        :return: DocxSetFooterResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.edit_document_docx_set_footer_with_http_info(req_config, **kwargs)  # noqa: E501
+        else:
+            (data) = self.edit_document_docx_set_footer_with_http_info(req_config, **kwargs)  # noqa: E501
+            return data
+
+    def edit_document_docx_set_footer_with_http_info(self, req_config, **kwargs):  # noqa: E501
+        """Set the footer in a DOCX  # noqa: E501
+
+        Set the footer in a Word Document (DOCX)  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.edit_document_docx_set_footer_with_http_info(req_config, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param DocxSetFooterRequest req_config: (required)
+        :return: DocxSetFooterResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['req_config']  # noqa: E501
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method edit_document_docx_set_footer" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'req_config' is set
+        if ('req_config' not in params or
+                params['req_config'] is None):
+            raise ValueError("Missing the required parameter `req_config` when calling `edit_document_docx_set_footer`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'req_config' in params:
+            body_params = params['req_config']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/edit/docx/set-footer', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='DocxSetFooterResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def edit_document_docx_set_header(self, req_config, **kwargs):  # noqa: E501
+        """Set the header in a DOCX  # noqa: E501
+
+        Set the header in a Word Document (DOCX)  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.edit_document_docx_set_header(req_config, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param DocxSetHeaderRequest req_config: (required)
+        :return: DocxSetHeaderResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.edit_document_docx_set_header_with_http_info(req_config, **kwargs)  # noqa: E501
+        else:
+            (data) = self.edit_document_docx_set_header_with_http_info(req_config, **kwargs)  # noqa: E501
+            return data
+
+    def edit_document_docx_set_header_with_http_info(self, req_config, **kwargs):  # noqa: E501
+        """Set the header in a DOCX  # noqa: E501
+
+        Set the header in a Word Document (DOCX)  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.edit_document_docx_set_header_with_http_info(req_config, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param DocxSetHeaderRequest req_config: (required)
+        :return: DocxSetHeaderResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['req_config']  # noqa: E501
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method edit_document_docx_set_header" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'req_config' is set
+        if ('req_config' not in params or
+                params['req_config'] is None):
+            raise ValueError("Missing the required parameter `req_config` when calling `edit_document_docx_set_header`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'req_config' in params:
+            body_params = params['req_config']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/edit/docx/set-header', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='DocxSetHeaderResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def edit_document_finish_editing(self, req_config, **kwargs):  # noqa: E501
+        """Download result from document editing  # noqa: E501
+
+        Once done editing a document, download the result.  Begin editing a document by calling begin-editing, then perform operations, then call finish-editing to get the result.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.edit_document_finish_editing(req_config, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param FinishEditingRequest req_config: (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.edit_document_finish_editing_with_http_info(req_config, **kwargs)  # noqa: E501
+        else:
+            (data) = self.edit_document_finish_editing_with_http_info(req_config, **kwargs)  # noqa: E501
+            return data
+
+    def edit_document_finish_editing_with_http_info(self, req_config, **kwargs):  # noqa: E501
+        """Download result from document editing  # noqa: E501
+
+        Once done editing a document, download the result.  Begin editing a document by calling begin-editing, then perform operations, then call finish-editing to get the result.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.edit_document_finish_editing_with_http_info(req_config, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param FinishEditingRequest req_config: (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['req_config']  # noqa: E501
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method edit_document_finish_editing" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'req_config' is set
+        if ('req_config' not in params or
+                params['req_config'] is None):
+            raise ValueError("Missing the required parameter `req_config` when calling `edit_document_finish_editing`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'req_config' in params:
+            body_params = params['req_config']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/edit/finish-editing', 'POST',
             path_params,
             query_params,
             header_params,
