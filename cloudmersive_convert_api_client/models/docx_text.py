@@ -32,23 +32,28 @@ class DocxText(object):
     """
     swagger_types = {
         'text_index': 'int',
+        'path': 'str',
         'text_content': 'str'
     }
 
     attribute_map = {
         'text_index': 'TextIndex',
+        'path': 'Path',
         'text_content': 'TextContent'
     }
 
-    def __init__(self, text_index=None, text_content=None):  # noqa: E501
+    def __init__(self, text_index=None, path=None, text_content=None):  # noqa: E501
         """DocxText - a model defined in Swagger"""  # noqa: E501
 
         self._text_index = None
+        self._path = None
         self._text_content = None
         self.discriminator = None
 
         if text_index is not None:
             self.text_index = text_index
+        if path is not None:
+            self.path = path
         if text_content is not None:
             self.text_content = text_content
 
@@ -74,6 +79,29 @@ class DocxText(object):
         """
 
         self._text_index = text_index
+
+    @property
+    def path(self):
+        """Gets the path of this DocxText.  # noqa: E501
+
+        The Path of the location of this object; leave blank for new tables  # noqa: E501
+
+        :return: The path of this DocxText.  # noqa: E501
+        :rtype: str
+        """
+        return self._path
+
+    @path.setter
+    def path(self, path):
+        """Sets the path of this DocxText.
+
+        The Path of the location of this object; leave blank for new tables  # noqa: E501
+
+        :param path: The path of this DocxText.  # noqa: E501
+        :type: str
+        """
+
+        self._path = path
 
     @property
     def text_content(self):

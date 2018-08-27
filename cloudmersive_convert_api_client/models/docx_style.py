@@ -32,6 +32,7 @@ class DocxStyle(object):
     """
     swagger_types = {
         'style_id': 'str',
+        'path': 'str',
         'bold': 'bool',
         'italic': 'bool',
         'underline': 'bool',
@@ -41,6 +42,7 @@ class DocxStyle(object):
 
     attribute_map = {
         'style_id': 'StyleID',
+        'path': 'Path',
         'bold': 'Bold',
         'italic': 'Italic',
         'underline': 'Underline',
@@ -48,10 +50,11 @@ class DocxStyle(object):
         'font_family': 'FontFamily'
     }
 
-    def __init__(self, style_id=None, bold=None, italic=None, underline=None, font_size=None, font_family=None):  # noqa: E501
+    def __init__(self, style_id=None, path=None, bold=None, italic=None, underline=None, font_size=None, font_family=None):  # noqa: E501
         """DocxStyle - a model defined in Swagger"""  # noqa: E501
 
         self._style_id = None
+        self._path = None
         self._bold = None
         self._italic = None
         self._underline = None
@@ -61,6 +64,8 @@ class DocxStyle(object):
 
         if style_id is not None:
             self.style_id = style_id
+        if path is not None:
+            self.path = path
         if bold is not None:
             self.bold = bold
         if italic is not None:
@@ -94,6 +99,29 @@ class DocxStyle(object):
         """
 
         self._style_id = style_id
+
+    @property
+    def path(self):
+        """Gets the path of this DocxStyle.  # noqa: E501
+
+        The Path of the location of this object; leave blank for new tables  # noqa: E501
+
+        :return: The path of this DocxStyle.  # noqa: E501
+        :rtype: str
+        """
+        return self._path
+
+    @path.setter
+    def path(self, path):
+        """Sets the path of this DocxStyle.
+
+        The Path of the location of this object; leave blank for new tables  # noqa: E501
+
+        :param path: The path of this DocxStyle.  # noqa: E501
+        :type: str
+        """
+
+        self._path = path
 
     @property
     def bold(self):

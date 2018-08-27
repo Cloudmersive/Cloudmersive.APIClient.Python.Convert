@@ -34,26 +34,31 @@ class DocxParagraph(object):
     """
     swagger_types = {
         'paragraph_index': 'int',
+        'path': 'str',
         'content_runs': 'list[DocxRun]',
         'style_id': 'str'
     }
 
     attribute_map = {
         'paragraph_index': 'ParagraphIndex',
+        'path': 'Path',
         'content_runs': 'ContentRuns',
         'style_id': 'StyleID'
     }
 
-    def __init__(self, paragraph_index=None, content_runs=None, style_id=None):  # noqa: E501
+    def __init__(self, paragraph_index=None, path=None, content_runs=None, style_id=None):  # noqa: E501
         """DocxParagraph - a model defined in Swagger"""  # noqa: E501
 
         self._paragraph_index = None
+        self._path = None
         self._content_runs = None
         self._style_id = None
         self.discriminator = None
 
         if paragraph_index is not None:
             self.paragraph_index = paragraph_index
+        if path is not None:
+            self.path = path
         if content_runs is not None:
             self.content_runs = content_runs
         if style_id is not None:
@@ -81,6 +86,29 @@ class DocxParagraph(object):
         """
 
         self._paragraph_index = paragraph_index
+
+    @property
+    def path(self):
+        """Gets the path of this DocxParagraph.  # noqa: E501
+
+        The Path of the location of this object; leave blank for new tables  # noqa: E501
+
+        :return: The path of this DocxParagraph.  # noqa: E501
+        :rtype: str
+        """
+        return self._path
+
+    @path.setter
+    def path(self, path):
+        """Sets the path of this DocxParagraph.
+
+        The Path of the location of this object; leave blank for new tables  # noqa: E501
+
+        :param path: The path of this DocxParagraph.  # noqa: E501
+        :type: str
+        """
+
+        self._path = path
 
     @property
     def content_runs(self):

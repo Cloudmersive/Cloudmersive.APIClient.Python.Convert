@@ -35,21 +35,27 @@ class InsertDocxTablesRequest(object):
     swagger_types = {
         'input_file_bytes': 'str',
         'input_file_url': 'str',
-        'table_to_insert': 'DocxTable'
+        'table_to_insert': 'DocxTable',
+        'insert_placement': 'str',
+        'insert_path': 'str'
     }
 
     attribute_map = {
         'input_file_bytes': 'InputFileBytes',
         'input_file_url': 'InputFileUrl',
-        'table_to_insert': 'TableToInsert'
+        'table_to_insert': 'TableToInsert',
+        'insert_placement': 'InsertPlacement',
+        'insert_path': 'InsertPath'
     }
 
-    def __init__(self, input_file_bytes=None, input_file_url=None, table_to_insert=None):  # noqa: E501
+    def __init__(self, input_file_bytes=None, input_file_url=None, table_to_insert=None, insert_placement=None, insert_path=None):  # noqa: E501
         """InsertDocxTablesRequest - a model defined in Swagger"""  # noqa: E501
 
         self._input_file_bytes = None
         self._input_file_url = None
         self._table_to_insert = None
+        self._insert_placement = None
+        self._insert_path = None
         self.discriminator = None
 
         if input_file_bytes is not None:
@@ -58,6 +64,10 @@ class InsertDocxTablesRequest(object):
             self.input_file_url = input_file_url
         if table_to_insert is not None:
             self.table_to_insert = table_to_insert
+        if insert_placement is not None:
+            self.insert_placement = insert_placement
+        if insert_path is not None:
+            self.insert_path = insert_path
 
     @property
     def input_file_bytes(self):
@@ -129,6 +139,52 @@ class InsertDocxTablesRequest(object):
         """
 
         self._table_to_insert = table_to_insert
+
+    @property
+    def insert_placement(self):
+        """Gets the insert_placement of this InsertDocxTablesRequest.  # noqa: E501
+
+        Optional; default is DocumentEnd.  Placement Type of the insert; possible values are: DocumentStart (very beginning of the document), DocumentEnd (very end of the document), BeforeExistingObject (right before an existing object - fill in the InsertPath field using the Path value from an existing object), AfterExistingObject (right after an existing object - fill in the InsertPath field using the Path value from an existing object)  # noqa: E501
+
+        :return: The insert_placement of this InsertDocxTablesRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._insert_placement
+
+    @insert_placement.setter
+    def insert_placement(self, insert_placement):
+        """Sets the insert_placement of this InsertDocxTablesRequest.
+
+        Optional; default is DocumentEnd.  Placement Type of the insert; possible values are: DocumentStart (very beginning of the document), DocumentEnd (very end of the document), BeforeExistingObject (right before an existing object - fill in the InsertPath field using the Path value from an existing object), AfterExistingObject (right after an existing object - fill in the InsertPath field using the Path value from an existing object)  # noqa: E501
+
+        :param insert_placement: The insert_placement of this InsertDocxTablesRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._insert_placement = insert_placement
+
+    @property
+    def insert_path(self):
+        """Gets the insert_path of this InsertDocxTablesRequest.  # noqa: E501
+
+        Optional; location within the document to insert the object; fill in the InsertPath field using the Path value from an existing object.  Used with InsertPlacement of BeforeExistingObject or AfterExistingObject  # noqa: E501
+
+        :return: The insert_path of this InsertDocxTablesRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._insert_path
+
+    @insert_path.setter
+    def insert_path(self, insert_path):
+        """Sets the insert_path of this InsertDocxTablesRequest.
+
+        Optional; location within the document to insert the object; fill in the InsertPath field using the Path value from an existing object.  Used with InsertPlacement of BeforeExistingObject or AfterExistingObject  # noqa: E501
+
+        :param insert_path: The insert_path of this InsertDocxTablesRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._insert_path = insert_path
 
     def to_dict(self):
         """Returns the model properties as a dict"""

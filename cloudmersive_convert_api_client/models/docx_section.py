@@ -31,21 +31,26 @@ class DocxSection(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'starting_page_numbers': 'list[int]'
+        'starting_page_numbers': 'list[int]',
+        'path': 'str'
     }
 
     attribute_map = {
-        'starting_page_numbers': 'StartingPageNumbers'
+        'starting_page_numbers': 'StartingPageNumbers',
+        'path': 'Path'
     }
 
-    def __init__(self, starting_page_numbers=None):  # noqa: E501
+    def __init__(self, starting_page_numbers=None, path=None):  # noqa: E501
         """DocxSection - a model defined in Swagger"""  # noqa: E501
 
         self._starting_page_numbers = None
+        self._path = None
         self.discriminator = None
 
         if starting_page_numbers is not None:
             self.starting_page_numbers = starting_page_numbers
+        if path is not None:
+            self.path = path
 
     @property
     def starting_page_numbers(self):
@@ -69,6 +74,29 @@ class DocxSection(object):
         """
 
         self._starting_page_numbers = starting_page_numbers
+
+    @property
+    def path(self):
+        """Gets the path of this DocxSection.  # noqa: E501
+
+        The Path of the location of this object; leave blank for new tables  # noqa: E501
+
+        :return: The path of this DocxSection.  # noqa: E501
+        :rtype: str
+        """
+        return self._path
+
+    @path.setter
+    def path(self, path):
+        """Sets the path of this DocxSection.
+
+        The Path of the location of this object; leave blank for new tables  # noqa: E501
+
+        :param path: The path of this DocxSection.  # noqa: E501
+        :type: str
+        """
+
+        self._path = path
 
     def to_dict(self):
         """Returns the model properties as a dict"""

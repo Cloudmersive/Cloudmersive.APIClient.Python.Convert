@@ -132,6 +132,105 @@ class EditDocumentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def edit_document_docx_body(self, req_config, **kwargs):  # noqa: E501
+        """Get body from a DOCX  # noqa: E501
+
+        Returns the body defined in the Word Document (DOCX) format file; this is the main content part of a DOCX document  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.edit_document_docx_body(req_config, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param GetDocxBodyRequest req_config: (required)
+        :return: GetDocxBodyResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.edit_document_docx_body_with_http_info(req_config, **kwargs)  # noqa: E501
+        else:
+            (data) = self.edit_document_docx_body_with_http_info(req_config, **kwargs)  # noqa: E501
+            return data
+
+    def edit_document_docx_body_with_http_info(self, req_config, **kwargs):  # noqa: E501
+        """Get body from a DOCX  # noqa: E501
+
+        Returns the body defined in the Word Document (DOCX) format file; this is the main content part of a DOCX document  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.edit_document_docx_body_with_http_info(req_config, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param GetDocxBodyRequest req_config: (required)
+        :return: GetDocxBodyResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['req_config']  # noqa: E501
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method edit_document_docx_body" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'req_config' is set
+        if ('req_config' not in params or
+                params['req_config'] is None):
+            raise ValueError("Missing the required parameter `req_config` when calling `edit_document_docx_body`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'req_config' in params:
+            body_params = params['req_config']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/edit/docx/get-body', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='GetDocxBodyResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def edit_document_docx_get_headers_and_footers(self, req_config, **kwargs):  # noqa: E501
         """Get content of a footer from a DOCX  # noqa: E501
 
@@ -224,6 +323,204 @@ class EditDocumentApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='GetDocxHeadersAndFootersResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def edit_document_docx_get_images(self, req_config, **kwargs):  # noqa: E501
+        """Get images from a DOCX  # noqa: E501
+
+        Returns the images defined in the Word Document (DOCX) format file  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.edit_document_docx_get_images(req_config, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param GetDocxImagesRequest req_config: (required)
+        :return: GetDocxImagesResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.edit_document_docx_get_images_with_http_info(req_config, **kwargs)  # noqa: E501
+        else:
+            (data) = self.edit_document_docx_get_images_with_http_info(req_config, **kwargs)  # noqa: E501
+            return data
+
+    def edit_document_docx_get_images_with_http_info(self, req_config, **kwargs):  # noqa: E501
+        """Get images from a DOCX  # noqa: E501
+
+        Returns the images defined in the Word Document (DOCX) format file  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.edit_document_docx_get_images_with_http_info(req_config, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param GetDocxImagesRequest req_config: (required)
+        :return: GetDocxImagesResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['req_config']  # noqa: E501
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method edit_document_docx_get_images" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'req_config' is set
+        if ('req_config' not in params or
+                params['req_config'] is None):
+            raise ValueError("Missing the required parameter `req_config` when calling `edit_document_docx_get_images`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'req_config' in params:
+            body_params = params['req_config']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/edit/docx/get-images', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='GetDocxImagesResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def edit_document_docx_get_sections(self, req_config, **kwargs):  # noqa: E501
+        """Get sections from a DOCX  # noqa: E501
+
+        Returns the sections defined in the Word Document (DOCX) format file  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.edit_document_docx_get_sections(req_config, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param GetDocxSectionsRequest req_config: (required)
+        :return: GetDocxSectionsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.edit_document_docx_get_sections_with_http_info(req_config, **kwargs)  # noqa: E501
+        else:
+            (data) = self.edit_document_docx_get_sections_with_http_info(req_config, **kwargs)  # noqa: E501
+            return data
+
+    def edit_document_docx_get_sections_with_http_info(self, req_config, **kwargs):  # noqa: E501
+        """Get sections from a DOCX  # noqa: E501
+
+        Returns the sections defined in the Word Document (DOCX) format file  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.edit_document_docx_get_sections_with_http_info(req_config, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param GetDocxSectionsRequest req_config: (required)
+        :return: GetDocxSectionsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['req_config']  # noqa: E501
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method edit_document_docx_get_sections" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'req_config' is set
+        if ('req_config' not in params or
+                params['req_config'] is None):
+            raise ValueError("Missing the required parameter `req_config` when calling `edit_document_docx_get_sections`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'req_config' in params:
+            body_params = params['req_config']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/edit/docx/get-sections', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='GetDocxSectionsResponse',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -528,6 +825,105 @@ class EditDocumentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def edit_document_docx_insert_paragraph(self, req_config, **kwargs):  # noqa: E501
+        """Insert a new paragraph into a DOCX  # noqa: E501
+
+        Adds a new paragraph into a DOCX and returns the result.  You can insert at the beginning/end of a document, or before/after an existing object using its Path (location within the document).  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.edit_document_docx_insert_paragraph(req_config, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param InsertDocxInsertParagraphRequest req_config: (required)
+        :return: InsertDocxInsertParagraphResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.edit_document_docx_insert_paragraph_with_http_info(req_config, **kwargs)  # noqa: E501
+        else:
+            (data) = self.edit_document_docx_insert_paragraph_with_http_info(req_config, **kwargs)  # noqa: E501
+            return data
+
+    def edit_document_docx_insert_paragraph_with_http_info(self, req_config, **kwargs):  # noqa: E501
+        """Insert a new paragraph into a DOCX  # noqa: E501
+
+        Adds a new paragraph into a DOCX and returns the result.  You can insert at the beginning/end of a document, or before/after an existing object using its Path (location within the document).  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.edit_document_docx_insert_paragraph_with_http_info(req_config, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param InsertDocxInsertParagraphRequest req_config: (required)
+        :return: InsertDocxInsertParagraphResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['req_config']  # noqa: E501
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method edit_document_docx_insert_paragraph" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'req_config' is set
+        if ('req_config' not in params or
+                params['req_config'] is None):
+            raise ValueError("Missing the required parameter `req_config` when calling `edit_document_docx_insert_paragraph`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'req_config' in params:
+            body_params = params['req_config']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/edit/docx/insert-paragraph', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InsertDocxInsertParagraphResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def edit_document_docx_insert_table(self, req_config, **kwargs):  # noqa: E501
         """Insert a new table into a DOCX  # noqa: E501
 
@@ -719,6 +1115,105 @@ class EditDocumentApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='RemoveDocxHeadersAndFootersResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def edit_document_docx_remove_object(self, req_config, **kwargs):  # noqa: E501
+        """Delete any object in a DOCX  # noqa: E501
+
+        Delete any object, such as a paragraph, table, image, etc. from a Word Document (DOCX).  Pass in the Path of the object you would like to delete.  You can call other functions such as Get-Tables, Get-Images, Get-Body, etc. to get the paths of the objects in the document.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.edit_document_docx_remove_object(req_config, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param DocxRemoveObjectRequest req_config: (required)
+        :return: DocxRemoveObjectResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.edit_document_docx_remove_object_with_http_info(req_config, **kwargs)  # noqa: E501
+        else:
+            (data) = self.edit_document_docx_remove_object_with_http_info(req_config, **kwargs)  # noqa: E501
+            return data
+
+    def edit_document_docx_remove_object_with_http_info(self, req_config, **kwargs):  # noqa: E501
+        """Delete any object in a DOCX  # noqa: E501
+
+        Delete any object, such as a paragraph, table, image, etc. from a Word Document (DOCX).  Pass in the Path of the object you would like to delete.  You can call other functions such as Get-Tables, Get-Images, Get-Body, etc. to get the paths of the objects in the document.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.edit_document_docx_remove_object_with_http_info(req_config, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param DocxRemoveObjectRequest req_config: (required)
+        :return: DocxRemoveObjectResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['req_config']  # noqa: E501
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method edit_document_docx_remove_object" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'req_config' is set
+        if ('req_config' not in params or
+                params['req_config'] is None):
+            raise ValueError("Missing the required parameter `req_config` when calling `edit_document_docx_remove_object`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'req_config' in params:
+            body_params = params['req_config']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/edit/docx/remove-object', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='DocxRemoveObjectResponse',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1214,6 +1709,600 @@ class EditDocumentApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def edit_document_xlsx_get_columns(self, input, **kwargs):  # noqa: E501
+        """Get rows and cells from a XLSX worksheet  # noqa: E501
+
+        Returns the rows and cells defined in the Excel Spreadsheet worksheet  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.edit_document_xlsx_get_columns(input, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param GetXlsxColumnsRequest input: (required)
+        :return: GetXlsxColumnsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.edit_document_xlsx_get_columns_with_http_info(input, **kwargs)  # noqa: E501
+        else:
+            (data) = self.edit_document_xlsx_get_columns_with_http_info(input, **kwargs)  # noqa: E501
+            return data
+
+    def edit_document_xlsx_get_columns_with_http_info(self, input, **kwargs):  # noqa: E501
+        """Get rows and cells from a XLSX worksheet  # noqa: E501
+
+        Returns the rows and cells defined in the Excel Spreadsheet worksheet  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.edit_document_xlsx_get_columns_with_http_info(input, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param GetXlsxColumnsRequest input: (required)
+        :return: GetXlsxColumnsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input']  # noqa: E501
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method edit_document_xlsx_get_columns" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input' is set
+        if ('input' not in params or
+                params['input'] is None):
+            raise ValueError("Missing the required parameter `input` when calling `edit_document_xlsx_get_columns`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'input' in params:
+            body_params = params['input']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/edit/xlsx/get-columns', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='GetXlsxColumnsResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def edit_document_xlsx_get_images(self, input, **kwargs):  # noqa: E501
+        """Get images from a XLSX worksheet  # noqa: E501
+
+        Returns the images defined in the Excel Spreadsheet worksheet  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.edit_document_xlsx_get_images(input, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param GetXlsxImagesRequest input: (required)
+        :return: GetXlsxImagesResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.edit_document_xlsx_get_images_with_http_info(input, **kwargs)  # noqa: E501
+        else:
+            (data) = self.edit_document_xlsx_get_images_with_http_info(input, **kwargs)  # noqa: E501
+            return data
+
+    def edit_document_xlsx_get_images_with_http_info(self, input, **kwargs):  # noqa: E501
+        """Get images from a XLSX worksheet  # noqa: E501
+
+        Returns the images defined in the Excel Spreadsheet worksheet  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.edit_document_xlsx_get_images_with_http_info(input, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param GetXlsxImagesRequest input: (required)
+        :return: GetXlsxImagesResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input']  # noqa: E501
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method edit_document_xlsx_get_images" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input' is set
+        if ('input' not in params or
+                params['input'] is None):
+            raise ValueError("Missing the required parameter `input` when calling `edit_document_xlsx_get_images`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'input' in params:
+            body_params = params['input']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/edit/xlsx/get-images', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='GetXlsxImagesResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def edit_document_xlsx_get_rows_and_cells(self, input, **kwargs):  # noqa: E501
+        """Get rows and cells from a XLSX worksheet  # noqa: E501
+
+        Returns the rows and cells defined in the Excel Spreadsheet worksheet  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.edit_document_xlsx_get_rows_and_cells(input, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param GetXlsxRowsAndCellsRequest input: (required)
+        :return: GetXlsxRowsAndCellsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.edit_document_xlsx_get_rows_and_cells_with_http_info(input, **kwargs)  # noqa: E501
+        else:
+            (data) = self.edit_document_xlsx_get_rows_and_cells_with_http_info(input, **kwargs)  # noqa: E501
+            return data
+
+    def edit_document_xlsx_get_rows_and_cells_with_http_info(self, input, **kwargs):  # noqa: E501
+        """Get rows and cells from a XLSX worksheet  # noqa: E501
+
+        Returns the rows and cells defined in the Excel Spreadsheet worksheet  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.edit_document_xlsx_get_rows_and_cells_with_http_info(input, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param GetXlsxRowsAndCellsRequest input: (required)
+        :return: GetXlsxRowsAndCellsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input']  # noqa: E501
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method edit_document_xlsx_get_rows_and_cells" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input' is set
+        if ('input' not in params or
+                params['input'] is None):
+            raise ValueError("Missing the required parameter `input` when calling `edit_document_xlsx_get_rows_and_cells`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'input' in params:
+            body_params = params['input']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/edit/xlsx/get-rows-and-cells', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='GetXlsxRowsAndCellsResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def edit_document_xlsx_get_styles(self, input, **kwargs):  # noqa: E501
+        """Get styles from a XLSX worksheet  # noqa: E501
+
+        Returns the style defined in the Excel Spreadsheet  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.edit_document_xlsx_get_styles(input, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param GetXlsxStylesRequest input: (required)
+        :return: GetXlsxStylesResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.edit_document_xlsx_get_styles_with_http_info(input, **kwargs)  # noqa: E501
+        else:
+            (data) = self.edit_document_xlsx_get_styles_with_http_info(input, **kwargs)  # noqa: E501
+            return data
+
+    def edit_document_xlsx_get_styles_with_http_info(self, input, **kwargs):  # noqa: E501
+        """Get styles from a XLSX worksheet  # noqa: E501
+
+        Returns the style defined in the Excel Spreadsheet  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.edit_document_xlsx_get_styles_with_http_info(input, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param GetXlsxStylesRequest input: (required)
+        :return: GetXlsxStylesResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input']  # noqa: E501
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method edit_document_xlsx_get_styles" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input' is set
+        if ('input' not in params or
+                params['input'] is None):
+            raise ValueError("Missing the required parameter `input` when calling `edit_document_xlsx_get_styles`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'input' in params:
+            body_params = params['input']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/edit/xlsx/get-styles', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='GetXlsxStylesResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def edit_document_xlsx_get_worksheets(self, input, **kwargs):  # noqa: E501
+        """Get worksheets from a XLSX  # noqa: E501
+
+        Returns the worksheets (tabs) defined in the Excel Spreadsheet (XLSX) format file  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.edit_document_xlsx_get_worksheets(input, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param GetXlsxWorksheetsRequest input: (required)
+        :return: GetXlsxWorksheetsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.edit_document_xlsx_get_worksheets_with_http_info(input, **kwargs)  # noqa: E501
+        else:
+            (data) = self.edit_document_xlsx_get_worksheets_with_http_info(input, **kwargs)  # noqa: E501
+            return data
+
+    def edit_document_xlsx_get_worksheets_with_http_info(self, input, **kwargs):  # noqa: E501
+        """Get worksheets from a XLSX  # noqa: E501
+
+        Returns the worksheets (tabs) defined in the Excel Spreadsheet (XLSX) format file  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.edit_document_xlsx_get_worksheets_with_http_info(input, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param GetXlsxWorksheetsRequest input: (required)
+        :return: GetXlsxWorksheetsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input']  # noqa: E501
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method edit_document_xlsx_get_worksheets" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input' is set
+        if ('input' not in params or
+                params['input'] is None):
+            raise ValueError("Missing the required parameter `input` when calling `edit_document_xlsx_get_worksheets`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'input' in params:
+            body_params = params['input']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/edit/xlsx/get-worksheets', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='GetXlsxWorksheetsResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def edit_document_xlsx_insert_worksheet(self, input, **kwargs):  # noqa: E501
+        """Insert a new worksheet into an XLSX spreadsheet  # noqa: E501
+
+        Inserts a new worksheet into an Excel Spreadsheet  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.edit_document_xlsx_insert_worksheet(input, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param InsertXlsxWorksheetRequest input: (required)
+        :return: InsertXlsxWorksheetResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.edit_document_xlsx_insert_worksheet_with_http_info(input, **kwargs)  # noqa: E501
+        else:
+            (data) = self.edit_document_xlsx_insert_worksheet_with_http_info(input, **kwargs)  # noqa: E501
+            return data
+
+    def edit_document_xlsx_insert_worksheet_with_http_info(self, input, **kwargs):  # noqa: E501
+        """Insert a new worksheet into an XLSX spreadsheet  # noqa: E501
+
+        Inserts a new worksheet into an Excel Spreadsheet  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.edit_document_xlsx_insert_worksheet_with_http_info(input, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param InsertXlsxWorksheetRequest input: (required)
+        :return: InsertXlsxWorksheetResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input']  # noqa: E501
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method edit_document_xlsx_insert_worksheet" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input' is set
+        if ('input' not in params or
+                params['input'] is None):
+            raise ValueError("Missing the required parameter `input` when calling `edit_document_xlsx_insert_worksheet`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'input' in params:
+            body_params = params['input']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/edit/xlsx/insert-worksheet', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InsertXlsxWorksheetResponse',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),

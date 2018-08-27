@@ -34,23 +34,28 @@ class DocxTableRow(object):
     """
     swagger_types = {
         'row_index': 'int',
+        'path': 'str',
         'row_cells': 'list[DocxTableCell]'
     }
 
     attribute_map = {
         'row_index': 'RowIndex',
+        'path': 'Path',
         'row_cells': 'RowCells'
     }
 
-    def __init__(self, row_index=None, row_cells=None):  # noqa: E501
+    def __init__(self, row_index=None, path=None, row_cells=None):  # noqa: E501
         """DocxTableRow - a model defined in Swagger"""  # noqa: E501
 
         self._row_index = None
+        self._path = None
         self._row_cells = None
         self.discriminator = None
 
         if row_index is not None:
             self.row_index = row_index
+        if path is not None:
+            self.path = path
         if row_cells is not None:
             self.row_cells = row_cells
 
@@ -76,6 +81,29 @@ class DocxTableRow(object):
         """
 
         self._row_index = row_index
+
+    @property
+    def path(self):
+        """Gets the path of this DocxTableRow.  # noqa: E501
+
+        The Path of the location of this object; leave blank for new tables  # noqa: E501
+
+        :return: The path of this DocxTableRow.  # noqa: E501
+        :rtype: str
+        """
+        return self._path
+
+    @path.setter
+    def path(self, path):
+        """Sets the path of this DocxTableRow.
+
+        The Path of the location of this object; leave blank for new tables  # noqa: E501
+
+        :param path: The path of this DocxTableRow.  # noqa: E501
+        :type: str
+        """
+
+        self._path = path
 
     @property
     def row_cells(self):

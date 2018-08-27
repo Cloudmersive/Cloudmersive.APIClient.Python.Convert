@@ -34,6 +34,7 @@ class DocxTable(object):
     """
     swagger_types = {
         'table_id': 'str',
+        'path': 'str',
         'width': 'str',
         'width_type': 'str',
         'table_rows': 'list[DocxTableRow]',
@@ -75,6 +76,7 @@ class DocxTable(object):
 
     attribute_map = {
         'table_id': 'TableID',
+        'path': 'Path',
         'width': 'Width',
         'width_type': 'WidthType',
         'table_rows': 'TableRows',
@@ -114,10 +116,11 @@ class DocxTable(object):
         'table_indentation_width': 'TableIndentationWidth'
     }
 
-    def __init__(self, table_id=None, width=None, width_type=None, table_rows=None, top_border_type=None, top_border_size=None, top_border_space=None, top_border_color=None, bottom_border_type=None, bottom_border_size=None, bottom_border_space=None, bottom_border_color=None, left_border_type=None, left_border_size=None, left_border_space=None, left_border_color=None, right_border_type=None, right_border_size=None, right_border_space=None, right_border_color=None, cell_horizontal_border_type=None, cell_horizontal_border_size=None, cell_horizontal_border_space=None, cell_horizontal_border_color=None, cell_vertical_border_type=None, cell_vertical_border_size=None, cell_vertical_border_space=None, cell_vertical_border_color=None, start_border_type=None, start_border_size=None, start_border_space=None, start_border_color=None, end_border_type=None, end_border_size=None, end_border_space=None, end_border_color=None, table_indentation_mode=None, table_indentation_width=None):  # noqa: E501
+    def __init__(self, table_id=None, path=None, width=None, width_type=None, table_rows=None, top_border_type=None, top_border_size=None, top_border_space=None, top_border_color=None, bottom_border_type=None, bottom_border_size=None, bottom_border_space=None, bottom_border_color=None, left_border_type=None, left_border_size=None, left_border_space=None, left_border_color=None, right_border_type=None, right_border_size=None, right_border_space=None, right_border_color=None, cell_horizontal_border_type=None, cell_horizontal_border_size=None, cell_horizontal_border_space=None, cell_horizontal_border_color=None, cell_vertical_border_type=None, cell_vertical_border_size=None, cell_vertical_border_space=None, cell_vertical_border_color=None, start_border_type=None, start_border_size=None, start_border_space=None, start_border_color=None, end_border_type=None, end_border_size=None, end_border_space=None, end_border_color=None, table_indentation_mode=None, table_indentation_width=None):  # noqa: E501
         """DocxTable - a model defined in Swagger"""  # noqa: E501
 
         self._table_id = None
+        self._path = None
         self._width = None
         self._width_type = None
         self._table_rows = None
@@ -159,6 +162,8 @@ class DocxTable(object):
 
         if table_id is not None:
             self.table_id = table_id
+        if path is not None:
+            self.path = path
         if width is not None:
             self.width = width
         if width_type is not None:
@@ -238,7 +243,7 @@ class DocxTable(object):
     def table_id(self):
         """Gets the table_id of this DocxTable.  # noqa: E501
 
-        The ID of the table  # noqa: E501
+        The ID of the table; leave blank for new tables  # noqa: E501
 
         :return: The table_id of this DocxTable.  # noqa: E501
         :rtype: str
@@ -249,13 +254,36 @@ class DocxTable(object):
     def table_id(self, table_id):
         """Sets the table_id of this DocxTable.
 
-        The ID of the table  # noqa: E501
+        The ID of the table; leave blank for new tables  # noqa: E501
 
         :param table_id: The table_id of this DocxTable.  # noqa: E501
         :type: str
         """
 
         self._table_id = table_id
+
+    @property
+    def path(self):
+        """Gets the path of this DocxTable.  # noqa: E501
+
+        The Path of the location of this object; leave blank for new tables  # noqa: E501
+
+        :return: The path of this DocxTable.  # noqa: E501
+        :rtype: str
+        """
+        return self._path
+
+    @path.setter
+    def path(self, path):
+        """Sets the path of this DocxTable.
+
+        The Path of the location of this object; leave blank for new tables  # noqa: E501
+
+        :param path: The path of this DocxTable.  # noqa: E501
+        :type: str
+        """
+
+        self._path = path
 
     @property
     def width(self):

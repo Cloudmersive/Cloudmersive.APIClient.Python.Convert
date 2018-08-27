@@ -34,6 +34,7 @@ class DocxTableCell(object):
     """
     swagger_types = {
         'cell_index': 'int',
+        'path': 'str',
         'paragraphs': 'list[DocxParagraph]',
         'cell_shading_color': 'str',
         'cell_shading_fill': 'str',
@@ -44,6 +45,7 @@ class DocxTableCell(object):
 
     attribute_map = {
         'cell_index': 'CellIndex',
+        'path': 'Path',
         'paragraphs': 'Paragraphs',
         'cell_shading_color': 'CellShadingColor',
         'cell_shading_fill': 'CellShadingFill',
@@ -52,10 +54,11 @@ class DocxTableCell(object):
         'cell_width': 'CellWidth'
     }
 
-    def __init__(self, cell_index=None, paragraphs=None, cell_shading_color=None, cell_shading_fill=None, cell_shading_pattern=None, cell_width_mode=None, cell_width=None):  # noqa: E501
+    def __init__(self, cell_index=None, path=None, paragraphs=None, cell_shading_color=None, cell_shading_fill=None, cell_shading_pattern=None, cell_width_mode=None, cell_width=None):  # noqa: E501
         """DocxTableCell - a model defined in Swagger"""  # noqa: E501
 
         self._cell_index = None
+        self._path = None
         self._paragraphs = None
         self._cell_shading_color = None
         self._cell_shading_fill = None
@@ -66,6 +69,8 @@ class DocxTableCell(object):
 
         if cell_index is not None:
             self.cell_index = cell_index
+        if path is not None:
+            self.path = path
         if paragraphs is not None:
             self.paragraphs = paragraphs
         if cell_shading_color is not None:
@@ -101,6 +106,29 @@ class DocxTableCell(object):
         """
 
         self._cell_index = cell_index
+
+    @property
+    def path(self):
+        """Gets the path of this DocxTableCell.  # noqa: E501
+
+        The Path of the location of this object; leave blank for new tables  # noqa: E501
+
+        :return: The path of this DocxTableCell.  # noqa: E501
+        :rtype: str
+        """
+        return self._path
+
+    @path.setter
+    def path(self, path):
+        """Sets the path of this DocxTableCell.
+
+        The Path of the location of this object; leave blank for new tables  # noqa: E501
+
+        :param path: The path of this DocxTableCell.  # noqa: E501
+        :type: str
+        """
+
+        self._path = path
 
     @property
     def paragraphs(self):

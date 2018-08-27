@@ -34,26 +34,54 @@ class DocxFooter(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'path': 'str',
         'paragraphs': 'list[DocxParagraph]',
         'sections_with_footer': 'list[DocxSection]'
     }
 
     attribute_map = {
+        'path': 'Path',
         'paragraphs': 'Paragraphs',
         'sections_with_footer': 'SectionsWithFooter'
     }
 
-    def __init__(self, paragraphs=None, sections_with_footer=None):  # noqa: E501
+    def __init__(self, path=None, paragraphs=None, sections_with_footer=None):  # noqa: E501
         """DocxFooter - a model defined in Swagger"""  # noqa: E501
 
+        self._path = None
         self._paragraphs = None
         self._sections_with_footer = None
         self.discriminator = None
 
+        if path is not None:
+            self.path = path
         if paragraphs is not None:
             self.paragraphs = paragraphs
         if sections_with_footer is not None:
             self.sections_with_footer = sections_with_footer
+
+    @property
+    def path(self):
+        """Gets the path of this DocxFooter.  # noqa: E501
+
+        The Path of the location of this object; leave blank for new tables  # noqa: E501
+
+        :return: The path of this DocxFooter.  # noqa: E501
+        :rtype: str
+        """
+        return self._path
+
+    @path.setter
+    def path(self, path):
+        """Sets the path of this DocxFooter.
+
+        The Path of the location of this object; leave blank for new tables  # noqa: E501
+
+        :param path: The path of this DocxFooter.  # noqa: E501
+        :type: str
+        """
+
+        self._path = path
 
     @property
     def paragraphs(self):

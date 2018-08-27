@@ -34,6 +34,7 @@ class DocxRun(object):
     """
     swagger_types = {
         'run_index': 'int',
+        'path': 'str',
         'text_items': 'list[DocxText]',
         'bold': 'bool',
         'italic': 'bool',
@@ -44,6 +45,7 @@ class DocxRun(object):
 
     attribute_map = {
         'run_index': 'RunIndex',
+        'path': 'Path',
         'text_items': 'TextItems',
         'bold': 'Bold',
         'italic': 'Italic',
@@ -52,10 +54,11 @@ class DocxRun(object):
         'font_size': 'FontSize'
     }
 
-    def __init__(self, run_index=None, text_items=None, bold=None, italic=None, underline=None, font_family=None, font_size=None):  # noqa: E501
+    def __init__(self, run_index=None, path=None, text_items=None, bold=None, italic=None, underline=None, font_family=None, font_size=None):  # noqa: E501
         """DocxRun - a model defined in Swagger"""  # noqa: E501
 
         self._run_index = None
+        self._path = None
         self._text_items = None
         self._bold = None
         self._italic = None
@@ -66,6 +69,8 @@ class DocxRun(object):
 
         if run_index is not None:
             self.run_index = run_index
+        if path is not None:
+            self.path = path
         if text_items is not None:
             self.text_items = text_items
         if bold is not None:
@@ -101,6 +106,29 @@ class DocxRun(object):
         """
 
         self._run_index = run_index
+
+    @property
+    def path(self):
+        """Gets the path of this DocxRun.  # noqa: E501
+
+        The Path of the location of this object; leave blank for new tables  # noqa: E501
+
+        :return: The path of this DocxRun.  # noqa: E501
+        :rtype: str
+        """
+        return self._path
+
+    @path.setter
+    def path(self, path):
+        """Sets the path of this DocxRun.
+
+        The Path of the location of this object; leave blank for new tables  # noqa: E501
+
+        :param path: The path of this DocxRun.  # noqa: E501
+        :type: str
+        """
+
+        self._path = path
 
     @property
     def text_items(self):
