@@ -15,6 +15,8 @@
 from __future__ import absolute_import
 
 # import models into model package
+from cloudmersive_convert_api_client.models.alternate_file_format_candidate import AlternateFileFormatCandidate
+from cloudmersive_convert_api_client.models.autodetect_get_info_result import AutodetectGetInfoResult
 from cloudmersive_convert_api_client.models.converted_png_page import ConvertedPngPage
 from cloudmersive_convert_api_client.models.document_validation_error import DocumentValidationError
 from cloudmersive_convert_api_client.models.document_validation_result import DocumentValidationResult

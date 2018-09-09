@@ -43,7 +43,7 @@ class DocxImage(object):
         'image_data_content_type': 'str',
         'image_internal_file_name': 'str',
         'image_contents_url': 'str',
-        'inline': 'bool'
+        'inline_with_text': 'bool'
     }
 
     attribute_map = {
@@ -59,10 +59,10 @@ class DocxImage(object):
         'image_data_content_type': 'ImageDataContentType',
         'image_internal_file_name': 'ImageInternalFileName',
         'image_contents_url': 'ImageContentsURL',
-        'inline': 'Inline'
+        'inline_with_text': 'InlineWithText'
     }
 
-    def __init__(self, path=None, image_name=None, image_id=None, image_description=None, image_width=None, image_height=None, x_offset=None, y_offset=None, image_data_embed_id=None, image_data_content_type=None, image_internal_file_name=None, image_contents_url=None, inline=None):  # noqa: E501
+    def __init__(self, path=None, image_name=None, image_id=None, image_description=None, image_width=None, image_height=None, x_offset=None, y_offset=None, image_data_embed_id=None, image_data_content_type=None, image_internal_file_name=None, image_contents_url=None, inline_with_text=None):  # noqa: E501
         """DocxImage - a model defined in Swagger"""  # noqa: E501
 
         self._path = None
@@ -77,7 +77,7 @@ class DocxImage(object):
         self._image_data_content_type = None
         self._image_internal_file_name = None
         self._image_contents_url = None
-        self._inline = None
+        self._inline_with_text = None
         self.discriminator = None
 
         if path is not None:
@@ -104,8 +104,8 @@ class DocxImage(object):
             self.image_internal_file_name = image_internal_file_name
         if image_contents_url is not None:
             self.image_contents_url = image_contents_url
-        if inline is not None:
-            self.inline = inline
+        if inline_with_text is not None:
+            self.inline_with_text = inline_with_text
 
     @property
     def path(self):
@@ -384,27 +384,27 @@ class DocxImage(object):
         self._image_contents_url = image_contents_url
 
     @property
-    def inline(self):
-        """Gets the inline of this DocxImage.  # noqa: E501
+    def inline_with_text(self):
+        """Gets the inline_with_text of this DocxImage.  # noqa: E501
 
         True if the image is inline with the text; false if it is floating  # noqa: E501
 
-        :return: The inline of this DocxImage.  # noqa: E501
+        :return: The inline_with_text of this DocxImage.  # noqa: E501
         :rtype: bool
         """
-        return self._inline
+        return self._inline_with_text
 
-    @inline.setter
-    def inline(self, inline):
-        """Sets the inline of this DocxImage.
+    @inline_with_text.setter
+    def inline_with_text(self, inline_with_text):
+        """Sets the inline_with_text of this DocxImage.
 
         True if the image is inline with the text; false if it is floating  # noqa: E501
 
-        :param inline: The inline of this DocxImage.  # noqa: E501
+        :param inline_with_text: The inline_with_text of this DocxImage.  # noqa: E501
         :type: bool
         """
 
-        self._inline = inline
+        self._inline_with_text = inline_with_text
 
     def to_dict(self):
         """Returns the model properties as a dict"""
