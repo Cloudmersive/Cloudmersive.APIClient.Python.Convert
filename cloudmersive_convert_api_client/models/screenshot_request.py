@@ -32,25 +32,35 @@ class ScreenshotRequest(object):
     """
     swagger_types = {
         'url': 'str',
-        'extra_loading_wait': 'int'
+        'extra_loading_wait': 'int',
+        'screenshot_width': 'int',
+        'screenshot_height': 'int'
     }
 
     attribute_map = {
         'url': 'Url',
-        'extra_loading_wait': 'ExtraLoadingWait'
+        'extra_loading_wait': 'ExtraLoadingWait',
+        'screenshot_width': 'ScreenshotWidth',
+        'screenshot_height': 'ScreenshotHeight'
     }
 
-    def __init__(self, url=None, extra_loading_wait=None):  # noqa: E501
+    def __init__(self, url=None, extra_loading_wait=None, screenshot_width=None, screenshot_height=None):  # noqa: E501
         """ScreenshotRequest - a model defined in Swagger"""  # noqa: E501
 
         self._url = None
         self._extra_loading_wait = None
+        self._screenshot_width = None
+        self._screenshot_height = None
         self.discriminator = None
 
         if url is not None:
             self.url = url
         if extra_loading_wait is not None:
             self.extra_loading_wait = extra_loading_wait
+        if screenshot_width is not None:
+            self.screenshot_width = screenshot_width
+        if screenshot_height is not None:
+            self.screenshot_height = screenshot_height
 
     @property
     def url(self):
@@ -93,6 +103,48 @@ class ScreenshotRequest(object):
         """
 
         self._extra_loading_wait = extra_loading_wait
+
+    @property
+    def screenshot_width(self):
+        """Gets the screenshot_width of this ScreenshotRequest.  # noqa: E501
+
+
+        :return: The screenshot_width of this ScreenshotRequest.  # noqa: E501
+        :rtype: int
+        """
+        return self._screenshot_width
+
+    @screenshot_width.setter
+    def screenshot_width(self, screenshot_width):
+        """Sets the screenshot_width of this ScreenshotRequest.
+
+
+        :param screenshot_width: The screenshot_width of this ScreenshotRequest.  # noqa: E501
+        :type: int
+        """
+
+        self._screenshot_width = screenshot_width
+
+    @property
+    def screenshot_height(self):
+        """Gets the screenshot_height of this ScreenshotRequest.  # noqa: E501
+
+
+        :return: The screenshot_height of this ScreenshotRequest.  # noqa: E501
+        :rtype: int
+        """
+        return self._screenshot_height
+
+    @screenshot_height.setter
+    def screenshot_height(self, screenshot_height):
+        """Sets the screenshot_height of this ScreenshotRequest.
+
+
+        :param screenshot_height: The screenshot_height of this ScreenshotRequest.  # noqa: E501
+        :type: int
+        """
+
+        self._screenshot_height = screenshot_height
 
     def to_dict(self):
         """Returns the model properties as a dict"""
