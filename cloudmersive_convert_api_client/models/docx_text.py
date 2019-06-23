@@ -147,6 +147,9 @@ class DocxText(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(DocxText, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

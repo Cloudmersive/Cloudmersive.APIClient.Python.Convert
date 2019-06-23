@@ -203,6 +203,9 @@ class XlsxImage(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(XlsxImage, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

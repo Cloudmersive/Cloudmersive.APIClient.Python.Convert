@@ -175,6 +175,9 @@ class DocxCellStyle(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(DocxCellStyle, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

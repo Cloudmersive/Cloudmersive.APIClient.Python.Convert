@@ -147,6 +147,9 @@ class HtmlTemplateOperation(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(HtmlTemplateOperation, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

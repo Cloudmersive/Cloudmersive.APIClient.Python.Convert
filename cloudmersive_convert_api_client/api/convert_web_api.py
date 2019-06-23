@@ -38,18 +38,18 @@ class ConvertWebApi(object):
 
         Convert HTML to Office Word Document (DOCX) format  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.convert_web_html_to_docx(input_request, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_web_html_to_docx(input_request, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param HtmlToOfficeRequest input_request: (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.convert_web_html_to_docx_with_http_info(input_request, **kwargs)  # noqa: E501
         else:
             (data) = self.convert_web_html_to_docx_with_http_info(input_request, **kwargs)  # noqa: E501
@@ -60,11 +60,11 @@ class ConvertWebApi(object):
 
         Convert HTML to Office Word Document (DOCX) format  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.convert_web_html_to_docx_with_http_info(input_request, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_web_html_to_docx_with_http_info(input_request, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param HtmlToOfficeRequest input_request: (required)
         :return: str
                  If the method is called asynchronously,
@@ -72,7 +72,7 @@ class ConvertWebApi(object):
         """
 
         all_params = ['input_request']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -126,7 +126,7 @@ class ConvertWebApi(object):
             files=local_var_files,
             response_type='str',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -137,18 +137,18 @@ class ConvertWebApi(object):
 
         Fully renders a website and returns a PDF of the HTML.  Javascript, HTML5, CSS and other advanced features are all supported.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.convert_web_html_to_pdf(input, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_web_html_to_pdf(input, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param HtmlToPdfRequest input: HTML to PDF request parameters (required)
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.convert_web_html_to_pdf_with_http_info(input, **kwargs)  # noqa: E501
         else:
             (data) = self.convert_web_html_to_pdf_with_http_info(input, **kwargs)  # noqa: E501
@@ -159,11 +159,11 @@ class ConvertWebApi(object):
 
         Fully renders a website and returns a PDF of the HTML.  Javascript, HTML5, CSS and other advanced features are all supported.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.convert_web_html_to_pdf_with_http_info(input, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_web_html_to_pdf_with_http_info(input, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param HtmlToPdfRequest input: HTML to PDF request parameters (required)
         :return: object
                  If the method is called asynchronously,
@@ -171,7 +171,7 @@ class ConvertWebApi(object):
         """
 
         all_params = ['input']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -225,7 +225,7 @@ class ConvertWebApi(object):
             files=local_var_files,
             response_type='object',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -236,18 +236,18 @@ class ConvertWebApi(object):
 
         Convert a markdown file (.md) to HTML  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.convert_web_md_to_html(input_file, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_web_md_to_html(input_file, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param file input_file: Input file to perform the operation on. (required)
         :return: HtmlMdResult
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.convert_web_md_to_html_with_http_info(input_file, **kwargs)  # noqa: E501
         else:
             (data) = self.convert_web_md_to_html_with_http_info(input_file, **kwargs)  # noqa: E501
@@ -258,11 +258,11 @@ class ConvertWebApi(object):
 
         Convert a markdown file (.md) to HTML  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.convert_web_md_to_html_with_http_info(input_file, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_web_md_to_html_with_http_info(input_file, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param file input_file: Input file to perform the operation on. (required)
         :return: HtmlMdResult
                  If the method is called asynchronously,
@@ -270,7 +270,7 @@ class ConvertWebApi(object):
         """
 
         all_params = ['input_file']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -324,7 +324,7 @@ class ConvertWebApi(object):
             files=local_var_files,
             response_type='HtmlMdResult',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -335,18 +335,18 @@ class ConvertWebApi(object):
 
         Fully renders a website and returns a PDF of the full page.  Javascript, HTML5, CSS and other advanced features are all supported.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.convert_web_url_to_pdf(input, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_web_url_to_pdf(input, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param ScreenshotRequest input: URL to PDF request parameters (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.convert_web_url_to_pdf_with_http_info(input, **kwargs)  # noqa: E501
         else:
             (data) = self.convert_web_url_to_pdf_with_http_info(input, **kwargs)  # noqa: E501
@@ -357,11 +357,11 @@ class ConvertWebApi(object):
 
         Fully renders a website and returns a PDF of the full page.  Javascript, HTML5, CSS and other advanced features are all supported.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.convert_web_url_to_pdf_with_http_info(input, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_web_url_to_pdf_with_http_info(input, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param ScreenshotRequest input: URL to PDF request parameters (required)
         :return: str
                  If the method is called asynchronously,
@@ -369,7 +369,7 @@ class ConvertWebApi(object):
         """
 
         all_params = ['input']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -423,7 +423,7 @@ class ConvertWebApi(object):
             files=local_var_files,
             response_type='str',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -434,18 +434,18 @@ class ConvertWebApi(object):
 
         Fully renders a website and returns a PNG screenshot of the full page image.  Javascript, HTML5, CSS and other advanced features are all supported.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.convert_web_url_to_screenshot(input, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_web_url_to_screenshot(input, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param ScreenshotRequest input: Screenshot request parameters (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.convert_web_url_to_screenshot_with_http_info(input, **kwargs)  # noqa: E501
         else:
             (data) = self.convert_web_url_to_screenshot_with_http_info(input, **kwargs)  # noqa: E501
@@ -456,11 +456,11 @@ class ConvertWebApi(object):
 
         Fully renders a website and returns a PNG screenshot of the full page image.  Javascript, HTML5, CSS and other advanced features are all supported.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.convert_web_url_to_screenshot_with_http_info(input, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_web_url_to_screenshot_with_http_info(input, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param ScreenshotRequest input: Screenshot request parameters (required)
         :return: str
                  If the method is called asynchronously,
@@ -468,7 +468,7 @@ class ConvertWebApi(object):
         """
 
         all_params = ['input']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -522,7 +522,7 @@ class ConvertWebApi(object):
             files=local_var_files,
             response_type='str',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

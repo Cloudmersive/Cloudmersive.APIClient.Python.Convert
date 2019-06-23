@@ -38,18 +38,18 @@ class EditDocumentApi(object):
 
         Uploads a document to Cloudmersive to begin a series of one or more editing operations  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.edit_document_begin_editing(input_file, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_begin_editing(input_file, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param file input_file: Input file to perform the operation on. (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.edit_document_begin_editing_with_http_info(input_file, **kwargs)  # noqa: E501
         else:
             (data) = self.edit_document_begin_editing_with_http_info(input_file, **kwargs)  # noqa: E501
@@ -60,11 +60,11 @@ class EditDocumentApi(object):
 
         Uploads a document to Cloudmersive to begin a series of one or more editing operations  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.edit_document_begin_editing_with_http_info(input_file, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_begin_editing_with_http_info(input_file, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param file input_file: Input file to perform the operation on. (required)
         :return: str
                  If the method is called asynchronously,
@@ -72,7 +72,7 @@ class EditDocumentApi(object):
         """
 
         all_params = ['input_file']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -126,7 +126,7 @@ class EditDocumentApi(object):
             files=local_var_files,
             response_type='str',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -137,18 +137,18 @@ class EditDocumentApi(object):
 
         Returns the body defined in the Word Document (DOCX) format file; this is the main content part of a DOCX document  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.edit_document_docx_body(req_config, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_docx_body(req_config, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param GetDocxBodyRequest req_config: (required)
         :return: GetDocxBodyResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.edit_document_docx_body_with_http_info(req_config, **kwargs)  # noqa: E501
         else:
             (data) = self.edit_document_docx_body_with_http_info(req_config, **kwargs)  # noqa: E501
@@ -159,11 +159,11 @@ class EditDocumentApi(object):
 
         Returns the body defined in the Word Document (DOCX) format file; this is the main content part of a DOCX document  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.edit_document_docx_body_with_http_info(req_config, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_docx_body_with_http_info(req_config, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param GetDocxBodyRequest req_config: (required)
         :return: GetDocxBodyResponse
                  If the method is called asynchronously,
@@ -171,7 +171,7 @@ class EditDocumentApi(object):
         """
 
         all_params = ['req_config']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -225,7 +225,7 @@ class EditDocumentApi(object):
             files=local_var_files,
             response_type='GetDocxBodyResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -236,18 +236,18 @@ class EditDocumentApi(object):
 
         Returns the footer content from a Word Document (DOCX) format file  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.edit_document_docx_get_headers_and_footers(req_config, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_docx_get_headers_and_footers(req_config, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param GetDocxHeadersAndFootersRequest req_config: (required)
         :return: GetDocxHeadersAndFootersResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.edit_document_docx_get_headers_and_footers_with_http_info(req_config, **kwargs)  # noqa: E501
         else:
             (data) = self.edit_document_docx_get_headers_and_footers_with_http_info(req_config, **kwargs)  # noqa: E501
@@ -258,11 +258,11 @@ class EditDocumentApi(object):
 
         Returns the footer content from a Word Document (DOCX) format file  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.edit_document_docx_get_headers_and_footers_with_http_info(req_config, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_docx_get_headers_and_footers_with_http_info(req_config, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param GetDocxHeadersAndFootersRequest req_config: (required)
         :return: GetDocxHeadersAndFootersResponse
                  If the method is called asynchronously,
@@ -270,7 +270,7 @@ class EditDocumentApi(object):
         """
 
         all_params = ['req_config']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -324,7 +324,7 @@ class EditDocumentApi(object):
             files=local_var_files,
             response_type='GetDocxHeadersAndFootersResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -335,18 +335,18 @@ class EditDocumentApi(object):
 
         Returns the images defined in the Word Document (DOCX) format file  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.edit_document_docx_get_images(req_config, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_docx_get_images(req_config, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param GetDocxImagesRequest req_config: (required)
         :return: GetDocxImagesResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.edit_document_docx_get_images_with_http_info(req_config, **kwargs)  # noqa: E501
         else:
             (data) = self.edit_document_docx_get_images_with_http_info(req_config, **kwargs)  # noqa: E501
@@ -357,11 +357,11 @@ class EditDocumentApi(object):
 
         Returns the images defined in the Word Document (DOCX) format file  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.edit_document_docx_get_images_with_http_info(req_config, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_docx_get_images_with_http_info(req_config, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param GetDocxImagesRequest req_config: (required)
         :return: GetDocxImagesResponse
                  If the method is called asynchronously,
@@ -369,7 +369,7 @@ class EditDocumentApi(object):
         """
 
         all_params = ['req_config']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -423,7 +423,7 @@ class EditDocumentApi(object):
             files=local_var_files,
             response_type='GetDocxImagesResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -434,18 +434,18 @@ class EditDocumentApi(object):
 
         Returns the sections defined in the Word Document (DOCX) format file  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.edit_document_docx_get_sections(req_config, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_docx_get_sections(req_config, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param GetDocxSectionsRequest req_config: (required)
         :return: GetDocxSectionsResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.edit_document_docx_get_sections_with_http_info(req_config, **kwargs)  # noqa: E501
         else:
             (data) = self.edit_document_docx_get_sections_with_http_info(req_config, **kwargs)  # noqa: E501
@@ -456,11 +456,11 @@ class EditDocumentApi(object):
 
         Returns the sections defined in the Word Document (DOCX) format file  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.edit_document_docx_get_sections_with_http_info(req_config, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_docx_get_sections_with_http_info(req_config, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param GetDocxSectionsRequest req_config: (required)
         :return: GetDocxSectionsResponse
                  If the method is called asynchronously,
@@ -468,7 +468,7 @@ class EditDocumentApi(object):
         """
 
         all_params = ['req_config']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -522,7 +522,7 @@ class EditDocumentApi(object):
             files=local_var_files,
             response_type='GetDocxSectionsResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -533,18 +533,18 @@ class EditDocumentApi(object):
 
         Returns the styles defined in the Word Document (DOCX) format file  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.edit_document_docx_get_styles(req_config, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_docx_get_styles(req_config, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param GetDocxStylesRequest req_config: (required)
         :return: GetDocxStylesResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.edit_document_docx_get_styles_with_http_info(req_config, **kwargs)  # noqa: E501
         else:
             (data) = self.edit_document_docx_get_styles_with_http_info(req_config, **kwargs)  # noqa: E501
@@ -555,11 +555,11 @@ class EditDocumentApi(object):
 
         Returns the styles defined in the Word Document (DOCX) format file  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.edit_document_docx_get_styles_with_http_info(req_config, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_docx_get_styles_with_http_info(req_config, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param GetDocxStylesRequest req_config: (required)
         :return: GetDocxStylesResponse
                  If the method is called asynchronously,
@@ -567,7 +567,7 @@ class EditDocumentApi(object):
         """
 
         all_params = ['req_config']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -621,7 +621,7 @@ class EditDocumentApi(object):
             files=local_var_files,
             response_type='GetDocxStylesResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -632,18 +632,18 @@ class EditDocumentApi(object):
 
         Returns all the table objects in an Office Word Document (docx)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.edit_document_docx_get_tables(req_config, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_docx_get_tables(req_config, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param GetDocxTablesRequest req_config: (required)
         :return: GetDocxTablesResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.edit_document_docx_get_tables_with_http_info(req_config, **kwargs)  # noqa: E501
         else:
             (data) = self.edit_document_docx_get_tables_with_http_info(req_config, **kwargs)  # noqa: E501
@@ -654,11 +654,11 @@ class EditDocumentApi(object):
 
         Returns all the table objects in an Office Word Document (docx)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.edit_document_docx_get_tables_with_http_info(req_config, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_docx_get_tables_with_http_info(req_config, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param GetDocxTablesRequest req_config: (required)
         :return: GetDocxTablesResponse
                  If the method is called asynchronously,
@@ -666,7 +666,7 @@ class EditDocumentApi(object):
         """
 
         all_params = ['req_config']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -720,7 +720,7 @@ class EditDocumentApi(object):
             files=local_var_files,
             response_type='GetDocxTablesResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -731,18 +731,18 @@ class EditDocumentApi(object):
 
         Set the footer in a Word Document (DOCX)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.edit_document_docx_insert_image(req_config, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_docx_insert_image(req_config, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param DocxInsertImageRequest req_config: (required)
         :return: DocxInsertImageResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.edit_document_docx_insert_image_with_http_info(req_config, **kwargs)  # noqa: E501
         else:
             (data) = self.edit_document_docx_insert_image_with_http_info(req_config, **kwargs)  # noqa: E501
@@ -753,11 +753,11 @@ class EditDocumentApi(object):
 
         Set the footer in a Word Document (DOCX)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.edit_document_docx_insert_image_with_http_info(req_config, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_docx_insert_image_with_http_info(req_config, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param DocxInsertImageRequest req_config: (required)
         :return: DocxInsertImageResponse
                  If the method is called asynchronously,
@@ -765,7 +765,7 @@ class EditDocumentApi(object):
         """
 
         all_params = ['req_config']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -819,7 +819,7 @@ class EditDocumentApi(object):
             files=local_var_files,
             response_type='DocxInsertImageResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -830,18 +830,18 @@ class EditDocumentApi(object):
 
         Adds a new paragraph into a DOCX and returns the result.  You can insert at the beginning/end of a document, or before/after an existing object using its Path (location within the document).  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.edit_document_docx_insert_paragraph(req_config, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_docx_insert_paragraph(req_config, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param InsertDocxInsertParagraphRequest req_config: (required)
         :return: InsertDocxInsertParagraphResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.edit_document_docx_insert_paragraph_with_http_info(req_config, **kwargs)  # noqa: E501
         else:
             (data) = self.edit_document_docx_insert_paragraph_with_http_info(req_config, **kwargs)  # noqa: E501
@@ -852,11 +852,11 @@ class EditDocumentApi(object):
 
         Adds a new paragraph into a DOCX and returns the result.  You can insert at the beginning/end of a document, or before/after an existing object using its Path (location within the document).  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.edit_document_docx_insert_paragraph_with_http_info(req_config, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_docx_insert_paragraph_with_http_info(req_config, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param InsertDocxInsertParagraphRequest req_config: (required)
         :return: InsertDocxInsertParagraphResponse
                  If the method is called asynchronously,
@@ -864,7 +864,7 @@ class EditDocumentApi(object):
         """
 
         all_params = ['req_config']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -918,7 +918,7 @@ class EditDocumentApi(object):
             files=local_var_files,
             response_type='InsertDocxInsertParagraphResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -929,18 +929,18 @@ class EditDocumentApi(object):
 
         Adds a new table into a DOCX and returns the result  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.edit_document_docx_insert_table(req_config, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_docx_insert_table(req_config, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param InsertDocxTablesRequest req_config: (required)
         :return: InsertDocxTablesResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.edit_document_docx_insert_table_with_http_info(req_config, **kwargs)  # noqa: E501
         else:
             (data) = self.edit_document_docx_insert_table_with_http_info(req_config, **kwargs)  # noqa: E501
@@ -951,11 +951,11 @@ class EditDocumentApi(object):
 
         Adds a new table into a DOCX and returns the result  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.edit_document_docx_insert_table_with_http_info(req_config, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_docx_insert_table_with_http_info(req_config, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param InsertDocxTablesRequest req_config: (required)
         :return: InsertDocxTablesResponse
                  If the method is called asynchronously,
@@ -963,7 +963,7 @@ class EditDocumentApi(object):
         """
 
         all_params = ['req_config']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1017,7 +1017,7 @@ class EditDocumentApi(object):
             files=local_var_files,
             response_type='InsertDocxTablesResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1028,18 +1028,18 @@ class EditDocumentApi(object):
 
         Remove all headers, or footers, or both from a Word Document (DOCX)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.edit_document_docx_remove_headers_and_footers(req_config, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_docx_remove_headers_and_footers(req_config, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param RemoveDocxHeadersAndFootersRequest req_config: (required)
         :return: RemoveDocxHeadersAndFootersResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.edit_document_docx_remove_headers_and_footers_with_http_info(req_config, **kwargs)  # noqa: E501
         else:
             (data) = self.edit_document_docx_remove_headers_and_footers_with_http_info(req_config, **kwargs)  # noqa: E501
@@ -1050,11 +1050,11 @@ class EditDocumentApi(object):
 
         Remove all headers, or footers, or both from a Word Document (DOCX)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.edit_document_docx_remove_headers_and_footers_with_http_info(req_config, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_docx_remove_headers_and_footers_with_http_info(req_config, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param RemoveDocxHeadersAndFootersRequest req_config: (required)
         :return: RemoveDocxHeadersAndFootersResponse
                  If the method is called asynchronously,
@@ -1062,7 +1062,7 @@ class EditDocumentApi(object):
         """
 
         all_params = ['req_config']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1116,7 +1116,7 @@ class EditDocumentApi(object):
             files=local_var_files,
             response_type='RemoveDocxHeadersAndFootersResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1127,18 +1127,18 @@ class EditDocumentApi(object):
 
         Delete any object, such as a paragraph, table, image, etc. from a Word Document (DOCX).  Pass in the Path of the object you would like to delete.  You can call other functions such as Get-Tables, Get-Images, Get-Body, etc. to get the paths of the objects in the document.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.edit_document_docx_remove_object(req_config, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_docx_remove_object(req_config, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param DocxRemoveObjectRequest req_config: (required)
         :return: DocxRemoveObjectResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.edit_document_docx_remove_object_with_http_info(req_config, **kwargs)  # noqa: E501
         else:
             (data) = self.edit_document_docx_remove_object_with_http_info(req_config, **kwargs)  # noqa: E501
@@ -1149,11 +1149,11 @@ class EditDocumentApi(object):
 
         Delete any object, such as a paragraph, table, image, etc. from a Word Document (DOCX).  Pass in the Path of the object you would like to delete.  You can call other functions such as Get-Tables, Get-Images, Get-Body, etc. to get the paths of the objects in the document.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.edit_document_docx_remove_object_with_http_info(req_config, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_docx_remove_object_with_http_info(req_config, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param DocxRemoveObjectRequest req_config: (required)
         :return: DocxRemoveObjectResponse
                  If the method is called asynchronously,
@@ -1161,7 +1161,7 @@ class EditDocumentApi(object):
         """
 
         all_params = ['req_config']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1215,7 +1215,7 @@ class EditDocumentApi(object):
             files=local_var_files,
             response_type='DocxRemoveObjectResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1226,18 +1226,18 @@ class EditDocumentApi(object):
 
         Replace all instances of a string in an Office Word Document (docx)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.edit_document_docx_replace(req_config, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_docx_replace(req_config, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param ReplaceStringRequest req_config: (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.edit_document_docx_replace_with_http_info(req_config, **kwargs)  # noqa: E501
         else:
             (data) = self.edit_document_docx_replace_with_http_info(req_config, **kwargs)  # noqa: E501
@@ -1248,11 +1248,11 @@ class EditDocumentApi(object):
 
         Replace all instances of a string in an Office Word Document (docx)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.edit_document_docx_replace_with_http_info(req_config, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_docx_replace_with_http_info(req_config, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param ReplaceStringRequest req_config: (required)
         :return: str
                  If the method is called asynchronously,
@@ -1260,7 +1260,7 @@ class EditDocumentApi(object):
         """
 
         all_params = ['req_config']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1314,7 +1314,7 @@ class EditDocumentApi(object):
             files=local_var_files,
             response_type='str',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1325,18 +1325,18 @@ class EditDocumentApi(object):
 
         Set the footer in a Word Document (DOCX)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.edit_document_docx_set_footer(req_config, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_docx_set_footer(req_config, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param DocxSetFooterRequest req_config: (required)
         :return: DocxSetFooterResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.edit_document_docx_set_footer_with_http_info(req_config, **kwargs)  # noqa: E501
         else:
             (data) = self.edit_document_docx_set_footer_with_http_info(req_config, **kwargs)  # noqa: E501
@@ -1347,11 +1347,11 @@ class EditDocumentApi(object):
 
         Set the footer in a Word Document (DOCX)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.edit_document_docx_set_footer_with_http_info(req_config, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_docx_set_footer_with_http_info(req_config, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param DocxSetFooterRequest req_config: (required)
         :return: DocxSetFooterResponse
                  If the method is called asynchronously,
@@ -1359,7 +1359,7 @@ class EditDocumentApi(object):
         """
 
         all_params = ['req_config']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1413,7 +1413,7 @@ class EditDocumentApi(object):
             files=local_var_files,
             response_type='DocxSetFooterResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1424,18 +1424,18 @@ class EditDocumentApi(object):
 
         Set the header in a Word Document (DOCX)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.edit_document_docx_set_header(req_config, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_docx_set_header(req_config, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param DocxSetHeaderRequest req_config: (required)
         :return: DocxSetHeaderResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.edit_document_docx_set_header_with_http_info(req_config, **kwargs)  # noqa: E501
         else:
             (data) = self.edit_document_docx_set_header_with_http_info(req_config, **kwargs)  # noqa: E501
@@ -1446,11 +1446,11 @@ class EditDocumentApi(object):
 
         Set the header in a Word Document (DOCX)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.edit_document_docx_set_header_with_http_info(req_config, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_docx_set_header_with_http_info(req_config, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param DocxSetHeaderRequest req_config: (required)
         :return: DocxSetHeaderResponse
                  If the method is called asynchronously,
@@ -1458,7 +1458,7 @@ class EditDocumentApi(object):
         """
 
         all_params = ['req_config']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1512,7 +1512,7 @@ class EditDocumentApi(object):
             files=local_var_files,
             response_type='DocxSetHeaderResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1523,18 +1523,18 @@ class EditDocumentApi(object):
 
         Once done editing a document, download the result.  Begin editing a document by calling begin-editing, then perform operations, then call finish-editing to get the result.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.edit_document_finish_editing(req_config, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_finish_editing(req_config, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param FinishEditingRequest req_config: (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.edit_document_finish_editing_with_http_info(req_config, **kwargs)  # noqa: E501
         else:
             (data) = self.edit_document_finish_editing_with_http_info(req_config, **kwargs)  # noqa: E501
@@ -1545,11 +1545,11 @@ class EditDocumentApi(object):
 
         Once done editing a document, download the result.  Begin editing a document by calling begin-editing, then perform operations, then call finish-editing to get the result.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.edit_document_finish_editing_with_http_info(req_config, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_finish_editing_with_http_info(req_config, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param FinishEditingRequest req_config: (required)
         :return: str
                  If the method is called asynchronously,
@@ -1557,7 +1557,7 @@ class EditDocumentApi(object):
         """
 
         all_params = ['req_config']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1611,7 +1611,7 @@ class EditDocumentApi(object):
             files=local_var_files,
             response_type='str',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1622,18 +1622,18 @@ class EditDocumentApi(object):
 
         Replace all instances of a string in an Office PowerPoint Document (pptx)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.edit_document_pptx_replace(req_config, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_pptx_replace(req_config, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param ReplaceStringRequest req_config: (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.edit_document_pptx_replace_with_http_info(req_config, **kwargs)  # noqa: E501
         else:
             (data) = self.edit_document_pptx_replace_with_http_info(req_config, **kwargs)  # noqa: E501
@@ -1644,11 +1644,11 @@ class EditDocumentApi(object):
 
         Replace all instances of a string in an Office PowerPoint Document (pptx)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.edit_document_pptx_replace_with_http_info(req_config, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_pptx_replace_with_http_info(req_config, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param ReplaceStringRequest req_config: (required)
         :return: str
                  If the method is called asynchronously,
@@ -1656,7 +1656,7 @@ class EditDocumentApi(object):
         """
 
         all_params = ['req_config']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1710,7 +1710,7 @@ class EditDocumentApi(object):
             files=local_var_files,
             response_type='str',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1721,18 +1721,18 @@ class EditDocumentApi(object):
 
         Returns the rows and cells defined in the Excel Spreadsheet worksheet  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.edit_document_xlsx_get_columns(input, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_xlsx_get_columns(input, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param GetXlsxColumnsRequest input: (required)
         :return: GetXlsxColumnsResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.edit_document_xlsx_get_columns_with_http_info(input, **kwargs)  # noqa: E501
         else:
             (data) = self.edit_document_xlsx_get_columns_with_http_info(input, **kwargs)  # noqa: E501
@@ -1743,11 +1743,11 @@ class EditDocumentApi(object):
 
         Returns the rows and cells defined in the Excel Spreadsheet worksheet  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.edit_document_xlsx_get_columns_with_http_info(input, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_xlsx_get_columns_with_http_info(input, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param GetXlsxColumnsRequest input: (required)
         :return: GetXlsxColumnsResponse
                  If the method is called asynchronously,
@@ -1755,7 +1755,7 @@ class EditDocumentApi(object):
         """
 
         all_params = ['input']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1809,7 +1809,7 @@ class EditDocumentApi(object):
             files=local_var_files,
             response_type='GetXlsxColumnsResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1820,18 +1820,18 @@ class EditDocumentApi(object):
 
         Returns the images defined in the Excel Spreadsheet worksheet  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.edit_document_xlsx_get_images(input, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_xlsx_get_images(input, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param GetXlsxImagesRequest input: (required)
         :return: GetXlsxImagesResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.edit_document_xlsx_get_images_with_http_info(input, **kwargs)  # noqa: E501
         else:
             (data) = self.edit_document_xlsx_get_images_with_http_info(input, **kwargs)  # noqa: E501
@@ -1842,11 +1842,11 @@ class EditDocumentApi(object):
 
         Returns the images defined in the Excel Spreadsheet worksheet  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.edit_document_xlsx_get_images_with_http_info(input, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_xlsx_get_images_with_http_info(input, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param GetXlsxImagesRequest input: (required)
         :return: GetXlsxImagesResponse
                  If the method is called asynchronously,
@@ -1854,7 +1854,7 @@ class EditDocumentApi(object):
         """
 
         all_params = ['input']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1908,7 +1908,7 @@ class EditDocumentApi(object):
             files=local_var_files,
             response_type='GetXlsxImagesResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1919,18 +1919,18 @@ class EditDocumentApi(object):
 
         Returns the rows and cells defined in the Excel Spreadsheet worksheet  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.edit_document_xlsx_get_rows_and_cells(input, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_xlsx_get_rows_and_cells(input, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param GetXlsxRowsAndCellsRequest input: (required)
         :return: GetXlsxRowsAndCellsResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.edit_document_xlsx_get_rows_and_cells_with_http_info(input, **kwargs)  # noqa: E501
         else:
             (data) = self.edit_document_xlsx_get_rows_and_cells_with_http_info(input, **kwargs)  # noqa: E501
@@ -1941,11 +1941,11 @@ class EditDocumentApi(object):
 
         Returns the rows and cells defined in the Excel Spreadsheet worksheet  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.edit_document_xlsx_get_rows_and_cells_with_http_info(input, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_xlsx_get_rows_and_cells_with_http_info(input, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param GetXlsxRowsAndCellsRequest input: (required)
         :return: GetXlsxRowsAndCellsResponse
                  If the method is called asynchronously,
@@ -1953,7 +1953,7 @@ class EditDocumentApi(object):
         """
 
         all_params = ['input']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -2007,7 +2007,7 @@ class EditDocumentApi(object):
             files=local_var_files,
             response_type='GetXlsxRowsAndCellsResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2018,18 +2018,18 @@ class EditDocumentApi(object):
 
         Returns the style defined in the Excel Spreadsheet  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.edit_document_xlsx_get_styles(input, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_xlsx_get_styles(input, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param GetXlsxStylesRequest input: (required)
         :return: GetXlsxStylesResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.edit_document_xlsx_get_styles_with_http_info(input, **kwargs)  # noqa: E501
         else:
             (data) = self.edit_document_xlsx_get_styles_with_http_info(input, **kwargs)  # noqa: E501
@@ -2040,11 +2040,11 @@ class EditDocumentApi(object):
 
         Returns the style defined in the Excel Spreadsheet  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.edit_document_xlsx_get_styles_with_http_info(input, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_xlsx_get_styles_with_http_info(input, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param GetXlsxStylesRequest input: (required)
         :return: GetXlsxStylesResponse
                  If the method is called asynchronously,
@@ -2052,7 +2052,7 @@ class EditDocumentApi(object):
         """
 
         all_params = ['input']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -2106,7 +2106,7 @@ class EditDocumentApi(object):
             files=local_var_files,
             response_type='GetXlsxStylesResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2117,18 +2117,18 @@ class EditDocumentApi(object):
 
         Returns the worksheets (tabs) defined in the Excel Spreadsheet (XLSX) format file  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.edit_document_xlsx_get_worksheets(input, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_xlsx_get_worksheets(input, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param GetXlsxWorksheetsRequest input: (required)
         :return: GetXlsxWorksheetsResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.edit_document_xlsx_get_worksheets_with_http_info(input, **kwargs)  # noqa: E501
         else:
             (data) = self.edit_document_xlsx_get_worksheets_with_http_info(input, **kwargs)  # noqa: E501
@@ -2139,11 +2139,11 @@ class EditDocumentApi(object):
 
         Returns the worksheets (tabs) defined in the Excel Spreadsheet (XLSX) format file  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.edit_document_xlsx_get_worksheets_with_http_info(input, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_xlsx_get_worksheets_with_http_info(input, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param GetXlsxWorksheetsRequest input: (required)
         :return: GetXlsxWorksheetsResponse
                  If the method is called asynchronously,
@@ -2151,7 +2151,7 @@ class EditDocumentApi(object):
         """
 
         all_params = ['input']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -2205,7 +2205,7 @@ class EditDocumentApi(object):
             files=local_var_files,
             response_type='GetXlsxWorksheetsResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2216,18 +2216,18 @@ class EditDocumentApi(object):
 
         Inserts a new worksheet into an Excel Spreadsheet  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.edit_document_xlsx_insert_worksheet(input, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_xlsx_insert_worksheet(input, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param InsertXlsxWorksheetRequest input: (required)
         :return: InsertXlsxWorksheetResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.edit_document_xlsx_insert_worksheet_with_http_info(input, **kwargs)  # noqa: E501
         else:
             (data) = self.edit_document_xlsx_insert_worksheet_with_http_info(input, **kwargs)  # noqa: E501
@@ -2238,11 +2238,11 @@ class EditDocumentApi(object):
 
         Inserts a new worksheet into an Excel Spreadsheet  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.edit_document_xlsx_insert_worksheet_with_http_info(input, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_xlsx_insert_worksheet_with_http_info(input, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param InsertXlsxWorksheetRequest input: (required)
         :return: InsertXlsxWorksheetResponse
                  If the method is called asynchronously,
@@ -2250,7 +2250,7 @@ class EditDocumentApi(object):
         """
 
         all_params = ['input']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -2304,7 +2304,7 @@ class EditDocumentApi(object):
             files=local_var_files,
             response_type='InsertXlsxWorksheetResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

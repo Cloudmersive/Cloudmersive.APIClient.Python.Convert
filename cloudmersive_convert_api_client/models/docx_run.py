@@ -289,6 +289,9 @@ class DocxRun(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(DocxRun, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

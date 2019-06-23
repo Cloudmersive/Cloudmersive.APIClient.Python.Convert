@@ -38,18 +38,18 @@ class ConvertImageApi(object):
 
         Get details from an image such as size, format and MIME type, compression, EXIF data such as location, DPI, unique colors, transparency information, and more  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.convert_image_get_image_info(input_file, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_image_get_image_info(input_file, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param file input_file: Input file to perform the operation on. (required)
         :return: GetImageInfoResult
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.convert_image_get_image_info_with_http_info(input_file, **kwargs)  # noqa: E501
         else:
             (data) = self.convert_image_get_image_info_with_http_info(input_file, **kwargs)  # noqa: E501
@@ -60,11 +60,11 @@ class ConvertImageApi(object):
 
         Get details from an image such as size, format and MIME type, compression, EXIF data such as location, DPI, unique colors, transparency information, and more  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.convert_image_get_image_info_with_http_info(input_file, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_image_get_image_info_with_http_info(input_file, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param file input_file: Input file to perform the operation on. (required)
         :return: GetImageInfoResult
                  If the method is called asynchronously,
@@ -72,7 +72,7 @@ class ConvertImageApi(object):
         """
 
         all_params = ['input_file']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -126,7 +126,7 @@ class ConvertImageApi(object):
             files=local_var_files,
             response_type='GetImageInfoResult',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -137,11 +137,11 @@ class ConvertImageApi(object):
 
         Convert between over 100 file formats, including key formats such as Photoshop (PSD), PNG, JPG, GIF, NEF, and BMP.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.convert_image_image_format_convert(format1, format2, input_file, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_image_image_format_convert(format1, format2, input_file, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str format1: Input file format as a 3+ letter file extension.  Supported formats include AAI, ART, ARW, AVS, BPG, BMP, BMP2, BMP3, BRF, CALS, CGM, CIN, CMYK, CMYKA, CR2, CRW, CUR, CUT, DCM, DCR, DCX, DDS, DIB, DJVU, DNG, DOT, DPX, EMF, EPDF, EPI, EPS, EPS2, EPS3, EPSF, EPSI, EPT, EXR, FAX, FIG, FITS, FPX, GIF, GPLT, GRAY, HDR, HEIC, HPGL, HRZ, ICO, ISOBRL, ISBRL6, JBIG, JNG, JP2, JPT, J2C, J2K, JPEG/JPG, JXR, MAT, MONO, MNG, M2V, MRW, MTV, NEF, ORF, OTB, P7, PALM, PAM, PBM, PCD, PCDS, PCL, PCX, PDF, PEF, PES, PFA, PFB, PFM, PGM, PICON, PICT, PIX, PNG, PNG8, PNG00, PNG24, PNG32, PNG48, PNG64, PNM, PPM, PSB, PSD, PTIF, PWB, RAD, RAF, RGB, RGBA, RGF, RLA, RLE, SCT, SFW, SGI, SID, SUN, SVG, TGA, TIFF, TIM, UIL, VIFF, VICAR, VBMP, WDP, WEBP, WPG, X, XBM, XCF, XPM, XWD, X3F, YCbCr, YCbCrA, YUV (required)
         :param str format2: Output (convert to this format) file format as a 3+ letter file extension.  Supported formats include AAI, ART, ARW, AVS, BPG, BMP, BMP2, BMP3, BRF, CALS, CGM, CIN, CMYK, CMYKA, CR2, CRW, CUR, CUT, DCM, DCR, DCX, DDS, DIB, DJVU, DNG, DOT, DPX, EMF, EPDF, EPI, EPS, EPS2, EPS3, EPSF, EPSI, EPT, EXR, FAX, FIG, FITS, FPX, GIF, GPLT, GRAY, HDR, HEIC, HPGL, HRZ, ICO, ISOBRL, ISBRL6, JBIG, JNG, JP2, JPT, J2C, J2K, JPEG/JPG, JXR, MAT, MONO, MNG, M2V, MRW, MTV, NEF, ORF, OTB, P7, PALM, PAM, PBM, PCD, PCDS, PCL, PCX, PDF, PEF, PES, PFA, PFB, PFM, PGM, PICON, PICT, PIX, PNG, PNG8, PNG00, PNG24, PNG32, PNG48, PNG64, PNM, PPM, PSB, PSD, PTIF, PWB, RAD, RAF, RGB, RGBA, RGF, RLA, RLE, SCT, SFW, SGI, SID, SUN, SVG, TGA, TIFF, TIM, UIL, VIFF, VICAR, VBMP, WDP, WEBP, WPG, X, XBM, XCF, XPM, XWD, X3F, YCbCr, YCbCrA, YUV (required)
         :param file input_file: Input file to perform the operation on. (required)
@@ -150,7 +150,7 @@ class ConvertImageApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.convert_image_image_format_convert_with_http_info(format1, format2, input_file, **kwargs)  # noqa: E501
         else:
             (data) = self.convert_image_image_format_convert_with_http_info(format1, format2, input_file, **kwargs)  # noqa: E501
@@ -161,11 +161,11 @@ class ConvertImageApi(object):
 
         Convert between over 100 file formats, including key formats such as Photoshop (PSD), PNG, JPG, GIF, NEF, and BMP.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.convert_image_image_format_convert_with_http_info(format1, format2, input_file, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_image_image_format_convert_with_http_info(format1, format2, input_file, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str format1: Input file format as a 3+ letter file extension.  Supported formats include AAI, ART, ARW, AVS, BPG, BMP, BMP2, BMP3, BRF, CALS, CGM, CIN, CMYK, CMYKA, CR2, CRW, CUR, CUT, DCM, DCR, DCX, DDS, DIB, DJVU, DNG, DOT, DPX, EMF, EPDF, EPI, EPS, EPS2, EPS3, EPSF, EPSI, EPT, EXR, FAX, FIG, FITS, FPX, GIF, GPLT, GRAY, HDR, HEIC, HPGL, HRZ, ICO, ISOBRL, ISBRL6, JBIG, JNG, JP2, JPT, J2C, J2K, JPEG/JPG, JXR, MAT, MONO, MNG, M2V, MRW, MTV, NEF, ORF, OTB, P7, PALM, PAM, PBM, PCD, PCDS, PCL, PCX, PDF, PEF, PES, PFA, PFB, PFM, PGM, PICON, PICT, PIX, PNG, PNG8, PNG00, PNG24, PNG32, PNG48, PNG64, PNM, PPM, PSB, PSD, PTIF, PWB, RAD, RAF, RGB, RGBA, RGF, RLA, RLE, SCT, SFW, SGI, SID, SUN, SVG, TGA, TIFF, TIM, UIL, VIFF, VICAR, VBMP, WDP, WEBP, WPG, X, XBM, XCF, XPM, XWD, X3F, YCbCr, YCbCrA, YUV (required)
         :param str format2: Output (convert to this format) file format as a 3+ letter file extension.  Supported formats include AAI, ART, ARW, AVS, BPG, BMP, BMP2, BMP3, BRF, CALS, CGM, CIN, CMYK, CMYKA, CR2, CRW, CUR, CUT, DCM, DCR, DCX, DDS, DIB, DJVU, DNG, DOT, DPX, EMF, EPDF, EPI, EPS, EPS2, EPS3, EPSF, EPSI, EPT, EXR, FAX, FIG, FITS, FPX, GIF, GPLT, GRAY, HDR, HEIC, HPGL, HRZ, ICO, ISOBRL, ISBRL6, JBIG, JNG, JP2, JPT, J2C, J2K, JPEG/JPG, JXR, MAT, MONO, MNG, M2V, MRW, MTV, NEF, ORF, OTB, P7, PALM, PAM, PBM, PCD, PCDS, PCL, PCX, PDF, PEF, PES, PFA, PFB, PFM, PGM, PICON, PICT, PIX, PNG, PNG8, PNG00, PNG24, PNG32, PNG48, PNG64, PNM, PPM, PSB, PSD, PTIF, PWB, RAD, RAF, RGB, RGBA, RGF, RLA, RLE, SCT, SFW, SGI, SID, SUN, SVG, TGA, TIFF, TIM, UIL, VIFF, VICAR, VBMP, WDP, WEBP, WPG, X, XBM, XCF, XPM, XWD, X3F, YCbCr, YCbCrA, YUV (required)
         :param file input_file: Input file to perform the operation on. (required)
@@ -175,7 +175,7 @@ class ConvertImageApi(object):
         """
 
         all_params = ['format1', 'format2', 'input_file']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -241,7 +241,7 @@ class ConvertImageApi(object):
             files=local_var_files,
             response_type='str',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -252,11 +252,11 @@ class ConvertImageApi(object):
 
         Resize an image to have a different DPI  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.convert_image_image_set_dpi(dpi, input_file, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_image_image_set_dpi(dpi, input_file, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param int dpi: New DPI in pixels-per-inch, for example 300 DPI or 600 DPI (required)
         :param file input_file: Input file to perform the operation on. (required)
         :return: str
@@ -264,7 +264,7 @@ class ConvertImageApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.convert_image_image_set_dpi_with_http_info(dpi, input_file, **kwargs)  # noqa: E501
         else:
             (data) = self.convert_image_image_set_dpi_with_http_info(dpi, input_file, **kwargs)  # noqa: E501
@@ -275,11 +275,11 @@ class ConvertImageApi(object):
 
         Resize an image to have a different DPI  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.convert_image_image_set_dpi_with_http_info(dpi, input_file, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_image_image_set_dpi_with_http_info(dpi, input_file, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param int dpi: New DPI in pixels-per-inch, for example 300 DPI or 600 DPI (required)
         :param file input_file: Input file to perform the operation on. (required)
         :return: str
@@ -288,7 +288,7 @@ class ConvertImageApi(object):
         """
 
         all_params = ['dpi', 'input_file']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -348,7 +348,7 @@ class ConvertImageApi(object):
             files=local_var_files,
             response_type='str',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

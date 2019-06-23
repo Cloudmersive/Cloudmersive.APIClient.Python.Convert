@@ -121,6 +121,9 @@ class GetXlsxRowsAndCellsResponse(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(GetXlsxRowsAndCellsResponse, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

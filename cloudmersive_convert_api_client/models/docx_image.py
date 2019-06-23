@@ -427,6 +427,9 @@ class DocxImage(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(DocxImage, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

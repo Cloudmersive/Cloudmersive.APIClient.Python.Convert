@@ -38,18 +38,18 @@ class ViewerToolsApi(object):
 
         Creates an HTML embed code for a simple web-based viewer of a document; supports Office document types and PDF.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.viewer_tools_create_simple(input_file, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.viewer_tools_create_simple(input_file, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param file input_file: Input file to perform the operation on. (required)
         :return: ViewerResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.viewer_tools_create_simple_with_http_info(input_file, **kwargs)  # noqa: E501
         else:
             (data) = self.viewer_tools_create_simple_with_http_info(input_file, **kwargs)  # noqa: E501
@@ -60,11 +60,11 @@ class ViewerToolsApi(object):
 
         Creates an HTML embed code for a simple web-based viewer of a document; supports Office document types and PDF.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.viewer_tools_create_simple_with_http_info(input_file, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.viewer_tools_create_simple_with_http_info(input_file, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param file input_file: Input file to perform the operation on. (required)
         :return: ViewerResponse
                  If the method is called asynchronously,
@@ -72,7 +72,7 @@ class ViewerToolsApi(object):
         """
 
         all_params = ['input_file']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -126,7 +126,7 @@ class ViewerToolsApi(object):
             files=local_var_files,
             response_type='ViewerResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

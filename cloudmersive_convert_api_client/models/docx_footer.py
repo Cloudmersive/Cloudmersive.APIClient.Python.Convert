@@ -150,6 +150,9 @@ class DocxFooter(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(DocxFooter, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

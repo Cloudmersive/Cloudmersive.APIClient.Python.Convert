@@ -38,18 +38,18 @@ class ConvertDataApi(object):
 
         Convert a CSV file to a JSON object array  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.convert_data_csv_to_json(input_file, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_data_csv_to_json(input_file, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param file input_file: Input file to perform the operation on. (required)
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.convert_data_csv_to_json_with_http_info(input_file, **kwargs)  # noqa: E501
         else:
             (data) = self.convert_data_csv_to_json_with_http_info(input_file, **kwargs)  # noqa: E501
@@ -60,11 +60,11 @@ class ConvertDataApi(object):
 
         Convert a CSV file to a JSON object array  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.convert_data_csv_to_json_with_http_info(input_file, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_data_csv_to_json_with_http_info(input_file, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param file input_file: Input file to perform the operation on. (required)
         :return: object
                  If the method is called asynchronously,
@@ -72,7 +72,7 @@ class ConvertDataApi(object):
         """
 
         all_params = ['input_file']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -126,7 +126,7 @@ class ConvertDataApi(object):
             files=local_var_files,
             response_type='object',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -137,18 +137,18 @@ class ConvertDataApi(object):
 
         Convert an Excel (97-2003) XLS file to a JSON object array  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.convert_data_xls_to_json(input_file, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_data_xls_to_json(input_file, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param file input_file: Input file to perform the operation on. (required)
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.convert_data_xls_to_json_with_http_info(input_file, **kwargs)  # noqa: E501
         else:
             (data) = self.convert_data_xls_to_json_with_http_info(input_file, **kwargs)  # noqa: E501
@@ -159,11 +159,11 @@ class ConvertDataApi(object):
 
         Convert an Excel (97-2003) XLS file to a JSON object array  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.convert_data_xls_to_json_with_http_info(input_file, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_data_xls_to_json_with_http_info(input_file, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param file input_file: Input file to perform the operation on. (required)
         :return: object
                  If the method is called asynchronously,
@@ -171,7 +171,7 @@ class ConvertDataApi(object):
         """
 
         all_params = ['input_file']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -225,7 +225,7 @@ class ConvertDataApi(object):
             files=local_var_files,
             response_type='object',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -236,18 +236,18 @@ class ConvertDataApi(object):
 
         Convert an Excel XLSX file to a JSON object array  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.convert_data_xlsx_to_json(input_file, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_data_xlsx_to_json(input_file, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param file input_file: Input file to perform the operation on. (required)
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.convert_data_xlsx_to_json_with_http_info(input_file, **kwargs)  # noqa: E501
         else:
             (data) = self.convert_data_xlsx_to_json_with_http_info(input_file, **kwargs)  # noqa: E501
@@ -258,11 +258,11 @@ class ConvertDataApi(object):
 
         Convert an Excel XLSX file to a JSON object array  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.convert_data_xlsx_to_json_with_http_info(input_file, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_data_xlsx_to_json_with_http_info(input_file, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param file input_file: Input file to perform the operation on. (required)
         :return: object
                  If the method is called asynchronously,
@@ -270,7 +270,7 @@ class ConvertDataApi(object):
         """
 
         all_params = ['input_file']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -324,7 +324,7 @@ class ConvertDataApi(object):
             files=local_var_files,
             response_type='object',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -335,18 +335,18 @@ class ConvertDataApi(object):
 
         Convert an XML string or file into JSON  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.convert_data_xml_to_json(input_file, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_data_xml_to_json(input_file, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param file input_file: Input file to perform the operation on. (required)
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.convert_data_xml_to_json_with_http_info(input_file, **kwargs)  # noqa: E501
         else:
             (data) = self.convert_data_xml_to_json_with_http_info(input_file, **kwargs)  # noqa: E501
@@ -357,11 +357,11 @@ class ConvertDataApi(object):
 
         Convert an XML string or file into JSON  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.convert_data_xml_to_json_with_http_info(input_file, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_data_xml_to_json_with_http_info(input_file, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param file input_file: Input file to perform the operation on. (required)
         :return: object
                  If the method is called asynchronously,
@@ -369,7 +369,7 @@ class ConvertDataApi(object):
         """
 
         all_params = ['input_file']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -423,7 +423,7 @@ class ConvertDataApi(object):
             files=local_var_files,
             response_type='object',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

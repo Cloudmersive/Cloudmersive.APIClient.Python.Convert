@@ -38,11 +38,11 @@ class CompareDocumentApi(object):
 
         Compare two Office Word Documents (docx) files and highlight the differences  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.compare_document_docx(input_file1, input_file2, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.compare_document_docx(input_file1, input_file2, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param file input_file1: First input file to perform the operation on. (required)
         :param file input_file2: Second input file to perform the operation on (more than 2 can be supplied). (required)
         :return: str
@@ -50,7 +50,7 @@ class CompareDocumentApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.compare_document_docx_with_http_info(input_file1, input_file2, **kwargs)  # noqa: E501
         else:
             (data) = self.compare_document_docx_with_http_info(input_file1, input_file2, **kwargs)  # noqa: E501
@@ -61,11 +61,11 @@ class CompareDocumentApi(object):
 
         Compare two Office Word Documents (docx) files and highlight the differences  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.compare_document_docx_with_http_info(input_file1, input_file2, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.compare_document_docx_with_http_info(input_file1, input_file2, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param file input_file1: First input file to perform the operation on. (required)
         :param file input_file2: Second input file to perform the operation on (more than 2 can be supplied). (required)
         :return: str
@@ -74,7 +74,7 @@ class CompareDocumentApi(object):
         """
 
         all_params = ['input_file1', 'input_file2']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -134,7 +134,7 @@ class CompareDocumentApi(object):
             files=local_var_files,
             response_type='str',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

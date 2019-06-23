@@ -121,6 +121,9 @@ class GetDocxStylesResponse(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(GetDocxStylesResponse, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

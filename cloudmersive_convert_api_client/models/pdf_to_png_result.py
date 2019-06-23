@@ -121,6 +121,9 @@ class PdfToPngResult(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(PdfToPngResult, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

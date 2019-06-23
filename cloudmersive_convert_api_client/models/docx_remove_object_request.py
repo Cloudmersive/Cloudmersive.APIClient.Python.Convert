@@ -77,8 +77,8 @@ class DocxRemoveObjectRequest(object):
         :param input_file_bytes: The input_file_bytes of this DocxRemoveObjectRequest.  # noqa: E501
         :type: str
         """
-        if input_file_bytes is not None and not re.search('^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$', input_file_bytes):  # noqa: E501
-            raise ValueError("Invalid value for `input_file_bytes`, must be a follow pattern or equal to `/^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$/`")  # noqa: E501
+        if input_file_bytes is not None and not re.search(r'^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$', input_file_bytes):  # noqa: E501
+            raise ValueError(r"Invalid value for `input_file_bytes`, must be a follow pattern or equal to `/^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$/`")  # noqa: E501
 
         self._input_file_bytes = input_file_bytes
 
@@ -149,6 +149,9 @@ class DocxRemoveObjectRequest(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(DocxRemoveObjectRequest, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

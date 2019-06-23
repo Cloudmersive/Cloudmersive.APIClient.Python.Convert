@@ -38,18 +38,18 @@ class ConvertTemplateApi(object):
 
         Apply operations to fill in an HTML template, generating a final HTML result  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.convert_template_apply_html_template(value, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_template_apply_html_template(value, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param HtmlTemplateApplicationRequest value: Operations to apply to template (required)
         :return: HtmlTemplateApplicationResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.convert_template_apply_html_template_with_http_info(value, **kwargs)  # noqa: E501
         else:
             (data) = self.convert_template_apply_html_template_with_http_info(value, **kwargs)  # noqa: E501
@@ -60,11 +60,11 @@ class ConvertTemplateApi(object):
 
         Apply operations to fill in an HTML template, generating a final HTML result  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.convert_template_apply_html_template_with_http_info(value, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_template_apply_html_template_with_http_info(value, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param HtmlTemplateApplicationRequest value: Operations to apply to template (required)
         :return: HtmlTemplateApplicationResponse
                  If the method is called asynchronously,
@@ -72,7 +72,7 @@ class ConvertTemplateApi(object):
         """
 
         all_params = ['value']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -126,7 +126,7 @@ class ConvertTemplateApi(object):
             files=local_var_files,
             response_type='HtmlTemplateApplicationResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

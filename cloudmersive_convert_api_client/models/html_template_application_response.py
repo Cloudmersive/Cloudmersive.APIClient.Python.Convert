@@ -115,6 +115,9 @@ class HtmlTemplateApplicationResponse(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(HtmlTemplateApplicationResponse, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

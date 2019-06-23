@@ -38,18 +38,18 @@ class ValidateDocumentApi(object):
 
         Validate a Word document (DOCX); if the document is not valid, identifies the errors in the document  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.validate_document_docx_validation(input_file, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.validate_document_docx_validation(input_file, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param file input_file: Input file to perform the operation on. (required)
         :return: DocumentValidationResult
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.validate_document_docx_validation_with_http_info(input_file, **kwargs)  # noqa: E501
         else:
             (data) = self.validate_document_docx_validation_with_http_info(input_file, **kwargs)  # noqa: E501
@@ -60,11 +60,11 @@ class ValidateDocumentApi(object):
 
         Validate a Word document (DOCX); if the document is not valid, identifies the errors in the document  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.validate_document_docx_validation_with_http_info(input_file, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.validate_document_docx_validation_with_http_info(input_file, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param file input_file: Input file to perform the operation on. (required)
         :return: DocumentValidationResult
                  If the method is called asynchronously,
@@ -72,7 +72,7 @@ class ValidateDocumentApi(object):
         """
 
         all_params = ['input_file']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -126,7 +126,7 @@ class ValidateDocumentApi(object):
             files=local_var_files,
             response_type='DocumentValidationResult',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -137,18 +137,18 @@ class ValidateDocumentApi(object):
 
         Validate a PowerPoint presentation (PPTX); if the document is not valid, identifies the errors in the document  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.validate_document_pptx_validation(input_file, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.validate_document_pptx_validation(input_file, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param file input_file: Input file to perform the operation on. (required)
         :return: DocumentValidationResult
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.validate_document_pptx_validation_with_http_info(input_file, **kwargs)  # noqa: E501
         else:
             (data) = self.validate_document_pptx_validation_with_http_info(input_file, **kwargs)  # noqa: E501
@@ -159,11 +159,11 @@ class ValidateDocumentApi(object):
 
         Validate a PowerPoint presentation (PPTX); if the document is not valid, identifies the errors in the document  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.validate_document_pptx_validation_with_http_info(input_file, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.validate_document_pptx_validation_with_http_info(input_file, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param file input_file: Input file to perform the operation on. (required)
         :return: DocumentValidationResult
                  If the method is called asynchronously,
@@ -171,7 +171,7 @@ class ValidateDocumentApi(object):
         """
 
         all_params = ['input_file']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -225,7 +225,7 @@ class ValidateDocumentApi(object):
             files=local_var_files,
             response_type='DocumentValidationResult',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -236,18 +236,18 @@ class ValidateDocumentApi(object):
 
         Validate a Excel document (XLSX); if the document is not valid, identifies the errors in the document  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.validate_document_xlsx_validation(input_file, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.validate_document_xlsx_validation(input_file, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param file input_file: Input file to perform the operation on. (required)
         :return: DocumentValidationResult
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.validate_document_xlsx_validation_with_http_info(input_file, **kwargs)  # noqa: E501
         else:
             (data) = self.validate_document_xlsx_validation_with_http_info(input_file, **kwargs)  # noqa: E501
@@ -258,11 +258,11 @@ class ValidateDocumentApi(object):
 
         Validate a Excel document (XLSX); if the document is not valid, identifies the errors in the document  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.validate_document_xlsx_validation_with_http_info(input_file, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.validate_document_xlsx_validation_with_http_info(input_file, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param file input_file: Input file to perform the operation on. (required)
         :return: DocumentValidationResult
                  If the method is called asynchronously,
@@ -270,7 +270,7 @@ class ValidateDocumentApi(object):
         """
 
         all_params = ['input_file']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -324,7 +324,7 @@ class ValidateDocumentApi(object):
             files=local_var_files,
             response_type='DocumentValidationResult',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

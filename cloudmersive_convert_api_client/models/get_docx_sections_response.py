@@ -121,6 +121,9 @@ class GetDocxSectionsResponse(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(GetDocxSectionsResponse, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

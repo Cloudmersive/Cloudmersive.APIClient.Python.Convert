@@ -201,6 +201,9 @@ class XlsxSpreadsheetCell(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(XlsxSpreadsheetCell, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 
