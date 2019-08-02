@@ -1034,7 +1034,7 @@ class ConvertDocumentApi(object):
 
         :param async_req bool
         :param file input_file: Input file to perform the operation on. (required)
-        :return: object
+        :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1056,7 +1056,7 @@ class ConvertDocumentApi(object):
 
         :param async_req bool
         :param file input_file: Input file to perform the operation on. (required)
-        :return: object
+        :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1114,7 +1114,7 @@ class ConvertDocumentApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='str',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
