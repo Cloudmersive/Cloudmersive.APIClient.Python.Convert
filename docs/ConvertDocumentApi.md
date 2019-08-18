@@ -6,10 +6,13 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**convert_document_autodetect_get_info**](ConvertDocumentApi.md#convert_document_autodetect_get_info) | **POST** /convert/autodetect/get-info | Get document type information
 [**convert_document_autodetect_to_pdf**](ConvertDocumentApi.md#convert_document_autodetect_to_pdf) | **POST** /convert/autodetect/to/pdf | Convert Document to PDF
+[**convert_document_autodetect_to_png_array**](ConvertDocumentApi.md#convert_document_autodetect_to_png_array) | **POST** /convert/autodetect/to/png | Convert Document to PNG array
 [**convert_document_csv_to_xlsx**](ConvertDocumentApi.md#convert_document_csv_to_xlsx) | **POST** /convert/csv/to/xlsx | CSV to Excel XLSX
 [**convert_document_doc_to_docx**](ConvertDocumentApi.md#convert_document_doc_to_docx) | **POST** /convert/doc/to/docx | Word DOC (97-03) to DOCX
 [**convert_document_doc_to_pdf**](ConvertDocumentApi.md#convert_document_doc_to_pdf) | **POST** /convert/doc/to/pdf | Word DOC (97-03) to PDF
 [**convert_document_docx_to_pdf**](ConvertDocumentApi.md#convert_document_docx_to_pdf) | **POST** /convert/docx/to/pdf | Word DOCX to PDF
+[**convert_document_html_to_pdf**](ConvertDocumentApi.md#convert_document_html_to_pdf) | **POST** /convert/html/to/pdf | HTML to PDF
+[**convert_document_html_to_png**](ConvertDocumentApi.md#convert_document_html_to_png) | **POST** /convert/html/to/png | HTML to PNG array
 [**convert_document_pdf_to_docx**](ConvertDocumentApi.md#convert_document_pdf_to_docx) | **POST** /convert/pdf/to/docx | PDF to Word DOCX
 [**convert_document_pdf_to_png_array**](ConvertDocumentApi.md#convert_document_pdf_to_png_array) | **POST** /convert/pdf/to/png | PDF to PNG Array
 [**convert_document_pdf_to_pptx**](ConvertDocumentApi.md#convert_document_pdf_to_pptx) | **POST** /convert/pdf/to/pptx | PDF to PowerPoint PPTX
@@ -27,7 +30,7 @@ Method | HTTP request | Description
 
 Get document type information
 
-Auto-detects a document's type information; does not require file extension.  Analyzes file contents to confirm file type.
+Auto-detects a document's type information; does not require file extension.  Analyzes file contents to confirm file type.  Even if no file extension is present, the auto-detect system will reliably analyze the contents of the file and identify its file type.  Supports over 100 image file formats, Office document file formats, PDF, and more.
 
 ### Example
 ```python
@@ -81,7 +84,7 @@ Name | Type | Description  | Notes
 
 Convert Document to PDF
 
-Automatically detect file type and convert it to PDF.
+Automatically detect file type and convert it to PDF.  Supports all of the major Office document file formats including Word (DOCX, DOC), Excel (XLSX, XLS), PowerPoint (PPTX, PPT), over 100 image formats, HTML files, and even multi-page TIFF files.
 
 ### Example
 ```python
@@ -118,6 +121,60 @@ Name | Type | Description  | Notes
 ### Return type
 
 **str**
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/octet-stream
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **convert_document_autodetect_to_png_array**
+> AutodetectToPngResult convert_document_autodetect_to_png_array(input_file)
+
+Convert Document to PNG array
+
+Automatically detect file type and convert it to an array of PNG images.  Supports all of the major Office document file formats, over 100 image formats, and even multi-page TIFF files.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_convert_api_client
+from cloudmersive_convert_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_convert_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_convert_api_client.ConvertDocumentApi(cloudmersive_convert_api_client.ApiClient(configuration))
+input_file = '/path/to/file.txt' # file | Input file to perform the operation on.
+
+try:
+    # Convert Document to PNG array
+    api_response = api_instance.convert_document_autodetect_to_png_array(input_file)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConvertDocumentApi->convert_document_autodetect_to_png_array: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **input_file** | **file**| Input file to perform the operation on. | 
+
+### Return type
+
+[**AutodetectToPngResult**](AutodetectToPngResult.md)
 
 ### Authorization
 
@@ -334,6 +391,114 @@ Name | Type | Description  | Notes
 ### Return type
 
 **str**
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/octet-stream
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **convert_document_html_to_pdf**
+> str convert_document_html_to_pdf(input_file)
+
+HTML to PDF
+
+Convert standard HTML, with full support for CSS, JavaScript, Images, and other complex behavior to PDF.  To use external files such as images, use an absolute URL to the file.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_convert_api_client
+from cloudmersive_convert_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_convert_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_convert_api_client.ConvertDocumentApi(cloudmersive_convert_api_client.ApiClient(configuration))
+input_file = '/path/to/file.txt' # file | Input file to perform the operation on.
+
+try:
+    # HTML to PDF
+    api_response = api_instance.convert_document_html_to_pdf(input_file)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConvertDocumentApi->convert_document_html_to_pdf: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **input_file** | **file**| Input file to perform the operation on. | 
+
+### Return type
+
+**str**
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/octet-stream
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **convert_document_html_to_png**
+> PdfToPngResult convert_document_html_to_png(input_file)
+
+HTML to PNG array
+
+Convert standard HTML, with full support for CSS, JavaScript, Images, and other complex behavior to an array of PNG images, one for each page.  To use external files in your HTML such as images, use an absolute URL to the file.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_convert_api_client
+from cloudmersive_convert_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_convert_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_convert_api_client.ConvertDocumentApi(cloudmersive_convert_api_client.ApiClient(configuration))
+input_file = '/path/to/file.txt' # file | Input file to perform the operation on.
+
+try:
+    # HTML to PNG array
+    api_response = api_instance.convert_document_html_to_png(input_file)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConvertDocumentApi->convert_document_html_to_png: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **input_file** | **file**| Input file to perform the operation on. | 
+
+### Return type
+
+[**PdfToPngResult**](PdfToPngResult.md)
 
 ### Authorization
 
