@@ -1,10 +1,10 @@
 # cloudmersive_convert_api_client
 Convert API lets you effortlessly convert file formats and types.
 
-This Python package provides a native API client for [Cloudmersive OCR](https://www.cloudmersive.com/ocr-api)
+This Python package provides a native API client for [Cloudmersive Document Conversion](https://www.cloudmersive.com/convert-api)
 
 - API version: v1
-- Package version: 2.0.5
+- Package version: 2.0.6
 - Build package: io.swagger.codegen.languages.PythonClientCodegen
 
 ## Requirements.
