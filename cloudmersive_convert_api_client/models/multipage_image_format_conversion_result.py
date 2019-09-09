@@ -63,6 +63,7 @@ class MultipageImageFormatConversionResult(object):
     def successful(self):
         """Gets the successful of this MultipageImageFormatConversionResult.  # noqa: E501
 
+        True if successful, false otherwise  # noqa: E501
 
         :return: The successful of this MultipageImageFormatConversionResult.  # noqa: E501
         :rtype: bool
@@ -73,6 +74,7 @@ class MultipageImageFormatConversionResult(object):
     def successful(self, successful):
         """Sets the successful of this MultipageImageFormatConversionResult.
 
+        True if successful, false otherwise  # noqa: E501
 
         :param successful: The successful of this MultipageImageFormatConversionResult.  # noqa: E501
         :type: bool
@@ -84,6 +86,7 @@ class MultipageImageFormatConversionResult(object):
     def page_count(self):
         """Gets the page_count of this MultipageImageFormatConversionResult.  # noqa: E501
 
+        The number of pages in the converted output  # noqa: E501
 
         :return: The page_count of this MultipageImageFormatConversionResult.  # noqa: E501
         :rtype: int
@@ -94,6 +97,7 @@ class MultipageImageFormatConversionResult(object):
     def page_count(self, page_count):
         """Sets the page_count of this MultipageImageFormatConversionResult.
 
+        The number of pages in the converted output  # noqa: E501
 
         :param page_count: The page_count of this MultipageImageFormatConversionResult.  # noqa: E501
         :type: int
@@ -105,6 +109,7 @@ class MultipageImageFormatConversionResult(object):
     def pages(self):
         """Gets the pages of this MultipageImageFormatConversionResult.  # noqa: E501
 
+        Converted page results  # noqa: E501
 
         :return: The pages of this MultipageImageFormatConversionResult.  # noqa: E501
         :rtype: list[PageConversionResult]
@@ -115,6 +120,7 @@ class MultipageImageFormatConversionResult(object):
     def pages(self, pages):
         """Sets the pages of this MultipageImageFormatConversionResult.
 
+        Converted page results  # noqa: E501
 
         :param pages: The pages of this MultipageImageFormatConversionResult.  # noqa: E501
         :type: list[PageConversionResult]

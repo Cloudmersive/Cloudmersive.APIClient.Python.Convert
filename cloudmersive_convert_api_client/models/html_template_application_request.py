@@ -63,6 +63,7 @@ class HtmlTemplateApplicationRequest(object):
     def html_template(self):
         """Gets the html_template of this HtmlTemplateApplicationRequest.  # noqa: E501
 
+        HTML template input as a string  # noqa: E501
 
         :return: The html_template of this HtmlTemplateApplicationRequest.  # noqa: E501
         :rtype: str
@@ -73,6 +74,7 @@ class HtmlTemplateApplicationRequest(object):
     def html_template(self, html_template):
         """Sets the html_template of this HtmlTemplateApplicationRequest.
 
+        HTML template input as a string  # noqa: E501
 
         :param html_template: The html_template of this HtmlTemplateApplicationRequest.  # noqa: E501
         :type: str
@@ -84,6 +86,7 @@ class HtmlTemplateApplicationRequest(object):
     def html_template_url(self):
         """Gets the html_template_url of this HtmlTemplateApplicationRequest.  # noqa: E501
 
+        URL to HTML template input  # noqa: E501
 
         :return: The html_template_url of this HtmlTemplateApplicationRequest.  # noqa: E501
         :rtype: str
@@ -94,6 +97,7 @@ class HtmlTemplateApplicationRequest(object):
     def html_template_url(self, html_template_url):
         """Sets the html_template_url of this HtmlTemplateApplicationRequest.
 
+        URL to HTML template input  # noqa: E501
 
         :param html_template_url: The html_template_url of this HtmlTemplateApplicationRequest.  # noqa: E501
         :type: str
@@ -105,6 +109,7 @@ class HtmlTemplateApplicationRequest(object):
     def operations(self):
         """Gets the operations of this HtmlTemplateApplicationRequest.  # noqa: E501
 
+        Operations to apply to this template  # noqa: E501
 
         :return: The operations of this HtmlTemplateApplicationRequest.  # noqa: E501
         :rtype: list[HtmlTemplateOperation]
@@ -115,6 +120,7 @@ class HtmlTemplateApplicationRequest(object):
     def operations(self, operations):
         """Sets the operations of this HtmlTemplateApplicationRequest.
 
+        Operations to apply to this template  # noqa: E501
 
         :param operations: The operations of this HtmlTemplateApplicationRequest.  # noqa: E501
         :type: list[HtmlTemplateOperation]

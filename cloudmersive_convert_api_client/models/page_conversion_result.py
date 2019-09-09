@@ -56,6 +56,7 @@ class PageConversionResult(object):
     def filename(self):
         """Gets the filename of this PageConversionResult.  # noqa: E501
 
+        File name of the image in the converted file format  # noqa: E501
 
         :return: The filename of this PageConversionResult.  # noqa: E501
         :rtype: str
@@ -66,6 +67,7 @@ class PageConversionResult(object):
     def filename(self, filename):
         """Sets the filename of this PageConversionResult.
 
+        File name of the image in the converted file format  # noqa: E501
 
         :param filename: The filename of this PageConversionResult.  # noqa: E501
         :type: str
@@ -77,6 +79,7 @@ class PageConversionResult(object):
     def file_bytes(self):
         """Gets the file_bytes of this PageConversionResult.  # noqa: E501
 
+        File bytes (contents) of the image in converted file format  # noqa: E501
 
         :return: The file_bytes of this PageConversionResult.  # noqa: E501
         :rtype: str
@@ -87,6 +90,7 @@ class PageConversionResult(object):
     def file_bytes(self, file_bytes):
         """Sets the file_bytes of this PageConversionResult.
 
+        File bytes (contents) of the image in converted file format  # noqa: E501
 
         :param file_bytes: The file_bytes of this PageConversionResult.  # noqa: E501
         :type: str
