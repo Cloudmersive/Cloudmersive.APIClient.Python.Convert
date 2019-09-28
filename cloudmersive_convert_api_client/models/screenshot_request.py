@@ -66,6 +66,7 @@ class ScreenshotRequest(object):
     def url(self):
         """Gets the url of this ScreenshotRequest.  # noqa: E501
 
+        URL address of the website to screenshot.  HTTP and HTTPS are both supported, as are custom ports.  # noqa: E501
 
         :return: The url of this ScreenshotRequest.  # noqa: E501
         :rtype: str
@@ -76,6 +77,7 @@ class ScreenshotRequest(object):
     def url(self, url):
         """Sets the url of this ScreenshotRequest.
 
+        URL address of the website to screenshot.  HTTP and HTTPS are both supported, as are custom ports.  # noqa: E501
 
         :param url: The url of this ScreenshotRequest.  # noqa: E501
         :type: str
@@ -87,6 +89,7 @@ class ScreenshotRequest(object):
     def extra_loading_wait(self):
         """Gets the extra_loading_wait of this ScreenshotRequest.  # noqa: E501
 
+        Optional: Additional number of milliseconds to wait once the web page has finished loading before taking the screenshot.  Can be helpful for highly asynchronous websites.  Provide a value of 0 for the default of 5000 milliseconds (5 seconds)  # noqa: E501
 
         :return: The extra_loading_wait of this ScreenshotRequest.  # noqa: E501
         :rtype: int
@@ -97,6 +100,7 @@ class ScreenshotRequest(object):
     def extra_loading_wait(self, extra_loading_wait):
         """Sets the extra_loading_wait of this ScreenshotRequest.
 
+        Optional: Additional number of milliseconds to wait once the web page has finished loading before taking the screenshot.  Can be helpful for highly asynchronous websites.  Provide a value of 0 for the default of 5000 milliseconds (5 seconds)  # noqa: E501
 
         :param extra_loading_wait: The extra_loading_wait of this ScreenshotRequest.  # noqa: E501
         :type: int
@@ -108,6 +112,7 @@ class ScreenshotRequest(object):
     def screenshot_width(self):
         """Gets the screenshot_width of this ScreenshotRequest.  # noqa: E501
 
+        Optional: Width of the screenshot in pixels; supply 0 to default to 1280 x 1024, supply -1 to measure the full screen height of the page and attempt to take a screen-height screenshot  # noqa: E501
 
         :return: The screenshot_width of this ScreenshotRequest.  # noqa: E501
         :rtype: int
@@ -118,6 +123,7 @@ class ScreenshotRequest(object):
     def screenshot_width(self, screenshot_width):
         """Sets the screenshot_width of this ScreenshotRequest.
 
+        Optional: Width of the screenshot in pixels; supply 0 to default to 1280 x 1024, supply -1 to measure the full screen height of the page and attempt to take a screen-height screenshot  # noqa: E501
 
         :param screenshot_width: The screenshot_width of this ScreenshotRequest.  # noqa: E501
         :type: int
@@ -129,6 +135,7 @@ class ScreenshotRequest(object):
     def screenshot_height(self):
         """Gets the screenshot_height of this ScreenshotRequest.  # noqa: E501
 
+        Optional: Height of the screenshot in pixels; supply 0 to default to 1280 x 1024, supply -1 to measure the full screen height of the page and attempt to take a screen-height screenshot  # noqa: E501
 
         :return: The screenshot_height of this ScreenshotRequest.  # noqa: E501
         :rtype: int
@@ -139,6 +146,7 @@ class ScreenshotRequest(object):
     def screenshot_height(self, screenshot_height):
         """Sets the screenshot_height of this ScreenshotRequest.
 
+        Optional: Height of the screenshot in pixels; supply 0 to default to 1280 x 1024, supply -1 to measure the full screen height of the page and attempt to take a screen-height screenshot  # noqa: E501
 
         :param screenshot_height: The screenshot_height of this ScreenshotRequest.  # noqa: E501
         :type: int

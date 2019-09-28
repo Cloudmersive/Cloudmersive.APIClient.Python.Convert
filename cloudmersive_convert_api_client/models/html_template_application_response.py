@@ -56,6 +56,7 @@ class HtmlTemplateApplicationResponse(object):
     def successful(self):
         """Gets the successful of this HtmlTemplateApplicationResponse.  # noqa: E501
 
+        True if the operation was successful, false otherwise  # noqa: E501
 
         :return: The successful of this HtmlTemplateApplicationResponse.  # noqa: E501
         :rtype: bool
@@ -66,6 +67,7 @@ class HtmlTemplateApplicationResponse(object):
     def successful(self, successful):
         """Sets the successful of this HtmlTemplateApplicationResponse.
 
+        True if the operation was successful, false otherwise  # noqa: E501
 
         :param successful: The successful of this HtmlTemplateApplicationResponse.  # noqa: E501
         :type: bool
@@ -77,6 +79,7 @@ class HtmlTemplateApplicationResponse(object):
     def final_html(self):
         """Gets the final_html of this HtmlTemplateApplicationResponse.  # noqa: E501
 
+        Final HTML result of all operations on input  # noqa: E501
 
         :return: The final_html of this HtmlTemplateApplicationResponse.  # noqa: E501
         :rtype: str
@@ -87,6 +90,7 @@ class HtmlTemplateApplicationResponse(object):
     def final_html(self, final_html):
         """Sets the final_html of this HtmlTemplateApplicationResponse.
 
+        Final HTML result of all operations on input  # noqa: E501
 
         :param final_html: The final_html of this HtmlTemplateApplicationResponse.  # noqa: E501
         :type: str

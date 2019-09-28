@@ -56,6 +56,7 @@ class HtmlToPdfRequest(object):
     def html(self):
         """Gets the html of this HtmlToPdfRequest.  # noqa: E501
 
+        HTML to render to PDF  # noqa: E501
 
         :return: The html of this HtmlToPdfRequest.  # noqa: E501
         :rtype: str
@@ -66,6 +67,7 @@ class HtmlToPdfRequest(object):
     def html(self, html):
         """Sets the html of this HtmlToPdfRequest.
 
+        HTML to render to PDF  # noqa: E501
 
         :param html: The html of this HtmlToPdfRequest.  # noqa: E501
         :type: str
@@ -77,6 +79,7 @@ class HtmlToPdfRequest(object):
     def extra_loading_wait(self):
         """Gets the extra_loading_wait of this HtmlToPdfRequest.  # noqa: E501
 
+        Optional: Additional number of milliseconds to wait once the web page has finished loading before taking the screenshot.  Can be helpful for highly asynchronous websites.  # noqa: E501
 
         :return: The extra_loading_wait of this HtmlToPdfRequest.  # noqa: E501
         :rtype: int
@@ -87,6 +90,7 @@ class HtmlToPdfRequest(object):
     def extra_loading_wait(self, extra_loading_wait):
         """Sets the extra_loading_wait of this HtmlToPdfRequest.
 
+        Optional: Additional number of milliseconds to wait once the web page has finished loading before taking the screenshot.  Can be helpful for highly asynchronous websites.  # noqa: E501
 
         :param extra_loading_wait: The extra_loading_wait of this HtmlToPdfRequest.  # noqa: E501
         :type: int

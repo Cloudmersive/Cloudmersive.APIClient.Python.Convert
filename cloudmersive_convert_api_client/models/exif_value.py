@@ -61,6 +61,7 @@ class ExifValue(object):
     def tag(self):
         """Gets the tag of this ExifValue.  # noqa: E501
 
+        Tag name for the EXIF value  # noqa: E501
 
         :return: The tag of this ExifValue.  # noqa: E501
         :rtype: str
@@ -71,6 +72,7 @@ class ExifValue(object):
     def tag(self, tag):
         """Sets the tag of this ExifValue.
 
+        Tag name for the EXIF value  # noqa: E501
 
         :param tag: The tag of this ExifValue.  # noqa: E501
         :type: str
@@ -82,6 +84,7 @@ class ExifValue(object):
     def data_type(self):
         """Gets the data_type of this ExifValue.  # noqa: E501
 
+        Date type of the EXIF value  # noqa: E501
 
         :return: The data_type of this ExifValue.  # noqa: E501
         :rtype: str
@@ -92,6 +95,7 @@ class ExifValue(object):
     def data_type(self, data_type):
         """Sets the data_type of this ExifValue.
 
+        Date type of the EXIF value  # noqa: E501
 
         :param data_type: The data_type of this ExifValue.  # noqa: E501
         :type: str
@@ -103,6 +107,7 @@ class ExifValue(object):
     def data_value(self):
         """Gets the data_value of this ExifValue.  # noqa: E501
 
+        Value, formatted as a string of the EXIF value  # noqa: E501
 
         :return: The data_value of this ExifValue.  # noqa: E501
         :rtype: str
@@ -113,6 +118,7 @@ class ExifValue(object):
     def data_value(self, data_value):
         """Sets the data_value of this ExifValue.
 
+        Value, formatted as a string of the EXIF value  # noqa: E501
 
         :param data_value: The data_value of this ExifValue.  # noqa: E501
         :type: str
