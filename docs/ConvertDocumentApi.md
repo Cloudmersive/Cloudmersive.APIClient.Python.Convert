@@ -23,6 +23,7 @@ Method | HTTP request | Description
 [**convert_document_ppt_to_pptx**](ConvertDocumentApi.md#convert_document_ppt_to_pptx) | **POST** /convert/ppt/to/pptx | PowerPoint PPT (97-03) to PPTX
 [**convert_document_pptx_to_pdf**](ConvertDocumentApi.md#convert_document_pptx_to_pdf) | **POST** /convert/pptx/to/pdf | PowerPoint PPTX to PDF
 [**convert_document_pptx_to_txt**](ConvertDocumentApi.md#convert_document_pptx_to_txt) | **POST** /convert/pptx/to/txt | PowerPoint PPTX to Text
+[**convert_document_xls_to_csv**](ConvertDocumentApi.md#convert_document_xls_to_csv) | **POST** /convert/xls/to/csv | Excel XLS (97-03) to CSV
 [**convert_document_xls_to_pdf**](ConvertDocumentApi.md#convert_document_xls_to_pdf) | **POST** /convert/xls/to/pdf | Excel XLS (97-03) to PDF
 [**convert_document_xls_to_xlsx**](ConvertDocumentApi.md#convert_document_xls_to_xlsx) | **POST** /convert/xls/to/xlsx | Excel XLS (97-03) to XLSX
 [**convert_document_xlsx_to_csv**](ConvertDocumentApi.md#convert_document_xlsx_to_csv) | **POST** /convert/xlsx/to/csv | Excel XLSX to CSV
@@ -80,7 +81,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
- - **Accept**: application/octet-stream
+ - **Accept**: application/json, text/json, application/xml, text/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1056,6 +1057,60 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **convert_document_xls_to_csv**
+> str convert_document_xls_to_csv(input_file)
+
+Excel XLS (97-03) to CSV
+
+Convert/upgrade Office Excel (97-2003) Workbooks (xls) to standard CSV format.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_convert_api_client
+from cloudmersive_convert_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_convert_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_convert_api_client.ConvertDocumentApi(cloudmersive_convert_api_client.ApiClient(configuration))
+input_file = '/path/to/file.txt' # file | Input file to perform the operation on.
+
+try:
+    # Excel XLS (97-03) to CSV
+    api_response = api_instance.convert_document_xls_to_csv(input_file)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConvertDocumentApi->convert_document_xls_to_csv: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **input_file** | **file**| Input file to perform the operation on. | 
+
+### Return type
+
+**str**
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/octet-stream
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **convert_document_xls_to_pdf**
 > str convert_document_xls_to_pdf(input_file)
 
@@ -1169,7 +1224,7 @@ Name | Type | Description  | Notes
 
 Excel XLSX to CSV
 
-Convert Office Excel Workbooks (xlsx) to standard Comma-Separated Values (CSV) format.
+Convert Office Excel Workbooks (XLSX) to standard Comma-Separated Values (CSV) format.  Supports both XLSX and XLSB file Excel formats.
 
 ### Example
 ```python
@@ -1223,7 +1278,7 @@ Name | Type | Description  | Notes
 
 Excel XLSX to PDF
 
-Convert Office Excel Workbooks (xlsx) to standard PDF.  Converts all worksheets in the workbook to PDF.
+Convert Office Excel Workbooks (XLSX) to standard PDF.  Converts all worksheets in the workbook to PDF.  Supports both XLSX and XLSB Excel file formats.
 
 ### Example
 ```python
@@ -1277,7 +1332,7 @@ Name | Type | Description  | Notes
 
 Excel XLSX to Text
 
-Convert Office Excel Workbooks (xlsx) to standard Text.  Converts all worksheets in the workbook to Text.
+Convert Office Excel Workbooks (XLSX) to standard Text.  Converts all worksheets in the workbook to Text.  Supports both XLSX and XLSB file formats.
 
 ### Example
 ```python

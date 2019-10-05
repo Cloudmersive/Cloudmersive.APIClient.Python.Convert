@@ -4,7 +4,7 @@ Convert API lets you effortlessly convert file formats and types.
 This Python package provides a native API client for [Cloudmersive Document Conversion](https://www.cloudmersive.com/convert-api)
 
 - API version: v1
-- Package version: 2.0.8
+- Package version: 2.0.9
 - Build package: io.swagger.codegen.languages.PythonClientCodegen
 
 ## Requirements.
@@ -101,6 +101,7 @@ Class | Method | HTTP request | Description
 *ConvertDocumentApi* | [**convert_document_ppt_to_pptx**](docs/ConvertDocumentApi.md#convert_document_ppt_to_pptx) | **POST** /convert/ppt/to/pptx | PowerPoint PPT (97-03) to PPTX
 *ConvertDocumentApi* | [**convert_document_pptx_to_pdf**](docs/ConvertDocumentApi.md#convert_document_pptx_to_pdf) | **POST** /convert/pptx/to/pdf | PowerPoint PPTX to PDF
 *ConvertDocumentApi* | [**convert_document_pptx_to_txt**](docs/ConvertDocumentApi.md#convert_document_pptx_to_txt) | **POST** /convert/pptx/to/txt | PowerPoint PPTX to Text
+*ConvertDocumentApi* | [**convert_document_xls_to_csv**](docs/ConvertDocumentApi.md#convert_document_xls_to_csv) | **POST** /convert/xls/to/csv | Excel XLS (97-03) to CSV
 *ConvertDocumentApi* | [**convert_document_xls_to_pdf**](docs/ConvertDocumentApi.md#convert_document_xls_to_pdf) | **POST** /convert/xls/to/pdf | Excel XLS (97-03) to PDF
 *ConvertDocumentApi* | [**convert_document_xls_to_xlsx**](docs/ConvertDocumentApi.md#convert_document_xls_to_xlsx) | **POST** /convert/xls/to/xlsx | Excel XLS (97-03) to XLSX
 *ConvertDocumentApi* | [**convert_document_xlsx_to_csv**](docs/ConvertDocumentApi.md#convert_document_xlsx_to_csv) | **POST** /convert/xlsx/to/csv | Excel XLSX to CSV
