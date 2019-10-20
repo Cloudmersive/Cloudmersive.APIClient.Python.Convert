@@ -1,6 +1,6 @@
 ﻿{
 "projectName" : "cloudmersive_convert_api_client",
   "packageName" : "cloudmersive_convert_api_client",
-  "packageVersion": "2.1.0",
+  "packageVersion": "2.1.1",
   "packageUrl": "https://www.cloudmersive.com/convert-api"
 }  
