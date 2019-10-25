@@ -1419,6 +1419,105 @@ class EditDocumentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def edit_document_docx_set_footer_add_page_number(self, req_config, **kwargs):  # noqa: E501
+        """Add page number to footer in a DOCX  # noqa: E501
+
+        Set the footer in a Word Document (DOCX) to contain a page number  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_docx_set_footer_add_page_number(req_config, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param DocxSetFooterAddPageNumberRequest req_config: (required)
+        :return: DocxSetFooterResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.edit_document_docx_set_footer_add_page_number_with_http_info(req_config, **kwargs)  # noqa: E501
+        else:
+            (data) = self.edit_document_docx_set_footer_add_page_number_with_http_info(req_config, **kwargs)  # noqa: E501
+            return data
+
+    def edit_document_docx_set_footer_add_page_number_with_http_info(self, req_config, **kwargs):  # noqa: E501
+        """Add page number to footer in a DOCX  # noqa: E501
+
+        Set the footer in a Word Document (DOCX) to contain a page number  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_docx_set_footer_add_page_number_with_http_info(req_config, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param DocxSetFooterAddPageNumberRequest req_config: (required)
+        :return: DocxSetFooterResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['req_config']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method edit_document_docx_set_footer_add_page_number" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'req_config' is set
+        if ('req_config' not in params or
+                params['req_config'] is None):
+            raise ValueError("Missing the required parameter `req_config` when calling `edit_document_docx_set_footer_add_page_number`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'req_config' in params:
+            body_params = params['req_config']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/edit/docx/set-footer/add-page-number', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='DocxSetFooterResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def edit_document_docx_set_header(self, req_config, **kwargs):  # noqa: E501
         """Set the header in a DOCX  # noqa: E501
 

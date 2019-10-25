@@ -4,7 +4,7 @@ Convert API lets you effortlessly convert file formats and types.
 This Python package provides a native API client for [Cloudmersive Document Conversion](https://www.cloudmersive.com/convert-api)
 
 - API version: v1
-- Package version: 2.1.1
+- Package version: 2.1.2
 - Build package: io.swagger.codegen.languages.PythonClientCodegen
 
 ## Requirements.
@@ -132,6 +132,7 @@ Class | Method | HTTP request | Description
 *EditDocumentApi* | [**edit_document_docx_remove_object**](docs/EditDocumentApi.md#edit_document_docx_remove_object) | **POST** /convert/edit/docx/remove-object | Delete any object in a DOCX
 *EditDocumentApi* | [**edit_document_docx_replace**](docs/EditDocumentApi.md#edit_document_docx_replace) | **POST** /convert/edit/docx/replace-all | Replace string in DOCX
 *EditDocumentApi* | [**edit_document_docx_set_footer**](docs/EditDocumentApi.md#edit_document_docx_set_footer) | **POST** /convert/edit/docx/set-footer | Set the footer in a DOCX
+*EditDocumentApi* | [**edit_document_docx_set_footer_add_page_number**](docs/EditDocumentApi.md#edit_document_docx_set_footer_add_page_number) | **POST** /convert/edit/docx/set-footer/add-page-number | Add page number to footer in a DOCX
 *EditDocumentApi* | [**edit_document_docx_set_header**](docs/EditDocumentApi.md#edit_document_docx_set_header) | **POST** /convert/edit/docx/set-header | Set the header in a DOCX
 *EditDocumentApi* | [**edit_document_finish_editing**](docs/EditDocumentApi.md#edit_document_finish_editing) | **POST** /convert/edit/finish-editing | Download result from document editing
 *EditDocumentApi* | [**edit_document_pptx_replace**](docs/EditDocumentApi.md#edit_document_pptx_replace) | **POST** /convert/edit/pptx/replace-all | Replace string in PPTX
@@ -175,6 +176,7 @@ Class | Method | HTTP request | Description
  - [DocxRemoveObjectResponse](docs/DocxRemoveObjectResponse.md)
  - [DocxRun](docs/DocxRun.md)
  - [DocxSection](docs/DocxSection.md)
+ - [DocxSetFooterAddPageNumberRequest](docs/DocxSetFooterAddPageNumberRequest.md)
  - [DocxSetFooterRequest](docs/DocxSetFooterRequest.md)
  - [DocxSetFooterResponse](docs/DocxSetFooterResponse.md)
  - [DocxSetHeaderRequest](docs/DocxSetHeaderRequest.md)
