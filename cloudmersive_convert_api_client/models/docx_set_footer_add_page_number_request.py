@@ -31,52 +31,31 @@ class DocxSetFooterAddPageNumberRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'prepend_text': 'str',
         'input_file_bytes': 'str',
-        'input_file_url': 'str'
+        'input_file_url': 'str',
+        'prepend_text': 'str'
     }
 
     attribute_map = {
-        'prepend_text': 'PrependText',
         'input_file_bytes': 'InputFileBytes',
-        'input_file_url': 'InputFileUrl'
+        'input_file_url': 'InputFileUrl',
+        'prepend_text': 'PrependText'
     }
 
-    def __init__(self, prepend_text=None, input_file_bytes=None, input_file_url=None):  # noqa: E501
+    def __init__(self, input_file_bytes=None, input_file_url=None, prepend_text=None):  # noqa: E501
         """DocxSetFooterAddPageNumberRequest - a model defined in Swagger"""  # noqa: E501
 
-        self._prepend_text = None
         self._input_file_bytes = None
         self._input_file_url = None
+        self._prepend_text = None
         self.discriminator = None
 
-        if prepend_text is not None:
-            self.prepend_text = prepend_text
         if input_file_bytes is not None:
             self.input_file_bytes = input_file_bytes
         if input_file_url is not None:
             self.input_file_url = input_file_url
-
-    @property
-    def prepend_text(self):
-        """Gets the prepend_text of this DocxSetFooterAddPageNumberRequest.  # noqa: E501
-
-
-        :return: The prepend_text of this DocxSetFooterAddPageNumberRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._prepend_text
-
-    @prepend_text.setter
-    def prepend_text(self, prepend_text):
-        """Sets the prepend_text of this DocxSetFooterAddPageNumberRequest.
-
-
-        :param prepend_text: The prepend_text of this DocxSetFooterAddPageNumberRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._prepend_text = prepend_text
+        if prepend_text is not None:
+            self.prepend_text = prepend_text
 
     @property
     def input_file_bytes(self):
@@ -125,6 +104,29 @@ class DocxSetFooterAddPageNumberRequest(object):
         """
 
         self._input_file_url = input_file_url
+
+    @property
+    def prepend_text(self):
+        """Gets the prepend_text of this DocxSetFooterAddPageNumberRequest.  # noqa: E501
+
+        Optional: extra text to add before the page number, for example if you want to show \"Page 1\" then you can set PrependText to \"Page\"  # noqa: E501
+
+        :return: The prepend_text of this DocxSetFooterAddPageNumberRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._prepend_text
+
+    @prepend_text.setter
+    def prepend_text(self, prepend_text):
+        """Sets the prepend_text of this DocxSetFooterAddPageNumberRequest.
+
+        Optional: extra text to add before the page number, for example if you want to show \"Page 1\" then you can set PrependText to \"Page\"  # noqa: E501
+
+        :param prepend_text: The prepend_text of this DocxSetFooterAddPageNumberRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._prepend_text = prepend_text
 
     def to_dict(self):
         """Returns the model properties as a dict"""

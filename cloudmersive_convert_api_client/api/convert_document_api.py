@@ -2222,6 +2222,7 @@ class ConvertDocumentApi(object):
 
         :param async_req bool
         :param file input_file: Input file to perform the operation on. (required)
+        :param str output_encoding: Optional, set the output text encoding for the result; possible values are UTF-8 and UTF-32.  Default is UTF-32.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2244,12 +2245,13 @@ class ConvertDocumentApi(object):
 
         :param async_req bool
         :param file input_file: Input file to perform the operation on. (required)
+        :param str output_encoding: Optional, set the output text encoding for the result; possible values are UTF-8 and UTF-32.  Default is UTF-32.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['input_file']  # noqa: E501
+        all_params = ['input_file', 'output_encoding']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2276,6 +2278,8 @@ class ConvertDocumentApi(object):
         query_params = []
 
         header_params = {}
+        if 'output_encoding' in params:
+            header_params['outputEncoding'] = params['output_encoding']  # noqa: E501
 
         form_params = []
         local_var_files = {}

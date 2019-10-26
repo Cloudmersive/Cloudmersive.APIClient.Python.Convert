@@ -36,6 +36,9 @@ class AutodetectGetInfoResult(object):
         'successful': 'bool',
         'detected_file_extension': 'str',
         'detected_mime_type': 'str',
+        'page_count': 'int',
+        'author': 'str',
+        'date_modified': 'datetime',
         'alternate_file_type_candidates': 'list[AlternateFileFormatCandidate]'
     }
 
@@ -43,15 +46,21 @@ class AutodetectGetInfoResult(object):
         'successful': 'Successful',
         'detected_file_extension': 'DetectedFileExtension',
         'detected_mime_type': 'DetectedMimeType',
+        'page_count': 'PageCount',
+        'author': 'Author',
+        'date_modified': 'DateModified',
         'alternate_file_type_candidates': 'AlternateFileTypeCandidates'
     }
 
-    def __init__(self, successful=None, detected_file_extension=None, detected_mime_type=None, alternate_file_type_candidates=None):  # noqa: E501
+    def __init__(self, successful=None, detected_file_extension=None, detected_mime_type=None, page_count=None, author=None, date_modified=None, alternate_file_type_candidates=None):  # noqa: E501
         """AutodetectGetInfoResult - a model defined in Swagger"""  # noqa: E501
 
         self._successful = None
         self._detected_file_extension = None
         self._detected_mime_type = None
+        self._page_count = None
+        self._author = None
+        self._date_modified = None
         self._alternate_file_type_candidates = None
         self.discriminator = None
 
@@ -61,6 +70,12 @@ class AutodetectGetInfoResult(object):
             self.detected_file_extension = detected_file_extension
         if detected_mime_type is not None:
             self.detected_mime_type = detected_mime_type
+        if page_count is not None:
+            self.page_count = page_count
+        if author is not None:
+            self.author = author
+        if date_modified is not None:
+            self.date_modified = date_modified
         if alternate_file_type_candidates is not None:
             self.alternate_file_type_candidates = alternate_file_type_candidates
 
@@ -132,6 +147,75 @@ class AutodetectGetInfoResult(object):
         """
 
         self._detected_mime_type = detected_mime_type
+
+    @property
+    def page_count(self):
+        """Gets the page_count of this AutodetectGetInfoResult.  # noqa: E501
+
+        Number of pages in a page-based document; for presentations, this is the number of slides and for a spreadsheet this is the number of worksheets.  Contains 0 when the page count cannot be determined, or if the concept of page count does not apply (e.g. for an image)  # noqa: E501
+
+        :return: The page_count of this AutodetectGetInfoResult.  # noqa: E501
+        :rtype: int
+        """
+        return self._page_count
+
+    @page_count.setter
+    def page_count(self, page_count):
+        """Sets the page_count of this AutodetectGetInfoResult.
+
+        Number of pages in a page-based document; for presentations, this is the number of slides and for a spreadsheet this is the number of worksheets.  Contains 0 when the page count cannot be determined, or if the concept of page count does not apply (e.g. for an image)  # noqa: E501
+
+        :param page_count: The page_count of this AutodetectGetInfoResult.  # noqa: E501
+        :type: int
+        """
+
+        self._page_count = page_count
+
+    @property
+    def author(self):
+        """Gets the author of this AutodetectGetInfoResult.  # noqa: E501
+
+        User name of the creator/author of the document, if available, null if not available  # noqa: E501
+
+        :return: The author of this AutodetectGetInfoResult.  # noqa: E501
+        :rtype: str
+        """
+        return self._author
+
+    @author.setter
+    def author(self, author):
+        """Sets the author of this AutodetectGetInfoResult.
+
+        User name of the creator/author of the document, if available, null if not available  # noqa: E501
+
+        :param author: The author of this AutodetectGetInfoResult.  # noqa: E501
+        :type: str
+        """
+
+        self._author = author
+
+    @property
+    def date_modified(self):
+        """Gets the date_modified of this AutodetectGetInfoResult.  # noqa: E501
+
+        The timestamp that the document was last modified, if available, null if not available  # noqa: E501
+
+        :return: The date_modified of this AutodetectGetInfoResult.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._date_modified
+
+    @date_modified.setter
+    def date_modified(self, date_modified):
+        """Sets the date_modified of this AutodetectGetInfoResult.
+
+        The timestamp that the document was last modified, if available, null if not available  # noqa: E501
+
+        :param date_modified: The date_modified of this AutodetectGetInfoResult.  # noqa: E501
+        :type: datetime
+        """
+
+        self._date_modified = date_modified
 
     @property
     def alternate_file_type_candidates(self):

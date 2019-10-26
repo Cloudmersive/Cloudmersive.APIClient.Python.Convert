@@ -1220,7 +1220,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **convert_document_xlsx_to_csv**
-> str convert_document_xlsx_to_csv(input_file)
+> str convert_document_xlsx_to_csv(input_file, output_encoding=output_encoding)
 
 Excel XLSX to CSV
 
@@ -1243,10 +1243,11 @@ configuration.api_key['Apikey'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = cloudmersive_convert_api_client.ConvertDocumentApi(cloudmersive_convert_api_client.ApiClient(configuration))
 input_file = '/path/to/file.txt' # file | Input file to perform the operation on.
+output_encoding = 'output_encoding_example' # str | Optional, set the output text encoding for the result; possible values are UTF-8 and UTF-32.  Default is UTF-32. (optional)
 
 try:
     # Excel XLSX to CSV
-    api_response = api_instance.convert_document_xlsx_to_csv(input_file)
+    api_response = api_instance.convert_document_xlsx_to_csv(input_file, output_encoding=output_encoding)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConvertDocumentApi->convert_document_xlsx_to_csv: %s\n" % e)
@@ -1257,6 +1258,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **input_file** | **file**| Input file to perform the operation on. | 
+ **output_encoding** | **str**| Optional, set the output text encoding for the result; possible values are UTF-8 and UTF-32.  Default is UTF-32. | [optional] 
 
 ### Return type
 
