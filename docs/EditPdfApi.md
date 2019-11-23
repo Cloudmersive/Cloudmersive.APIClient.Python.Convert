@@ -5,6 +5,7 @@ All URIs are relative to *https://api.cloudmersive.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**edit_pdf_encrypt**](EditPdfApi.md#edit_pdf_encrypt) | **POST** /convert/edit/pdf/encrypt | Encrypt and password-protect a PDF
+[**edit_pdf_rasterize**](EditPdfApi.md#edit_pdf_rasterize) | **POST** /convert/edit/pdf/rasterize | Rasterize a PDF to an image-based PDF
 [**edit_pdf_set_permissions**](EditPdfApi.md#edit_pdf_set_permissions) | **POST** /convert/edit/pdf/encrypt/set-permissions | Encrypt, password-protect and set restricted permissions on a PDF
 [**edit_pdf_watermark_text**](EditPdfApi.md#edit_pdf_watermark_text) | **POST** /convert/edit/pdf/watermark/text | Add a text watermark to a PDF
 
@@ -51,6 +52,60 @@ Name | Type | Description  | Notes
  **input_file** | **file**| Input file to perform the operation on. | 
  **user_password** | **str**| Password of a user (reader) of the PDF file | [optional] 
  **owner_password** | **str**| Password of a owner (creator/editor) of the PDF file | [optional] 
+
+### Return type
+
+**str**
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/octet-stream
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **edit_pdf_rasterize**
+> str edit_pdf_rasterize(input_file)
+
+Rasterize a PDF to an image-based PDF
+
+Rasterize a PDF into an image-based PDF.  The output is a PDF where each page is comprised of a high-resolution image, with all text, figures and other components removed.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_convert_api_client
+from cloudmersive_convert_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_convert_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_convert_api_client.EditPdfApi(cloudmersive_convert_api_client.ApiClient(configuration))
+input_file = '/path/to/file.txt' # file | Input file to perform the operation on.
+
+try:
+    # Rasterize a PDF to an image-based PDF
+    api_response = api_instance.edit_pdf_rasterize(input_file)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EditPdfApi->edit_pdf_rasterize: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **input_file** | **file**| Input file to perform the operation on. | 
 
 ### Return type
 
