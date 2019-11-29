@@ -33,6 +33,121 @@ class EditPdfApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
+    def edit_pdf_delete_pages(self, input_file, page_start, page_end, **kwargs):  # noqa: E501
+        """Remove / delete pages from a PDF document  # noqa: E501
+
+        Remove one or more pages from a PDF document  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_pdf_delete_pages(input_file, page_start, page_end, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :param int page_start: Page number (1 based) to start deleting pages from (inclusive). (required)
+        :param int page_end: Page number (1 based) to stop deleting pages from (inclusive). (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.edit_pdf_delete_pages_with_http_info(input_file, page_start, page_end, **kwargs)  # noqa: E501
+        else:
+            (data) = self.edit_pdf_delete_pages_with_http_info(input_file, page_start, page_end, **kwargs)  # noqa: E501
+            return data
+
+    def edit_pdf_delete_pages_with_http_info(self, input_file, page_start, page_end, **kwargs):  # noqa: E501
+        """Remove / delete pages from a PDF document  # noqa: E501
+
+        Remove one or more pages from a PDF document  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_pdf_delete_pages_with_http_info(input_file, page_start, page_end, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :param int page_start: Page number (1 based) to start deleting pages from (inclusive). (required)
+        :param int page_end: Page number (1 based) to stop deleting pages from (inclusive). (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file', 'page_start', 'page_end']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method edit_pdf_delete_pages" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `edit_pdf_delete_pages`")  # noqa: E501
+        # verify the required parameter 'page_start' is set
+        if ('page_start' not in params or
+                params['page_start'] is None):
+            raise ValueError("Missing the required parameter `page_start` when calling `edit_pdf_delete_pages`")  # noqa: E501
+        # verify the required parameter 'page_end' is set
+        if ('page_end' not in params or
+                params['page_end'] is None):
+            raise ValueError("Missing the required parameter `page_end` when calling `edit_pdf_delete_pages`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'page_start' in params:
+            header_params['pageStart'] = params['page_start']  # noqa: E501
+        if 'page_end' in params:
+            header_params['pageEnd'] = params['page_end']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/edit/pdf/pages/delete', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def edit_pdf_encrypt(self, input_file, **kwargs):  # noqa: E501
         """Encrypt and password-protect a PDF  # noqa: E501
 
@@ -338,6 +453,137 @@ class EditPdfApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def edit_pdf_insert_pages(self, source_file, destination_file, page_start_source, page_end_source, page_insert_before_desitnation, **kwargs):  # noqa: E501
+        """Insert / copy pages from one PDF document into another  # noqa: E501
+
+        Copy one or more pages from one PDF document (source document) and insert them into a second PDF document (destination document).  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_pdf_insert_pages(source_file, destination_file, page_start_source, page_end_source, page_insert_before_desitnation, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file source_file: Source PDF file to copy pages from. (required)
+        :param file destination_file: Destination PDF file to copy pages into. (required)
+        :param int page_start_source: Page number (1 based) to start copying pages from (inclusive) in the Source file. (required)
+        :param int page_end_source: Page number (1 based) to stop copying pages pages from (inclusive) in the Source file. (required)
+        :param int page_insert_before_desitnation: Page number (1 based) to insert the pages before in the Destination file. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.edit_pdf_insert_pages_with_http_info(source_file, destination_file, page_start_source, page_end_source, page_insert_before_desitnation, **kwargs)  # noqa: E501
+        else:
+            (data) = self.edit_pdf_insert_pages_with_http_info(source_file, destination_file, page_start_source, page_end_source, page_insert_before_desitnation, **kwargs)  # noqa: E501
+            return data
+
+    def edit_pdf_insert_pages_with_http_info(self, source_file, destination_file, page_start_source, page_end_source, page_insert_before_desitnation, **kwargs):  # noqa: E501
+        """Insert / copy pages from one PDF document into another  # noqa: E501
+
+        Copy one or more pages from one PDF document (source document) and insert them into a second PDF document (destination document).  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_pdf_insert_pages_with_http_info(source_file, destination_file, page_start_source, page_end_source, page_insert_before_desitnation, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file source_file: Source PDF file to copy pages from. (required)
+        :param file destination_file: Destination PDF file to copy pages into. (required)
+        :param int page_start_source: Page number (1 based) to start copying pages from (inclusive) in the Source file. (required)
+        :param int page_end_source: Page number (1 based) to stop copying pages pages from (inclusive) in the Source file. (required)
+        :param int page_insert_before_desitnation: Page number (1 based) to insert the pages before in the Destination file. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['source_file', 'destination_file', 'page_start_source', 'page_end_source', 'page_insert_before_desitnation']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method edit_pdf_insert_pages" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'source_file' is set
+        if ('source_file' not in params or
+                params['source_file'] is None):
+            raise ValueError("Missing the required parameter `source_file` when calling `edit_pdf_insert_pages`")  # noqa: E501
+        # verify the required parameter 'destination_file' is set
+        if ('destination_file' not in params or
+                params['destination_file'] is None):
+            raise ValueError("Missing the required parameter `destination_file` when calling `edit_pdf_insert_pages`")  # noqa: E501
+        # verify the required parameter 'page_start_source' is set
+        if ('page_start_source' not in params or
+                params['page_start_source'] is None):
+            raise ValueError("Missing the required parameter `page_start_source` when calling `edit_pdf_insert_pages`")  # noqa: E501
+        # verify the required parameter 'page_end_source' is set
+        if ('page_end_source' not in params or
+                params['page_end_source'] is None):
+            raise ValueError("Missing the required parameter `page_end_source` when calling `edit_pdf_insert_pages`")  # noqa: E501
+        # verify the required parameter 'page_insert_before_desitnation' is set
+        if ('page_insert_before_desitnation' not in params or
+                params['page_insert_before_desitnation'] is None):
+            raise ValueError("Missing the required parameter `page_insert_before_desitnation` when calling `edit_pdf_insert_pages`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'page_start_source' in params:
+            header_params['pageStartSource'] = params['page_start_source']  # noqa: E501
+        if 'page_end_source' in params:
+            header_params['pageEndSource'] = params['page_end_source']  # noqa: E501
+        if 'page_insert_before_desitnation' in params:
+            header_params['pageInsertBeforeDesitnation'] = params['page_insert_before_desitnation']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+        if 'source_file' in params:
+            local_var_files['sourceFile'] = params['source_file']  # noqa: E501
+        if 'destination_file' in params:
+            local_var_files['destinationFile'] = params['destination_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/edit/pdf/pages/insert', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def edit_pdf_rasterize(self, input_file, **kwargs):  # noqa: E501
         """Rasterize a PDF to an image-based PDF  # noqa: E501
 
@@ -547,7 +793,7 @@ class EditPdfApi(object):
 
         :param async_req bool
         :param SetPdfMetadataRequest request: (required)
-        :return: object
+        :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -569,7 +815,7 @@ class EditPdfApi(object):
 
         :param async_req bool
         :param SetPdfMetadataRequest request: (required)
-        :return: object
+        :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -627,7 +873,7 @@ class EditPdfApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='str',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

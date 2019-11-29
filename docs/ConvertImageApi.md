@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**convert_image_get_image_info**](ConvertImageApi.md#convert_image_get_image_info) | **POST** /convert/image/get-info | Get information about an image
 [**convert_image_image_format_convert**](ConvertImageApi.md#convert_image_image_format_convert) | **POST** /convert/image/{format1}/to/{format2} | Image format conversion
 [**convert_image_image_set_dpi**](ConvertImageApi.md#convert_image_image_set_dpi) | **POST** /convert/image/set-dpi/{dpi} | Change image DPI
-[**convert_image_multipage_image_format_convert**](ConvertImageApi.md#convert_image_multipage_image_format_convert) | **POST** /convert/image-multipage/{format1}/to/{format2} | Multi-page format conversion
+[**convert_image_multipage_image_format_convert**](ConvertImageApi.md#convert_image_multipage_image_format_convert) | **POST** /convert/image-multipage/{format1}/to/{format2} | Multi-page image format conversion
 
 
 # **convert_image_get_image_info**
@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
 # **convert_image_multipage_image_format_convert**
 > MultipageImageFormatConversionResult convert_image_multipage_image_format_convert(format1, format2, input_file)
 
-Multi-page format conversion
+Multi-page image format conversion
 
 Convert between over 100 file formats, including support for Multiple-Page formats (e.g. PDFs, TIFFs, etc. with multiple pages).
 
@@ -206,7 +206,7 @@ format2 = 'format2_example' # str | Output (convert to this format) file format 
 input_file = '/path/to/file.txt' # file | Input file to perform the operation on.
 
 try:
-    # Multi-page format conversion
+    # Multi-page image format conversion
     api_response = api_instance.convert_image_multipage_image_format_convert(format1, format2, input_file)
     pprint(api_response)
 except ApiException as e:

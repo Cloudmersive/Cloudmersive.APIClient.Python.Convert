@@ -305,7 +305,7 @@ class ConvertDocumentApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/octet-stream'])  # noqa: E501
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
@@ -430,7 +430,7 @@ class ConvertDocumentApi(object):
             collection_formats=collection_formats)
 
     def convert_document_csv_to_xlsx(self, input_file, **kwargs):  # noqa: E501
-        """CSV to Excel XLSX  # noqa: E501
+        """Convert CSV to Excel XLSX Spreadsheet  # noqa: E501
 
         Convert CSV file to Office Excel XLSX Workbooks file format.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -452,7 +452,7 @@ class ConvertDocumentApi(object):
             return data
 
     def convert_document_csv_to_xlsx_with_http_info(self, input_file, **kwargs):  # noqa: E501
-        """CSV to Excel XLSX  # noqa: E501
+        """Convert CSV to Excel XLSX Spreadsheet  # noqa: E501
 
         Convert CSV file to Office Excel XLSX Workbooks file format.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -529,7 +529,7 @@ class ConvertDocumentApi(object):
             collection_formats=collection_formats)
 
     def convert_document_doc_to_docx(self, input_file, **kwargs):  # noqa: E501
-        """Word DOC (97-03) to DOCX  # noqa: E501
+        """Convert Word DOC (97-03) Document to DOCX  # noqa: E501
 
         Convert/upgrade Office Word (97-2003 Format) Documents (doc) to the modern DOCX format  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -551,7 +551,7 @@ class ConvertDocumentApi(object):
             return data
 
     def convert_document_doc_to_docx_with_http_info(self, input_file, **kwargs):  # noqa: E501
-        """Word DOC (97-03) to DOCX  # noqa: E501
+        """Convert Word DOC (97-03) Document to DOCX  # noqa: E501
 
         Convert/upgrade Office Word (97-2003 Format) Documents (doc) to the modern DOCX format  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -628,7 +628,7 @@ class ConvertDocumentApi(object):
             collection_formats=collection_formats)
 
     def convert_document_doc_to_pdf(self, input_file, **kwargs):  # noqa: E501
-        """Word DOC (97-03) to PDF  # noqa: E501
+        """Convert Word DOC (97-03) Document to PDF  # noqa: E501
 
         Convert Office Word (97-2003 Format) Documents (doc) to standard PDF  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -650,7 +650,7 @@ class ConvertDocumentApi(object):
             return data
 
     def convert_document_doc_to_pdf_with_http_info(self, input_file, **kwargs):  # noqa: E501
-        """Word DOC (97-03) to PDF  # noqa: E501
+        """Convert Word DOC (97-03) Document to PDF  # noqa: E501
 
         Convert Office Word (97-2003 Format) Documents (doc) to standard PDF  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -727,7 +727,7 @@ class ConvertDocumentApi(object):
             collection_formats=collection_formats)
 
     def convert_document_docx_to_pdf(self, input_file, **kwargs):  # noqa: E501
-        """Word DOCX to PDF  # noqa: E501
+        """Convert Word DOCX Document to PDF  # noqa: E501
 
         Convert Office Word Documents (docx) to standard PDF  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -749,7 +749,7 @@ class ConvertDocumentApi(object):
             return data
 
     def convert_document_docx_to_pdf_with_http_info(self, input_file, **kwargs):  # noqa: E501
-        """Word DOCX to PDF  # noqa: E501
+        """Convert Word DOCX Document to PDF  # noqa: E501
 
         Convert Office Word Documents (docx) to standard PDF  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -826,7 +826,7 @@ class ConvertDocumentApi(object):
             collection_formats=collection_formats)
 
     def convert_document_docx_to_txt(self, input_file, **kwargs):  # noqa: E501
-        """Word DOCX to Text  # noqa: E501
+        """Convert Word DOCX Document to Text  # noqa: E501
 
         Convert Office Word Documents (docx) to text  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -848,7 +848,7 @@ class ConvertDocumentApi(object):
             return data
 
     def convert_document_docx_to_txt_with_http_info(self, input_file, **kwargs):  # noqa: E501
-        """Word DOCX to Text  # noqa: E501
+        """Convert Word DOCX Document to Text  # noqa: E501
 
         Convert Office Word Documents (docx) to text  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -925,7 +925,7 @@ class ConvertDocumentApi(object):
             collection_formats=collection_formats)
 
     def convert_document_html_to_pdf(self, input_file, **kwargs):  # noqa: E501
-        """HTML to PDF  # noqa: E501
+        """Convert HTML to PDF Document  # noqa: E501
 
         Convert standard HTML, with full support for CSS, JavaScript, Images, and other complex behavior to PDF.  To use external files such as images, use an absolute URL to the file.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -947,7 +947,7 @@ class ConvertDocumentApi(object):
             return data
 
     def convert_document_html_to_pdf_with_http_info(self, input_file, **kwargs):  # noqa: E501
-        """HTML to PDF  # noqa: E501
+        """Convert HTML to PDF Document  # noqa: E501
 
         Convert standard HTML, with full support for CSS, JavaScript, Images, and other complex behavior to PDF.  To use external files such as images, use an absolute URL to the file.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1024,7 +1024,7 @@ class ConvertDocumentApi(object):
             collection_formats=collection_formats)
 
     def convert_document_html_to_png(self, input_file, **kwargs):  # noqa: E501
-        """HTML to PNG array  # noqa: E501
+        """Convert HTML to PNG image array  # noqa: E501
 
         Convert standard HTML, with full support for CSS, JavaScript, Images, and other complex behavior to an array of PNG images, one for each page.  To use external files in your HTML such as images, use an absolute URL to the file.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1046,7 +1046,7 @@ class ConvertDocumentApi(object):
             return data
 
     def convert_document_html_to_png_with_http_info(self, input_file, **kwargs):  # noqa: E501
-        """HTML to PNG array  # noqa: E501
+        """Convert HTML to PNG image array  # noqa: E501
 
         Convert standard HTML, with full support for CSS, JavaScript, Images, and other complex behavior to an array of PNG images, one for each page.  To use external files in your HTML such as images, use an absolute URL to the file.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1097,7 +1097,7 @@ class ConvertDocumentApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/octet-stream'])  # noqa: E501
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
@@ -1123,7 +1123,7 @@ class ConvertDocumentApi(object):
             collection_formats=collection_formats)
 
     def convert_document_pdf_to_docx(self, input_file, **kwargs):  # noqa: E501
-        """PDF to Word DOCX  # noqa: E501
+        """Convert PDF to Word DOCX Document  # noqa: E501
 
         Convert standard PDF to Office Word Documents (docx).    Converts a PDF at high fidelity into Word format, where it can be easily edited and processed.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1145,7 +1145,7 @@ class ConvertDocumentApi(object):
             return data
 
     def convert_document_pdf_to_docx_with_http_info(self, input_file, **kwargs):  # noqa: E501
-        """PDF to Word DOCX  # noqa: E501
+        """Convert PDF to Word DOCX Document  # noqa: E501
 
         Convert standard PDF to Office Word Documents (docx).    Converts a PDF at high fidelity into Word format, where it can be easily edited and processed.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1222,7 +1222,7 @@ class ConvertDocumentApi(object):
             collection_formats=collection_formats)
 
     def convert_document_pdf_to_png_array(self, input_file, **kwargs):  # noqa: E501
-        """PDF to PNG Array  # noqa: E501
+        """Convert PDF to PNG Image Array  # noqa: E501
 
         Convert PDF document to PNG array, one image per page.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1244,7 +1244,7 @@ class ConvertDocumentApi(object):
             return data
 
     def convert_document_pdf_to_png_array_with_http_info(self, input_file, **kwargs):  # noqa: E501
-        """PDF to PNG Array  # noqa: E501
+        """Convert PDF to PNG Image Array  # noqa: E501
 
         Convert PDF document to PNG array, one image per page.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1295,7 +1295,7 @@ class ConvertDocumentApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/octet-stream'])  # noqa: E501
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
@@ -1321,7 +1321,7 @@ class ConvertDocumentApi(object):
             collection_formats=collection_formats)
 
     def convert_document_pdf_to_png_single(self, input_file, **kwargs):  # noqa: E501
-        """PDF to Single PNG image  # noqa: E501
+        """Convert PDF to Single PNG image  # noqa: E501
 
         Convert PDF document to a single tall PNG image, by stacking/concatenating the images vertically into a single \"tall\" image  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1343,7 +1343,7 @@ class ConvertDocumentApi(object):
             return data
 
     def convert_document_pdf_to_png_single_with_http_info(self, input_file, **kwargs):  # noqa: E501
-        """PDF to Single PNG image  # noqa: E501
+        """Convert PDF to Single PNG image  # noqa: E501
 
         Convert PDF document to a single tall PNG image, by stacking/concatenating the images vertically into a single \"tall\" image  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1420,7 +1420,7 @@ class ConvertDocumentApi(object):
             collection_formats=collection_formats)
 
     def convert_document_pdf_to_pptx(self, input_file, **kwargs):  # noqa: E501
-        """PDF to PowerPoint PPTX  # noqa: E501
+        """Convert PDF to PowerPoint PPTX Presentation  # noqa: E501
 
         Convert standard PDF to Office PowerPoint Presentation (pptx).  Converts a PDF file at high fidelity into PowerPoint format, where it can be easily edited and processed.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1442,7 +1442,7 @@ class ConvertDocumentApi(object):
             return data
 
     def convert_document_pdf_to_pptx_with_http_info(self, input_file, **kwargs):  # noqa: E501
-        """PDF to PowerPoint PPTX  # noqa: E501
+        """Convert PDF to PowerPoint PPTX Presentation  # noqa: E501
 
         Convert standard PDF to Office PowerPoint Presentation (pptx).  Converts a PDF file at high fidelity into PowerPoint format, where it can be easily edited and processed.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1519,7 +1519,7 @@ class ConvertDocumentApi(object):
             collection_formats=collection_formats)
 
     def convert_document_pdf_to_txt(self, input_file, **kwargs):  # noqa: E501
-        """PDF to Text  # noqa: E501
+        """Convert PDF Document to Text  # noqa: E501
 
         PDF document to text  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1541,7 +1541,7 @@ class ConvertDocumentApi(object):
             return data
 
     def convert_document_pdf_to_txt_with_http_info(self, input_file, **kwargs):  # noqa: E501
-        """PDF to Text  # noqa: E501
+        """Convert PDF Document to Text  # noqa: E501
 
         PDF document to text  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1592,7 +1592,7 @@ class ConvertDocumentApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/octet-stream'])  # noqa: E501
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
@@ -1618,7 +1618,7 @@ class ConvertDocumentApi(object):
             collection_formats=collection_formats)
 
     def convert_document_png_array_to_pdf(self, input_file1, input_file2, **kwargs):  # noqa: E501
-        """PNG Array to PDF  # noqa: E501
+        """Convert PNG Array to PDF  # noqa: E501
 
         Convert an array of PNG images, one image per page, into a newly-created PDF.  Supports images of different sizes as input.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1649,7 +1649,7 @@ class ConvertDocumentApi(object):
             return data
 
     def convert_document_png_array_to_pdf_with_http_info(self, input_file1, input_file2, **kwargs):  # noqa: E501
-        """PNG Array to PDF  # noqa: E501
+        """Convert PNG Array to PDF  # noqa: E501
 
         Convert an array of PNG images, one image per page, into a newly-created PDF.  Supports images of different sizes as input.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1757,7 +1757,7 @@ class ConvertDocumentApi(object):
             collection_formats=collection_formats)
 
     def convert_document_ppt_to_pdf(self, input_file, **kwargs):  # noqa: E501
-        """PowerPoint PPT (97-03) to PDF  # noqa: E501
+        """Convert PowerPoint PPT (97-03) Presentation to PDF  # noqa: E501
 
         Convert Office PowerPoint (97-2003) Documents (ppt) to standard PDF  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1779,7 +1779,7 @@ class ConvertDocumentApi(object):
             return data
 
     def convert_document_ppt_to_pdf_with_http_info(self, input_file, **kwargs):  # noqa: E501
-        """PowerPoint PPT (97-03) to PDF  # noqa: E501
+        """Convert PowerPoint PPT (97-03) Presentation to PDF  # noqa: E501
 
         Convert Office PowerPoint (97-2003) Documents (ppt) to standard PDF  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1856,7 +1856,7 @@ class ConvertDocumentApi(object):
             collection_formats=collection_formats)
 
     def convert_document_ppt_to_pptx(self, input_file, **kwargs):  # noqa: E501
-        """PowerPoint PPT (97-03) to PPTX  # noqa: E501
+        """Convert PowerPoint PPT (97-03) Presentation to PPTX  # noqa: E501
 
         Convert/upgrade Office PowerPoint (97-2003) Documents (ppt) to modern PPTX  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1878,7 +1878,7 @@ class ConvertDocumentApi(object):
             return data
 
     def convert_document_ppt_to_pptx_with_http_info(self, input_file, **kwargs):  # noqa: E501
-        """PowerPoint PPT (97-03) to PPTX  # noqa: E501
+        """Convert PowerPoint PPT (97-03) Presentation to PPTX  # noqa: E501
 
         Convert/upgrade Office PowerPoint (97-2003) Documents (ppt) to modern PPTX  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1955,7 +1955,7 @@ class ConvertDocumentApi(object):
             collection_formats=collection_formats)
 
     def convert_document_pptx_to_pdf(self, input_file, **kwargs):  # noqa: E501
-        """PowerPoint PPTX to PDF  # noqa: E501
+        """Convert PowerPoint PPTX Presentation to PDF  # noqa: E501
 
         Convert Office PowerPoint Documents (pptx) to standard PDF  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1977,7 +1977,7 @@ class ConvertDocumentApi(object):
             return data
 
     def convert_document_pptx_to_pdf_with_http_info(self, input_file, **kwargs):  # noqa: E501
-        """PowerPoint PPTX to PDF  # noqa: E501
+        """Convert PowerPoint PPTX Presentation to PDF  # noqa: E501
 
         Convert Office PowerPoint Documents (pptx) to standard PDF  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2054,7 +2054,7 @@ class ConvertDocumentApi(object):
             collection_formats=collection_formats)
 
     def convert_document_pptx_to_txt(self, input_file, **kwargs):  # noqa: E501
-        """PowerPoint PPTX to Text  # noqa: E501
+        """Convert PowerPoint PPTX Presentation to Text  # noqa: E501
 
         Convert Office PowerPoint Documents (pptx) to standard Text  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2076,7 +2076,7 @@ class ConvertDocumentApi(object):
             return data
 
     def convert_document_pptx_to_txt_with_http_info(self, input_file, **kwargs):  # noqa: E501
-        """PowerPoint PPTX to Text  # noqa: E501
+        """Convert PowerPoint PPTX Presentation to Text  # noqa: E501
 
         Convert Office PowerPoint Documents (pptx) to standard Text  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2153,7 +2153,7 @@ class ConvertDocumentApi(object):
             collection_formats=collection_formats)
 
     def convert_document_xls_to_csv(self, input_file, **kwargs):  # noqa: E501
-        """Excel XLS (97-03) to CSV  # noqa: E501
+        """Convert Excel XLS (97-03) Spreadsheet to CSV  # noqa: E501
 
         Convert/upgrade Office Excel (97-2003) Workbooks (xls) to standard CSV format.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2175,7 +2175,7 @@ class ConvertDocumentApi(object):
             return data
 
     def convert_document_xls_to_csv_with_http_info(self, input_file, **kwargs):  # noqa: E501
-        """Excel XLS (97-03) to CSV  # noqa: E501
+        """Convert Excel XLS (97-03) Spreadsheet to CSV  # noqa: E501
 
         Convert/upgrade Office Excel (97-2003) Workbooks (xls) to standard CSV format.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2252,7 +2252,7 @@ class ConvertDocumentApi(object):
             collection_formats=collection_formats)
 
     def convert_document_xls_to_pdf(self, input_file, **kwargs):  # noqa: E501
-        """Excel XLS (97-03) to PDF  # noqa: E501
+        """Convert Excel XLS (97-03) Spreadsheet to PDF  # noqa: E501
 
         Convert Office Excel (97-2003) Workbooks (xls) to standard PDF.  Converts all worksheets in the workbook to PDF.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2274,7 +2274,7 @@ class ConvertDocumentApi(object):
             return data
 
     def convert_document_xls_to_pdf_with_http_info(self, input_file, **kwargs):  # noqa: E501
-        """Excel XLS (97-03) to PDF  # noqa: E501
+        """Convert Excel XLS (97-03) Spreadsheet to PDF  # noqa: E501
 
         Convert Office Excel (97-2003) Workbooks (xls) to standard PDF.  Converts all worksheets in the workbook to PDF.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2351,7 +2351,7 @@ class ConvertDocumentApi(object):
             collection_formats=collection_formats)
 
     def convert_document_xls_to_xlsx(self, input_file, **kwargs):  # noqa: E501
-        """Excel XLS (97-03) to XLSX  # noqa: E501
+        """Convert Excel XLS (97-03) Spreadsheet to XLSX  # noqa: E501
 
         Convert/upgrade Office Excel (97-2003) Workbooks (xls) to modern XLSX format.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2373,7 +2373,7 @@ class ConvertDocumentApi(object):
             return data
 
     def convert_document_xls_to_xlsx_with_http_info(self, input_file, **kwargs):  # noqa: E501
-        """Excel XLS (97-03) to XLSX  # noqa: E501
+        """Convert Excel XLS (97-03) Spreadsheet to XLSX  # noqa: E501
 
         Convert/upgrade Office Excel (97-2003) Workbooks (xls) to modern XLSX format.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2450,7 +2450,7 @@ class ConvertDocumentApi(object):
             collection_formats=collection_formats)
 
     def convert_document_xlsx_to_csv(self, input_file, **kwargs):  # noqa: E501
-        """Excel XLSX to CSV  # noqa: E501
+        """Convert Excel XLSX Spreadsheet to CSV  # noqa: E501
 
         Convert Office Excel Workbooks (XLSX) to standard Comma-Separated Values (CSV) format.  Supports both XLSX and XLSB file Excel formats.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2473,7 +2473,7 @@ class ConvertDocumentApi(object):
             return data
 
     def convert_document_xlsx_to_csv_with_http_info(self, input_file, **kwargs):  # noqa: E501
-        """Excel XLSX to CSV  # noqa: E501
+        """Convert Excel XLSX Spreadsheet to CSV  # noqa: E501
 
         Convert Office Excel Workbooks (XLSX) to standard Comma-Separated Values (CSV) format.  Supports both XLSX and XLSB file Excel formats.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2553,7 +2553,7 @@ class ConvertDocumentApi(object):
             collection_formats=collection_formats)
 
     def convert_document_xlsx_to_pdf(self, input_file, **kwargs):  # noqa: E501
-        """Excel XLSX to PDF  # noqa: E501
+        """Convert Excel XLSX Spreadsheet to PDF  # noqa: E501
 
         Convert Office Excel Workbooks (XLSX) to standard PDF.  Converts all worksheets in the workbook to PDF.  Supports both XLSX and XLSB Excel file formats.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2575,7 +2575,7 @@ class ConvertDocumentApi(object):
             return data
 
     def convert_document_xlsx_to_pdf_with_http_info(self, input_file, **kwargs):  # noqa: E501
-        """Excel XLSX to PDF  # noqa: E501
+        """Convert Excel XLSX Spreadsheet to PDF  # noqa: E501
 
         Convert Office Excel Workbooks (XLSX) to standard PDF.  Converts all worksheets in the workbook to PDF.  Supports both XLSX and XLSB Excel file formats.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2652,7 +2652,7 @@ class ConvertDocumentApi(object):
             collection_formats=collection_formats)
 
     def convert_document_xlsx_to_txt(self, input_file, **kwargs):  # noqa: E501
-        """Excel XLSX to Text  # noqa: E501
+        """Convert Excel XLSX Spreadsheet to Text  # noqa: E501
 
         Convert Office Excel Workbooks (XLSX) to standard Text.  Converts all worksheets in the workbook to Text.  Supports both XLSX and XLSB file formats.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2674,7 +2674,7 @@ class ConvertDocumentApi(object):
             return data
 
     def convert_document_xlsx_to_txt_with_http_info(self, input_file, **kwargs):  # noqa: E501
-        """Excel XLSX to Text  # noqa: E501
+        """Convert Excel XLSX Spreadsheet to Text  # noqa: E501
 
         Convert Office Excel Workbooks (XLSX) to standard Text.  Converts all worksheets in the workbook to Text.  Supports both XLSX and XLSB file formats.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an

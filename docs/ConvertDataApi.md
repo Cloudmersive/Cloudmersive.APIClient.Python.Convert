@@ -4,16 +4,16 @@ All URIs are relative to *https://api.cloudmersive.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**convert_data_csv_to_json**](ConvertDataApi.md#convert_data_csv_to_json) | **POST** /convert/csv/to/json | CSV to JSON conversion
-[**convert_data_xls_to_json**](ConvertDataApi.md#convert_data_xls_to_json) | **POST** /convert/xls/to/json | Excel (97-2003) XLS to JSON conversion
-[**convert_data_xlsx_to_json**](ConvertDataApi.md#convert_data_xlsx_to_json) | **POST** /convert/xlsx/to/json | Excel XLSX to JSON conversion
-[**convert_data_xml_to_json**](ConvertDataApi.md#convert_data_xml_to_json) | **POST** /convert/xml/to/json | XML to JSON conversion
+[**convert_data_csv_to_json**](ConvertDataApi.md#convert_data_csv_to_json) | **POST** /convert/csv/to/json | Convert CSV to JSON conversion
+[**convert_data_xls_to_json**](ConvertDataApi.md#convert_data_xls_to_json) | **POST** /convert/xls/to/json | Convert Excel (97-2003) XLS to JSON conversion
+[**convert_data_xlsx_to_json**](ConvertDataApi.md#convert_data_xlsx_to_json) | **POST** /convert/xlsx/to/json | Convert Excel XLSX to JSON conversion
+[**convert_data_xml_to_json**](ConvertDataApi.md#convert_data_xml_to_json) | **POST** /convert/xml/to/json | Convert XML to JSON conversion
 
 
 # **convert_data_csv_to_json**
 > object convert_data_csv_to_json(input_file)
 
-CSV to JSON conversion
+Convert CSV to JSON conversion
 
 Convert a CSV file to a JSON object array
 
@@ -36,7 +36,7 @@ api_instance = cloudmersive_convert_api_client.ConvertDataApi(cloudmersive_conve
 input_file = '/path/to/file.txt' # file | Input file to perform the operation on.
 
 try:
-    # CSV to JSON conversion
+    # Convert CSV to JSON conversion
     api_response = api_instance.convert_data_csv_to_json(input_file)
     pprint(api_response)
 except ApiException as e:
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 # **convert_data_xls_to_json**
 > object convert_data_xls_to_json(input_file)
 
-Excel (97-2003) XLS to JSON conversion
+Convert Excel (97-2003) XLS to JSON conversion
 
 Convert an Excel (97-2003) XLS file to a JSON object array
 
@@ -90,7 +90,7 @@ api_instance = cloudmersive_convert_api_client.ConvertDataApi(cloudmersive_conve
 input_file = '/path/to/file.txt' # file | Input file to perform the operation on.
 
 try:
-    # Excel (97-2003) XLS to JSON conversion
+    # Convert Excel (97-2003) XLS to JSON conversion
     api_response = api_instance.convert_data_xls_to_json(input_file)
     pprint(api_response)
 except ApiException as e:
@@ -121,7 +121,7 @@ Name | Type | Description  | Notes
 # **convert_data_xlsx_to_json**
 > object convert_data_xlsx_to_json(input_file)
 
-Excel XLSX to JSON conversion
+Convert Excel XLSX to JSON conversion
 
 Convert an Excel XLSX file to a JSON object array
 
@@ -144,7 +144,7 @@ api_instance = cloudmersive_convert_api_client.ConvertDataApi(cloudmersive_conve
 input_file = '/path/to/file.txt' # file | Input file to perform the operation on.
 
 try:
-    # Excel XLSX to JSON conversion
+    # Convert Excel XLSX to JSON conversion
     api_response = api_instance.convert_data_xlsx_to_json(input_file)
     pprint(api_response)
 except ApiException as e:
@@ -175,7 +175,7 @@ Name | Type | Description  | Notes
 # **convert_data_xml_to_json**
 > object convert_data_xml_to_json(input_file)
 
-XML to JSON conversion
+Convert XML to JSON conversion
 
 Convert an XML string or file into JSON
 
@@ -198,7 +198,7 @@ api_instance = cloudmersive_convert_api_client.ConvertDataApi(cloudmersive_conve
 input_file = '/path/to/file.txt' # file | Input file to perform the operation on.
 
 try:
-    # XML to JSON conversion
+    # Convert XML to JSON conversion
     api_response = api_instance.convert_data_xml_to_json(input_file)
     pprint(api_response)
 except ApiException as e:

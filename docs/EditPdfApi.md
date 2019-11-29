@@ -4,15 +4,75 @@ All URIs are relative to *https://api.cloudmersive.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**edit_pdf_delete_pages**](EditPdfApi.md#edit_pdf_delete_pages) | **POST** /convert/edit/pdf/pages/delete | Remove / delete pages from a PDF document
 [**edit_pdf_encrypt**](EditPdfApi.md#edit_pdf_encrypt) | **POST** /convert/edit/pdf/encrypt | Encrypt and password-protect a PDF
 [**edit_pdf_get_form_fields**](EditPdfApi.md#edit_pdf_get_form_fields) | **POST** /convert/edit/pdf/form/get-fields | Gets PDF Form fields and values
 [**edit_pdf_get_metadata**](EditPdfApi.md#edit_pdf_get_metadata) | **POST** /convert/edit/pdf/get-metadata | Get PDF document metadata
+[**edit_pdf_insert_pages**](EditPdfApi.md#edit_pdf_insert_pages) | **POST** /convert/edit/pdf/pages/insert | Insert / copy pages from one PDF document into another
 [**edit_pdf_rasterize**](EditPdfApi.md#edit_pdf_rasterize) | **POST** /convert/edit/pdf/rasterize | Rasterize a PDF to an image-based PDF
 [**edit_pdf_set_form_fields**](EditPdfApi.md#edit_pdf_set_form_fields) | **POST** /convert/edit/pdf/form/set-fields | Sets ands fills PDF Form field values
 [**edit_pdf_set_metadata**](EditPdfApi.md#edit_pdf_set_metadata) | **POST** /convert/edit/pdf/set-metadata | Sets PDF document metadata
 [**edit_pdf_set_permissions**](EditPdfApi.md#edit_pdf_set_permissions) | **POST** /convert/edit/pdf/encrypt/set-permissions | Encrypt, password-protect and set restricted permissions on a PDF
 [**edit_pdf_watermark_text**](EditPdfApi.md#edit_pdf_watermark_text) | **POST** /convert/edit/pdf/watermark/text | Add a text watermark to a PDF
 
+
+# **edit_pdf_delete_pages**
+> str edit_pdf_delete_pages(input_file, page_start, page_end)
+
+Remove / delete pages from a PDF document
+
+Remove one or more pages from a PDF document
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_convert_api_client
+from cloudmersive_convert_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_convert_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_convert_api_client.EditPdfApi(cloudmersive_convert_api_client.ApiClient(configuration))
+input_file = '/path/to/file.txt' # file | Input file to perform the operation on.
+page_start = 56 # int | Page number (1 based) to start deleting pages from (inclusive).
+page_end = 56 # int | Page number (1 based) to stop deleting pages from (inclusive).
+
+try:
+    # Remove / delete pages from a PDF document
+    api_response = api_instance.edit_pdf_delete_pages(input_file, page_start, page_end)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EditPdfApi->edit_pdf_delete_pages: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **input_file** | **file**| Input file to perform the operation on. | 
+ **page_start** | **int**| Page number (1 based) to start deleting pages from (inclusive). | 
+ **page_end** | **int**| Page number (1 based) to stop deleting pages from (inclusive). | 
+
+### Return type
+
+**str**
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/octet-stream
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **edit_pdf_encrypt**
 > str edit_pdf_encrypt(input_file, user_password=user_password, owner_password=owner_password)
@@ -180,6 +240,68 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **edit_pdf_insert_pages**
+> str edit_pdf_insert_pages(source_file, destination_file, page_start_source, page_end_source, page_insert_before_desitnation)
+
+Insert / copy pages from one PDF document into another
+
+Copy one or more pages from one PDF document (source document) and insert them into a second PDF document (destination document).
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_convert_api_client
+from cloudmersive_convert_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_convert_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_convert_api_client.EditPdfApi(cloudmersive_convert_api_client.ApiClient(configuration))
+source_file = '/path/to/file.txt' # file | Source PDF file to copy pages from.
+destination_file = '/path/to/file.txt' # file | Destination PDF file to copy pages into.
+page_start_source = 56 # int | Page number (1 based) to start copying pages from (inclusive) in the Source file.
+page_end_source = 56 # int | Page number (1 based) to stop copying pages pages from (inclusive) in the Source file.
+page_insert_before_desitnation = 56 # int | Page number (1 based) to insert the pages before in the Destination file.
+
+try:
+    # Insert / copy pages from one PDF document into another
+    api_response = api_instance.edit_pdf_insert_pages(source_file, destination_file, page_start_source, page_end_source, page_insert_before_desitnation)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EditPdfApi->edit_pdf_insert_pages: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **source_file** | **file**| Source PDF file to copy pages from. | 
+ **destination_file** | **file**| Destination PDF file to copy pages into. | 
+ **page_start_source** | **int**| Page number (1 based) to start copying pages from (inclusive) in the Source file. | 
+ **page_end_source** | **int**| Page number (1 based) to stop copying pages pages from (inclusive) in the Source file. | 
+ **page_insert_before_desitnation** | **int**| Page number (1 based) to insert the pages before in the Destination file. | 
+
+### Return type
+
+**str**
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/octet-stream
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **edit_pdf_rasterize**
 > str edit_pdf_rasterize(input_file)
 
@@ -289,7 +411,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **edit_pdf_set_metadata**
-> object edit_pdf_set_metadata(request)
+> str edit_pdf_set_metadata(request)
 
 Sets PDF document metadata
 
@@ -329,7 +451,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+**str**
 
 ### Authorization
 

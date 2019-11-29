@@ -355,7 +355,7 @@ class ConvertImageApi(object):
             collection_formats=collection_formats)
 
     def convert_image_multipage_image_format_convert(self, format1, format2, input_file, **kwargs):  # noqa: E501
-        """Multi-page format conversion  # noqa: E501
+        """Multi-page image format conversion  # noqa: E501
 
         Convert between over 100 file formats, including support for Multiple-Page formats (e.g. PDFs, TIFFs, etc. with multiple pages).  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -379,7 +379,7 @@ class ConvertImageApi(object):
             return data
 
     def convert_image_multipage_image_format_convert_with_http_info(self, format1, format2, input_file, **kwargs):  # noqa: E501
-        """Multi-page format conversion  # noqa: E501
+        """Multi-page image format conversion  # noqa: E501
 
         Convert between over 100 file formats, including support for Multiple-Page formats (e.g. PDFs, TIFFs, etc. with multiple pages).  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an

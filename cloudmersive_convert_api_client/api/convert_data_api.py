@@ -34,7 +34,7 @@ class ConvertDataApi(object):
         self.api_client = api_client
 
     def convert_data_csv_to_json(self, input_file, **kwargs):  # noqa: E501
-        """CSV to JSON conversion  # noqa: E501
+        """Convert CSV to JSON conversion  # noqa: E501
 
         Convert a CSV file to a JSON object array  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -56,7 +56,7 @@ class ConvertDataApi(object):
             return data
 
     def convert_data_csv_to_json_with_http_info(self, input_file, **kwargs):  # noqa: E501
-        """CSV to JSON conversion  # noqa: E501
+        """Convert CSV to JSON conversion  # noqa: E501
 
         Convert a CSV file to a JSON object array  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -133,7 +133,7 @@ class ConvertDataApi(object):
             collection_formats=collection_formats)
 
     def convert_data_xls_to_json(self, input_file, **kwargs):  # noqa: E501
-        """Excel (97-2003) XLS to JSON conversion  # noqa: E501
+        """Convert Excel (97-2003) XLS to JSON conversion  # noqa: E501
 
         Convert an Excel (97-2003) XLS file to a JSON object array  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -155,7 +155,7 @@ class ConvertDataApi(object):
             return data
 
     def convert_data_xls_to_json_with_http_info(self, input_file, **kwargs):  # noqa: E501
-        """Excel (97-2003) XLS to JSON conversion  # noqa: E501
+        """Convert Excel (97-2003) XLS to JSON conversion  # noqa: E501
 
         Convert an Excel (97-2003) XLS file to a JSON object array  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -232,7 +232,7 @@ class ConvertDataApi(object):
             collection_formats=collection_formats)
 
     def convert_data_xlsx_to_json(self, input_file, **kwargs):  # noqa: E501
-        """Excel XLSX to JSON conversion  # noqa: E501
+        """Convert Excel XLSX to JSON conversion  # noqa: E501
 
         Convert an Excel XLSX file to a JSON object array  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -254,7 +254,7 @@ class ConvertDataApi(object):
             return data
 
     def convert_data_xlsx_to_json_with_http_info(self, input_file, **kwargs):  # noqa: E501
-        """Excel XLSX to JSON conversion  # noqa: E501
+        """Convert Excel XLSX to JSON conversion  # noqa: E501
 
         Convert an Excel XLSX file to a JSON object array  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -331,7 +331,7 @@ class ConvertDataApi(object):
             collection_formats=collection_formats)
 
     def convert_data_xml_to_json(self, input_file, **kwargs):  # noqa: E501
-        """XML to JSON conversion  # noqa: E501
+        """Convert XML to JSON conversion  # noqa: E501
 
         Convert an XML string or file into JSON  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -353,7 +353,7 @@ class ConvertDataApi(object):
             return data
 
     def convert_data_xml_to_json_with_http_info(self, input_file, **kwargs):  # noqa: E501
-        """XML to JSON conversion  # noqa: E501
+        """Convert XML to JSON conversion  # noqa: E501
 
         Convert an XML string or file into JSON  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an

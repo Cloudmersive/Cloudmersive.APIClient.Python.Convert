@@ -133,7 +133,7 @@ class EditDocumentApi(object):
             collection_formats=collection_formats)
 
     def edit_document_docx_body(self, req_config, **kwargs):  # noqa: E501
-        """Get body from a DOCX  # noqa: E501
+        """Get body from a Word DOCX document  # noqa: E501
 
         Returns the body defined in the Word Document (DOCX) format file; this is the main content part of a DOCX document  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -142,7 +142,7 @@ class EditDocumentApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param GetDocxBodyRequest req_config: (required)
+        :param GetDocxBodyRequest req_config: Document input request (required)
         :return: GetDocxBodyResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -155,7 +155,7 @@ class EditDocumentApi(object):
             return data
 
     def edit_document_docx_body_with_http_info(self, req_config, **kwargs):  # noqa: E501
-        """Get body from a DOCX  # noqa: E501
+        """Get body from a Word DOCX document  # noqa: E501
 
         Returns the body defined in the Word Document (DOCX) format file; this is the main content part of a DOCX document  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -164,7 +164,7 @@ class EditDocumentApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param GetDocxBodyRequest req_config: (required)
+        :param GetDocxBodyRequest req_config: Document input request (required)
         :return: GetDocxBodyResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -232,7 +232,7 @@ class EditDocumentApi(object):
             collection_formats=collection_formats)
 
     def edit_document_docx_get_headers_and_footers(self, req_config, **kwargs):  # noqa: E501
-        """Get content of a footer from a DOCX  # noqa: E501
+        """Get content of a footer from a Word DOCX document  # noqa: E501
 
         Returns the footer content from a Word Document (DOCX) format file  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -241,7 +241,7 @@ class EditDocumentApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param GetDocxHeadersAndFootersRequest req_config: (required)
+        :param GetDocxHeadersAndFootersRequest req_config: Document input request (required)
         :return: GetDocxHeadersAndFootersResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -254,7 +254,7 @@ class EditDocumentApi(object):
             return data
 
     def edit_document_docx_get_headers_and_footers_with_http_info(self, req_config, **kwargs):  # noqa: E501
-        """Get content of a footer from a DOCX  # noqa: E501
+        """Get content of a footer from a Word DOCX document  # noqa: E501
 
         Returns the footer content from a Word Document (DOCX) format file  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -263,7 +263,7 @@ class EditDocumentApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param GetDocxHeadersAndFootersRequest req_config: (required)
+        :param GetDocxHeadersAndFootersRequest req_config: Document input request (required)
         :return: GetDocxHeadersAndFootersResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -331,7 +331,7 @@ class EditDocumentApi(object):
             collection_formats=collection_formats)
 
     def edit_document_docx_get_images(self, req_config, **kwargs):  # noqa: E501
-        """Get images from a DOCX  # noqa: E501
+        """Get images from a Word DOCX document  # noqa: E501
 
         Returns the images defined in the Word Document (DOCX) format file  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -340,7 +340,7 @@ class EditDocumentApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param GetDocxImagesRequest req_config: (required)
+        :param GetDocxImagesRequest req_config: Document input request (required)
         :return: GetDocxImagesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -353,7 +353,7 @@ class EditDocumentApi(object):
             return data
 
     def edit_document_docx_get_images_with_http_info(self, req_config, **kwargs):  # noqa: E501
-        """Get images from a DOCX  # noqa: E501
+        """Get images from a Word DOCX document  # noqa: E501
 
         Returns the images defined in the Word Document (DOCX) format file  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -362,7 +362,7 @@ class EditDocumentApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param GetDocxImagesRequest req_config: (required)
+        :param GetDocxImagesRequest req_config: Document input request (required)
         :return: GetDocxImagesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -430,7 +430,7 @@ class EditDocumentApi(object):
             collection_formats=collection_formats)
 
     def edit_document_docx_get_sections(self, req_config, **kwargs):  # noqa: E501
-        """Get sections from a DOCX  # noqa: E501
+        """Get sections from a Word DOCX document  # noqa: E501
 
         Returns the sections defined in the Word Document (DOCX) format file  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -439,7 +439,7 @@ class EditDocumentApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param GetDocxSectionsRequest req_config: (required)
+        :param GetDocxSectionsRequest req_config: Document input request (required)
         :return: GetDocxSectionsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -452,7 +452,7 @@ class EditDocumentApi(object):
             return data
 
     def edit_document_docx_get_sections_with_http_info(self, req_config, **kwargs):  # noqa: E501
-        """Get sections from a DOCX  # noqa: E501
+        """Get sections from a Word DOCX document  # noqa: E501
 
         Returns the sections defined in the Word Document (DOCX) format file  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -461,7 +461,7 @@ class EditDocumentApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param GetDocxSectionsRequest req_config: (required)
+        :param GetDocxSectionsRequest req_config: Document input request (required)
         :return: GetDocxSectionsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -529,7 +529,7 @@ class EditDocumentApi(object):
             collection_formats=collection_formats)
 
     def edit_document_docx_get_styles(self, req_config, **kwargs):  # noqa: E501
-        """Get styles from a DOCX  # noqa: E501
+        """Get styles from a Word DOCX document  # noqa: E501
 
         Returns the styles defined in the Word Document (DOCX) format file  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -538,7 +538,7 @@ class EditDocumentApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param GetDocxStylesRequest req_config: (required)
+        :param GetDocxStylesRequest req_config: Document input request (required)
         :return: GetDocxStylesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -551,7 +551,7 @@ class EditDocumentApi(object):
             return data
 
     def edit_document_docx_get_styles_with_http_info(self, req_config, **kwargs):  # noqa: E501
-        """Get styles from a DOCX  # noqa: E501
+        """Get styles from a Word DOCX document  # noqa: E501
 
         Returns the styles defined in the Word Document (DOCX) format file  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -560,7 +560,7 @@ class EditDocumentApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param GetDocxStylesRequest req_config: (required)
+        :param GetDocxStylesRequest req_config: Document input request (required)
         :return: GetDocxStylesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -628,7 +628,7 @@ class EditDocumentApi(object):
             collection_formats=collection_formats)
 
     def edit_document_docx_get_tables(self, req_config, **kwargs):  # noqa: E501
-        """Get tables in DOCX  # noqa: E501
+        """Get tables in Word DOCX document  # noqa: E501
 
         Returns all the table objects in an Office Word Document (docx)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -637,7 +637,7 @@ class EditDocumentApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param GetDocxTablesRequest req_config: (required)
+        :param GetDocxTablesRequest req_config: Document input request (required)
         :return: GetDocxTablesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -650,7 +650,7 @@ class EditDocumentApi(object):
             return data
 
     def edit_document_docx_get_tables_with_http_info(self, req_config, **kwargs):  # noqa: E501
-        """Get tables in DOCX  # noqa: E501
+        """Get tables in Word DOCX document  # noqa: E501
 
         Returns all the table objects in an Office Word Document (docx)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -659,7 +659,7 @@ class EditDocumentApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param GetDocxTablesRequest req_config: (required)
+        :param GetDocxTablesRequest req_config: Document input request (required)
         :return: GetDocxTablesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -727,16 +727,16 @@ class EditDocumentApi(object):
             collection_formats=collection_formats)
 
     def edit_document_docx_insert_image(self, req_config, **kwargs):  # noqa: E501
-        """Insert image into a DOCX  # noqa: E501
+        """Insert image into a Word DOCX document  # noqa: E501
 
-        Set the footer in a Word Document (DOCX)  # noqa: E501
+        Set the footer in a Word Document (DOCX).  Call Finish Editing on the output URL to complete the operation.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.edit_document_docx_insert_image(req_config, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param DocxInsertImageRequest req_config: (required)
+        :param DocxInsertImageRequest req_config: Document input request (required)
         :return: DocxInsertImageResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -749,16 +749,16 @@ class EditDocumentApi(object):
             return data
 
     def edit_document_docx_insert_image_with_http_info(self, req_config, **kwargs):  # noqa: E501
-        """Insert image into a DOCX  # noqa: E501
+        """Insert image into a Word DOCX document  # noqa: E501
 
-        Set the footer in a Word Document (DOCX)  # noqa: E501
+        Set the footer in a Word Document (DOCX).  Call Finish Editing on the output URL to complete the operation.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.edit_document_docx_insert_image_with_http_info(req_config, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param DocxInsertImageRequest req_config: (required)
+        :param DocxInsertImageRequest req_config: Document input request (required)
         :return: DocxInsertImageResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -826,16 +826,16 @@ class EditDocumentApi(object):
             collection_formats=collection_formats)
 
     def edit_document_docx_insert_paragraph(self, req_config, **kwargs):  # noqa: E501
-        """Insert a new paragraph into a DOCX  # noqa: E501
+        """Insert a new paragraph into a Word DOCX document  # noqa: E501
 
-        Adds a new paragraph into a DOCX and returns the result.  You can insert at the beginning/end of a document, or before/after an existing object using its Path (location within the document).  # noqa: E501
+        Adds a new paragraph into a DOCX and returns the result.  You can insert at the beginning/end of a document, or before/after an existing object using its Path (location within the document).  Call Finish Editing on the output URL to complete the operation.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.edit_document_docx_insert_paragraph(req_config, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param InsertDocxInsertParagraphRequest req_config: (required)
+        :param InsertDocxInsertParagraphRequest req_config: Document input request (required)
         :return: InsertDocxInsertParagraphResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -848,16 +848,16 @@ class EditDocumentApi(object):
             return data
 
     def edit_document_docx_insert_paragraph_with_http_info(self, req_config, **kwargs):  # noqa: E501
-        """Insert a new paragraph into a DOCX  # noqa: E501
+        """Insert a new paragraph into a Word DOCX document  # noqa: E501
 
-        Adds a new paragraph into a DOCX and returns the result.  You can insert at the beginning/end of a document, or before/after an existing object using its Path (location within the document).  # noqa: E501
+        Adds a new paragraph into a DOCX and returns the result.  You can insert at the beginning/end of a document, or before/after an existing object using its Path (location within the document).  Call Finish Editing on the output URL to complete the operation.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.edit_document_docx_insert_paragraph_with_http_info(req_config, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param InsertDocxInsertParagraphRequest req_config: (required)
+        :param InsertDocxInsertParagraphRequest req_config: Document input request (required)
         :return: InsertDocxInsertParagraphResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -925,16 +925,16 @@ class EditDocumentApi(object):
             collection_formats=collection_formats)
 
     def edit_document_docx_insert_table(self, req_config, **kwargs):  # noqa: E501
-        """Insert a new table into a DOCX  # noqa: E501
+        """Insert a new table into a Word DOCX document  # noqa: E501
 
-        Adds a new table into a DOCX and returns the result  # noqa: E501
+        Adds a new table into a DOCX and returns the result.  Call Finish Editing on the output URL to complete the operation.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.edit_document_docx_insert_table(req_config, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param InsertDocxTablesRequest req_config: (required)
+        :param InsertDocxTablesRequest req_config: Document input request (required)
         :return: InsertDocxTablesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -947,16 +947,16 @@ class EditDocumentApi(object):
             return data
 
     def edit_document_docx_insert_table_with_http_info(self, req_config, **kwargs):  # noqa: E501
-        """Insert a new table into a DOCX  # noqa: E501
+        """Insert a new table into a Word DOCX document  # noqa: E501
 
-        Adds a new table into a DOCX and returns the result  # noqa: E501
+        Adds a new table into a DOCX and returns the result.  Call Finish Editing on the output URL to complete the operation.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.edit_document_docx_insert_table_with_http_info(req_config, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param InsertDocxTablesRequest req_config: (required)
+        :param InsertDocxTablesRequest req_config: Document input request (required)
         :return: InsertDocxTablesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1024,16 +1024,16 @@ class EditDocumentApi(object):
             collection_formats=collection_formats)
 
     def edit_document_docx_remove_headers_and_footers(self, req_config, **kwargs):  # noqa: E501
-        """Remove headers and footers from DOCX  # noqa: E501
+        """Remove headers and footers from Word DOCX document  # noqa: E501
 
-        Remove all headers, or footers, or both from a Word Document (DOCX)  # noqa: E501
+        Remove all headers, or footers, or both from a Word Document (DOCX).  Call Finish Editing on the output URL to complete the operation.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.edit_document_docx_remove_headers_and_footers(req_config, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param RemoveDocxHeadersAndFootersRequest req_config: (required)
+        :param RemoveDocxHeadersAndFootersRequest req_config: Document input request (required)
         :return: RemoveDocxHeadersAndFootersResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1046,16 +1046,16 @@ class EditDocumentApi(object):
             return data
 
     def edit_document_docx_remove_headers_and_footers_with_http_info(self, req_config, **kwargs):  # noqa: E501
-        """Remove headers and footers from DOCX  # noqa: E501
+        """Remove headers and footers from Word DOCX document  # noqa: E501
 
-        Remove all headers, or footers, or both from a Word Document (DOCX)  # noqa: E501
+        Remove all headers, or footers, or both from a Word Document (DOCX).  Call Finish Editing on the output URL to complete the operation.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.edit_document_docx_remove_headers_and_footers_with_http_info(req_config, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param RemoveDocxHeadersAndFootersRequest req_config: (required)
+        :param RemoveDocxHeadersAndFootersRequest req_config: Document input request (required)
         :return: RemoveDocxHeadersAndFootersResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1123,16 +1123,16 @@ class EditDocumentApi(object):
             collection_formats=collection_formats)
 
     def edit_document_docx_remove_object(self, req_config, **kwargs):  # noqa: E501
-        """Delete any object in a DOCX  # noqa: E501
+        """Delete any object in a Word DOCX document  # noqa: E501
 
-        Delete any object, such as a paragraph, table, image, etc. from a Word Document (DOCX).  Pass in the Path of the object you would like to delete.  You can call other functions such as Get-Tables, Get-Images, Get-Body, etc. to get the paths of the objects in the document.  # noqa: E501
+        Delete any object, such as a paragraph, table, image, etc. from a Word Document (DOCX).  Pass in the Path of the object you would like to delete.  You can call other functions such as Get-Tables, Get-Images, Get-Body, etc. to get the paths of the objects in the document.  Call Finish Editing on the output URL to complete the operation.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.edit_document_docx_remove_object(req_config, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param DocxRemoveObjectRequest req_config: (required)
+        :param DocxRemoveObjectRequest req_config: Document input request (required)
         :return: DocxRemoveObjectResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1145,16 +1145,16 @@ class EditDocumentApi(object):
             return data
 
     def edit_document_docx_remove_object_with_http_info(self, req_config, **kwargs):  # noqa: E501
-        """Delete any object in a DOCX  # noqa: E501
+        """Delete any object in a Word DOCX document  # noqa: E501
 
-        Delete any object, such as a paragraph, table, image, etc. from a Word Document (DOCX).  Pass in the Path of the object you would like to delete.  You can call other functions such as Get-Tables, Get-Images, Get-Body, etc. to get the paths of the objects in the document.  # noqa: E501
+        Delete any object, such as a paragraph, table, image, etc. from a Word Document (DOCX).  Pass in the Path of the object you would like to delete.  You can call other functions such as Get-Tables, Get-Images, Get-Body, etc. to get the paths of the objects in the document.  Call Finish Editing on the output URL to complete the operation.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.edit_document_docx_remove_object_with_http_info(req_config, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param DocxRemoveObjectRequest req_config: (required)
+        :param DocxRemoveObjectRequest req_config: Document input request (required)
         :return: DocxRemoveObjectResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1222,7 +1222,7 @@ class EditDocumentApi(object):
             collection_formats=collection_formats)
 
     def edit_document_docx_replace(self, req_config, **kwargs):  # noqa: E501
-        """Replace string in DOCX  # noqa: E501
+        """Replace string in Word DOCX document  # noqa: E501
 
         Replace all instances of a string in an Office Word Document (docx)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1231,7 +1231,7 @@ class EditDocumentApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ReplaceStringRequest req_config: (required)
+        :param ReplaceStringRequest req_config: Document string replacement configuration input (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1244,7 +1244,7 @@ class EditDocumentApi(object):
             return data
 
     def edit_document_docx_replace_with_http_info(self, req_config, **kwargs):  # noqa: E501
-        """Replace string in DOCX  # noqa: E501
+        """Replace string in Word DOCX document  # noqa: E501
 
         Replace all instances of a string in an Office Word Document (docx)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1253,7 +1253,7 @@ class EditDocumentApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ReplaceStringRequest req_config: (required)
+        :param ReplaceStringRequest req_config: Document string replacement configuration input (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1321,16 +1321,16 @@ class EditDocumentApi(object):
             collection_formats=collection_formats)
 
     def edit_document_docx_set_footer(self, req_config, **kwargs):  # noqa: E501
-        """Set the footer in a DOCX  # noqa: E501
+        """Set the footer in a Word DOCX document  # noqa: E501
 
-        Set the footer in a Word Document (DOCX)  # noqa: E501
+        Set the footer in a Word Document (DOCX).  Call Finish Editing on the output URL to complete the operation.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.edit_document_docx_set_footer(req_config, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param DocxSetFooterRequest req_config: (required)
+        :param DocxSetFooterRequest req_config: Document input request (required)
         :return: DocxSetFooterResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1343,16 +1343,16 @@ class EditDocumentApi(object):
             return data
 
     def edit_document_docx_set_footer_with_http_info(self, req_config, **kwargs):  # noqa: E501
-        """Set the footer in a DOCX  # noqa: E501
+        """Set the footer in a Word DOCX document  # noqa: E501
 
-        Set the footer in a Word Document (DOCX)  # noqa: E501
+        Set the footer in a Word Document (DOCX).  Call Finish Editing on the output URL to complete the operation.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.edit_document_docx_set_footer_with_http_info(req_config, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param DocxSetFooterRequest req_config: (required)
+        :param DocxSetFooterRequest req_config: Document input request (required)
         :return: DocxSetFooterResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1420,16 +1420,16 @@ class EditDocumentApi(object):
             collection_formats=collection_formats)
 
     def edit_document_docx_set_footer_add_page_number(self, req_config, **kwargs):  # noqa: E501
-        """Add page number to footer in a DOCX  # noqa: E501
+        """Add page number to footer in a Word DOCX document  # noqa: E501
 
-        Set the footer in a Word Document (DOCX) to contain a page number  # noqa: E501
+        Set the footer in a Word Document (DOCX) to contain a page number.  Call Finish Editing on the output URL to complete the operation.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.edit_document_docx_set_footer_add_page_number(req_config, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param DocxSetFooterAddPageNumberRequest req_config: (required)
+        :param DocxSetFooterAddPageNumberRequest req_config: Document input request (required)
         :return: DocxSetFooterResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1442,16 +1442,16 @@ class EditDocumentApi(object):
             return data
 
     def edit_document_docx_set_footer_add_page_number_with_http_info(self, req_config, **kwargs):  # noqa: E501
-        """Add page number to footer in a DOCX  # noqa: E501
+        """Add page number to footer in a Word DOCX document  # noqa: E501
 
-        Set the footer in a Word Document (DOCX) to contain a page number  # noqa: E501
+        Set the footer in a Word Document (DOCX) to contain a page number.  Call Finish Editing on the output URL to complete the operation.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.edit_document_docx_set_footer_add_page_number_with_http_info(req_config, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param DocxSetFooterAddPageNumberRequest req_config: (required)
+        :param DocxSetFooterAddPageNumberRequest req_config: Document input request (required)
         :return: DocxSetFooterResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1519,16 +1519,16 @@ class EditDocumentApi(object):
             collection_formats=collection_formats)
 
     def edit_document_docx_set_header(self, req_config, **kwargs):  # noqa: E501
-        """Set the header in a DOCX  # noqa: E501
+        """Set the header in a Word DOCX document  # noqa: E501
 
-        Set the header in a Word Document (DOCX)  # noqa: E501
+        Set the header in a Word Document (DOCX).  Call Finish Editing on the output URL to complete the operation.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.edit_document_docx_set_header(req_config, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param DocxSetHeaderRequest req_config: (required)
+        :param DocxSetHeaderRequest req_config: Document input request (required)
         :return: DocxSetHeaderResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1541,16 +1541,16 @@ class EditDocumentApi(object):
             return data
 
     def edit_document_docx_set_header_with_http_info(self, req_config, **kwargs):  # noqa: E501
-        """Set the header in a DOCX  # noqa: E501
+        """Set the header in a Word DOCX document  # noqa: E501
 
-        Set the header in a Word Document (DOCX)  # noqa: E501
+        Set the header in a Word Document (DOCX).  Call Finish Editing on the output URL to complete the operation.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.edit_document_docx_set_header_with_http_info(req_config, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param DocxSetHeaderRequest req_config: (required)
+        :param DocxSetHeaderRequest req_config: Document input request (required)
         :return: DocxSetHeaderResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1627,7 +1627,7 @@ class EditDocumentApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param FinishEditingRequest req_config: (required)
+        :param FinishEditingRequest req_config: Cloudmersive Document URL to complete editing on (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1649,7 +1649,7 @@ class EditDocumentApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param FinishEditingRequest req_config: (required)
+        :param FinishEditingRequest req_config: Cloudmersive Document URL to complete editing on (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1717,7 +1717,7 @@ class EditDocumentApi(object):
             collection_formats=collection_formats)
 
     def edit_document_pptx_replace(self, req_config, **kwargs):  # noqa: E501
-        """Replace string in PPTX  # noqa: E501
+        """Replace string in PowerPoint PPTX presentation  # noqa: E501
 
         Replace all instances of a string in an Office PowerPoint Document (pptx)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1726,7 +1726,7 @@ class EditDocumentApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ReplaceStringRequest req_config: (required)
+        :param ReplaceStringRequest req_config: Replacement document configuration input (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1739,7 +1739,7 @@ class EditDocumentApi(object):
             return data
 
     def edit_document_pptx_replace_with_http_info(self, req_config, **kwargs):  # noqa: E501
-        """Replace string in PPTX  # noqa: E501
+        """Replace string in PowerPoint PPTX presentation  # noqa: E501
 
         Replace all instances of a string in an Office PowerPoint Document (pptx)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1748,7 +1748,7 @@ class EditDocumentApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ReplaceStringRequest req_config: (required)
+        :param ReplaceStringRequest req_config: Replacement document configuration input (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1816,7 +1816,7 @@ class EditDocumentApi(object):
             collection_formats=collection_formats)
 
     def edit_document_xlsx_get_columns(self, input, **kwargs):  # noqa: E501
-        """Get rows and cells from a XLSX worksheet  # noqa: E501
+        """Get rows and cells from a Excel XLSX spreadsheet, worksheet  # noqa: E501
 
         Returns the rows and cells defined in the Excel Spreadsheet worksheet  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1825,7 +1825,7 @@ class EditDocumentApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param GetXlsxColumnsRequest input: (required)
+        :param GetXlsxColumnsRequest input: Document input request (required)
         :return: GetXlsxColumnsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1838,7 +1838,7 @@ class EditDocumentApi(object):
             return data
 
     def edit_document_xlsx_get_columns_with_http_info(self, input, **kwargs):  # noqa: E501
-        """Get rows and cells from a XLSX worksheet  # noqa: E501
+        """Get rows and cells from a Excel XLSX spreadsheet, worksheet  # noqa: E501
 
         Returns the rows and cells defined in the Excel Spreadsheet worksheet  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1847,7 +1847,7 @@ class EditDocumentApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param GetXlsxColumnsRequest input: (required)
+        :param GetXlsxColumnsRequest input: Document input request (required)
         :return: GetXlsxColumnsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1915,7 +1915,7 @@ class EditDocumentApi(object):
             collection_formats=collection_formats)
 
     def edit_document_xlsx_get_images(self, input, **kwargs):  # noqa: E501
-        """Get images from a XLSX worksheet  # noqa: E501
+        """Get images from a Excel XLSX spreadsheet, worksheet  # noqa: E501
 
         Returns the images defined in the Excel Spreadsheet worksheet  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1924,7 +1924,7 @@ class EditDocumentApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param GetXlsxImagesRequest input: (required)
+        :param GetXlsxImagesRequest input: Document input request (required)
         :return: GetXlsxImagesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1937,7 +1937,7 @@ class EditDocumentApi(object):
             return data
 
     def edit_document_xlsx_get_images_with_http_info(self, input, **kwargs):  # noqa: E501
-        """Get images from a XLSX worksheet  # noqa: E501
+        """Get images from a Excel XLSX spreadsheet, worksheet  # noqa: E501
 
         Returns the images defined in the Excel Spreadsheet worksheet  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1946,7 +1946,7 @@ class EditDocumentApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param GetXlsxImagesRequest input: (required)
+        :param GetXlsxImagesRequest input: Document input request (required)
         :return: GetXlsxImagesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2014,7 +2014,7 @@ class EditDocumentApi(object):
             collection_formats=collection_formats)
 
     def edit_document_xlsx_get_rows_and_cells(self, input, **kwargs):  # noqa: E501
-        """Get rows and cells from a XLSX worksheet  # noqa: E501
+        """Get rows and cells from a Word XLSX spreadsheet, worksheet  # noqa: E501
 
         Returns the rows and cells defined in the Excel Spreadsheet worksheet  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2023,7 +2023,7 @@ class EditDocumentApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param GetXlsxRowsAndCellsRequest input: (required)
+        :param GetXlsxRowsAndCellsRequest input: Document input request (required)
         :return: GetXlsxRowsAndCellsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2036,7 +2036,7 @@ class EditDocumentApi(object):
             return data
 
     def edit_document_xlsx_get_rows_and_cells_with_http_info(self, input, **kwargs):  # noqa: E501
-        """Get rows and cells from a XLSX worksheet  # noqa: E501
+        """Get rows and cells from a Word XLSX spreadsheet, worksheet  # noqa: E501
 
         Returns the rows and cells defined in the Excel Spreadsheet worksheet  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2045,7 +2045,7 @@ class EditDocumentApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param GetXlsxRowsAndCellsRequest input: (required)
+        :param GetXlsxRowsAndCellsRequest input: Document input request (required)
         :return: GetXlsxRowsAndCellsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2113,7 +2113,7 @@ class EditDocumentApi(object):
             collection_formats=collection_formats)
 
     def edit_document_xlsx_get_styles(self, input, **kwargs):  # noqa: E501
-        """Get styles from a XLSX worksheet  # noqa: E501
+        """Get styles from a Excel XLSX spreadsheet, worksheet  # noqa: E501
 
         Returns the style defined in the Excel Spreadsheet  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2122,7 +2122,7 @@ class EditDocumentApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param GetXlsxStylesRequest input: (required)
+        :param GetXlsxStylesRequest input: Document input request (required)
         :return: GetXlsxStylesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2135,7 +2135,7 @@ class EditDocumentApi(object):
             return data
 
     def edit_document_xlsx_get_styles_with_http_info(self, input, **kwargs):  # noqa: E501
-        """Get styles from a XLSX worksheet  # noqa: E501
+        """Get styles from a Excel XLSX spreadsheet, worksheet  # noqa: E501
 
         Returns the style defined in the Excel Spreadsheet  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2144,7 +2144,7 @@ class EditDocumentApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param GetXlsxStylesRequest input: (required)
+        :param GetXlsxStylesRequest input: Document input request (required)
         :return: GetXlsxStylesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2212,7 +2212,7 @@ class EditDocumentApi(object):
             collection_formats=collection_formats)
 
     def edit_document_xlsx_get_worksheets(self, input, **kwargs):  # noqa: E501
-        """Get worksheets from a XLSX  # noqa: E501
+        """Get worksheets from a Excel XLSX spreadsheet  # noqa: E501
 
         Returns the worksheets (tabs) defined in the Excel Spreadsheet (XLSX) format file  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2221,7 +2221,7 @@ class EditDocumentApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param GetXlsxWorksheetsRequest input: (required)
+        :param GetXlsxWorksheetsRequest input: Document input request (required)
         :return: GetXlsxWorksheetsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2234,7 +2234,7 @@ class EditDocumentApi(object):
             return data
 
     def edit_document_xlsx_get_worksheets_with_http_info(self, input, **kwargs):  # noqa: E501
-        """Get worksheets from a XLSX  # noqa: E501
+        """Get worksheets from a Excel XLSX spreadsheet  # noqa: E501
 
         Returns the worksheets (tabs) defined in the Excel Spreadsheet (XLSX) format file  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2243,7 +2243,7 @@ class EditDocumentApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param GetXlsxWorksheetsRequest input: (required)
+        :param GetXlsxWorksheetsRequest input: Document input request (required)
         :return: GetXlsxWorksheetsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2311,7 +2311,7 @@ class EditDocumentApi(object):
             collection_formats=collection_formats)
 
     def edit_document_xlsx_insert_worksheet(self, input, **kwargs):  # noqa: E501
-        """Insert a new worksheet into an XLSX spreadsheet  # noqa: E501
+        """Insert a new worksheet into an Excel XLSX spreadsheet  # noqa: E501
 
         Inserts a new worksheet into an Excel Spreadsheet  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2320,7 +2320,7 @@ class EditDocumentApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param InsertXlsxWorksheetRequest input: (required)
+        :param InsertXlsxWorksheetRequest input: Document input request (required)
         :return: InsertXlsxWorksheetResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2333,7 +2333,7 @@ class EditDocumentApi(object):
             return data
 
     def edit_document_xlsx_insert_worksheet_with_http_info(self, input, **kwargs):  # noqa: E501
-        """Insert a new worksheet into an XLSX spreadsheet  # noqa: E501
+        """Insert a new worksheet into an Excel XLSX spreadsheet  # noqa: E501
 
         Inserts a new worksheet into an Excel Spreadsheet  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2342,7 +2342,7 @@ class EditDocumentApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param InsertXlsxWorksheetRequest input: (required)
+        :param InsertXlsxWorksheetRequest input: Document input request (required)
         :return: InsertXlsxWorksheetResponse
                  If the method is called asynchronously,
                  returns the request thread.
