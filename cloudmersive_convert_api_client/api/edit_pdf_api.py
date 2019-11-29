@@ -33,6 +33,113 @@ class EditPdfApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
+    def edit_pdf_decrypt(self, password, input_file, **kwargs):  # noqa: E501
+        """Decrypt and password-protect a PDF  # noqa: E501
+
+        Decrypt a PDF document with a password.  Decrypted PDF will no longer require a password to open.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_pdf_decrypt(password, input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str password: Valid password for the PDF file (required)
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.edit_pdf_decrypt_with_http_info(password, input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.edit_pdf_decrypt_with_http_info(password, input_file, **kwargs)  # noqa: E501
+            return data
+
+    def edit_pdf_decrypt_with_http_info(self, password, input_file, **kwargs):  # noqa: E501
+        """Decrypt and password-protect a PDF  # noqa: E501
+
+        Decrypt a PDF document with a password.  Decrypted PDF will no longer require a password to open.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_pdf_decrypt_with_http_info(password, input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str password: Valid password for the PDF file (required)
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['password', 'input_file']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method edit_pdf_decrypt" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'password' is set
+        if ('password' not in params or
+                params['password'] is None):
+            raise ValueError("Missing the required parameter `password` when calling `edit_pdf_decrypt`")  # noqa: E501
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `edit_pdf_decrypt`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'password' in params:
+            header_params['password'] = params['password']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/edit/pdf/decrypt', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def edit_pdf_delete_pages(self, input_file, page_start, page_end, **kwargs):  # noqa: E501
         """Remove / delete pages from a PDF document  # noqa: E501
 
@@ -161,6 +268,7 @@ class EditPdfApi(object):
         :param file input_file: Input file to perform the operation on. (required)
         :param str user_password: Password of a user (reader) of the PDF file
         :param str owner_password: Password of a owner (creator/editor) of the PDF file
+        :param str encryption_key_length: Possible values are \"128\" (128-bit RC4 encryption) and \"256\" (256-bit AES encryption).  Default is 256.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -185,12 +293,13 @@ class EditPdfApi(object):
         :param file input_file: Input file to perform the operation on. (required)
         :param str user_password: Password of a user (reader) of the PDF file
         :param str owner_password: Password of a owner (creator/editor) of the PDF file
+        :param str encryption_key_length: Possible values are \"128\" (128-bit RC4 encryption) and \"256\" (256-bit AES encryption).  Default is 256.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['input_file', 'user_password', 'owner_password']  # noqa: E501
+        all_params = ['input_file', 'user_password', 'owner_password', 'encryption_key_length']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -221,6 +330,8 @@ class EditPdfApi(object):
             header_params['userPassword'] = params['user_password']  # noqa: E501
         if 'owner_password' in params:
             header_params['ownerPassword'] = params['owner_password']  # noqa: E501
+        if 'encryption_key_length' in params:
+            header_params['encryptionKeyLength'] = params['encryption_key_length']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -881,19 +992,20 @@ class EditPdfApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def edit_pdf_set_permissions(self, owner_password, input_file, **kwargs):  # noqa: E501
+    def edit_pdf_set_permissions(self, owner_password, user_password, input_file, **kwargs):  # noqa: E501
         """Encrypt, password-protect and set restricted permissions on a PDF  # noqa: E501
 
         Encrypt a PDF document with a password, and set permissions on the PDF.  Set an owner password to control owner (editor/creator) permissions [required], and set a user (reader) password to control the viewer of the PDF [optional].  Set the reader password to null to omit the password.  Restrict or allow printing, copying content, document assembly, editing (read-only), form filling, modification of annotations, and degraded printing through document Digital Rights Management (DRM).  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.edit_pdf_set_permissions(owner_password, input_file, async_req=True)
+        >>> thread = api.edit_pdf_set_permissions(owner_password, user_password, input_file, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param str owner_password: Password of a owner (creator/editor) of the PDF file (required) (required)
+        :param str user_password: Password of a user (reader) of the PDF file (optional) (required)
         :param file input_file: Input file to perform the operation on. (required)
-        :param str user_password: Password of a user (reader) of the PDF file (optional)
+        :param str encryption_key_length: Possible values are \"128\" (128-bit RC4 encryption) and \"256\" (256-bit AES encryption).  Default is 256.
         :param bool allow_printing: Set to false to disable printing through DRM.  Default is true.
         :param bool allow_document_assembly: Set to false to disable document assembly through DRM.  Default is true.
         :param bool allow_content_extraction: Set to false to disable copying/extracting content out of the PDF through DRM.  Default is true.
@@ -907,24 +1019,25 @@ class EditPdfApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.edit_pdf_set_permissions_with_http_info(owner_password, input_file, **kwargs)  # noqa: E501
+            return self.edit_pdf_set_permissions_with_http_info(owner_password, user_password, input_file, **kwargs)  # noqa: E501
         else:
-            (data) = self.edit_pdf_set_permissions_with_http_info(owner_password, input_file, **kwargs)  # noqa: E501
+            (data) = self.edit_pdf_set_permissions_with_http_info(owner_password, user_password, input_file, **kwargs)  # noqa: E501
             return data
 
-    def edit_pdf_set_permissions_with_http_info(self, owner_password, input_file, **kwargs):  # noqa: E501
+    def edit_pdf_set_permissions_with_http_info(self, owner_password, user_password, input_file, **kwargs):  # noqa: E501
         """Encrypt, password-protect and set restricted permissions on a PDF  # noqa: E501
 
         Encrypt a PDF document with a password, and set permissions on the PDF.  Set an owner password to control owner (editor/creator) permissions [required], and set a user (reader) password to control the viewer of the PDF [optional].  Set the reader password to null to omit the password.  Restrict or allow printing, copying content, document assembly, editing (read-only), form filling, modification of annotations, and degraded printing through document Digital Rights Management (DRM).  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.edit_pdf_set_permissions_with_http_info(owner_password, input_file, async_req=True)
+        >>> thread = api.edit_pdf_set_permissions_with_http_info(owner_password, user_password, input_file, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param str owner_password: Password of a owner (creator/editor) of the PDF file (required) (required)
+        :param str user_password: Password of a user (reader) of the PDF file (optional) (required)
         :param file input_file: Input file to perform the operation on. (required)
-        :param str user_password: Password of a user (reader) of the PDF file (optional)
+        :param str encryption_key_length: Possible values are \"128\" (128-bit RC4 encryption) and \"256\" (256-bit AES encryption).  Default is 256.
         :param bool allow_printing: Set to false to disable printing through DRM.  Default is true.
         :param bool allow_document_assembly: Set to false to disable document assembly through DRM.  Default is true.
         :param bool allow_content_extraction: Set to false to disable copying/extracting content out of the PDF through DRM.  Default is true.
@@ -937,7 +1050,7 @@ class EditPdfApi(object):
                  returns the request thread.
         """
 
-        all_params = ['owner_password', 'input_file', 'user_password', 'allow_printing', 'allow_document_assembly', 'allow_content_extraction', 'allow_form_filling', 'allow_editing', 'allow_annotations', 'allow_degraded_printing']  # noqa: E501
+        all_params = ['owner_password', 'user_password', 'input_file', 'encryption_key_length', 'allow_printing', 'allow_document_assembly', 'allow_content_extraction', 'allow_form_filling', 'allow_editing', 'allow_annotations', 'allow_degraded_printing']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -956,6 +1069,10 @@ class EditPdfApi(object):
         if ('owner_password' not in params or
                 params['owner_password'] is None):
             raise ValueError("Missing the required parameter `owner_password` when calling `edit_pdf_set_permissions`")  # noqa: E501
+        # verify the required parameter 'user_password' is set
+        if ('user_password' not in params or
+                params['user_password'] is None):
+            raise ValueError("Missing the required parameter `user_password` when calling `edit_pdf_set_permissions`")  # noqa: E501
         # verify the required parameter 'input_file' is set
         if ('input_file' not in params or
                 params['input_file'] is None):
@@ -972,6 +1089,8 @@ class EditPdfApi(object):
             header_params['ownerPassword'] = params['owner_password']  # noqa: E501
         if 'user_password' in params:
             header_params['userPassword'] = params['user_password']  # noqa: E501
+        if 'encryption_key_length' in params:
+            header_params['encryptionKeyLength'] = params['encryption_key_length']  # noqa: E501
         if 'allow_printing' in params:
             header_params['allowPrinting'] = params['allow_printing']  # noqa: E501
         if 'allow_document_assembly' in params:

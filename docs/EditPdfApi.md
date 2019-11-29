@@ -4,6 +4,7 @@ All URIs are relative to *https://api.cloudmersive.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**edit_pdf_decrypt**](EditPdfApi.md#edit_pdf_decrypt) | **POST** /convert/edit/pdf/decrypt | Decrypt and password-protect a PDF
 [**edit_pdf_delete_pages**](EditPdfApi.md#edit_pdf_delete_pages) | **POST** /convert/edit/pdf/pages/delete | Remove / delete pages from a PDF document
 [**edit_pdf_encrypt**](EditPdfApi.md#edit_pdf_encrypt) | **POST** /convert/edit/pdf/encrypt | Encrypt and password-protect a PDF
 [**edit_pdf_get_form_fields**](EditPdfApi.md#edit_pdf_get_form_fields) | **POST** /convert/edit/pdf/form/get-fields | Gets PDF Form fields and values
@@ -15,6 +16,62 @@ Method | HTTP request | Description
 [**edit_pdf_set_permissions**](EditPdfApi.md#edit_pdf_set_permissions) | **POST** /convert/edit/pdf/encrypt/set-permissions | Encrypt, password-protect and set restricted permissions on a PDF
 [**edit_pdf_watermark_text**](EditPdfApi.md#edit_pdf_watermark_text) | **POST** /convert/edit/pdf/watermark/text | Add a text watermark to a PDF
 
+
+# **edit_pdf_decrypt**
+> str edit_pdf_decrypt(password, input_file)
+
+Decrypt and password-protect a PDF
+
+Decrypt a PDF document with a password.  Decrypted PDF will no longer require a password to open.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_convert_api_client
+from cloudmersive_convert_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_convert_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_convert_api_client.EditPdfApi(cloudmersive_convert_api_client.ApiClient(configuration))
+password = 'password_example' # str | Valid password for the PDF file
+input_file = '/path/to/file.txt' # file | Input file to perform the operation on.
+
+try:
+    # Decrypt and password-protect a PDF
+    api_response = api_instance.edit_pdf_decrypt(password, input_file)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EditPdfApi->edit_pdf_decrypt: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **password** | **str**| Valid password for the PDF file | 
+ **input_file** | **file**| Input file to perform the operation on. | 
+
+### Return type
+
+**str**
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/octet-stream
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **edit_pdf_delete_pages**
 > str edit_pdf_delete_pages(input_file, page_start, page_end)
@@ -75,7 +132,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **edit_pdf_encrypt**
-> str edit_pdf_encrypt(input_file, user_password=user_password, owner_password=owner_password)
+> str edit_pdf_encrypt(input_file, user_password=user_password, owner_password=owner_password, encryption_key_length=encryption_key_length)
 
 Encrypt and password-protect a PDF
 
@@ -100,10 +157,11 @@ api_instance = cloudmersive_convert_api_client.EditPdfApi(cloudmersive_convert_a
 input_file = '/path/to/file.txt' # file | Input file to perform the operation on.
 user_password = 'user_password_example' # str | Password of a user (reader) of the PDF file (optional)
 owner_password = 'owner_password_example' # str | Password of a owner (creator/editor) of the PDF file (optional)
+encryption_key_length = 'encryption_key_length_example' # str | Possible values are \"128\" (128-bit RC4 encryption) and \"256\" (256-bit AES encryption).  Default is 256. (optional)
 
 try:
     # Encrypt and password-protect a PDF
-    api_response = api_instance.edit_pdf_encrypt(input_file, user_password=user_password, owner_password=owner_password)
+    api_response = api_instance.edit_pdf_encrypt(input_file, user_password=user_password, owner_password=owner_password, encryption_key_length=encryption_key_length)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EditPdfApi->edit_pdf_encrypt: %s\n" % e)
@@ -116,6 +174,7 @@ Name | Type | Description  | Notes
  **input_file** | **file**| Input file to perform the operation on. | 
  **user_password** | **str**| Password of a user (reader) of the PDF file | [optional] 
  **owner_password** | **str**| Password of a owner (creator/editor) of the PDF file | [optional] 
+ **encryption_key_length** | **str**| Possible values are \&quot;128\&quot; (128-bit RC4 encryption) and \&quot;256\&quot; (256-bit AES encryption).  Default is 256. | [optional] 
 
 ### Return type
 
@@ -465,7 +524,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **edit_pdf_set_permissions**
-> str edit_pdf_set_permissions(owner_password, input_file, user_password=user_password, allow_printing=allow_printing, allow_document_assembly=allow_document_assembly, allow_content_extraction=allow_content_extraction, allow_form_filling=allow_form_filling, allow_editing=allow_editing, allow_annotations=allow_annotations, allow_degraded_printing=allow_degraded_printing)
+> str edit_pdf_set_permissions(owner_password, user_password, input_file, encryption_key_length=encryption_key_length, allow_printing=allow_printing, allow_document_assembly=allow_document_assembly, allow_content_extraction=allow_content_extraction, allow_form_filling=allow_form_filling, allow_editing=allow_editing, allow_annotations=allow_annotations, allow_degraded_printing=allow_degraded_printing)
 
 Encrypt, password-protect and set restricted permissions on a PDF
 
@@ -488,8 +547,9 @@ configuration.api_key['Apikey'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = cloudmersive_convert_api_client.EditPdfApi(cloudmersive_convert_api_client.ApiClient(configuration))
 owner_password = 'owner_password_example' # str | Password of a owner (creator/editor) of the PDF file (required)
+user_password = 'user_password_example' # str | Password of a user (reader) of the PDF file (optional)
 input_file = '/path/to/file.txt' # file | Input file to perform the operation on.
-user_password = 'user_password_example' # str | Password of a user (reader) of the PDF file (optional) (optional)
+encryption_key_length = 'encryption_key_length_example' # str | Possible values are \"128\" (128-bit RC4 encryption) and \"256\" (256-bit AES encryption).  Default is 256. (optional)
 allow_printing = true # bool | Set to false to disable printing through DRM.  Default is true. (optional)
 allow_document_assembly = true # bool | Set to false to disable document assembly through DRM.  Default is true. (optional)
 allow_content_extraction = true # bool | Set to false to disable copying/extracting content out of the PDF through DRM.  Default is true. (optional)
@@ -500,7 +560,7 @@ allow_degraded_printing = true # bool | Set to false to disable degraded printin
 
 try:
     # Encrypt, password-protect and set restricted permissions on a PDF
-    api_response = api_instance.edit_pdf_set_permissions(owner_password, input_file, user_password=user_password, allow_printing=allow_printing, allow_document_assembly=allow_document_assembly, allow_content_extraction=allow_content_extraction, allow_form_filling=allow_form_filling, allow_editing=allow_editing, allow_annotations=allow_annotations, allow_degraded_printing=allow_degraded_printing)
+    api_response = api_instance.edit_pdf_set_permissions(owner_password, user_password, input_file, encryption_key_length=encryption_key_length, allow_printing=allow_printing, allow_document_assembly=allow_document_assembly, allow_content_extraction=allow_content_extraction, allow_form_filling=allow_form_filling, allow_editing=allow_editing, allow_annotations=allow_annotations, allow_degraded_printing=allow_degraded_printing)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EditPdfApi->edit_pdf_set_permissions: %s\n" % e)
@@ -511,8 +571,9 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **owner_password** | **str**| Password of a owner (creator/editor) of the PDF file (required) | 
+ **user_password** | **str**| Password of a user (reader) of the PDF file (optional) | 
  **input_file** | **file**| Input file to perform the operation on. | 
- **user_password** | **str**| Password of a user (reader) of the PDF file (optional) | [optional] 
+ **encryption_key_length** | **str**| Possible values are \&quot;128\&quot; (128-bit RC4 encryption) and \&quot;256\&quot; (256-bit AES encryption).  Default is 256. | [optional] 
  **allow_printing** | **bool**| Set to false to disable printing through DRM.  Default is true. | [optional] 
  **allow_document_assembly** | **bool**| Set to false to disable document assembly through DRM.  Default is true. | [optional] 
  **allow_content_extraction** | **bool**| Set to false to disable copying/extracting content out of the PDF through DRM.  Default is true. | [optional] 

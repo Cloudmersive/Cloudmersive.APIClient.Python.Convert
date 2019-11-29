@@ -4,7 +4,7 @@ Convert API lets you effortlessly convert file formats and types.
 This Python package provides a native API client for [Cloudmersive Document Conversion](https://www.cloudmersive.com/convert-api)
 
 - API version: v1
-- Package version: 2.1.9
+- Package version: 2.2.0
 - Build package: io.swagger.codegen.languages.PythonClientCodegen
 
 ## Requirements.
@@ -145,6 +145,7 @@ Class | Method | HTTP request | Description
 *EditDocumentApi* | [**edit_document_xlsx_get_styles**](docs/EditDocumentApi.md#edit_document_xlsx_get_styles) | **POST** /convert/edit/xlsx/get-styles | Get styles from a Excel XLSX spreadsheet, worksheet
 *EditDocumentApi* | [**edit_document_xlsx_get_worksheets**](docs/EditDocumentApi.md#edit_document_xlsx_get_worksheets) | **POST** /convert/edit/xlsx/get-worksheets | Get worksheets from a Excel XLSX spreadsheet
 *EditDocumentApi* | [**edit_document_xlsx_insert_worksheet**](docs/EditDocumentApi.md#edit_document_xlsx_insert_worksheet) | **POST** /convert/edit/xlsx/insert-worksheet | Insert a new worksheet into an Excel XLSX spreadsheet
+*EditPdfApi* | [**edit_pdf_decrypt**](docs/EditPdfApi.md#edit_pdf_decrypt) | **POST** /convert/edit/pdf/decrypt | Decrypt and password-protect a PDF
 *EditPdfApi* | [**edit_pdf_delete_pages**](docs/EditPdfApi.md#edit_pdf_delete_pages) | **POST** /convert/edit/pdf/pages/delete | Remove / delete pages from a PDF document
 *EditPdfApi* | [**edit_pdf_encrypt**](docs/EditPdfApi.md#edit_pdf_encrypt) | **POST** /convert/edit/pdf/encrypt | Encrypt and password-protect a PDF
 *EditPdfApi* | [**edit_pdf_get_form_fields**](docs/EditPdfApi.md#edit_pdf_get_form_fields) | **POST** /convert/edit/pdf/form/get-fields | Gets PDF Form fields and values
