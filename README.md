@@ -4,7 +4,7 @@ Convert API lets you effortlessly convert file formats and types.
 This Python package provides a native API client for [Cloudmersive Document Conversion](https://www.cloudmersive.com/convert-api)
 
 - API version: v1
-- Package version: 2.2.0
+- Package version: 2.2.1
 - Build package: io.swagger.codegen.languages.PythonClientCodegen
 
 ## Requirements.
@@ -115,7 +115,7 @@ Class | Method | HTTP request | Description
 *ConvertImageApi* | [**convert_image_multipage_image_format_convert**](docs/ConvertImageApi.md#convert_image_multipage_image_format_convert) | **POST** /convert/image-multipage/{format1}/to/{format2} | Multi-page image format conversion
 *ConvertTemplateApi* | [**convert_template_apply_docx_template**](docs/ConvertTemplateApi.md#convert_template_apply_docx_template) | **POST** /convert/template/docx/apply | Apply Word DOCX template
 *ConvertTemplateApi* | [**convert_template_apply_html_template**](docs/ConvertTemplateApi.md#convert_template_apply_html_template) | **POST** /convert/template/html/apply | Apply HTML template
-*ConvertWebApi* | [**convert_web_html_to_docx**](docs/ConvertWebApi.md#convert_web_html_to_docx) | **POST** /convert/html/to/docx | Convert HTML to DOCX
+*ConvertWebApi* | [**convert_web_html_to_docx**](docs/ConvertWebApi.md#convert_web_html_to_docx) | **POST** /convert/html/to/docx | Convert HTML to Word DOCX Document
 *ConvertWebApi* | [**convert_web_html_to_pdf**](docs/ConvertWebApi.md#convert_web_html_to_pdf) | **POST** /convert/web/html/to/pdf | Convert HTML string to PDF
 *ConvertWebApi* | [**convert_web_html_to_png**](docs/ConvertWebApi.md#convert_web_html_to_png) | **POST** /convert/web/html/to/png | Convert HTML string to PNG
 *ConvertWebApi* | [**convert_web_md_to_html**](docs/ConvertWebApi.md#convert_web_md_to_html) | **POST** /convert/web/md/to/html | Convert Markdown to HTML
@@ -123,6 +123,7 @@ Class | Method | HTTP request | Description
 *ConvertWebApi* | [**convert_web_url_to_screenshot**](docs/ConvertWebApi.md#convert_web_url_to_screenshot) | **POST** /convert/web/url/to/screenshot | Take screenshot of URL
 *EditDocumentApi* | [**edit_document_begin_editing**](docs/EditDocumentApi.md#edit_document_begin_editing) | **POST** /convert/edit/begin-editing | Begin editing a document
 *EditDocumentApi* | [**edit_document_docx_body**](docs/EditDocumentApi.md#edit_document_docx_body) | **POST** /convert/edit/docx/get-body | Get body from a Word DOCX document
+*EditDocumentApi* | [**edit_document_docx_delete_pages**](docs/EditDocumentApi.md#edit_document_docx_delete_pages) | **POST** /convert/edit/docx/delete-pages | Delete, remove pages from a Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_get_headers_and_footers**](docs/EditDocumentApi.md#edit_document_docx_get_headers_and_footers) | **POST** /convert/edit/docx/get-headers-and-footers | Get content of a footer from a Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_get_images**](docs/EditDocumentApi.md#edit_document_docx_get_images) | **POST** /convert/edit/docx/get-images | Get images from a Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_get_sections**](docs/EditDocumentApi.md#edit_document_docx_get_sections) | **POST** /convert/edit/docx/get-sections | Get sections from a Word DOCX document
@@ -131,6 +132,8 @@ Class | Method | HTTP request | Description
 *EditDocumentApi* | [**edit_document_docx_insert_image**](docs/EditDocumentApi.md#edit_document_docx_insert_image) | **POST** /convert/edit/docx/insert-image | Insert image into a Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_insert_paragraph**](docs/EditDocumentApi.md#edit_document_docx_insert_paragraph) | **POST** /convert/edit/docx/insert-paragraph | Insert a new paragraph into a Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_insert_table**](docs/EditDocumentApi.md#edit_document_docx_insert_table) | **POST** /convert/edit/docx/insert-table | Insert a new table into a Word DOCX document
+*EditDocumentApi* | [**edit_document_docx_insert_table_row**](docs/EditDocumentApi.md#edit_document_docx_insert_table_row) | **POST** /convert/edit/docx/insert-table-row | Insert a new row into an existing table in a Word DOCX document
+*EditDocumentApi* | [**edit_document_docx_pages**](docs/EditDocumentApi.md#edit_document_docx_pages) | **POST** /convert/edit/docx/get-pages | Get pages and content from a Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_remove_headers_and_footers**](docs/EditDocumentApi.md#edit_document_docx_remove_headers_and_footers) | **POST** /convert/edit/docx/remove-headers-and-footers | Remove headers and footers from Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_remove_object**](docs/EditDocumentApi.md#edit_document_docx_remove_object) | **POST** /convert/edit/docx/remove-object | Delete any object in a Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_replace**](docs/EditDocumentApi.md#edit_document_docx_replace) | **POST** /convert/edit/docx/replace-all | Replace string in Word DOCX document
@@ -150,6 +153,7 @@ Class | Method | HTTP request | Description
 *EditPdfApi* | [**edit_pdf_encrypt**](docs/EditPdfApi.md#edit_pdf_encrypt) | **POST** /convert/edit/pdf/encrypt | Encrypt and password-protect a PDF
 *EditPdfApi* | [**edit_pdf_get_form_fields**](docs/EditPdfApi.md#edit_pdf_get_form_fields) | **POST** /convert/edit/pdf/form/get-fields | Gets PDF Form fields and values
 *EditPdfApi* | [**edit_pdf_get_metadata**](docs/EditPdfApi.md#edit_pdf_get_metadata) | **POST** /convert/edit/pdf/get-metadata | Get PDF document metadata
+*EditPdfApi* | [**edit_pdf_get_pdf_text_by_pages**](docs/EditPdfApi.md#edit_pdf_get_pdf_text_by_pages) | **POST** /convert/edit/pdf/pages/get-text | Get text in a PDF document by page
 *EditPdfApi* | [**edit_pdf_insert_pages**](docs/EditPdfApi.md#edit_pdf_insert_pages) | **POST** /convert/edit/pdf/pages/insert | Insert / copy pages from one PDF document into another
 *EditPdfApi* | [**edit_pdf_rasterize**](docs/EditPdfApi.md#edit_pdf_rasterize) | **POST** /convert/edit/pdf/rasterize | Rasterize a PDF to an image-based PDF
 *EditPdfApi* | [**edit_pdf_set_form_fields**](docs/EditPdfApi.md#edit_pdf_set_form_fields) | **POST** /convert/edit/pdf/form/set-fields | Sets ands fills PDF Form field values
@@ -194,6 +198,7 @@ Class | Method | HTTP request | Description
  - [DocxImage](docs/DocxImage.md)
  - [DocxInsertImageRequest](docs/DocxInsertImageRequest.md)
  - [DocxInsertImageResponse](docs/DocxInsertImageResponse.md)
+ - [DocxPage](docs/DocxPage.md)
  - [DocxParagraph](docs/DocxParagraph.md)
  - [DocxRemoveObjectRequest](docs/DocxRemoveObjectRequest.md)
  - [DocxRemoveObjectResponse](docs/DocxRemoveObjectResponse.md)
@@ -219,6 +224,8 @@ Class | Method | HTTP request | Description
  - [GetDocxHeadersAndFootersResponse](docs/GetDocxHeadersAndFootersResponse.md)
  - [GetDocxImagesRequest](docs/GetDocxImagesRequest.md)
  - [GetDocxImagesResponse](docs/GetDocxImagesResponse.md)
+ - [GetDocxPagesRequest](docs/GetDocxPagesRequest.md)
+ - [GetDocxPagesResponse](docs/GetDocxPagesResponse.md)
  - [GetDocxSectionsRequest](docs/GetDocxSectionsRequest.md)
  - [GetDocxSectionsResponse](docs/GetDocxSectionsResponse.md)
  - [GetDocxStylesRequest](docs/GetDocxStylesRequest.md)
@@ -245,6 +252,8 @@ Class | Method | HTTP request | Description
  - [HtmlToPngRequest](docs/HtmlToPngRequest.md)
  - [InsertDocxInsertParagraphRequest](docs/InsertDocxInsertParagraphRequest.md)
  - [InsertDocxInsertParagraphResponse](docs/InsertDocxInsertParagraphResponse.md)
+ - [InsertDocxTableRowRequest](docs/InsertDocxTableRowRequest.md)
+ - [InsertDocxTableRowResponse](docs/InsertDocxTableRowResponse.md)
  - [InsertDocxTablesRequest](docs/InsertDocxTablesRequest.md)
  - [InsertDocxTablesResponse](docs/InsertDocxTablesResponse.md)
  - [InsertXlsxWorksheetRequest](docs/InsertXlsxWorksheetRequest.md)
@@ -255,9 +264,12 @@ Class | Method | HTTP request | Description
  - [PdfFormField](docs/PdfFormField.md)
  - [PdfFormFields](docs/PdfFormFields.md)
  - [PdfMetadata](docs/PdfMetadata.md)
+ - [PdfPageText](docs/PdfPageText.md)
+ - [PdfTextByPageResult](docs/PdfTextByPageResult.md)
  - [PdfToPngResult](docs/PdfToPngResult.md)
  - [RemoveDocxHeadersAndFootersRequest](docs/RemoveDocxHeadersAndFootersRequest.md)
  - [RemoveDocxHeadersAndFootersResponse](docs/RemoveDocxHeadersAndFootersResponse.md)
+ - [RemoveDocxPagesRequest](docs/RemoveDocxPagesRequest.md)
  - [ReplaceStringRequest](docs/ReplaceStringRequest.md)
  - [ScreenshotRequest](docs/ScreenshotRequest.md)
  - [SetFormFieldValue](docs/SetFormFieldValue.md)

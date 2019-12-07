@@ -4,7 +4,7 @@ All URIs are relative to *https://api.cloudmersive.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**convert_web_html_to_docx**](ConvertWebApi.md#convert_web_html_to_docx) | **POST** /convert/html/to/docx | Convert HTML to DOCX
+[**convert_web_html_to_docx**](ConvertWebApi.md#convert_web_html_to_docx) | **POST** /convert/html/to/docx | Convert HTML to Word DOCX Document
 [**convert_web_html_to_pdf**](ConvertWebApi.md#convert_web_html_to_pdf) | **POST** /convert/web/html/to/pdf | Convert HTML string to PDF
 [**convert_web_html_to_png**](ConvertWebApi.md#convert_web_html_to_png) | **POST** /convert/web/html/to/png | Convert HTML string to PNG
 [**convert_web_md_to_html**](ConvertWebApi.md#convert_web_md_to_html) | **POST** /convert/web/md/to/html | Convert Markdown to HTML
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 # **convert_web_html_to_docx**
 > str convert_web_html_to_docx(input_request)
 
-Convert HTML to DOCX
+Convert HTML to Word DOCX Document
 
 Convert HTML to Office Word Document (DOCX) format
 
@@ -38,7 +38,7 @@ api_instance = cloudmersive_convert_api_client.ConvertWebApi(cloudmersive_conver
 input_request = cloudmersive_convert_api_client.HtmlToOfficeRequest() # HtmlToOfficeRequest | HTL input to convert to DOCX
 
 try:
-    # Convert HTML to DOCX
+    # Convert HTML to Word DOCX Document
     api_response = api_instance.convert_web_html_to_docx(input_request)
     pprint(api_response)
 except ApiException as e:

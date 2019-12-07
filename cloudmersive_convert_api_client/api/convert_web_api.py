@@ -34,7 +34,7 @@ class ConvertWebApi(object):
         self.api_client = api_client
 
     def convert_web_html_to_docx(self, input_request, **kwargs):  # noqa: E501
-        """Convert HTML to DOCX  # noqa: E501
+        """Convert HTML to Word DOCX Document  # noqa: E501
 
         Convert HTML to Office Word Document (DOCX) format  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -56,7 +56,7 @@ class ConvertWebApi(object):
             return data
 
     def convert_web_html_to_docx_with_http_info(self, input_request, **kwargs):  # noqa: E501
-        """Convert HTML to DOCX  # noqa: E501
+        """Convert HTML to Word DOCX Document  # noqa: E501
 
         Convert HTML to Office Word Document (DOCX) format  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
