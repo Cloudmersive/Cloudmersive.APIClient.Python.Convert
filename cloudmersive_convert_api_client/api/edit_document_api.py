@@ -330,6 +330,105 @@ class EditDocumentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def edit_document_docx_delete_table_row(self, req_config, **kwargs):  # noqa: E501
+        """Deletes a table row in an existing table in a Word DOCX document  # noqa: E501
+
+        Deletes an existing table row in a Word DOCX Document and returns the result.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_docx_delete_table_row(req_config, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param DeleteDocxTableRowRequest req_config: Document input request (required)
+        :return: DeleteDocxTableRowResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.edit_document_docx_delete_table_row_with_http_info(req_config, **kwargs)  # noqa: E501
+        else:
+            (data) = self.edit_document_docx_delete_table_row_with_http_info(req_config, **kwargs)  # noqa: E501
+            return data
+
+    def edit_document_docx_delete_table_row_with_http_info(self, req_config, **kwargs):  # noqa: E501
+        """Deletes a table row in an existing table in a Word DOCX document  # noqa: E501
+
+        Deletes an existing table row in a Word DOCX Document and returns the result.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_docx_delete_table_row_with_http_info(req_config, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param DeleteDocxTableRowRequest req_config: Document input request (required)
+        :return: DeleteDocxTableRowResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['req_config']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method edit_document_docx_delete_table_row" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'req_config' is set
+        if ('req_config' not in params or
+                params['req_config'] is None):
+            raise ValueError("Missing the required parameter `req_config` when calling `edit_document_docx_delete_table_row`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'req_config' in params:
+            body_params = params['req_config']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/edit/docx/delete-table-row', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='DeleteDocxTableRowResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def edit_document_docx_get_headers_and_footers(self, req_config, **kwargs):  # noqa: E501
         """Get content of a footer from a Word DOCX document  # noqa: E501
 
@@ -726,8 +825,206 @@ class EditDocumentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def edit_document_docx_get_table_by_index(self, req_config, **kwargs):  # noqa: E501
+        """Get a specific table by index in a Word DOCX document  # noqa: E501
+
+        Returns the specific table object by its 0-based index in an Office Word Document (DOCX)  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_docx_get_table_by_index(req_config, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param GetDocxTableByIndexRequest req_config: Document input request (required)
+        :return: GetDocxTableByIndexResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.edit_document_docx_get_table_by_index_with_http_info(req_config, **kwargs)  # noqa: E501
+        else:
+            (data) = self.edit_document_docx_get_table_by_index_with_http_info(req_config, **kwargs)  # noqa: E501
+            return data
+
+    def edit_document_docx_get_table_by_index_with_http_info(self, req_config, **kwargs):  # noqa: E501
+        """Get a specific table by index in a Word DOCX document  # noqa: E501
+
+        Returns the specific table object by its 0-based index in an Office Word Document (DOCX)  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_docx_get_table_by_index_with_http_info(req_config, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param GetDocxTableByIndexRequest req_config: Document input request (required)
+        :return: GetDocxTableByIndexResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['req_config']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method edit_document_docx_get_table_by_index" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'req_config' is set
+        if ('req_config' not in params or
+                params['req_config'] is None):
+            raise ValueError("Missing the required parameter `req_config` when calling `edit_document_docx_get_table_by_index`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'req_config' in params:
+            body_params = params['req_config']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/edit/docx/get-table/by-index', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='GetDocxTableByIndexResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def edit_document_docx_get_table_row(self, req_config, **kwargs):  # noqa: E501
+        """Gets the contents of an existing table row in an existing table in a Word DOCX document  # noqa: E501
+
+        Gets the contents of an existing table row in a Word DOCX Document and returns the result.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_docx_get_table_row(req_config, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param GetDocxTableRowRequest req_config: Document input request (required)
+        :return: GetDocxTableRowResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.edit_document_docx_get_table_row_with_http_info(req_config, **kwargs)  # noqa: E501
+        else:
+            (data) = self.edit_document_docx_get_table_row_with_http_info(req_config, **kwargs)  # noqa: E501
+            return data
+
+    def edit_document_docx_get_table_row_with_http_info(self, req_config, **kwargs):  # noqa: E501
+        """Gets the contents of an existing table row in an existing table in a Word DOCX document  # noqa: E501
+
+        Gets the contents of an existing table row in a Word DOCX Document and returns the result.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_docx_get_table_row_with_http_info(req_config, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param GetDocxTableRowRequest req_config: Document input request (required)
+        :return: GetDocxTableRowResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['req_config']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method edit_document_docx_get_table_row" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'req_config' is set
+        if ('req_config' not in params or
+                params['req_config'] is None):
+            raise ValueError("Missing the required parameter `req_config` when calling `edit_document_docx_get_table_row`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'req_config' in params:
+            body_params = params['req_config']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/edit/docx/get-table-row', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='GetDocxTableRowResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def edit_document_docx_get_tables(self, req_config, **kwargs):  # noqa: E501
-        """Get tables in Word DOCX document  # noqa: E501
+        """Get all tables in Word DOCX document  # noqa: E501
 
         Returns all the table objects in an Office Word Document (docx)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -749,7 +1046,7 @@ class EditDocumentApi(object):
             return data
 
     def edit_document_docx_get_tables_with_http_info(self, req_config, **kwargs):  # noqa: E501
-        """Get tables in Word DOCX document  # noqa: E501
+        """Get all tables in Word DOCX document  # noqa: E501
 
         Returns all the table objects in an Office Word Document (docx)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1907,6 +2204,105 @@ class EditDocumentApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='DocxSetHeaderResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def edit_document_docx_update_table_row(self, req_config, **kwargs):  # noqa: E501
+        """Update, set contents of a table row in an existing table in a Word DOCX document  # noqa: E501
+
+        Sets the contents of a table row into a DOCX Document and returns the result.  Call Finish Editing on the output URL to complete the operation.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_docx_update_table_row(req_config, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param UpdateDocxTableRowRequest req_config: Document input request (required)
+        :return: UpdateDocxTableRowResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.edit_document_docx_update_table_row_with_http_info(req_config, **kwargs)  # noqa: E501
+        else:
+            (data) = self.edit_document_docx_update_table_row_with_http_info(req_config, **kwargs)  # noqa: E501
+            return data
+
+    def edit_document_docx_update_table_row_with_http_info(self, req_config, **kwargs):  # noqa: E501
+        """Update, set contents of a table row in an existing table in a Word DOCX document  # noqa: E501
+
+        Sets the contents of a table row into a DOCX Document and returns the result.  Call Finish Editing on the output URL to complete the operation.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_docx_update_table_row_with_http_info(req_config, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param UpdateDocxTableRowRequest req_config: Document input request (required)
+        :return: UpdateDocxTableRowResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['req_config']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method edit_document_docx_update_table_row" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'req_config' is set
+        if ('req_config' not in params or
+                params['req_config'] is None):
+            raise ValueError("Missing the required parameter `req_config` when calling `edit_document_docx_update_table_row`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'req_config' in params:
+            body_params = params['req_config']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/edit/docx/update-table-row', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='UpdateDocxTableRowResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

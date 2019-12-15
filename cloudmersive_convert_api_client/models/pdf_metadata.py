@@ -38,7 +38,8 @@ class PdfMetadata(object):
         'author': 'str',
         'creator': 'str',
         'date_modified': 'datetime',
-        'date_created': 'datetime'
+        'date_created': 'datetime',
+        'page_count': 'int'
     }
 
     attribute_map = {
@@ -49,10 +50,11 @@ class PdfMetadata(object):
         'author': 'Author',
         'creator': 'Creator',
         'date_modified': 'DateModified',
-        'date_created': 'DateCreated'
+        'date_created': 'DateCreated',
+        'page_count': 'PageCount'
     }
 
-    def __init__(self, successful=None, title=None, keywords=None, subject=None, author=None, creator=None, date_modified=None, date_created=None):  # noqa: E501
+    def __init__(self, successful=None, title=None, keywords=None, subject=None, author=None, creator=None, date_modified=None, date_created=None, page_count=None):  # noqa: E501
         """PdfMetadata - a model defined in Swagger"""  # noqa: E501
 
         self._successful = None
@@ -63,6 +65,7 @@ class PdfMetadata(object):
         self._creator = None
         self._date_modified = None
         self._date_created = None
+        self._page_count = None
         self.discriminator = None
 
         if successful is not None:
@@ -81,6 +84,8 @@ class PdfMetadata(object):
             self.date_modified = date_modified
         if date_created is not None:
             self.date_created = date_created
+        if page_count is not None:
+            self.page_count = page_count
 
     @property
     def successful(self):
@@ -265,6 +270,29 @@ class PdfMetadata(object):
         """
 
         self._date_created = date_created
+
+    @property
+    def page_count(self):
+        """Gets the page_count of this PdfMetadata.  # noqa: E501
+
+        The number of pages in the document  # noqa: E501
+
+        :return: The page_count of this PdfMetadata.  # noqa: E501
+        :rtype: int
+        """
+        return self._page_count
+
+    @page_count.setter
+    def page_count(self, page_count):
+        """Sets the page_count of this PdfMetadata.
+
+        The number of pages in the document  # noqa: E501
+
+        :param page_count: The page_count of this PdfMetadata.  # noqa: E501
+        :type: int
+        """
+
+        self._page_count = page_count
 
     def to_dict(self):
         """Returns the model properties as a dict"""
