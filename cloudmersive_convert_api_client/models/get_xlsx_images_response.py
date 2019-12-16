@@ -81,7 +81,7 @@ class GetXlsxImagesResponse(object):
     def images(self):
         """Gets the images of this GetXlsxImagesResponse.  # noqa: E501
 
-        Spreadsheet Columns in the DOCX document  # noqa: E501
+        Spreadsheet Images in the XLSX document  # noqa: E501
 
         :return: The images of this GetXlsxImagesResponse.  # noqa: E501
         :rtype: list[XlsxImage]
@@ -92,7 +92,7 @@ class GetXlsxImagesResponse(object):
     def images(self, images):
         """Sets the images of this GetXlsxImagesResponse.
 
-        Spreadsheet Columns in the DOCX document  # noqa: E501
+        Spreadsheet Images in the XLSX document  # noqa: E501
 
         :param images: The images of this GetXlsxImagesResponse.  # noqa: E501
         :type: list[XlsxImage]

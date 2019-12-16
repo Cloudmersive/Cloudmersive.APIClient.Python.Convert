@@ -81,7 +81,7 @@ class GetXlsxRowsAndCellsResponse(object):
     def rows(self):
         """Gets the rows of this GetXlsxRowsAndCellsResponse.  # noqa: E501
 
-        Spreadsheet Rows in the DOCX document  # noqa: E501
+        Spreadsheet Rows in the Excel XLSX document  # noqa: E501
 
         :return: The rows of this GetXlsxRowsAndCellsResponse.  # noqa: E501
         :rtype: list[XlsxSpreadsheetRow]
@@ -92,7 +92,7 @@ class GetXlsxRowsAndCellsResponse(object):
     def rows(self, rows):
         """Sets the rows of this GetXlsxRowsAndCellsResponse.
 
-        Spreadsheet Rows in the DOCX document  # noqa: E501
+        Spreadsheet Rows in the Excel XLSX document  # noqa: E501
 
         :param rows: The rows of this GetXlsxRowsAndCellsResponse.  # noqa: E501
         :type: list[XlsxSpreadsheetRow]

@@ -39,7 +39,9 @@ class DocxInsertImageRequest(object):
         'input_image_file_url': 'str',
         'image_to_add': 'DocxImage',
         'insert_placement': 'str',
-        'insert_path': 'str'
+        'insert_path': 'str',
+        'width_in_em_us': 'int',
+        'height_in_em_us': 'int'
     }
 
     attribute_map = {
@@ -49,10 +51,12 @@ class DocxInsertImageRequest(object):
         'input_image_file_url': 'InputImageFileUrl',
         'image_to_add': 'ImageToAdd',
         'insert_placement': 'InsertPlacement',
-        'insert_path': 'InsertPath'
+        'insert_path': 'InsertPath',
+        'width_in_em_us': 'WidthInEMUs',
+        'height_in_em_us': 'HeightInEMUs'
     }
 
-    def __init__(self, input_document_file_bytes=None, input_document_file_url=None, input_image_file_bytes=None, input_image_file_url=None, image_to_add=None, insert_placement=None, insert_path=None):  # noqa: E501
+    def __init__(self, input_document_file_bytes=None, input_document_file_url=None, input_image_file_bytes=None, input_image_file_url=None, image_to_add=None, insert_placement=None, insert_path=None, width_in_em_us=None, height_in_em_us=None):  # noqa: E501
         """DocxInsertImageRequest - a model defined in Swagger"""  # noqa: E501
 
         self._input_document_file_bytes = None
@@ -62,6 +66,8 @@ class DocxInsertImageRequest(object):
         self._image_to_add = None
         self._insert_placement = None
         self._insert_path = None
+        self._width_in_em_us = None
+        self._height_in_em_us = None
         self.discriminator = None
 
         if input_document_file_bytes is not None:
@@ -78,6 +84,10 @@ class DocxInsertImageRequest(object):
             self.insert_placement = insert_placement
         if insert_path is not None:
             self.insert_path = insert_path
+        if width_in_em_us is not None:
+            self.width_in_em_us = width_in_em_us
+        if height_in_em_us is not None:
+            self.height_in_em_us = height_in_em_us
 
     @property
     def input_document_file_bytes(self):
@@ -243,6 +253,52 @@ class DocxInsertImageRequest(object):
         """
 
         self._insert_path = insert_path
+
+    @property
+    def width_in_em_us(self):
+        """Gets the width_in_em_us of this DocxInsertImageRequest.  # noqa: E501
+
+        Optional: The width of the image in EMUs  # noqa: E501
+
+        :return: The width_in_em_us of this DocxInsertImageRequest.  # noqa: E501
+        :rtype: int
+        """
+        return self._width_in_em_us
+
+    @width_in_em_us.setter
+    def width_in_em_us(self, width_in_em_us):
+        """Sets the width_in_em_us of this DocxInsertImageRequest.
+
+        Optional: The width of the image in EMUs  # noqa: E501
+
+        :param width_in_em_us: The width_in_em_us of this DocxInsertImageRequest.  # noqa: E501
+        :type: int
+        """
+
+        self._width_in_em_us = width_in_em_us
+
+    @property
+    def height_in_em_us(self):
+        """Gets the height_in_em_us of this DocxInsertImageRequest.  # noqa: E501
+
+        Optional: The height of the image in EMUs  # noqa: E501
+
+        :return: The height_in_em_us of this DocxInsertImageRequest.  # noqa: E501
+        :rtype: int
+        """
+        return self._height_in_em_us
+
+    @height_in_em_us.setter
+    def height_in_em_us(self, height_in_em_us):
+        """Sets the height_in_em_us of this DocxInsertImageRequest.
+
+        Optional: The height of the image in EMUs  # noqa: E501
+
+        :param height_in_em_us: The height_in_em_us of this DocxInsertImageRequest.  # noqa: E501
+        :type: int
+        """
+
+        self._height_in_em_us = height_in_em_us
 
     def to_dict(self):
         """Returns the model properties as a dict"""
