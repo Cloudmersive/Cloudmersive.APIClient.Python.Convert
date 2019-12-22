@@ -6,7 +6,9 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**convert_web_html_to_docx**](ConvertWebApi.md#convert_web_html_to_docx) | **POST** /convert/html/to/docx | Convert HTML to Word DOCX Document
 [**convert_web_html_to_pdf**](ConvertWebApi.md#convert_web_html_to_pdf) | **POST** /convert/web/html/to/pdf | Convert HTML string to PDF
-[**convert_web_html_to_png**](ConvertWebApi.md#convert_web_html_to_png) | **POST** /convert/web/html/to/png | Convert HTML string to PNG
+[**convert_web_html_to_png**](ConvertWebApi.md#convert_web_html_to_png) | **POST** /convert/web/html/to/png | Convert HTML string to PNG screenshot
+[**convert_web_html_to_txt**](ConvertWebApi.md#convert_web_html_to_txt) | **POST** /convert/web/url/to/txt | Convert website URL page to text (txt)
+[**convert_web_html_to_txt_0**](ConvertWebApi.md#convert_web_html_to_txt_0) | **POST** /convert/web/html/to/txt | Convert HTML string to text (txt)
 [**convert_web_md_to_html**](ConvertWebApi.md#convert_web_md_to_html) | **POST** /convert/web/md/to/html | Convert Markdown to HTML
 [**convert_web_url_to_pdf**](ConvertWebApi.md#convert_web_url_to_pdf) | **POST** /convert/web/url/to/pdf | Convert a URL to PDF
 [**convert_web_url_to_screenshot**](ConvertWebApi.md#convert_web_url_to_screenshot) | **POST** /convert/web/url/to/screenshot | Take screenshot of URL
@@ -123,7 +125,7 @@ Name | Type | Description  | Notes
 # **convert_web_html_to_png**
 > object convert_web_html_to_png(input)
 
-Convert HTML string to PNG
+Convert HTML string to PNG screenshot
 
 Fully renders a website and returns a PNG (screenshot) of the HTML.  Javascript, HTML5, CSS and other advanced features are all supported.
 
@@ -146,7 +148,7 @@ api_instance = cloudmersive_convert_api_client.ConvertWebApi(cloudmersive_conver
 input = cloudmersive_convert_api_client.HtmlToPngRequest() # HtmlToPngRequest | HTML to PNG request parameters
 
 try:
-    # Convert HTML string to PNG
+    # Convert HTML string to PNG screenshot
     api_response = api_instance.convert_web_html_to_png(input)
     pprint(api_response)
 except ApiException as e:
@@ -162,6 +164,114 @@ Name | Type | Description  | Notes
 ### Return type
 
 **object**
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
+ - **Accept**: application/octet-stream
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **convert_web_html_to_txt**
+> UrlToTextResponse convert_web_html_to_txt(input)
+
+Convert website URL page to text (txt)
+
+Converts a website URL page into text (txt); extracts text from HTML
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_convert_api_client
+from cloudmersive_convert_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_convert_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_convert_api_client.ConvertWebApi(cloudmersive_convert_api_client.ApiClient(configuration))
+input = cloudmersive_convert_api_client.UrlToTextRequest() # UrlToTextRequest | HTML to Text request parameters
+
+try:
+    # Convert website URL page to text (txt)
+    api_response = api_instance.convert_web_html_to_txt(input)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConvertWebApi->convert_web_html_to_txt: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **input** | [**UrlToTextRequest**](UrlToTextRequest.md)| HTML to Text request parameters | 
+
+### Return type
+
+[**UrlToTextResponse**](UrlToTextResponse.md)
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
+ - **Accept**: application/octet-stream
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **convert_web_html_to_txt_0**
+> HtmlToTextResponse convert_web_html_to_txt_0(input)
+
+Convert HTML string to text (txt)
+
+Converts an HTML string input into text (txt); extracts text from HTML
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_convert_api_client
+from cloudmersive_convert_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_convert_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_convert_api_client.ConvertWebApi(cloudmersive_convert_api_client.ApiClient(configuration))
+input = cloudmersive_convert_api_client.HtmlToTextRequest() # HtmlToTextRequest | HTML to Text request parameters
+
+try:
+    # Convert HTML string to text (txt)
+    api_response = api_instance.convert_web_html_to_txt_0(input)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConvertWebApi->convert_web_html_to_txt_0: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **input** | [**HtmlToTextRequest**](HtmlToTextRequest.md)| HTML to Text request parameters | 
+
+### Return type
+
+[**HtmlToTextResponse**](HtmlToTextResponse.md)
 
 ### Authorization
 

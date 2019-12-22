@@ -7,31 +7,32 @@ Method | HTTP request | Description
 [**convert_document_autodetect_get_info**](ConvertDocumentApi.md#convert_document_autodetect_get_info) | **POST** /convert/autodetect/get-info | Get document type information
 [**convert_document_autodetect_to_pdf**](ConvertDocumentApi.md#convert_document_autodetect_to_pdf) | **POST** /convert/autodetect/to/pdf | Convert Document to PDF
 [**convert_document_autodetect_to_png_array**](ConvertDocumentApi.md#convert_document_autodetect_to_png_array) | **POST** /convert/autodetect/to/png | Convert Document to PNG array
-[**convert_document_autodetect_to_txt**](ConvertDocumentApi.md#convert_document_autodetect_to_txt) | **POST** /convert/autodetect/to/txt | Convert Document to Text
+[**convert_document_autodetect_to_txt**](ConvertDocumentApi.md#convert_document_autodetect_to_txt) | **POST** /convert/autodetect/to/txt | Convert Document to Text (txt)
 [**convert_document_csv_to_xlsx**](ConvertDocumentApi.md#convert_document_csv_to_xlsx) | **POST** /convert/csv/to/xlsx | Convert CSV to Excel XLSX Spreadsheet
 [**convert_document_doc_to_docx**](ConvertDocumentApi.md#convert_document_doc_to_docx) | **POST** /convert/doc/to/docx | Convert Word DOC (97-03) Document to DOCX
 [**convert_document_doc_to_pdf**](ConvertDocumentApi.md#convert_document_doc_to_pdf) | **POST** /convert/doc/to/pdf | Convert Word DOC (97-03) Document to PDF
 [**convert_document_docx_to_pdf**](ConvertDocumentApi.md#convert_document_docx_to_pdf) | **POST** /convert/docx/to/pdf | Convert Word DOCX Document to PDF
-[**convert_document_docx_to_txt**](ConvertDocumentApi.md#convert_document_docx_to_txt) | **POST** /convert/docx/to/txt | Convert Word DOCX Document to Text
-[**convert_document_html_to_pdf**](ConvertDocumentApi.md#convert_document_html_to_pdf) | **POST** /convert/html/to/pdf | Convert HTML to PDF Document
-[**convert_document_html_to_png**](ConvertDocumentApi.md#convert_document_html_to_png) | **POST** /convert/html/to/png | Convert HTML to PNG image array
+[**convert_document_docx_to_txt**](ConvertDocumentApi.md#convert_document_docx_to_txt) | **POST** /convert/docx/to/txt | Convert Word DOCX Document to Text (txt)
+[**convert_document_html_to_pdf**](ConvertDocumentApi.md#convert_document_html_to_pdf) | **POST** /convert/html/to/pdf | Convert HTML document file to PDF Document
+[**convert_document_html_to_png**](ConvertDocumentApi.md#convert_document_html_to_png) | **POST** /convert/html/to/png | Convert HTML document file to PNG image array
+[**convert_document_html_to_txt**](ConvertDocumentApi.md#convert_document_html_to_txt) | **POST** /convert/html/to/txt | HTML Document file to Text (txt)
 [**convert_document_pdf_to_docx**](ConvertDocumentApi.md#convert_document_pdf_to_docx) | **POST** /convert/pdf/to/docx | Convert PDF to Word DOCX Document
 [**convert_document_pdf_to_docx_rasterize**](ConvertDocumentApi.md#convert_document_pdf_to_docx_rasterize) | **POST** /convert/pdf/to/docx/rasterize | Convert PDF to Word DOCX Document based on rasterized version of the PDF
 [**convert_document_pdf_to_png_array**](ConvertDocumentApi.md#convert_document_pdf_to_png_array) | **POST** /convert/pdf/to/png | Convert PDF to PNG Image Array
 [**convert_document_pdf_to_png_single**](ConvertDocumentApi.md#convert_document_pdf_to_png_single) | **POST** /convert/pdf/to/png/merge-single | Convert PDF to Single PNG image
 [**convert_document_pdf_to_pptx**](ConvertDocumentApi.md#convert_document_pdf_to_pptx) | **POST** /convert/pdf/to/pptx | Convert PDF to PowerPoint PPTX Presentation
-[**convert_document_pdf_to_txt**](ConvertDocumentApi.md#convert_document_pdf_to_txt) | **POST** /convert/pdf/to/txt | Convert PDF Document to Text
+[**convert_document_pdf_to_txt**](ConvertDocumentApi.md#convert_document_pdf_to_txt) | **POST** /convert/pdf/to/txt | Convert PDF Document to Text (txt)
 [**convert_document_png_array_to_pdf**](ConvertDocumentApi.md#convert_document_png_array_to_pdf) | **POST** /convert/png/to/pdf | Convert PNG Array to PDF
 [**convert_document_ppt_to_pdf**](ConvertDocumentApi.md#convert_document_ppt_to_pdf) | **POST** /convert/ppt/to/pdf | Convert PowerPoint PPT (97-03) Presentation to PDF
 [**convert_document_ppt_to_pptx**](ConvertDocumentApi.md#convert_document_ppt_to_pptx) | **POST** /convert/ppt/to/pptx | Convert PowerPoint PPT (97-03) Presentation to PPTX
 [**convert_document_pptx_to_pdf**](ConvertDocumentApi.md#convert_document_pptx_to_pdf) | **POST** /convert/pptx/to/pdf | Convert PowerPoint PPTX Presentation to PDF
-[**convert_document_pptx_to_txt**](ConvertDocumentApi.md#convert_document_pptx_to_txt) | **POST** /convert/pptx/to/txt | Convert PowerPoint PPTX Presentation to Text
+[**convert_document_pptx_to_txt**](ConvertDocumentApi.md#convert_document_pptx_to_txt) | **POST** /convert/pptx/to/txt | Convert PowerPoint PPTX Presentation to Text (txt)
 [**convert_document_xls_to_csv**](ConvertDocumentApi.md#convert_document_xls_to_csv) | **POST** /convert/xls/to/csv | Convert Excel XLS (97-03) Spreadsheet to CSV
 [**convert_document_xls_to_pdf**](ConvertDocumentApi.md#convert_document_xls_to_pdf) | **POST** /convert/xls/to/pdf | Convert Excel XLS (97-03) Spreadsheet to PDF
 [**convert_document_xls_to_xlsx**](ConvertDocumentApi.md#convert_document_xls_to_xlsx) | **POST** /convert/xls/to/xlsx | Convert Excel XLS (97-03) Spreadsheet to XLSX
 [**convert_document_xlsx_to_csv**](ConvertDocumentApi.md#convert_document_xlsx_to_csv) | **POST** /convert/xlsx/to/csv | Convert Excel XLSX Spreadsheet to CSV
 [**convert_document_xlsx_to_pdf**](ConvertDocumentApi.md#convert_document_xlsx_to_pdf) | **POST** /convert/xlsx/to/pdf | Convert Excel XLSX Spreadsheet to PDF
-[**convert_document_xlsx_to_txt**](ConvertDocumentApi.md#convert_document_xlsx_to_txt) | **POST** /convert/xlsx/to/txt | Convert Excel XLSX Spreadsheet to Text
+[**convert_document_xlsx_to_txt**](ConvertDocumentApi.md#convert_document_xlsx_to_txt) | **POST** /convert/xlsx/to/txt | Convert Excel XLSX Spreadsheet to Text (txt)
 
 
 # **convert_document_autodetect_get_info**
@@ -199,7 +200,7 @@ Name | Type | Description  | Notes
 # **convert_document_autodetect_to_txt**
 > TextConversionResult convert_document_autodetect_to_txt(input_file)
 
-Convert Document to Text
+Convert Document to Text (txt)
 
 Automatically detect file type and convert it to Text.  Supports all of the major Office document file formats including Word (DOCX, DOC), Excel (XLSX, XLS), PowerPoint (PPTX, PPT) and PDF files.
 
@@ -222,7 +223,7 @@ api_instance = cloudmersive_convert_api_client.ConvertDocumentApi(cloudmersive_c
 input_file = '/path/to/file.txt' # file | Input file to perform the operation on.
 
 try:
-    # Convert Document to Text
+    # Convert Document to Text (txt)
     api_response = api_instance.convert_document_autodetect_to_txt(input_file)
     pprint(api_response)
 except ApiException as e:
@@ -469,7 +470,7 @@ Name | Type | Description  | Notes
 # **convert_document_docx_to_txt**
 > TextConversionResult convert_document_docx_to_txt(input_file)
 
-Convert Word DOCX Document to Text
+Convert Word DOCX Document to Text (txt)
 
 Convert Office Word Documents (docx) to text
 
@@ -492,7 +493,7 @@ api_instance = cloudmersive_convert_api_client.ConvertDocumentApi(cloudmersive_c
 input_file = '/path/to/file.txt' # file | Input file to perform the operation on.
 
 try:
-    # Convert Word DOCX Document to Text
+    # Convert Word DOCX Document to Text (txt)
     api_response = api_instance.convert_document_docx_to_txt(input_file)
     pprint(api_response)
 except ApiException as e:
@@ -523,7 +524,7 @@ Name | Type | Description  | Notes
 # **convert_document_html_to_pdf**
 > str convert_document_html_to_pdf(input_file)
 
-Convert HTML to PDF Document
+Convert HTML document file to PDF Document
 
 Convert standard HTML, with full support for CSS, JavaScript, Images, and other complex behavior to PDF.  To use external files such as images, use an absolute URL to the file.
 
@@ -546,7 +547,7 @@ api_instance = cloudmersive_convert_api_client.ConvertDocumentApi(cloudmersive_c
 input_file = '/path/to/file.txt' # file | Input file to perform the operation on.
 
 try:
-    # Convert HTML to PDF Document
+    # Convert HTML document file to PDF Document
     api_response = api_instance.convert_document_html_to_pdf(input_file)
     pprint(api_response)
 except ApiException as e:
@@ -577,7 +578,7 @@ Name | Type | Description  | Notes
 # **convert_document_html_to_png**
 > PdfToPngResult convert_document_html_to_png(input_file)
 
-Convert HTML to PNG image array
+Convert HTML document file to PNG image array
 
 Convert standard HTML, with full support for CSS, JavaScript, Images, and other complex behavior to an array of PNG images, one for each page.  To use external files in your HTML such as images, use an absolute URL to the file.
 
@@ -600,7 +601,7 @@ api_instance = cloudmersive_convert_api_client.ConvertDocumentApi(cloudmersive_c
 input_file = '/path/to/file.txt' # file | Input file to perform the operation on.
 
 try:
-    # Convert HTML to PNG image array
+    # Convert HTML document file to PNG image array
     api_response = api_instance.convert_document_html_to_png(input_file)
     pprint(api_response)
 except ApiException as e:
@@ -616,6 +617,60 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PdfToPngResult**](PdfToPngResult.md)
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **convert_document_html_to_txt**
+> TextConversionResult convert_document_html_to_txt(input_file)
+
+HTML Document file to Text (txt)
+
+HTML document to text
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_convert_api_client
+from cloudmersive_convert_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_convert_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_convert_api_client.ConvertDocumentApi(cloudmersive_convert_api_client.ApiClient(configuration))
+input_file = '/path/to/file.txt' # file | Input file to perform the operation on.
+
+try:
+    # HTML Document file to Text (txt)
+    api_response = api_instance.convert_document_html_to_txt(input_file)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConvertDocumentApi->convert_document_html_to_txt: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **input_file** | **file**| Input file to perform the operation on. | 
+
+### Return type
+
+[**TextConversionResult**](TextConversionResult.md)
 
 ### Authorization
 
@@ -901,7 +956,7 @@ Name | Type | Description  | Notes
 # **convert_document_pdf_to_txt**
 > TextConversionResult convert_document_pdf_to_txt(input_file)
 
-Convert PDF Document to Text
+Convert PDF Document to Text (txt)
 
 PDF document to text
 
@@ -924,7 +979,7 @@ api_instance = cloudmersive_convert_api_client.ConvertDocumentApi(cloudmersive_c
 input_file = '/path/to/file.txt' # file | Input file to perform the operation on.
 
 try:
-    # Convert PDF Document to Text
+    # Convert PDF Document to Text (txt)
     api_response = api_instance.convert_document_pdf_to_txt(input_file)
     pprint(api_response)
 except ApiException as e:
@@ -1189,7 +1244,7 @@ Name | Type | Description  | Notes
 # **convert_document_pptx_to_txt**
 > TextConversionResult convert_document_pptx_to_txt(input_file)
 
-Convert PowerPoint PPTX Presentation to Text
+Convert PowerPoint PPTX Presentation to Text (txt)
 
 Convert Office PowerPoint Documents (pptx) to standard Text
 
@@ -1212,7 +1267,7 @@ api_instance = cloudmersive_convert_api_client.ConvertDocumentApi(cloudmersive_c
 input_file = '/path/to/file.txt' # file | Input file to perform the operation on.
 
 try:
-    # Convert PowerPoint PPTX Presentation to Text
+    # Convert PowerPoint PPTX Presentation to Text (txt)
     api_response = api_instance.convert_document_pptx_to_txt(input_file)
     pprint(api_response)
 except ApiException as e:
@@ -1515,7 +1570,7 @@ Name | Type | Description  | Notes
 # **convert_document_xlsx_to_txt**
 > TextConversionResult convert_document_xlsx_to_txt(input_file)
 
-Convert Excel XLSX Spreadsheet to Text
+Convert Excel XLSX Spreadsheet to Text (txt)
 
 Convert Office Excel Workbooks (XLSX) to standard Text.  Converts all worksheets in the workbook to Text.  Supports both XLSX and XLSB file formats.
 
@@ -1538,7 +1593,7 @@ api_instance = cloudmersive_convert_api_client.ConvertDocumentApi(cloudmersive_c
 input_file = '/path/to/file.txt' # file | Input file to perform the operation on.
 
 try:
-    # Convert Excel XLSX Spreadsheet to Text
+    # Convert Excel XLSX Spreadsheet to Text (txt)
     api_response = api_instance.convert_document_xlsx_to_txt(input_file)
     pprint(api_response)
 except ApiException as e:
