@@ -143,7 +143,7 @@ class ConvertDataApi(object):
 
         :param async_req bool
         :param object json_object: (required)
-        :return: object
+        :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -165,7 +165,7 @@ class ConvertDataApi(object):
 
         :param async_req bool
         :param object json_object: (required)
-        :return: object
+        :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -223,7 +223,7 @@ class ConvertDataApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='str',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -429,6 +429,775 @@ class ConvertDataApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def convert_data_xml_edit_add_attribute_with_x_path(self, input_file, x_path_expression, xml_attribute_name, xml_attribute_value, **kwargs):  # noqa: E501
+        """Adds an attribute to all XML nodes matching XPath expression  # noqa: E501
+
+        Return the reuslts of editing an XML document by adding an attribute to all of the nodes that match an input XPath expression.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_data_xml_edit_add_attribute_with_x_path(input_file, x_path_expression, xml_attribute_name, xml_attribute_value, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input XML file to perform the operation on. (required)
+        :param str x_path_expression: Valid XML XPath query expression (required)
+        :param str xml_attribute_name: Name of the XML attribute to add (required)
+        :param str xml_attribute_value: Value of the XML attribute to add (required)
+        :return: XmlAddAttributeWithXPathResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_data_xml_edit_add_attribute_with_x_path_with_http_info(input_file, x_path_expression, xml_attribute_name, xml_attribute_value, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_data_xml_edit_add_attribute_with_x_path_with_http_info(input_file, x_path_expression, xml_attribute_name, xml_attribute_value, **kwargs)  # noqa: E501
+            return data
+
+    def convert_data_xml_edit_add_attribute_with_x_path_with_http_info(self, input_file, x_path_expression, xml_attribute_name, xml_attribute_value, **kwargs):  # noqa: E501
+        """Adds an attribute to all XML nodes matching XPath expression  # noqa: E501
+
+        Return the reuslts of editing an XML document by adding an attribute to all of the nodes that match an input XPath expression.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_data_xml_edit_add_attribute_with_x_path_with_http_info(input_file, x_path_expression, xml_attribute_name, xml_attribute_value, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input XML file to perform the operation on. (required)
+        :param str x_path_expression: Valid XML XPath query expression (required)
+        :param str xml_attribute_name: Name of the XML attribute to add (required)
+        :param str xml_attribute_value: Value of the XML attribute to add (required)
+        :return: XmlAddAttributeWithXPathResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file', 'x_path_expression', 'xml_attribute_name', 'xml_attribute_value']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_data_xml_edit_add_attribute_with_x_path" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_data_xml_edit_add_attribute_with_x_path`")  # noqa: E501
+        # verify the required parameter 'x_path_expression' is set
+        if ('x_path_expression' not in params or
+                params['x_path_expression'] is None):
+            raise ValueError("Missing the required parameter `x_path_expression` when calling `convert_data_xml_edit_add_attribute_with_x_path`")  # noqa: E501
+        # verify the required parameter 'xml_attribute_name' is set
+        if ('xml_attribute_name' not in params or
+                params['xml_attribute_name'] is None):
+            raise ValueError("Missing the required parameter `xml_attribute_name` when calling `convert_data_xml_edit_add_attribute_with_x_path`")  # noqa: E501
+        # verify the required parameter 'xml_attribute_value' is set
+        if ('xml_attribute_value' not in params or
+                params['xml_attribute_value'] is None):
+            raise ValueError("Missing the required parameter `xml_attribute_value` when calling `convert_data_xml_edit_add_attribute_with_x_path`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'x_path_expression' in params:
+            header_params['XPathExpression'] = params['x_path_expression']  # noqa: E501
+        if 'xml_attribute_name' in params:
+            header_params['XmlAttributeName'] = params['xml_attribute_name']  # noqa: E501
+        if 'xml_attribute_value' in params:
+            header_params['XmlAttributeValue'] = params['xml_attribute_value']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/xml/edit/xpath/add-attribute', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='XmlAddAttributeWithXPathResult',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def convert_data_xml_edit_add_child_with_x_path(self, input_file, x_path_expression, xml_node_to_add, **kwargs):  # noqa: E501
+        """Adds an XML node as a child to XML nodes matching XPath expression  # noqa: E501
+
+        Return the reuslts of editing an XML document by adding an XML node as a child to all of the nodes that match an input XPath expression.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_data_xml_edit_add_child_with_x_path(input_file, x_path_expression, xml_node_to_add, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input XML file to perform the operation on. (required)
+        :param str x_path_expression: Valid XML XPath query expression (required)
+        :param str xml_node_to_add: XML Node to add as a child (required)
+        :return: XmlAddChildWithXPathResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_data_xml_edit_add_child_with_x_path_with_http_info(input_file, x_path_expression, xml_node_to_add, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_data_xml_edit_add_child_with_x_path_with_http_info(input_file, x_path_expression, xml_node_to_add, **kwargs)  # noqa: E501
+            return data
+
+    def convert_data_xml_edit_add_child_with_x_path_with_http_info(self, input_file, x_path_expression, xml_node_to_add, **kwargs):  # noqa: E501
+        """Adds an XML node as a child to XML nodes matching XPath expression  # noqa: E501
+
+        Return the reuslts of editing an XML document by adding an XML node as a child to all of the nodes that match an input XPath expression.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_data_xml_edit_add_child_with_x_path_with_http_info(input_file, x_path_expression, xml_node_to_add, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input XML file to perform the operation on. (required)
+        :param str x_path_expression: Valid XML XPath query expression (required)
+        :param str xml_node_to_add: XML Node to add as a child (required)
+        :return: XmlAddChildWithXPathResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file', 'x_path_expression', 'xml_node_to_add']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_data_xml_edit_add_child_with_x_path" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_data_xml_edit_add_child_with_x_path`")  # noqa: E501
+        # verify the required parameter 'x_path_expression' is set
+        if ('x_path_expression' not in params or
+                params['x_path_expression'] is None):
+            raise ValueError("Missing the required parameter `x_path_expression` when calling `convert_data_xml_edit_add_child_with_x_path`")  # noqa: E501
+        # verify the required parameter 'xml_node_to_add' is set
+        if ('xml_node_to_add' not in params or
+                params['xml_node_to_add'] is None):
+            raise ValueError("Missing the required parameter `xml_node_to_add` when calling `convert_data_xml_edit_add_child_with_x_path`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'x_path_expression' in params:
+            header_params['XPathExpression'] = params['x_path_expression']  # noqa: E501
+        if 'xml_node_to_add' in params:
+            header_params['XmlNodeToAdd'] = params['xml_node_to_add']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/xml/edit/xpath/add-child', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='XmlAddChildWithXPathResult',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def convert_data_xml_edit_remove_all_child_nodes_with_x_path(self, input_file, x_path_expression, **kwargs):  # noqa: E501
+        """Removes, deletes all children of nodes matching XPath expression, but does not remove the nodes  # noqa: E501
+
+        Return the reuslts of editing an XML document by removing all child nodes of the nodes that match an input XPath expression.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_data_xml_edit_remove_all_child_nodes_with_x_path(input_file, x_path_expression, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input XML file to perform the operation on. (required)
+        :param str x_path_expression: Valid XML XPath query expression (required)
+        :return: XmlRemoveAllChildrenWithXPathResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_data_xml_edit_remove_all_child_nodes_with_x_path_with_http_info(input_file, x_path_expression, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_data_xml_edit_remove_all_child_nodes_with_x_path_with_http_info(input_file, x_path_expression, **kwargs)  # noqa: E501
+            return data
+
+    def convert_data_xml_edit_remove_all_child_nodes_with_x_path_with_http_info(self, input_file, x_path_expression, **kwargs):  # noqa: E501
+        """Removes, deletes all children of nodes matching XPath expression, but does not remove the nodes  # noqa: E501
+
+        Return the reuslts of editing an XML document by removing all child nodes of the nodes that match an input XPath expression.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_data_xml_edit_remove_all_child_nodes_with_x_path_with_http_info(input_file, x_path_expression, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input XML file to perform the operation on. (required)
+        :param str x_path_expression: Valid XML XPath query expression (required)
+        :return: XmlRemoveAllChildrenWithXPathResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file', 'x_path_expression']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_data_xml_edit_remove_all_child_nodes_with_x_path" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_data_xml_edit_remove_all_child_nodes_with_x_path`")  # noqa: E501
+        # verify the required parameter 'x_path_expression' is set
+        if ('x_path_expression' not in params or
+                params['x_path_expression'] is None):
+            raise ValueError("Missing the required parameter `x_path_expression` when calling `convert_data_xml_edit_remove_all_child_nodes_with_x_path`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'x_path_expression' in params:
+            header_params['XPathExpression'] = params['x_path_expression']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/xml/edit/xpath/remove-all-children', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='XmlRemoveAllChildrenWithXPathResult',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def convert_data_xml_edit_replace_with_x_path(self, input_file, x_path_expression, xml_node_replacement, **kwargs):  # noqa: E501
+        """Replaces XML nodes matching XPath expression with new node  # noqa: E501
+
+        Return the reuslts of editing an XML document by replacing all of the nodes that match an input XPath expression with a new XML node expression.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_data_xml_edit_replace_with_x_path(input_file, x_path_expression, xml_node_replacement, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input XML file to perform the operation on. (required)
+        :param str x_path_expression: Valid XML XPath query expression (required)
+        :param str xml_node_replacement: XML Node replacement content (required)
+        :return: XmlReplaceWithXPathResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_data_xml_edit_replace_with_x_path_with_http_info(input_file, x_path_expression, xml_node_replacement, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_data_xml_edit_replace_with_x_path_with_http_info(input_file, x_path_expression, xml_node_replacement, **kwargs)  # noqa: E501
+            return data
+
+    def convert_data_xml_edit_replace_with_x_path_with_http_info(self, input_file, x_path_expression, xml_node_replacement, **kwargs):  # noqa: E501
+        """Replaces XML nodes matching XPath expression with new node  # noqa: E501
+
+        Return the reuslts of editing an XML document by replacing all of the nodes that match an input XPath expression with a new XML node expression.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_data_xml_edit_replace_with_x_path_with_http_info(input_file, x_path_expression, xml_node_replacement, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input XML file to perform the operation on. (required)
+        :param str x_path_expression: Valid XML XPath query expression (required)
+        :param str xml_node_replacement: XML Node replacement content (required)
+        :return: XmlReplaceWithXPathResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file', 'x_path_expression', 'xml_node_replacement']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_data_xml_edit_replace_with_x_path" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_data_xml_edit_replace_with_x_path`")  # noqa: E501
+        # verify the required parameter 'x_path_expression' is set
+        if ('x_path_expression' not in params or
+                params['x_path_expression'] is None):
+            raise ValueError("Missing the required parameter `x_path_expression` when calling `convert_data_xml_edit_replace_with_x_path`")  # noqa: E501
+        # verify the required parameter 'xml_node_replacement' is set
+        if ('xml_node_replacement' not in params or
+                params['xml_node_replacement'] is None):
+            raise ValueError("Missing the required parameter `xml_node_replacement` when calling `convert_data_xml_edit_replace_with_x_path`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'x_path_expression' in params:
+            header_params['XPathExpression'] = params['x_path_expression']  # noqa: E501
+        if 'xml_node_replacement' in params:
+            header_params['XmlNodeReplacement'] = params['xml_node_replacement']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/xml/edit/xpath/replace', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='XmlReplaceWithXPathResult',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def convert_data_xml_edit_set_value_with_x_path(self, input_file, x_path_expression, xml_value, **kwargs):  # noqa: E501
+        """Sets the value contents of XML nodes matching XPath expression  # noqa: E501
+
+        Return the reuslts of editing an XML document by setting the contents of all of the nodes that match an input XPath expression.  Supports elements and attributes.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_data_xml_edit_set_value_with_x_path(input_file, x_path_expression, xml_value, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input XML file to perform the operation on. (required)
+        :param str x_path_expression: Valid XML XPath query expression (required)
+        :param str xml_value: XML Value to set into the matching XML nodes (required)
+        :return: XmlSetValueWithXPathResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_data_xml_edit_set_value_with_x_path_with_http_info(input_file, x_path_expression, xml_value, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_data_xml_edit_set_value_with_x_path_with_http_info(input_file, x_path_expression, xml_value, **kwargs)  # noqa: E501
+            return data
+
+    def convert_data_xml_edit_set_value_with_x_path_with_http_info(self, input_file, x_path_expression, xml_value, **kwargs):  # noqa: E501
+        """Sets the value contents of XML nodes matching XPath expression  # noqa: E501
+
+        Return the reuslts of editing an XML document by setting the contents of all of the nodes that match an input XPath expression.  Supports elements and attributes.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_data_xml_edit_set_value_with_x_path_with_http_info(input_file, x_path_expression, xml_value, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input XML file to perform the operation on. (required)
+        :param str x_path_expression: Valid XML XPath query expression (required)
+        :param str xml_value: XML Value to set into the matching XML nodes (required)
+        :return: XmlSetValueWithXPathResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file', 'x_path_expression', 'xml_value']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_data_xml_edit_set_value_with_x_path" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_data_xml_edit_set_value_with_x_path`")  # noqa: E501
+        # verify the required parameter 'x_path_expression' is set
+        if ('x_path_expression' not in params or
+                params['x_path_expression'] is None):
+            raise ValueError("Missing the required parameter `x_path_expression` when calling `convert_data_xml_edit_set_value_with_x_path`")  # noqa: E501
+        # verify the required parameter 'xml_value' is set
+        if ('xml_value' not in params or
+                params['xml_value'] is None):
+            raise ValueError("Missing the required parameter `xml_value` when calling `convert_data_xml_edit_set_value_with_x_path`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'x_path_expression' in params:
+            header_params['XPathExpression'] = params['x_path_expression']  # noqa: E501
+        if 'xml_value' in params:
+            header_params['XmlValue'] = params['xml_value']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/xml/edit/xpath/set-value', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='XmlSetValueWithXPathResult',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def convert_data_xml_filter_with_x_path(self, x_path_expression, input_file, **kwargs):  # noqa: E501
+        """Filter, select XML nodes using XPath expression, get results  # noqa: E501
+
+        Return the reuslts of filtering, selecting an XML document with an XPath expression  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_data_xml_filter_with_x_path(x_path_expression, input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str x_path_expression: Valid XML XPath query expression (required)
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: XmlFIlterWithXPathResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_data_xml_filter_with_x_path_with_http_info(x_path_expression, input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_data_xml_filter_with_x_path_with_http_info(x_path_expression, input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_data_xml_filter_with_x_path_with_http_info(self, x_path_expression, input_file, **kwargs):  # noqa: E501
+        """Filter, select XML nodes using XPath expression, get results  # noqa: E501
+
+        Return the reuslts of filtering, selecting an XML document with an XPath expression  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_data_xml_filter_with_x_path_with_http_info(x_path_expression, input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str x_path_expression: Valid XML XPath query expression (required)
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: XmlFIlterWithXPathResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['x_path_expression', 'input_file']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_data_xml_filter_with_x_path" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'x_path_expression' is set
+        if ('x_path_expression' not in params or
+                params['x_path_expression'] is None):
+            raise ValueError("Missing the required parameter `x_path_expression` when calling `convert_data_xml_filter_with_x_path`")  # noqa: E501
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_data_xml_filter_with_x_path`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'x_path_expression' in params:
+            header_params['XPathExpression'] = params['x_path_expression']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/xml/select/xpath', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='XmlFIlterWithXPathResult',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def convert_data_xml_remove_with_x_path(self, x_path_expression, input_file, **kwargs):  # noqa: E501
+        """Remove, delete XML nodes and items matching XPath expression  # noqa: E501
+
+        Return the reuslts of editing an XML document by removing all of the nodes that match an input XPath expression  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_data_xml_remove_with_x_path(x_path_expression, input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str x_path_expression: Valid XML XPath query expression (required)
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: XmlRemoveWithXPathResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_data_xml_remove_with_x_path_with_http_info(x_path_expression, input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_data_xml_remove_with_x_path_with_http_info(x_path_expression, input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_data_xml_remove_with_x_path_with_http_info(self, x_path_expression, input_file, **kwargs):  # noqa: E501
+        """Remove, delete XML nodes and items matching XPath expression  # noqa: E501
+
+        Return the reuslts of editing an XML document by removing all of the nodes that match an input XPath expression  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_data_xml_remove_with_x_path_with_http_info(x_path_expression, input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str x_path_expression: Valid XML XPath query expression (required)
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: XmlRemoveWithXPathResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['x_path_expression', 'input_file']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_data_xml_remove_with_x_path" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'x_path_expression' is set
+        if ('x_path_expression' not in params or
+                params['x_path_expression'] is None):
+            raise ValueError("Missing the required parameter `x_path_expression` when calling `convert_data_xml_remove_with_x_path`")  # noqa: E501
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_data_xml_remove_with_x_path`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'x_path_expression' in params:
+            header_params['XPathExpression'] = params['x_path_expression']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/xml/edit/xpath/remove', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='XmlRemoveWithXPathResult',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def convert_data_xml_to_json(self, input_file, **kwargs):  # noqa: E501
         """Convert XML to JSON conversion  # noqa: E501
 
@@ -521,6 +1290,109 @@ class ConvertDataApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='object',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def convert_data_xml_transform_with_xslt_to_xml(self, input_file, transform_file, **kwargs):  # noqa: E501
+        """Transform XML document file with XSLT into a new XML document  # noqa: E501
+
+        Convert an XML string or file into JSON  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_data_xml_transform_with_xslt_to_xml(input_file, transform_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input XML file to perform the operation on. (required)
+        :param file transform_file: Input XSLT file to use to transform the input XML file. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_data_xml_transform_with_xslt_to_xml_with_http_info(input_file, transform_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_data_xml_transform_with_xslt_to_xml_with_http_info(input_file, transform_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_data_xml_transform_with_xslt_to_xml_with_http_info(self, input_file, transform_file, **kwargs):  # noqa: E501
+        """Transform XML document file with XSLT into a new XML document  # noqa: E501
+
+        Convert an XML string or file into JSON  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_data_xml_transform_with_xslt_to_xml_with_http_info(input_file, transform_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input XML file to perform the operation on. (required)
+        :param file transform_file: Input XSLT file to use to transform the input XML file. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file', 'transform_file']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_data_xml_transform_with_xslt_to_xml" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_data_xml_transform_with_xslt_to_xml`")  # noqa: E501
+        # verify the required parameter 'transform_file' is set
+        if ('transform_file' not in params or
+                params['transform_file'] is None):
+            raise ValueError("Missing the required parameter `transform_file` when calling `convert_data_xml_transform_with_xslt_to_xml`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+        if 'transform_file' in params:
+            local_var_files['transformFile'] = params['transform_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/xml/transform/xslt/to/xml', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

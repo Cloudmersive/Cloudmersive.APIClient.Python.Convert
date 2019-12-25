@@ -4,7 +4,7 @@ Convert API lets you effortlessly convert file formats and types.
 This Python package provides a native API client for [Cloudmersive Document Conversion](https://www.cloudmersive.com/convert-api)
 
 - API version: v1
-- Package version: 2.2.5
+- Package version: 2.2.6
 - Build package: io.swagger.codegen.languages.PythonClientCodegen
 
 ## Requirements.
@@ -82,7 +82,15 @@ Class | Method | HTTP request | Description
 *ConvertDataApi* | [**convert_data_json_to_xml**](docs/ConvertDataApi.md#convert_data_json_to_xml) | **POST** /convert/json/to/xml | Convert JSON to XML conversion
 *ConvertDataApi* | [**convert_data_xls_to_json**](docs/ConvertDataApi.md#convert_data_xls_to_json) | **POST** /convert/xls/to/json | Convert Excel (97-2003) XLS to JSON conversion
 *ConvertDataApi* | [**convert_data_xlsx_to_json**](docs/ConvertDataApi.md#convert_data_xlsx_to_json) | **POST** /convert/xlsx/to/json | Convert Excel XLSX to JSON conversion
+*ConvertDataApi* | [**convert_data_xml_edit_add_attribute_with_x_path**](docs/ConvertDataApi.md#convert_data_xml_edit_add_attribute_with_x_path) | **POST** /convert/xml/edit/xpath/add-attribute | Adds an attribute to all XML nodes matching XPath expression
+*ConvertDataApi* | [**convert_data_xml_edit_add_child_with_x_path**](docs/ConvertDataApi.md#convert_data_xml_edit_add_child_with_x_path) | **POST** /convert/xml/edit/xpath/add-child | Adds an XML node as a child to XML nodes matching XPath expression
+*ConvertDataApi* | [**convert_data_xml_edit_remove_all_child_nodes_with_x_path**](docs/ConvertDataApi.md#convert_data_xml_edit_remove_all_child_nodes_with_x_path) | **POST** /convert/xml/edit/xpath/remove-all-children | Removes, deletes all children of nodes matching XPath expression, but does not remove the nodes
+*ConvertDataApi* | [**convert_data_xml_edit_replace_with_x_path**](docs/ConvertDataApi.md#convert_data_xml_edit_replace_with_x_path) | **POST** /convert/xml/edit/xpath/replace | Replaces XML nodes matching XPath expression with new node
+*ConvertDataApi* | [**convert_data_xml_edit_set_value_with_x_path**](docs/ConvertDataApi.md#convert_data_xml_edit_set_value_with_x_path) | **POST** /convert/xml/edit/xpath/set-value | Sets the value contents of XML nodes matching XPath expression
+*ConvertDataApi* | [**convert_data_xml_filter_with_x_path**](docs/ConvertDataApi.md#convert_data_xml_filter_with_x_path) | **POST** /convert/xml/select/xpath | Filter, select XML nodes using XPath expression, get results
+*ConvertDataApi* | [**convert_data_xml_remove_with_x_path**](docs/ConvertDataApi.md#convert_data_xml_remove_with_x_path) | **POST** /convert/xml/edit/xpath/remove | Remove, delete XML nodes and items matching XPath expression
 *ConvertDataApi* | [**convert_data_xml_to_json**](docs/ConvertDataApi.md#convert_data_xml_to_json) | **POST** /convert/xml/to/json | Convert XML to JSON conversion
+*ConvertDataApi* | [**convert_data_xml_transform_with_xslt_to_xml**](docs/ConvertDataApi.md#convert_data_xml_transform_with_xslt_to_xml) | **POST** /convert/xml/transform/xslt/to/xml | Transform XML document file with XSLT into a new XML document
 *ConvertDocumentApi* | [**convert_document_autodetect_get_info**](docs/ConvertDocumentApi.md#convert_document_autodetect_get_info) | **POST** /convert/autodetect/get-info | Get document type information
 *ConvertDocumentApi* | [**convert_document_autodetect_to_pdf**](docs/ConvertDocumentApi.md#convert_document_autodetect_to_pdf) | **POST** /convert/autodetect/to/pdf | Convert Document to PDF
 *ConvertDocumentApi* | [**convert_document_autodetect_to_png_array**](docs/ConvertDocumentApi.md#convert_document_autodetect_to_png_array) | **POST** /convert/autodetect/to/png | Convert Document to PNG array
@@ -318,6 +326,13 @@ Class | Method | HTTP request | Description
  - [XlsxSpreadsheetColumn](docs/XlsxSpreadsheetColumn.md)
  - [XlsxSpreadsheetRow](docs/XlsxSpreadsheetRow.md)
  - [XlsxWorksheet](docs/XlsxWorksheet.md)
+ - [XmlAddAttributeWithXPathResult](docs/XmlAddAttributeWithXPathResult.md)
+ - [XmlAddChildWithXPathResult](docs/XmlAddChildWithXPathResult.md)
+ - [XmlFIlterWithXPathResult](docs/XmlFIlterWithXPathResult.md)
+ - [XmlRemoveAllChildrenWithXPathResult](docs/XmlRemoveAllChildrenWithXPathResult.md)
+ - [XmlRemoveWithXPathResult](docs/XmlRemoveWithXPathResult.md)
+ - [XmlReplaceWithXPathResult](docs/XmlReplaceWithXPathResult.md)
+ - [XmlSetValueWithXPathResult](docs/XmlSetValueWithXPathResult.md)
 
 
 ## Documentation For Authorization
