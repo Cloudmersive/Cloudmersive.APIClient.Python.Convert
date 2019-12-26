@@ -996,7 +996,7 @@ class ConvertDataApi(object):
         :param async_req bool
         :param str x_path_expression: Valid XML XPath query expression (required)
         :param file input_file: Input file to perform the operation on. (required)
-        :return: XmlFIlterWithXPathResult
+        :return: XmlFilterWithXPathResult
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1019,7 +1019,7 @@ class ConvertDataApi(object):
         :param async_req bool
         :param str x_path_expression: Valid XML XPath query expression (required)
         :param file input_file: Input file to perform the operation on. (required)
-        :return: XmlFIlterWithXPathResult
+        :return: XmlFilterWithXPathResult
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1083,7 +1083,249 @@ class ConvertDataApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='XmlFIlterWithXPathResult',  # noqa: E501
+            response_type='XmlFilterWithXPathResult',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def convert_data_xml_query_with_x_query(self, input_file, x_query, **kwargs):  # noqa: E501
+        """Query an XML file using XQuery query, get results  # noqa: E501
+
+        Return the reuslts of querying a single XML document with an XQuery expression.  Supports XQuery 3.1 and earlier.  This API is optimized for a single XML document as input.  Provided XML document is automatically loaded as the default context; to access elements in the document, simply refer to them without a document reference, such as bookstore/book  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_data_xml_query_with_x_query(input_file, x_query, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input XML file to perform the operation on. (required)
+        :param str x_query: Valid XML XQuery 3.1 or earlier query expression; multi-line expressions are supported (required)
+        :return: XmlQueryWithXQueryResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_data_xml_query_with_x_query_with_http_info(input_file, x_query, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_data_xml_query_with_x_query_with_http_info(input_file, x_query, **kwargs)  # noqa: E501
+            return data
+
+    def convert_data_xml_query_with_x_query_with_http_info(self, input_file, x_query, **kwargs):  # noqa: E501
+        """Query an XML file using XQuery query, get results  # noqa: E501
+
+        Return the reuslts of querying a single XML document with an XQuery expression.  Supports XQuery 3.1 and earlier.  This API is optimized for a single XML document as input.  Provided XML document is automatically loaded as the default context; to access elements in the document, simply refer to them without a document reference, such as bookstore/book  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_data_xml_query_with_x_query_with_http_info(input_file, x_query, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input XML file to perform the operation on. (required)
+        :param str x_query: Valid XML XQuery 3.1 or earlier query expression; multi-line expressions are supported (required)
+        :return: XmlQueryWithXQueryResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file', 'x_query']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_data_xml_query_with_x_query" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_data_xml_query_with_x_query`")  # noqa: E501
+        # verify the required parameter 'x_query' is set
+        if ('x_query' not in params or
+                params['x_query'] is None):
+            raise ValueError("Missing the required parameter `x_query` when calling `convert_data_xml_query_with_x_query`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'x_query' in params:
+            header_params['XQuery'] = params['x_query']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/xml/query/xquery', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='XmlQueryWithXQueryResult',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def convert_data_xml_query_with_x_query_multi(self, input_file1, x_query, **kwargs):  # noqa: E501
+        """Query multiple XML files using XQuery query, get results  # noqa: E501
+
+        Return the reuslts of querying an XML document with an XQuery expression.  Supports XQuery 3.1 and earlier.  This API is optimized for multiple XML documents as input.  You can refer to the contents of a given document by name, for example doc(\"books.xml\") or doc(\"restaurants.xml\") if you included two input files named books.xml and restaurants.xml.  If input files contain no file name, they will default to file names input1.xml, input2.xml and so on.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_data_xml_query_with_x_query_multi(input_file1, x_query, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file1: First input XML file to perform the operation on. (required)
+        :param str x_query: Valid XML XQuery 3.1 or earlier query expression; multi-line expressions are supported (required)
+        :param file input_file2: Second input XML file to perform the operation on.
+        :param file input_file3: Third input XML file to perform the operation on.
+        :param file input_file4: Fourth input XML file to perform the operation on.
+        :param file input_file5: Fifth input XML file to perform the operation on.
+        :param file input_file6: Sixth input XML file to perform the operation on.
+        :param file input_file7: Seventh input XML file to perform the operation on.
+        :param file input_file8: Eighth input XML file to perform the operation on.
+        :param file input_file9: Ninth input XML file to perform the operation on.
+        :param file input_file10: Tenth input XML file to perform the operation on.
+        :return: XmlQueryWithXQueryMultiResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_data_xml_query_with_x_query_multi_with_http_info(input_file1, x_query, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_data_xml_query_with_x_query_multi_with_http_info(input_file1, x_query, **kwargs)  # noqa: E501
+            return data
+
+    def convert_data_xml_query_with_x_query_multi_with_http_info(self, input_file1, x_query, **kwargs):  # noqa: E501
+        """Query multiple XML files using XQuery query, get results  # noqa: E501
+
+        Return the reuslts of querying an XML document with an XQuery expression.  Supports XQuery 3.1 and earlier.  This API is optimized for multiple XML documents as input.  You can refer to the contents of a given document by name, for example doc(\"books.xml\") or doc(\"restaurants.xml\") if you included two input files named books.xml and restaurants.xml.  If input files contain no file name, they will default to file names input1.xml, input2.xml and so on.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_data_xml_query_with_x_query_multi_with_http_info(input_file1, x_query, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file1: First input XML file to perform the operation on. (required)
+        :param str x_query: Valid XML XQuery 3.1 or earlier query expression; multi-line expressions are supported (required)
+        :param file input_file2: Second input XML file to perform the operation on.
+        :param file input_file3: Third input XML file to perform the operation on.
+        :param file input_file4: Fourth input XML file to perform the operation on.
+        :param file input_file5: Fifth input XML file to perform the operation on.
+        :param file input_file6: Sixth input XML file to perform the operation on.
+        :param file input_file7: Seventh input XML file to perform the operation on.
+        :param file input_file8: Eighth input XML file to perform the operation on.
+        :param file input_file9: Ninth input XML file to perform the operation on.
+        :param file input_file10: Tenth input XML file to perform the operation on.
+        :return: XmlQueryWithXQueryMultiResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file1', 'x_query', 'input_file2', 'input_file3', 'input_file4', 'input_file5', 'input_file6', 'input_file7', 'input_file8', 'input_file9', 'input_file10']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_data_xml_query_with_x_query_multi" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file1' is set
+        if ('input_file1' not in params or
+                params['input_file1'] is None):
+            raise ValueError("Missing the required parameter `input_file1` when calling `convert_data_xml_query_with_x_query_multi`")  # noqa: E501
+        # verify the required parameter 'x_query' is set
+        if ('x_query' not in params or
+                params['x_query'] is None):
+            raise ValueError("Missing the required parameter `x_query` when calling `convert_data_xml_query_with_x_query_multi`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'x_query' in params:
+            header_params['XQuery'] = params['x_query']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file1' in params:
+            local_var_files['inputFile1'] = params['input_file1']  # noqa: E501
+        if 'input_file2' in params:
+            local_var_files['inputFile2'] = params['input_file2']  # noqa: E501
+        if 'input_file3' in params:
+            local_var_files['inputFile3'] = params['input_file3']  # noqa: E501
+        if 'input_file4' in params:
+            local_var_files['inputFile4'] = params['input_file4']  # noqa: E501
+        if 'input_file5' in params:
+            local_var_files['inputFile5'] = params['input_file5']  # noqa: E501
+        if 'input_file6' in params:
+            local_var_files['inputFile6'] = params['input_file6']  # noqa: E501
+        if 'input_file7' in params:
+            local_var_files['inputFile7'] = params['input_file7']  # noqa: E501
+        if 'input_file8' in params:
+            local_var_files['inputFile8'] = params['input_file8']  # noqa: E501
+        if 'input_file9' in params:
+            local_var_files['inputFile9'] = params['input_file9']  # noqa: E501
+        if 'input_file10' in params:
+            local_var_files['inputFile10'] = params['input_file10']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/xml/query/xquery/multi', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='XmlQueryWithXQueryMultiResult',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

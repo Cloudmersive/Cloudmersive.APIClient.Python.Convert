@@ -14,6 +14,8 @@ Method | HTTP request | Description
 [**convert_data_xml_edit_replace_with_x_path**](ConvertDataApi.md#convert_data_xml_edit_replace_with_x_path) | **POST** /convert/xml/edit/xpath/replace | Replaces XML nodes matching XPath expression with new node
 [**convert_data_xml_edit_set_value_with_x_path**](ConvertDataApi.md#convert_data_xml_edit_set_value_with_x_path) | **POST** /convert/xml/edit/xpath/set-value | Sets the value contents of XML nodes matching XPath expression
 [**convert_data_xml_filter_with_x_path**](ConvertDataApi.md#convert_data_xml_filter_with_x_path) | **POST** /convert/xml/select/xpath | Filter, select XML nodes using XPath expression, get results
+[**convert_data_xml_query_with_x_query**](ConvertDataApi.md#convert_data_xml_query_with_x_query) | **POST** /convert/xml/query/xquery | Query an XML file using XQuery query, get results
+[**convert_data_xml_query_with_x_query_multi**](ConvertDataApi.md#convert_data_xml_query_with_x_query_multi) | **POST** /convert/xml/query/xquery/multi | Query multiple XML files using XQuery query, get results
 [**convert_data_xml_remove_with_x_path**](ConvertDataApi.md#convert_data_xml_remove_with_x_path) | **POST** /convert/xml/edit/xpath/remove | Remove, delete XML nodes and items matching XPath expression
 [**convert_data_xml_to_json**](ConvertDataApi.md#convert_data_xml_to_json) | **POST** /convert/xml/to/json | Convert XML to JSON conversion
 [**convert_data_xml_transform_with_xslt_to_xml**](ConvertDataApi.md#convert_data_xml_transform_with_xslt_to_xml) | **POST** /convert/xml/transform/xslt/to/xml | Transform XML document file with XSLT into a new XML document
@@ -526,7 +528,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **convert_data_xml_filter_with_x_path**
-> XmlFIlterWithXPathResult convert_data_xml_filter_with_x_path(x_path_expression, input_file)
+> XmlFilterWithXPathResult convert_data_xml_filter_with_x_path(x_path_expression, input_file)
 
 Filter, select XML nodes using XPath expression, get results
 
@@ -568,7 +570,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**XmlFIlterWithXPathResult**](XmlFIlterWithXPathResult.md)
+[**XmlFilterWithXPathResult**](XmlFilterWithXPathResult.md)
 
 ### Authorization
 
@@ -577,6 +579,136 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **convert_data_xml_query_with_x_query**
+> XmlQueryWithXQueryResult convert_data_xml_query_with_x_query(input_file, x_query)
+
+Query an XML file using XQuery query, get results
+
+Return the reuslts of querying a single XML document with an XQuery expression.  Supports XQuery 3.1 and earlier.  This API is optimized for a single XML document as input.  Provided XML document is automatically loaded as the default context; to access elements in the document, simply refer to them without a document reference, such as bookstore/book
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_convert_api_client
+from cloudmersive_convert_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_convert_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_convert_api_client.ConvertDataApi(cloudmersive_convert_api_client.ApiClient(configuration))
+input_file = '/path/to/file.txt' # file | Input XML file to perform the operation on.
+x_query = 'x_query_example' # str | Valid XML XQuery 3.1 or earlier query expression; multi-line expressions are supported
+
+try:
+    # Query an XML file using XQuery query, get results
+    api_response = api_instance.convert_data_xml_query_with_x_query(input_file, x_query)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConvertDataApi->convert_data_xml_query_with_x_query: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **input_file** | **file**| Input XML file to perform the operation on. | 
+ **x_query** | **str**| Valid XML XQuery 3.1 or earlier query expression; multi-line expressions are supported | 
+
+### Return type
+
+[**XmlQueryWithXQueryResult**](XmlQueryWithXQueryResult.md)
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **convert_data_xml_query_with_x_query_multi**
+> XmlQueryWithXQueryMultiResult convert_data_xml_query_with_x_query_multi(input_file1, x_query, input_file2=input_file2, input_file3=input_file3, input_file4=input_file4, input_file5=input_file5, input_file6=input_file6, input_file7=input_file7, input_file8=input_file8, input_file9=input_file9, input_file10=input_file10)
+
+Query multiple XML files using XQuery query, get results
+
+Return the reuslts of querying an XML document with an XQuery expression.  Supports XQuery 3.1 and earlier.  This API is optimized for multiple XML documents as input.  You can refer to the contents of a given document by name, for example doc(\"books.xml\") or doc(\"restaurants.xml\") if you included two input files named books.xml and restaurants.xml.  If input files contain no file name, they will default to file names input1.xml, input2.xml and so on.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_convert_api_client
+from cloudmersive_convert_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_convert_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_convert_api_client.ConvertDataApi(cloudmersive_convert_api_client.ApiClient(configuration))
+input_file1 = '/path/to/file.txt' # file | First input XML file to perform the operation on.
+x_query = 'x_query_example' # str | Valid XML XQuery 3.1 or earlier query expression; multi-line expressions are supported
+input_file2 = '/path/to/file.txt' # file | Second input XML file to perform the operation on. (optional)
+input_file3 = '/path/to/file.txt' # file | Third input XML file to perform the operation on. (optional)
+input_file4 = '/path/to/file.txt' # file | Fourth input XML file to perform the operation on. (optional)
+input_file5 = '/path/to/file.txt' # file | Fifth input XML file to perform the operation on. (optional)
+input_file6 = '/path/to/file.txt' # file | Sixth input XML file to perform the operation on. (optional)
+input_file7 = '/path/to/file.txt' # file | Seventh input XML file to perform the operation on. (optional)
+input_file8 = '/path/to/file.txt' # file | Eighth input XML file to perform the operation on. (optional)
+input_file9 = '/path/to/file.txt' # file | Ninth input XML file to perform the operation on. (optional)
+input_file10 = '/path/to/file.txt' # file | Tenth input XML file to perform the operation on. (optional)
+
+try:
+    # Query multiple XML files using XQuery query, get results
+    api_response = api_instance.convert_data_xml_query_with_x_query_multi(input_file1, x_query, input_file2=input_file2, input_file3=input_file3, input_file4=input_file4, input_file5=input_file5, input_file6=input_file6, input_file7=input_file7, input_file8=input_file8, input_file9=input_file9, input_file10=input_file10)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConvertDataApi->convert_data_xml_query_with_x_query_multi: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **input_file1** | **file**| First input XML file to perform the operation on. | 
+ **x_query** | **str**| Valid XML XQuery 3.1 or earlier query expression; multi-line expressions are supported | 
+ **input_file2** | **file**| Second input XML file to perform the operation on. | [optional] 
+ **input_file3** | **file**| Third input XML file to perform the operation on. | [optional] 
+ **input_file4** | **file**| Fourth input XML file to perform the operation on. | [optional] 
+ **input_file5** | **file**| Fifth input XML file to perform the operation on. | [optional] 
+ **input_file6** | **file**| Sixth input XML file to perform the operation on. | [optional] 
+ **input_file7** | **file**| Seventh input XML file to perform the operation on. | [optional] 
+ **input_file8** | **file**| Eighth input XML file to perform the operation on. | [optional] 
+ **input_file9** | **file**| Ninth input XML file to perform the operation on. | [optional] 
+ **input_file10** | **file**| Tenth input XML file to perform the operation on. | [optional] 
+
+### Return type
+
+[**XmlQueryWithXQueryMultiResult**](XmlQueryWithXQueryMultiResult.md)
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json, text/json, application/xml, text/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
