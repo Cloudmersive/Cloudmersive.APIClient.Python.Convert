@@ -33,6 +33,105 @@ class EditPdfApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
+    def edit_pdf_add_annotations(self, request, **kwargs):  # noqa: E501
+        """Add one or more PDF annotations, comments in the PDF document  # noqa: E501
+
+        Adds one or more annotations, comments to a PDF document.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_pdf_add_annotations(request, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param AddPdfAnnotationRequest request: (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.edit_pdf_add_annotations_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.edit_pdf_add_annotations_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def edit_pdf_add_annotations_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Add one or more PDF annotations, comments in the PDF document  # noqa: E501
+
+        Adds one or more annotations, comments to a PDF document.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_pdf_add_annotations_with_http_info(request, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param AddPdfAnnotationRequest request: (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['request']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method edit_pdf_add_annotations" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'request' is set
+        if ('request' not in params or
+                params['request'] is None):
+            raise ValueError("Missing the required parameter `request` when calling `edit_pdf_add_annotations`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'request' in params:
+            body_params = params['request']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/edit/pdf/annotations/add-item', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def edit_pdf_decrypt(self, password, input_file, **kwargs):  # noqa: E501
         """Decrypt and password-protect a PDF  # noqa: E501
 
@@ -359,6 +458,105 @@ class EditPdfApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def edit_pdf_get_annotations(self, input_file, **kwargs):  # noqa: E501
+        """Get PDF annotations, including comments in the document  # noqa: E501
+
+        Enumerates the annotations, including comments and notes, in a PDF document.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_pdf_get_annotations(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: GetPdfAnnotationsResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.edit_pdf_get_annotations_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.edit_pdf_get_annotations_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def edit_pdf_get_annotations_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Get PDF annotations, including comments in the document  # noqa: E501
+
+        Enumerates the annotations, including comments and notes, in a PDF document.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_pdf_get_annotations_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: GetPdfAnnotationsResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method edit_pdf_get_annotations" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `edit_pdf_get_annotations`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/edit/pdf/annotations/list', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='GetPdfAnnotationsResult',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -879,6 +1077,442 @@ class EditPdfApi(object):
 
         return self.api_client.call_api(
             '/convert/edit/pdf/rasterize', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def edit_pdf_remove_all_annotations(self, input_file, **kwargs):  # noqa: E501
+        """Remove all PDF annotations, including comments in the document  # noqa: E501
+
+        Removes all of the annotations, including comments and notes, in a PDF document.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_pdf_remove_all_annotations(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.edit_pdf_remove_all_annotations_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.edit_pdf_remove_all_annotations_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def edit_pdf_remove_all_annotations_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Remove all PDF annotations, including comments in the document  # noqa: E501
+
+        Removes all of the annotations, including comments and notes, in a PDF document.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_pdf_remove_all_annotations_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method edit_pdf_remove_all_annotations" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `edit_pdf_remove_all_annotations`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/edit/pdf/annotations/remove-all', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def edit_pdf_remove_annotation_item(self, input_file, annotation_index, **kwargs):  # noqa: E501
+        """Remove a specific PDF annotation, comment in the document  # noqa: E501
+
+        Removes a specific annotation in a PDF document, using the AnnotationIndex.  To enumerate AnnotationIndex for all of the annotations in the PDF document, use the /edit/pdf/annotations/list API.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_pdf_remove_annotation_item(input_file, annotation_index, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :param int annotation_index: The 0-based index of the annotation in the document (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.edit_pdf_remove_annotation_item_with_http_info(input_file, annotation_index, **kwargs)  # noqa: E501
+        else:
+            (data) = self.edit_pdf_remove_annotation_item_with_http_info(input_file, annotation_index, **kwargs)  # noqa: E501
+            return data
+
+    def edit_pdf_remove_annotation_item_with_http_info(self, input_file, annotation_index, **kwargs):  # noqa: E501
+        """Remove a specific PDF annotation, comment in the document  # noqa: E501
+
+        Removes a specific annotation in a PDF document, using the AnnotationIndex.  To enumerate AnnotationIndex for all of the annotations in the PDF document, use the /edit/pdf/annotations/list API.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_pdf_remove_annotation_item_with_http_info(input_file, annotation_index, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :param int annotation_index: The 0-based index of the annotation in the document (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file', 'annotation_index']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method edit_pdf_remove_annotation_item" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `edit_pdf_remove_annotation_item`")  # noqa: E501
+        # verify the required parameter 'annotation_index' is set
+        if ('annotation_index' not in params or
+                params['annotation_index'] is None):
+            raise ValueError("Missing the required parameter `annotation_index` when calling `edit_pdf_remove_annotation_item`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'annotation_index' in params:
+            header_params['annotationIndex'] = params['annotation_index']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/edit/pdf/annotations/remove-item', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def edit_pdf_rotate_all_pages(self, input_file, rotation_angle, **kwargs):  # noqa: E501
+        """Rotate all pages in a PDF document  # noqa: E501
+
+        Rotate all of the pages in a PDF document by a multiple of 90 degrees  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_pdf_rotate_all_pages(input_file, rotation_angle, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :param int rotation_angle: The angle to rotate the page in degrees, must be a multiple of 90 degrees, e.g. 90, 180, 270, or -90, -180, -270, etc. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.edit_pdf_rotate_all_pages_with_http_info(input_file, rotation_angle, **kwargs)  # noqa: E501
+        else:
+            (data) = self.edit_pdf_rotate_all_pages_with_http_info(input_file, rotation_angle, **kwargs)  # noqa: E501
+            return data
+
+    def edit_pdf_rotate_all_pages_with_http_info(self, input_file, rotation_angle, **kwargs):  # noqa: E501
+        """Rotate all pages in a PDF document  # noqa: E501
+
+        Rotate all of the pages in a PDF document by a multiple of 90 degrees  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_pdf_rotate_all_pages_with_http_info(input_file, rotation_angle, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :param int rotation_angle: The angle to rotate the page in degrees, must be a multiple of 90 degrees, e.g. 90, 180, 270, or -90, -180, -270, etc. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file', 'rotation_angle']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method edit_pdf_rotate_all_pages" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `edit_pdf_rotate_all_pages`")  # noqa: E501
+        # verify the required parameter 'rotation_angle' is set
+        if ('rotation_angle' not in params or
+                params['rotation_angle'] is None):
+            raise ValueError("Missing the required parameter `rotation_angle` when calling `edit_pdf_rotate_all_pages`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'rotation_angle' in params:
+            header_params['rotationAngle'] = params['rotation_angle']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/edit/pdf/pages/rotate/all', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def edit_pdf_rotate_page_range(self, input_file, rotation_angle, page_start, page_end, **kwargs):  # noqa: E501
+        """Rotate a range, subset of pages in a PDF document  # noqa: E501
+
+        Rotate a range of specific pages in a PDF document by a multiple of 90 degrees  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_pdf_rotate_page_range(input_file, rotation_angle, page_start, page_end, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :param int rotation_angle: The angle to rotate the page in degrees, must be a multiple of 90 degrees, e.g. 90, 180, 270, or -90, -180, -270, etc. (required)
+        :param int page_start: Page number (1 based) to start rotating pages from (inclusive). (required)
+        :param int page_end: Page number (1 based) to stop rotating pages from (inclusive). (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.edit_pdf_rotate_page_range_with_http_info(input_file, rotation_angle, page_start, page_end, **kwargs)  # noqa: E501
+        else:
+            (data) = self.edit_pdf_rotate_page_range_with_http_info(input_file, rotation_angle, page_start, page_end, **kwargs)  # noqa: E501
+            return data
+
+    def edit_pdf_rotate_page_range_with_http_info(self, input_file, rotation_angle, page_start, page_end, **kwargs):  # noqa: E501
+        """Rotate a range, subset of pages in a PDF document  # noqa: E501
+
+        Rotate a range of specific pages in a PDF document by a multiple of 90 degrees  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_pdf_rotate_page_range_with_http_info(input_file, rotation_angle, page_start, page_end, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :param int rotation_angle: The angle to rotate the page in degrees, must be a multiple of 90 degrees, e.g. 90, 180, 270, or -90, -180, -270, etc. (required)
+        :param int page_start: Page number (1 based) to start rotating pages from (inclusive). (required)
+        :param int page_end: Page number (1 based) to stop rotating pages from (inclusive). (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file', 'rotation_angle', 'page_start', 'page_end']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method edit_pdf_rotate_page_range" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `edit_pdf_rotate_page_range`")  # noqa: E501
+        # verify the required parameter 'rotation_angle' is set
+        if ('rotation_angle' not in params or
+                params['rotation_angle'] is None):
+            raise ValueError("Missing the required parameter `rotation_angle` when calling `edit_pdf_rotate_page_range`")  # noqa: E501
+        # verify the required parameter 'page_start' is set
+        if ('page_start' not in params or
+                params['page_start'] is None):
+            raise ValueError("Missing the required parameter `page_start` when calling `edit_pdf_rotate_page_range`")  # noqa: E501
+        # verify the required parameter 'page_end' is set
+        if ('page_end' not in params or
+                params['page_end'] is None):
+            raise ValueError("Missing the required parameter `page_end` when calling `edit_pdf_rotate_page_range`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'rotation_angle' in params:
+            header_params['rotationAngle'] = params['rotation_angle']  # noqa: E501
+        if 'page_start' in params:
+            header_params['pageStart'] = params['page_start']  # noqa: E501
+        if 'page_end' in params:
+            header_params['pageEnd'] = params['page_end']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/edit/pdf/pages/rotate/page-range', 'POST',
             path_params,
             query_params,
             header_params,

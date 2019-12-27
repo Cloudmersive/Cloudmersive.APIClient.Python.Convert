@@ -33,21 +33,24 @@ class WorksheetResult(object):
     swagger_types = {
         'worksheet_number': 'int',
         'worksheet_name': 'str',
-        'url': 'str'
+        'url': 'str',
+        'worksheet_contents': 'str'
     }
 
     attribute_map = {
         'worksheet_number': 'WorksheetNumber',
         'worksheet_name': 'WorksheetName',
-        'url': 'URL'
+        'url': 'URL',
+        'worksheet_contents': 'WorksheetContents'
     }
 
-    def __init__(self, worksheet_number=None, worksheet_name=None, url=None):  # noqa: E501
+    def __init__(self, worksheet_number=None, worksheet_name=None, url=None, worksheet_contents=None):  # noqa: E501
         """WorksheetResult - a model defined in Swagger"""  # noqa: E501
 
         self._worksheet_number = None
         self._worksheet_name = None
         self._url = None
+        self._worksheet_contents = None
         self.discriminator = None
 
         if worksheet_number is not None:
@@ -56,6 +59,8 @@ class WorksheetResult(object):
             self.worksheet_name = worksheet_name
         if url is not None:
             self.url = url
+        if worksheet_contents is not None:
+            self.worksheet_contents = worksheet_contents
 
     @property
     def worksheet_number(self):
@@ -125,6 +130,31 @@ class WorksheetResult(object):
         """
 
         self._url = url
+
+    @property
+    def worksheet_contents(self):
+        """Gets the worksheet_contents of this WorksheetResult.  # noqa: E501
+
+        Contents of the worksheet in bytes  # noqa: E501
+
+        :return: The worksheet_contents of this WorksheetResult.  # noqa: E501
+        :rtype: str
+        """
+        return self._worksheet_contents
+
+    @worksheet_contents.setter
+    def worksheet_contents(self, worksheet_contents):
+        """Sets the worksheet_contents of this WorksheetResult.
+
+        Contents of the worksheet in bytes  # noqa: E501
+
+        :param worksheet_contents: The worksheet_contents of this WorksheetResult.  # noqa: E501
+        :type: str
+        """
+        if worksheet_contents is not None and not re.search(r'^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$', worksheet_contents):  # noqa: E501
+            raise ValueError(r"Invalid value for `worksheet_contents`, must be a follow pattern or equal to `/^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$/`")  # noqa: E501
+
+        self._worksheet_contents = worksheet_contents
 
     def to_dict(self):
         """Returns the model properties as a dict"""
