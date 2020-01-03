@@ -4,7 +4,7 @@ Convert API lets you effortlessly convert file formats and types.
 This Python package provides a native API client for [Cloudmersive Document Conversion](https://www.cloudmersive.com/convert-api)
 
 - API version: v1
-- Package version: 2.2.9
+- Package version: 2.3.0
 - Build package: io.swagger.codegen.languages.PythonClientCodegen
 
 ## Requirements.
@@ -165,6 +165,7 @@ Class | Method | HTTP request | Description
 *EditDocumentApi* | [**edit_document_pptx_delete_slides**](docs/EditDocumentApi.md#edit_document_pptx_delete_slides) | **POST** /convert/edit/pptx/delete-slides | Delete, remove slides from a PowerPoint PPTX presentation document
 *EditDocumentApi* | [**edit_document_pptx_replace**](docs/EditDocumentApi.md#edit_document_pptx_replace) | **POST** /convert/edit/pptx/replace-all | Replace string in PowerPoint PPTX presentation
 *EditDocumentApi* | [**edit_document_xlsx_create_blank_spreadsheet**](docs/EditDocumentApi.md#edit_document_xlsx_create_blank_spreadsheet) | **POST** /convert/edit/xlsx/create/blank | Create a blank Excel XLSX spreadsheet
+*EditDocumentApi* | [**edit_document_xlsx_create_spreadsheet_from_data**](docs/EditDocumentApi.md#edit_document_xlsx_create_spreadsheet_from_data) | **POST** /convert/edit/xlsx/create/from/data | Create a new Excel XLSX spreadsheet from column and row data
 *EditDocumentApi* | [**edit_document_xlsx_get_cell_by_index**](docs/EditDocumentApi.md#edit_document_xlsx_get_cell_by_index) | **POST** /convert/edit/xlsx/get-cell/by-index | Get cell from an Excel XLSX spreadsheet, worksheet by index
 *EditDocumentApi* | [**edit_document_xlsx_get_columns**](docs/EditDocumentApi.md#edit_document_xlsx_get_columns) | **POST** /convert/edit/xlsx/get-columns | Get rows and cells from a Excel XLSX spreadsheet, worksheet
 *EditDocumentApi* | [**edit_document_xlsx_get_images**](docs/EditDocumentApi.md#edit_document_xlsx_get_images) | **POST** /convert/edit/xlsx/get-images | Get images from a Excel XLSX spreadsheet, worksheet
@@ -226,6 +227,8 @@ Class | Method | HTTP request | Description
  - [CreateBlankDocxResponse](docs/CreateBlankDocxResponse.md)
  - [CreateBlankSpreadsheetRequest](docs/CreateBlankSpreadsheetRequest.md)
  - [CreateBlankSpreadsheetResponse](docs/CreateBlankSpreadsheetResponse.md)
+ - [CreateSpreadsheetFromDataRequest](docs/CreateSpreadsheetFromDataRequest.md)
+ - [CreateSpreadsheetFromDataResponse](docs/CreateSpreadsheetFromDataResponse.md)
  - [DeleteDocxTableRowRequest](docs/DeleteDocxTableRowRequest.md)
  - [DeleteDocxTableRowResponse](docs/DeleteDocxTableRowResponse.md)
  - [DocumentValidationError](docs/DocumentValidationError.md)
