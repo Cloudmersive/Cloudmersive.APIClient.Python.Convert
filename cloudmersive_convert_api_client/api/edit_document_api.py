@@ -2805,6 +2805,105 @@ class EditDocumentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def edit_document_xlsx_clear_cell_by_index(self, input, **kwargs):  # noqa: E501
+        """Clear cell contents in an Excel XLSX spreadsheet, worksheet by index  # noqa: E501
+
+        Clears, sets to blank, the contents of a specific cell in an Excel XLSX spreadsheet, worksheet  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_xlsx_clear_cell_by_index(input, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param ClearXlsxCellRequest input: Document input request (required)
+        :return: ClearXlsxCellResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.edit_document_xlsx_clear_cell_by_index_with_http_info(input, **kwargs)  # noqa: E501
+        else:
+            (data) = self.edit_document_xlsx_clear_cell_by_index_with_http_info(input, **kwargs)  # noqa: E501
+            return data
+
+    def edit_document_xlsx_clear_cell_by_index_with_http_info(self, input, **kwargs):  # noqa: E501
+        """Clear cell contents in an Excel XLSX spreadsheet, worksheet by index  # noqa: E501
+
+        Clears, sets to blank, the contents of a specific cell in an Excel XLSX spreadsheet, worksheet  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_xlsx_clear_cell_by_index_with_http_info(input, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param ClearXlsxCellRequest input: Document input request (required)
+        :return: ClearXlsxCellResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method edit_document_xlsx_clear_cell_by_index" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input' is set
+        if ('input' not in params or
+                params['input'] is None):
+            raise ValueError("Missing the required parameter `input` when calling `edit_document_xlsx_clear_cell_by_index`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'input' in params:
+            body_params = params['input']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/edit/xlsx/clear-cell/by-index', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='ClearXlsxCellResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def edit_document_xlsx_create_blank_spreadsheet(self, input, **kwargs):  # noqa: E501
         """Create a blank Excel XLSX spreadsheet  # noqa: E501
 
@@ -2996,6 +3095,105 @@ class EditDocumentApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='CreateSpreadsheetFromDataResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def edit_document_xlsx_delete_worksheet(self, req_config, **kwargs):  # noqa: E501
+        """Delete, remove worksheet from an Excel XLSX spreadsheet document  # noqa: E501
+
+        Edits the input Excel XLSX spreadsheet document to remove the specified worksheet (tab).  Use the Get Worksheets API to enumerate available worksheets in a spreadsheet.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_xlsx_delete_worksheet(req_config, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param RemoveXlsxWorksheetRequest req_config: Spreadsheet input request (required)
+        :return: object
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.edit_document_xlsx_delete_worksheet_with_http_info(req_config, **kwargs)  # noqa: E501
+        else:
+            (data) = self.edit_document_xlsx_delete_worksheet_with_http_info(req_config, **kwargs)  # noqa: E501
+            return data
+
+    def edit_document_xlsx_delete_worksheet_with_http_info(self, req_config, **kwargs):  # noqa: E501
+        """Delete, remove worksheet from an Excel XLSX spreadsheet document  # noqa: E501
+
+        Edits the input Excel XLSX spreadsheet document to remove the specified worksheet (tab).  Use the Get Worksheets API to enumerate available worksheets in a spreadsheet.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_xlsx_delete_worksheet_with_http_info(req_config, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param RemoveXlsxWorksheetRequest req_config: Spreadsheet input request (required)
+        :return: object
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['req_config']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method edit_document_xlsx_delete_worksheet" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'req_config' is set
+        if ('req_config' not in params or
+                params['req_config'] is None):
+            raise ValueError("Missing the required parameter `req_config` when calling `edit_document_xlsx_delete_worksheet`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'req_config' in params:
+            body_params = params['req_config']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/edit/xlsx/delete-worksheet', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='object',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -3689,6 +3887,105 @@ class EditDocumentApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='InsertXlsxWorksheetResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def edit_document_xlsx_set_cell_by_index(self, input, **kwargs):  # noqa: E501
+        """Set, update cell contents in an Excel XLSX spreadsheet, worksheet by index  # noqa: E501
+
+        Sets, updates the contents of a specific cell in an Excel XLSX spreadsheet, worksheet  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_xlsx_set_cell_by_index(input, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param SetXlsxCellRequest input: Document input request (required)
+        :return: SetXlsxCellResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.edit_document_xlsx_set_cell_by_index_with_http_info(input, **kwargs)  # noqa: E501
+        else:
+            (data) = self.edit_document_xlsx_set_cell_by_index_with_http_info(input, **kwargs)  # noqa: E501
+            return data
+
+    def edit_document_xlsx_set_cell_by_index_with_http_info(self, input, **kwargs):  # noqa: E501
+        """Set, update cell contents in an Excel XLSX spreadsheet, worksheet by index  # noqa: E501
+
+        Sets, updates the contents of a specific cell in an Excel XLSX spreadsheet, worksheet  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_xlsx_set_cell_by_index_with_http_info(input, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param SetXlsxCellRequest input: Document input request (required)
+        :return: SetXlsxCellResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method edit_document_xlsx_set_cell_by_index" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input' is set
+        if ('input' not in params or
+                params['input'] is None):
+            raise ValueError("Missing the required parameter `input` when calling `edit_document_xlsx_set_cell_by_index`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'input' in params:
+            body_params = params['input']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/edit/xlsx/set-cell/by-index', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='SetXlsxCellResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

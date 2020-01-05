@@ -333,7 +333,7 @@ class ConvertDocumentApi(object):
     def convert_document_autodetect_to_txt(self, input_file, **kwargs):  # noqa: E501
         """Convert Document to Text (txt)  # noqa: E501
 
-        Automatically detect file type and convert it to Text.  Supports all of the major Office document file formats including Word (DOCX, DOC), Excel (XLSX, XLS), PowerPoint (PPTX, PPT) and PDF files.  # noqa: E501
+        Automatically detect file type and convert it to Text.  Supports all of the major Office document file formats including Word (DOCX, DOC), Excel (XLSX, XLS), PowerPoint (PPTX, PPT) and PDF files.  For spreadsheets, all worksheets will be included.  If you wish to exclude certain pages, worksheets, slides, etc. use the Split document API first, or the delete pages/slides/worksheet APIs first to adjust the document to the target state prior to converting to text.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.convert_document_autodetect_to_txt(input_file, async_req=True)
@@ -355,7 +355,7 @@ class ConvertDocumentApi(object):
     def convert_document_autodetect_to_txt_with_http_info(self, input_file, **kwargs):  # noqa: E501
         """Convert Document to Text (txt)  # noqa: E501
 
-        Automatically detect file type and convert it to Text.  Supports all of the major Office document file formats including Word (DOCX, DOC), Excel (XLSX, XLS), PowerPoint (PPTX, PPT) and PDF files.  # noqa: E501
+        Automatically detect file type and convert it to Text.  Supports all of the major Office document file formats including Word (DOCX, DOC), Excel (XLSX, XLS), PowerPoint (PPTX, PPT) and PDF files.  For spreadsheets, all worksheets will be included.  If you wish to exclude certain pages, worksheets, slides, etc. use the Split document API first, or the delete pages/slides/worksheet APIs first to adjust the document to the target state prior to converting to text.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.convert_document_autodetect_to_txt_with_http_info(input_file, async_req=True)
@@ -2852,7 +2852,7 @@ class ConvertDocumentApi(object):
     def convert_document_xlsx_to_txt(self, input_file, **kwargs):  # noqa: E501
         """Convert Excel XLSX Spreadsheet to Text (txt)  # noqa: E501
 
-        Convert Office Excel Workbooks (XLSX) to standard Text.  Converts all worksheets in the workbook to Text.  Supports both XLSX and XLSB file formats.  # noqa: E501
+        Convert Office Excel Workbooks (XLSX) to standard Text.  Converts all worksheets in the workbook to Text.  Supports both XLSX and XLSB file formats.  When a spreadsheet contains multiple worksheets, will export all of the text from all of the worksheets.  If you wish to export the text from only one worksheet, try using the Split XLSX API to split the spreadsheet into multiple worksheet files, and then run XLSX to Text on the individual worksheet file that you need to extract the text from.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.convert_document_xlsx_to_txt(input_file, async_req=True)
@@ -2874,7 +2874,7 @@ class ConvertDocumentApi(object):
     def convert_document_xlsx_to_txt_with_http_info(self, input_file, **kwargs):  # noqa: E501
         """Convert Excel XLSX Spreadsheet to Text (txt)  # noqa: E501
 
-        Convert Office Excel Workbooks (XLSX) to standard Text.  Converts all worksheets in the workbook to Text.  Supports both XLSX and XLSB file formats.  # noqa: E501
+        Convert Office Excel Workbooks (XLSX) to standard Text.  Converts all worksheets in the workbook to Text.  Supports both XLSX and XLSB file formats.  When a spreadsheet contains multiple worksheets, will export all of the text from all of the worksheets.  If you wish to export the text from only one worksheet, try using the Split XLSX API to split the spreadsheet into multiple worksheet files, and then run XLSX to Text on the individual worksheet file that you need to extract the text from.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.convert_document_xlsx_to_txt_with_http_info(input_file, async_req=True)
