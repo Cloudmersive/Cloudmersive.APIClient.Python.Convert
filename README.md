@@ -4,7 +4,7 @@ Convert API lets you effortlessly convert file formats and types.
 This Python package provides a native API client for [Cloudmersive Document Conversion](https://www.cloudmersive.com/convert-api)
 
 - API version: v1
-- Package version: 2.3.1
+- Package version: 2.3.2
 - Build package: io.swagger.codegen.languages.PythonClientCodegen
 
 ## Requirements.
