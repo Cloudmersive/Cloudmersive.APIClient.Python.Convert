@@ -4,7 +4,7 @@ Convert API lets you effortlessly convert file formats and types.
 This Python package provides a native API client for [Cloudmersive Document Conversion](https://www.cloudmersive.com/convert-api)
 
 - API version: v1
-- Package version: 2.3.2
+- Package version: 2.3.3
 - Build package: io.swagger.codegen.languages.PythonClientCodegen
 
 ## Requirements.
@@ -141,6 +141,7 @@ Class | Method | HTTP request | Description
 *EditDocumentApi* | [**edit_document_docx_create_blank_document**](docs/EditDocumentApi.md#edit_document_docx_create_blank_document) | **POST** /convert/edit/docx/create/blank | Create a blank Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_delete_pages**](docs/EditDocumentApi.md#edit_document_docx_delete_pages) | **POST** /convert/edit/docx/delete-pages | Delete, remove pages from a Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_delete_table_row**](docs/EditDocumentApi.md#edit_document_docx_delete_table_row) | **POST** /convert/edit/docx/delete-table-row | Deletes a table row in an existing table in a Word DOCX document
+*EditDocumentApi* | [**edit_document_docx_delete_table_row_range**](docs/EditDocumentApi.md#edit_document_docx_delete_table_row_range) | **POST** /convert/edit/docx/delete-table-row/range | Deletes a range of multiple table rows in an existing table in a Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_get_headers_and_footers**](docs/EditDocumentApi.md#edit_document_docx_get_headers_and_footers) | **POST** /convert/edit/docx/get-headers-and-footers | Get content of a footer from a Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_get_images**](docs/EditDocumentApi.md#edit_document_docx_get_images) | **POST** /convert/edit/docx/get-images | Get images from a Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_get_sections**](docs/EditDocumentApi.md#edit_document_docx_get_sections) | **POST** /convert/edit/docx/get-sections | Get sections from a Word DOCX document
@@ -168,6 +169,7 @@ Class | Method | HTTP request | Description
 *EditDocumentApi* | [**edit_document_xlsx_create_blank_spreadsheet**](docs/EditDocumentApi.md#edit_document_xlsx_create_blank_spreadsheet) | **POST** /convert/edit/xlsx/create/blank | Create a blank Excel XLSX spreadsheet
 *EditDocumentApi* | [**edit_document_xlsx_create_spreadsheet_from_data**](docs/EditDocumentApi.md#edit_document_xlsx_create_spreadsheet_from_data) | **POST** /convert/edit/xlsx/create/from/data | Create a new Excel XLSX spreadsheet from column and row data
 *EditDocumentApi* | [**edit_document_xlsx_delete_worksheet**](docs/EditDocumentApi.md#edit_document_xlsx_delete_worksheet) | **POST** /convert/edit/xlsx/delete-worksheet | Delete, remove worksheet from an Excel XLSX spreadsheet document
+*EditDocumentApi* | [**edit_document_xlsx_get_cell_by_identifier**](docs/EditDocumentApi.md#edit_document_xlsx_get_cell_by_identifier) | **POST** /convert/edit/xlsx/get-cell/by-identifier | Get cell from an Excel XLSX spreadsheet, worksheet by cell identifier
 *EditDocumentApi* | [**edit_document_xlsx_get_cell_by_index**](docs/EditDocumentApi.md#edit_document_xlsx_get_cell_by_index) | **POST** /convert/edit/xlsx/get-cell/by-index | Get cell from an Excel XLSX spreadsheet, worksheet by index
 *EditDocumentApi* | [**edit_document_xlsx_get_columns**](docs/EditDocumentApi.md#edit_document_xlsx_get_columns) | **POST** /convert/edit/xlsx/get-columns | Get rows and cells from a Excel XLSX spreadsheet, worksheet
 *EditDocumentApi* | [**edit_document_xlsx_get_images**](docs/EditDocumentApi.md#edit_document_xlsx_get_images) | **POST** /convert/edit/xlsx/get-images | Get images from a Excel XLSX spreadsheet, worksheet
@@ -175,6 +177,7 @@ Class | Method | HTTP request | Description
 *EditDocumentApi* | [**edit_document_xlsx_get_styles**](docs/EditDocumentApi.md#edit_document_xlsx_get_styles) | **POST** /convert/edit/xlsx/get-styles | Get styles from a Excel XLSX spreadsheet, worksheet
 *EditDocumentApi* | [**edit_document_xlsx_get_worksheets**](docs/EditDocumentApi.md#edit_document_xlsx_get_worksheets) | **POST** /convert/edit/xlsx/get-worksheets | Get worksheets from a Excel XLSX spreadsheet
 *EditDocumentApi* | [**edit_document_xlsx_insert_worksheet**](docs/EditDocumentApi.md#edit_document_xlsx_insert_worksheet) | **POST** /convert/edit/xlsx/insert-worksheet | Insert a new worksheet into an Excel XLSX spreadsheet
+*EditDocumentApi* | [**edit_document_xlsx_set_cell_by_identifier**](docs/EditDocumentApi.md#edit_document_xlsx_set_cell_by_identifier) | **POST** /convert/edit/xlsx/set-cell/by-identifier | Set, update cell contents in an Excel XLSX spreadsheet, worksheet by cell identifier
 *EditDocumentApi* | [**edit_document_xlsx_set_cell_by_index**](docs/EditDocumentApi.md#edit_document_xlsx_set_cell_by_index) | **POST** /convert/edit/xlsx/set-cell/by-index | Set, update cell contents in an Excel XLSX spreadsheet, worksheet by index
 *EditPdfApi* | [**edit_pdf_add_annotations**](docs/EditPdfApi.md#edit_pdf_add_annotations) | **POST** /convert/edit/pdf/annotations/add-item | Add one or more PDF annotations, comments in the PDF document
 *EditPdfApi* | [**edit_pdf_decrypt**](docs/EditPdfApi.md#edit_pdf_decrypt) | **POST** /convert/edit/pdf/decrypt | Decrypt and password-protect a PDF
@@ -234,6 +237,8 @@ Class | Method | HTTP request | Description
  - [CreateBlankSpreadsheetResponse](docs/CreateBlankSpreadsheetResponse.md)
  - [CreateSpreadsheetFromDataRequest](docs/CreateSpreadsheetFromDataRequest.md)
  - [CreateSpreadsheetFromDataResponse](docs/CreateSpreadsheetFromDataResponse.md)
+ - [DeleteDocxTableRowRangeRequest](docs/DeleteDocxTableRowRangeRequest.md)
+ - [DeleteDocxTableRowRangeResponse](docs/DeleteDocxTableRowRangeResponse.md)
  - [DeleteDocxTableRowRequest](docs/DeleteDocxTableRowRequest.md)
  - [DeleteDocxTableRowResponse](docs/DeleteDocxTableRowResponse.md)
  - [DocumentValidationError](docs/DocumentValidationError.md)
@@ -285,6 +290,8 @@ Class | Method | HTTP request | Description
  - [GetDocxTablesResponse](docs/GetDocxTablesResponse.md)
  - [GetImageInfoResult](docs/GetImageInfoResult.md)
  - [GetPdfAnnotationsResult](docs/GetPdfAnnotationsResult.md)
+ - [GetXlsxCellByIdentifierRequest](docs/GetXlsxCellByIdentifierRequest.md)
+ - [GetXlsxCellByIdentifierResponse](docs/GetXlsxCellByIdentifierResponse.md)
  - [GetXlsxCellRequest](docs/GetXlsxCellRequest.md)
  - [GetXlsxCellResponse](docs/GetXlsxCellResponse.md)
  - [GetXlsxColumnsRequest](docs/GetXlsxColumnsRequest.md)
@@ -335,6 +342,8 @@ Class | Method | HTTP request | Description
  - [SetFormFieldValue](docs/SetFormFieldValue.md)
  - [SetPdfFormFieldsRequest](docs/SetPdfFormFieldsRequest.md)
  - [SetPdfMetadataRequest](docs/SetPdfMetadataRequest.md)
+ - [SetXlsxCellByIdentifierRequest](docs/SetXlsxCellByIdentifierRequest.md)
+ - [SetXlsxCellByIdentifierResponse](docs/SetXlsxCellByIdentifierResponse.md)
  - [SetXlsxCellRequest](docs/SetXlsxCellRequest.md)
  - [SetXlsxCellResponse](docs/SetXlsxCellResponse.md)
  - [SplitDocumentResult](docs/SplitDocumentResult.md)

@@ -266,7 +266,7 @@ class DocxTable(object):
     def path(self):
         """Gets the path of this DocxTable.  # noqa: E501
 
-        The Path of the location of this object; leave blank for new tables  # noqa: E501
+        The Path of the location of this table object; leave blank for new tables  # noqa: E501
 
         :return: The path of this DocxTable.  # noqa: E501
         :rtype: str
@@ -277,7 +277,7 @@ class DocxTable(object):
     def path(self, path):
         """Sets the path of this DocxTable.
 
-        The Path of the location of this object; leave blank for new tables  # noqa: E501
+        The Path of the location of this table object; leave blank for new tables  # noqa: E501
 
         :param path: The path of this DocxTable.  # noqa: E501
         :type: str

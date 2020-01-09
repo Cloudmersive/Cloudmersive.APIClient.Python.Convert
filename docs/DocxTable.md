@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **table_id** | **str** | The ID of the table; leave blank for new tables | [optional] 
-**path** | **str** | The Path of the location of this object; leave blank for new tables | [optional] 
+**path** | **str** | The Path of the location of this table object; leave blank for new tables | [optional] 
 **width** | **str** | The Width of the table, or 0 if not specified | [optional] 
 **width_type** | **str** | The Width configuration type of the table | [optional] 
 **table_rows** | [**list[DocxTableRow]**](DocxTableRow.md) | Rows in the table; this is where the contents is located | [optional] 
