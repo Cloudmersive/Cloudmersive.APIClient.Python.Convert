@@ -36,7 +36,7 @@ class EditDocumentApi(object):
     def edit_document_begin_editing(self, input_file, **kwargs):  # noqa: E501
         """Begin editing a document  # noqa: E501
 
-        Uploads a document to Cloudmersive to begin a series of one or more editing operations  # noqa: E501
+        Uploads a document to Cloudmersive to begin a series of one or more editing operations.  To edit a document, first call Begin Editing on the document.  Then perform operations on the document using the secure URL returned from BeginEditing, such as Word DOCX Delete Pages and Insert Table.  Finally, perform finish editing on the URL to return the resulting edited document.  The editing URL is temporary and only stored in-memory cache, and will automatically expire from the cache after 30 minutes, and cannot be directly accessed.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.edit_document_begin_editing(input_file, async_req=True)
@@ -58,7 +58,7 @@ class EditDocumentApi(object):
     def edit_document_begin_editing_with_http_info(self, input_file, **kwargs):  # noqa: E501
         """Begin editing a document  # noqa: E501
 
-        Uploads a document to Cloudmersive to begin a series of one or more editing operations  # noqa: E501
+        Uploads a document to Cloudmersive to begin a series of one or more editing operations.  To edit a document, first call Begin Editing on the document.  Then perform operations on the document using the secure URL returned from BeginEditing, such as Word DOCX Delete Pages and Insert Table.  Finally, perform finish editing on the URL to return the resulting edited document.  The editing URL is temporary and only stored in-memory cache, and will automatically expire from the cache after 30 minutes, and cannot be directly accessed.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.edit_document_begin_editing_with_http_info(input_file, async_req=True)
@@ -234,7 +234,7 @@ class EditDocumentApi(object):
     def edit_document_docx_create_blank_document(self, input, **kwargs):  # noqa: E501
         """Create a blank Word DOCX document  # noqa: E501
 
-        Returns a blank Word DOCX Document format file  # noqa: E501
+        Returns a blank Word DOCX Document format file.  The file is blank, with no contents.  Use additional editing commands such as Insert Paragraph or Insert Table or Insert Image to populate the document.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.edit_document_docx_create_blank_document(input, async_req=True)
@@ -256,7 +256,7 @@ class EditDocumentApi(object):
     def edit_document_docx_create_blank_document_with_http_info(self, input, **kwargs):  # noqa: E501
         """Create a blank Word DOCX document  # noqa: E501
 
-        Returns a blank Word DOCX Document format file  # noqa: E501
+        Returns a blank Word DOCX Document format file.  The file is blank, with no contents.  Use additional editing commands such as Insert Paragraph or Insert Table or Insert Image to populate the document.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.edit_document_docx_create_blank_document_with_http_info(input, async_req=True)
@@ -2905,7 +2905,7 @@ class EditDocumentApi(object):
             collection_formats=collection_formats)
 
     def edit_document_finish_editing(self, req_config, **kwargs):  # noqa: E501
-        """Download result from document editing  # noqa: E501
+        """Finish editing document, and download result from document editing  # noqa: E501
 
         Once done editing a document, download the result.  Begin editing a document by calling begin-editing, then perform operations, then call finish-editing to get the result.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2927,7 +2927,7 @@ class EditDocumentApi(object):
             return data
 
     def edit_document_finish_editing_with_http_info(self, req_config, **kwargs):  # noqa: E501
-        """Download result from document editing  # noqa: E501
+        """Finish editing document, and download result from document editing  # noqa: E501
 
         Once done editing a document, download the result.  Begin editing a document by calling begin-editing, then perform operations, then call finish-editing to get the result.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an

@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**split_document_pdf_by_page**](SplitDocumentApi.md#split_document_pdf_by_page) | **POST** /convert/split/pdf | Split a PDF file into separate PDF files, one per page
 [**split_document_pptx**](SplitDocumentApi.md#split_document_pptx) | **POST** /convert/split/pptx | Split a single PowerPoint Presentation PPTX into Separate Slides
 [**split_document_txt_by_line**](SplitDocumentApi.md#split_document_txt_by_line) | **POST** /convert/split/txt/by-line | Split a single Text file (txt) into lines
+[**split_document_txt_by_string**](SplitDocumentApi.md#split_document_txt_by_string) | **POST** /convert/split/txt/by-string | Split a single Text file (txt) by a string delimiter
 [**split_document_xlsx**](SplitDocumentApi.md#split_document_xlsx) | **POST** /convert/split/xlsx | Split a single Excel XLSX into Separate Worksheets
 
 
@@ -221,6 +222,64 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SplitTextDocumentByLinesResult**](SplitTextDocumentByLinesResult.md)
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **split_document_txt_by_string**
+> SplitTextDocumentByStringResult split_document_txt_by_string(input_file, split_delimiter, skip_empty_elements=skip_empty_elements)
+
+Split a single Text file (txt) by a string delimiter
+
+Split a Text (txt) Document by a string delimiter, returning each component of the string as an array of strings.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_convert_api_client
+from cloudmersive_convert_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_convert_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_convert_api_client.SplitDocumentApi(cloudmersive_convert_api_client.ApiClient(configuration))
+input_file = '/path/to/file.txt' # file | Input file to perform the operation on.
+split_delimiter = 'split_delimiter_example' # str | Required; String to split up the input file on
+skip_empty_elements = true # bool | Optional; If true, empty elements will be skipped in the output (optional)
+
+try:
+    # Split a single Text file (txt) by a string delimiter
+    api_response = api_instance.split_document_txt_by_string(input_file, split_delimiter, skip_empty_elements=skip_empty_elements)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SplitDocumentApi->split_document_txt_by_string: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **input_file** | **file**| Input file to perform the operation on. | 
+ **split_delimiter** | **str**| Required; String to split up the input file on | 
+ **skip_empty_elements** | **bool**| Optional; If true, empty elements will be skipped in the output | [optional] 
+
+### Return type
+
+[**SplitTextDocumentByStringResult**](SplitTextDocumentByStringResult.md)
 
 ### Authorization
 

@@ -33,7 +33,7 @@ Method | HTTP request | Description
 [**edit_document_docx_set_header**](EditDocumentApi.md#edit_document_docx_set_header) | **POST** /convert/edit/docx/set-header | Set the header in a Word DOCX document
 [**edit_document_docx_update_table_cell**](EditDocumentApi.md#edit_document_docx_update_table_cell) | **POST** /convert/edit/docx/update-table-cell | Update, set contents of a table cell in an existing table in a Word DOCX document
 [**edit_document_docx_update_table_row**](EditDocumentApi.md#edit_document_docx_update_table_row) | **POST** /convert/edit/docx/update-table-row | Update, set contents of a table row in an existing table in a Word DOCX document
-[**edit_document_finish_editing**](EditDocumentApi.md#edit_document_finish_editing) | **POST** /convert/edit/finish-editing | Download result from document editing
+[**edit_document_finish_editing**](EditDocumentApi.md#edit_document_finish_editing) | **POST** /convert/edit/finish-editing | Finish editing document, and download result from document editing
 [**edit_document_pptx_delete_slides**](EditDocumentApi.md#edit_document_pptx_delete_slides) | **POST** /convert/edit/pptx/delete-slides | Delete, remove slides from a PowerPoint PPTX presentation document
 [**edit_document_pptx_replace**](EditDocumentApi.md#edit_document_pptx_replace) | **POST** /convert/edit/pptx/replace-all | Replace string in PowerPoint PPTX presentation
 [**edit_document_xlsx_clear_cell_by_index**](EditDocumentApi.md#edit_document_xlsx_clear_cell_by_index) | **POST** /convert/edit/xlsx/clear-cell/by-index | Clear cell contents in an Excel XLSX spreadsheet, worksheet by index
@@ -57,7 +57,7 @@ Method | HTTP request | Description
 
 Begin editing a document
 
-Uploads a document to Cloudmersive to begin a series of one or more editing operations
+Uploads a document to Cloudmersive to begin a series of one or more editing operations.  To edit a document, first call Begin Editing on the document.  Then perform operations on the document using the secure URL returned from BeginEditing, such as Word DOCX Delete Pages and Insert Table.  Finally, perform finish editing on the URL to return the resulting edited document.  The editing URL is temporary and only stored in-memory cache, and will automatically expire from the cache after 30 minutes, and cannot be directly accessed.
 
 ### Example
 ```python
@@ -165,7 +165,7 @@ Name | Type | Description  | Notes
 
 Create a blank Word DOCX document
 
-Returns a blank Word DOCX Document format file
+Returns a blank Word DOCX Document format file.  The file is blank, with no contents.  Use additional editing commands such as Insert Paragraph or Insert Table or Insert Image to populate the document.
 
 ### Example
 ```python
@@ -1621,7 +1621,7 @@ Name | Type | Description  | Notes
 # **edit_document_finish_editing**
 > str edit_document_finish_editing(req_config)
 
-Download result from document editing
+Finish editing document, and download result from document editing
 
 Once done editing a document, download the result.  Begin editing a document by calling begin-editing, then perform operations, then call finish-editing to get the result.
 
@@ -1644,7 +1644,7 @@ api_instance = cloudmersive_convert_api_client.EditDocumentApi(cloudmersive_conv
 req_config = cloudmersive_convert_api_client.FinishEditingRequest() # FinishEditingRequest | Cloudmersive Document URL to complete editing on
 
 try:
-    # Download result from document editing
+    # Finish editing document, and download result from document editing
     api_response = api_instance.edit_document_finish_editing(req_config)
     pprint(api_response)
 except ApiException as e:

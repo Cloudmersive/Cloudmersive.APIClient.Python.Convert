@@ -4,7 +4,7 @@ Convert API lets you effortlessly convert file formats and types.
 This Python package provides a native API client for [Cloudmersive Document Conversion](https://www.cloudmersive.com/convert-api)
 
 - API version: v1
-- Package version: 2.3.5
+- Package version: 2.3.6
 - Build package: io.swagger.codegen.languages.PythonClientCodegen
 
 ## Requirements.
@@ -166,7 +166,7 @@ Class | Method | HTTP request | Description
 *EditDocumentApi* | [**edit_document_docx_set_header**](docs/EditDocumentApi.md#edit_document_docx_set_header) | **POST** /convert/edit/docx/set-header | Set the header in a Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_update_table_cell**](docs/EditDocumentApi.md#edit_document_docx_update_table_cell) | **POST** /convert/edit/docx/update-table-cell | Update, set contents of a table cell in an existing table in a Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_update_table_row**](docs/EditDocumentApi.md#edit_document_docx_update_table_row) | **POST** /convert/edit/docx/update-table-row | Update, set contents of a table row in an existing table in a Word DOCX document
-*EditDocumentApi* | [**edit_document_finish_editing**](docs/EditDocumentApi.md#edit_document_finish_editing) | **POST** /convert/edit/finish-editing | Download result from document editing
+*EditDocumentApi* | [**edit_document_finish_editing**](docs/EditDocumentApi.md#edit_document_finish_editing) | **POST** /convert/edit/finish-editing | Finish editing document, and download result from document editing
 *EditDocumentApi* | [**edit_document_pptx_delete_slides**](docs/EditDocumentApi.md#edit_document_pptx_delete_slides) | **POST** /convert/edit/pptx/delete-slides | Delete, remove slides from a PowerPoint PPTX presentation document
 *EditDocumentApi* | [**edit_document_pptx_replace**](docs/EditDocumentApi.md#edit_document_pptx_replace) | **POST** /convert/edit/pptx/replace-all | Replace string in PowerPoint PPTX presentation
 *EditDocumentApi* | [**edit_document_xlsx_clear_cell_by_index**](docs/EditDocumentApi.md#edit_document_xlsx_clear_cell_by_index) | **POST** /convert/edit/xlsx/clear-cell/by-index | Clear cell contents in an Excel XLSX spreadsheet, worksheet by index
@@ -201,6 +201,15 @@ Class | Method | HTTP request | Description
 *EditPdfApi* | [**edit_pdf_set_metadata**](docs/EditPdfApi.md#edit_pdf_set_metadata) | **POST** /convert/edit/pdf/set-metadata | Sets PDF document metadata
 *EditPdfApi* | [**edit_pdf_set_permissions**](docs/EditPdfApi.md#edit_pdf_set_permissions) | **POST** /convert/edit/pdf/encrypt/set-permissions | Encrypt, password-protect and set restricted permissions on a PDF
 *EditPdfApi* | [**edit_pdf_watermark_text**](docs/EditPdfApi.md#edit_pdf_watermark_text) | **POST** /convert/edit/pdf/watermark/text | Add a text watermark to a PDF
+*EditTextApi* | [**edit_text_base64_decode**](docs/EditTextApi.md#edit_text_base64_decode) | **POST** /convert/edit/text/encoding/base64/decode | Base 64 decode, convert base 64 string to binary content
+*EditTextApi* | [**edit_text_base64_detect**](docs/EditTextApi.md#edit_text_base64_detect) | **POST** /convert/edit/text/encoding/base64/detect | Detect, check if text string is base 64 encoded
+*EditTextApi* | [**edit_text_base64_encode**](docs/EditTextApi.md#edit_text_base64_encode) | **POST** /convert/edit/text/encoding/base64/encode | Base 64 encode, convert binary or file data to a text string
+*EditTextApi* | [**edit_text_change_line_endings**](docs/EditTextApi.md#edit_text_change_line_endings) | **POST** /convert/edit/text/line-endings/change | Set, change line endings of a text file
+*EditTextApi* | [**edit_text_detect_line_endings**](docs/EditTextApi.md#edit_text_detect_line_endings) | **POST** /convert/edit/text/line-endings/detect | Detect line endings of a text file
+*EditTextApi* | [**edit_text_remove_all_whitespace**](docs/EditTextApi.md#edit_text_remove_all_whitespace) | **POST** /convert/edit/text/remove/whitespace/all | Remove whitespace from text string
+*EditTextApi* | [**edit_text_remove_html**](docs/EditTextApi.md#edit_text_remove_html) | **POST** /convert/edit/text/remove/html | Remove HTML from text string
+*EditTextApi* | [**edit_text_text_encoding_detect**](docs/EditTextApi.md#edit_text_text_encoding_detect) | **POST** /convert/edit/text/encoding/detect | Detect text encoding of file
+*EditTextApi* | [**edit_text_trim_whitespace**](docs/EditTextApi.md#edit_text_trim_whitespace) | **POST** /convert/edit/text/remove/whitespace/trim | Trim leading and trailing whitespace from text string
 *MergeDocumentApi* | [**merge_document_docx**](docs/MergeDocumentApi.md#merge_document_docx) | **POST** /convert/merge/docx | Merge Two Word DOCX Together
 *MergeDocumentApi* | [**merge_document_docx_multi**](docs/MergeDocumentApi.md#merge_document_docx_multi) | **POST** /convert/merge/docx/multi | Merge Multple Word DOCX Together
 *MergeDocumentApi* | [**merge_document_pdf**](docs/MergeDocumentApi.md#merge_document_pdf) | **POST** /convert/merge/pdf | Merge Two PDF Files Together
@@ -208,12 +217,15 @@ Class | Method | HTTP request | Description
 *MergeDocumentApi* | [**merge_document_png**](docs/MergeDocumentApi.md#merge_document_png) | **POST** /convert/merge/png/vertical | Merge Multple PNG Files Together
 *MergeDocumentApi* | [**merge_document_pptx**](docs/MergeDocumentApi.md#merge_document_pptx) | **POST** /convert/merge/pptx | Merge Two PowerPoint PPTX Together
 *MergeDocumentApi* | [**merge_document_pptx_multi**](docs/MergeDocumentApi.md#merge_document_pptx_multi) | **POST** /convert/merge/pptx/multi | Merge Multple PowerPoint PPTX Together
+*MergeDocumentApi* | [**merge_document_txt**](docs/MergeDocumentApi.md#merge_document_txt) | **POST** /convert/merge/txt | Merge Two Text (TXT) Files Together
+*MergeDocumentApi* | [**merge_document_txt_multi**](docs/MergeDocumentApi.md#merge_document_txt_multi) | **POST** /convert/merge/txt/multi | Merge Multple Text (TXT) Files Together
 *MergeDocumentApi* | [**merge_document_xlsx**](docs/MergeDocumentApi.md#merge_document_xlsx) | **POST** /convert/merge/xlsx | Merge Two Excel XLSX Together
 *MergeDocumentApi* | [**merge_document_xlsx_multi**](docs/MergeDocumentApi.md#merge_document_xlsx_multi) | **POST** /convert/merge/xlsx/multi | Merge Multple Excel XLSX Together
 *SplitDocumentApi* | [**split_document_docx**](docs/SplitDocumentApi.md#split_document_docx) | **POST** /convert/split/docx | Split a single Word Document DOCX into Separate Documents by Page
 *SplitDocumentApi* | [**split_document_pdf_by_page**](docs/SplitDocumentApi.md#split_document_pdf_by_page) | **POST** /convert/split/pdf | Split a PDF file into separate PDF files, one per page
 *SplitDocumentApi* | [**split_document_pptx**](docs/SplitDocumentApi.md#split_document_pptx) | **POST** /convert/split/pptx | Split a single PowerPoint Presentation PPTX into Separate Slides
 *SplitDocumentApi* | [**split_document_txt_by_line**](docs/SplitDocumentApi.md#split_document_txt_by_line) | **POST** /convert/split/txt/by-line | Split a single Text file (txt) into lines
+*SplitDocumentApi* | [**split_document_txt_by_string**](docs/SplitDocumentApi.md#split_document_txt_by_string) | **POST** /convert/split/txt/by-string | Split a single Text file (txt) by a string delimiter
 *SplitDocumentApi* | [**split_document_xlsx**](docs/SplitDocumentApi.md#split_document_xlsx) | **POST** /convert/split/xlsx | Split a single Excel XLSX into Separate Worksheets
 *ValidateDocumentApi* | [**validate_document_autodetect_validation**](docs/ValidateDocumentApi.md#validate_document_autodetect_validation) | **POST** /convert/validate/autodetect | Autodetect content type and validate
 *ValidateDocumentApi* | [**validate_document_docx_validation**](docs/ValidateDocumentApi.md#validate_document_docx_validation) | **POST** /convert/validate/docx | Validate a Word document (DOCX)
@@ -233,6 +245,13 @@ Class | Method | HTTP request | Description
  - [AutodetectDocumentValidationResult](docs/AutodetectDocumentValidationResult.md)
  - [AutodetectGetInfoResult](docs/AutodetectGetInfoResult.md)
  - [AutodetectToPngResult](docs/AutodetectToPngResult.md)
+ - [Base64DecodeRequest](docs/Base64DecodeRequest.md)
+ - [Base64DecodeResponse](docs/Base64DecodeResponse.md)
+ - [Base64DetectRequest](docs/Base64DetectRequest.md)
+ - [Base64DetectResponse](docs/Base64DetectResponse.md)
+ - [Base64EncodeRequest](docs/Base64EncodeRequest.md)
+ - [Base64EncodeResponse](docs/Base64EncodeResponse.md)
+ - [ChangeLineEndingResponse](docs/ChangeLineEndingResponse.md)
  - [ClearXlsxCellRequest](docs/ClearXlsxCellRequest.md)
  - [ClearXlsxCellResponse](docs/ClearXlsxCellResponse.md)
  - [ConvertedPngPage](docs/ConvertedPngPage.md)
@@ -246,6 +265,7 @@ Class | Method | HTTP request | Description
  - [DeleteDocxTableRowRangeResponse](docs/DeleteDocxTableRowRangeResponse.md)
  - [DeleteDocxTableRowRequest](docs/DeleteDocxTableRowRequest.md)
  - [DeleteDocxTableRowResponse](docs/DeleteDocxTableRowResponse.md)
+ - [DetectLineEndingsResponse](docs/DetectLineEndingsResponse.md)
  - [DocumentValidationError](docs/DocumentValidationError.md)
  - [DocumentValidationResult](docs/DocumentValidationResult.md)
  - [DocxBody](docs/DocxBody.md)
@@ -348,7 +368,11 @@ Class | Method | HTTP request | Description
  - [RemoveDocxHeadersAndFootersRequest](docs/RemoveDocxHeadersAndFootersRequest.md)
  - [RemoveDocxHeadersAndFootersResponse](docs/RemoveDocxHeadersAndFootersResponse.md)
  - [RemoveDocxPagesRequest](docs/RemoveDocxPagesRequest.md)
+ - [RemoveHtmlFromTextRequest](docs/RemoveHtmlFromTextRequest.md)
+ - [RemoveHtmlFromTextResponse](docs/RemoveHtmlFromTextResponse.md)
  - [RemovePptxSlidesRequest](docs/RemovePptxSlidesRequest.md)
+ - [RemoveWhitespaceFromTextRequest](docs/RemoveWhitespaceFromTextRequest.md)
+ - [RemoveWhitespaceFromTextResponse](docs/RemoveWhitespaceFromTextResponse.md)
  - [RemoveXlsxWorksheetRequest](docs/RemoveXlsxWorksheetRequest.md)
  - [ReplaceStringRequest](docs/ReplaceStringRequest.md)
  - [ScreenshotRequest](docs/ScreenshotRequest.md)
@@ -364,9 +388,12 @@ Class | Method | HTTP request | Description
  - [SplitPdfResult](docs/SplitPdfResult.md)
  - [SplitPptxPresentationResult](docs/SplitPptxPresentationResult.md)
  - [SplitTextDocumentByLinesResult](docs/SplitTextDocumentByLinesResult.md)
+ - [SplitTextDocumentByStringResult](docs/SplitTextDocumentByStringResult.md)
  - [SplitXlsxWorksheetResult](docs/SplitXlsxWorksheetResult.md)
  - [TextConversionResult](docs/TextConversionResult.md)
+ - [TextDocumentElement](docs/TextDocumentElement.md)
  - [TextDocumentLine](docs/TextDocumentLine.md)
+ - [TextEncodingDetectResponse](docs/TextEncodingDetectResponse.md)
  - [UpdateDocxTableCellRequest](docs/UpdateDocxTableCellRequest.md)
  - [UpdateDocxTableCellResponse](docs/UpdateDocxTableCellResponse.md)
  - [UpdateDocxTableRowRequest](docs/UpdateDocxTableRowRequest.md)

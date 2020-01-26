@@ -11,6 +11,8 @@ Method | HTTP request | Description
 [**merge_document_png**](MergeDocumentApi.md#merge_document_png) | **POST** /convert/merge/png/vertical | Merge Multple PNG Files Together
 [**merge_document_pptx**](MergeDocumentApi.md#merge_document_pptx) | **POST** /convert/merge/pptx | Merge Two PowerPoint PPTX Together
 [**merge_document_pptx_multi**](MergeDocumentApi.md#merge_document_pptx_multi) | **POST** /convert/merge/pptx/multi | Merge Multple PowerPoint PPTX Together
+[**merge_document_txt**](MergeDocumentApi.md#merge_document_txt) | **POST** /convert/merge/txt | Merge Two Text (TXT) Files Together
+[**merge_document_txt_multi**](MergeDocumentApi.md#merge_document_txt_multi) | **POST** /convert/merge/txt/multi | Merge Multple Text (TXT) Files Together
 [**merge_document_xlsx**](MergeDocumentApi.md#merge_document_xlsx) | **POST** /convert/merge/xlsx | Merge Two Excel XLSX Together
 [**merge_document_xlsx_multi**](MergeDocumentApi.md#merge_document_xlsx_multi) | **POST** /convert/merge/xlsx/multi | Merge Multple Excel XLSX Together
 
@@ -423,6 +425,134 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling MergeDocumentApi->merge_document_pptx_multi: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **input_file1** | **file**| First input file to perform the operation on. | 
+ **input_file2** | **file**| Second input file to perform the operation on. | 
+ **input_file3** | **file**| Third input file to perform the operation on. | [optional] 
+ **input_file4** | **file**| Fourth input file to perform the operation on. | [optional] 
+ **input_file5** | **file**| Fifth input file to perform the operation on. | [optional] 
+ **input_file6** | **file**| Sixth input file to perform the operation on. | [optional] 
+ **input_file7** | **file**| Seventh input file to perform the operation on. | [optional] 
+ **input_file8** | **file**| Eighth input file to perform the operation on. | [optional] 
+ **input_file9** | **file**| Ninth input file to perform the operation on. | [optional] 
+ **input_file10** | **file**| Tenth input file to perform the operation on. | [optional] 
+
+### Return type
+
+**str**
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/octet-stream
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **merge_document_txt**
+> object merge_document_txt(input_file1, input_file2)
+
+Merge Two Text (TXT) Files Together
+
+Combine two Text (.TXT) files into a single text document, preserving the order of the input documents in the combined document by stacking them vertically.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_convert_api_client
+from cloudmersive_convert_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_convert_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_convert_api_client.MergeDocumentApi(cloudmersive_convert_api_client.ApiClient(configuration))
+input_file1 = '/path/to/file.txt' # file | First input file to perform the operation on.
+input_file2 = '/path/to/file.txt' # file | Second input file to perform the operation on (more than 2 can be supplied).
+
+try:
+    # Merge Two Text (TXT) Files Together
+    api_response = api_instance.merge_document_txt(input_file1, input_file2)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling MergeDocumentApi->merge_document_txt: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **input_file1** | **file**| First input file to perform the operation on. | 
+ **input_file2** | **file**| Second input file to perform the operation on (more than 2 can be supplied). | 
+
+### Return type
+
+**object**
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/octet-stream
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **merge_document_txt_multi**
+> str merge_document_txt_multi(input_file1, input_file2, input_file3=input_file3, input_file4=input_file4, input_file5=input_file5, input_file6=input_file6, input_file7=input_file7, input_file8=input_file8, input_file9=input_file9, input_file10=input_file10)
+
+Merge Multple Text (TXT) Files Together
+
+Combine multiple Text (.TXT) files into a single text document, preserving the order of the input documents in the combined document by stacking them vertically.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_convert_api_client
+from cloudmersive_convert_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_convert_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_convert_api_client.MergeDocumentApi(cloudmersive_convert_api_client.ApiClient(configuration))
+input_file1 = '/path/to/file.txt' # file | First input file to perform the operation on.
+input_file2 = '/path/to/file.txt' # file | Second input file to perform the operation on.
+input_file3 = '/path/to/file.txt' # file | Third input file to perform the operation on. (optional)
+input_file4 = '/path/to/file.txt' # file | Fourth input file to perform the operation on. (optional)
+input_file5 = '/path/to/file.txt' # file | Fifth input file to perform the operation on. (optional)
+input_file6 = '/path/to/file.txt' # file | Sixth input file to perform the operation on. (optional)
+input_file7 = '/path/to/file.txt' # file | Seventh input file to perform the operation on. (optional)
+input_file8 = '/path/to/file.txt' # file | Eighth input file to perform the operation on. (optional)
+input_file9 = '/path/to/file.txt' # file | Ninth input file to perform the operation on. (optional)
+input_file10 = '/path/to/file.txt' # file | Tenth input file to perform the operation on. (optional)
+
+try:
+    # Merge Multple Text (TXT) Files Together
+    api_response = api_instance.merge_document_txt_multi(input_file1, input_file2, input_file3=input_file3, input_file4=input_file4, input_file5=input_file5, input_file6=input_file6, input_file7=input_file7, input_file8=input_file8, input_file9=input_file9, input_file10=input_file10)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling MergeDocumentApi->merge_document_txt_multi: %s\n" % e)
 ```
 
 ### Parameters

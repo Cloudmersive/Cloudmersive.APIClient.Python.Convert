@@ -939,6 +939,7 @@ class ConvertDocumentApi(object):
 
         :param async_req bool
         :param file input_file: Input file to perform the operation on. (required)
+        :param str text_formatting_mode: Optional; specify how whitespace should be handled when converting the document to text.  Possible values are 'preserveWhitespace' which will attempt to preserve whitespace in the document and relative positioning of text within the document, and 'minimizeWhitespace' which will not insert additional spaces into the document in most cases.  Default is 'minimizeWhitespace'.
         :return: TextConversionResult
                  If the method is called asynchronously,
                  returns the request thread.
@@ -961,12 +962,13 @@ class ConvertDocumentApi(object):
 
         :param async_req bool
         :param file input_file: Input file to perform the operation on. (required)
+        :param str text_formatting_mode: Optional; specify how whitespace should be handled when converting the document to text.  Possible values are 'preserveWhitespace' which will attempt to preserve whitespace in the document and relative positioning of text within the document, and 'minimizeWhitespace' which will not insert additional spaces into the document in most cases.  Default is 'minimizeWhitespace'.
         :return: TextConversionResult
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['input_file']  # noqa: E501
+        all_params = ['input_file', 'text_formatting_mode']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -993,6 +995,8 @@ class ConvertDocumentApi(object):
         query_params = []
 
         header_params = {}
+        if 'text_formatting_mode' in params:
+            header_params['textFormattingMode'] = params['text_formatting_mode']  # noqa: E501
 
         form_params = []
         local_var_files = {}
