@@ -9,8 +9,12 @@ Method | HTTP request | Description
 [**edit_text_base64_encode**](EditTextApi.md#edit_text_base64_encode) | **POST** /convert/edit/text/encoding/base64/encode | Base 64 encode, convert binary or file data to a text string
 [**edit_text_change_line_endings**](EditTextApi.md#edit_text_change_line_endings) | **POST** /convert/edit/text/line-endings/change | Set, change line endings of a text file
 [**edit_text_detect_line_endings**](EditTextApi.md#edit_text_detect_line_endings) | **POST** /convert/edit/text/line-endings/detect | Detect line endings of a text file
+[**edit_text_find_regex**](EditTextApi.md#edit_text_find_regex) | **POST** /convert/edit/text/find/regex | Find a regular expression regex in text input
+[**edit_text_find_simple**](EditTextApi.md#edit_text_find_simple) | **POST** /convert/edit/text/find/string | Find a string in text input
 [**edit_text_remove_all_whitespace**](EditTextApi.md#edit_text_remove_all_whitespace) | **POST** /convert/edit/text/remove/whitespace/all | Remove whitespace from text string
 [**edit_text_remove_html**](EditTextApi.md#edit_text_remove_html) | **POST** /convert/edit/text/remove/html | Remove HTML from text string
+[**edit_text_replace_regex**](EditTextApi.md#edit_text_replace_regex) | **POST** /convert/edit/text/replace/regex | Replace a string in text with a regex regular expression string
+[**edit_text_replace_simple**](EditTextApi.md#edit_text_replace_simple) | **POST** /convert/edit/text/replace/string | Replace a string in text with another string value
 [**edit_text_text_encoding_detect**](EditTextApi.md#edit_text_text_encoding_detect) | **POST** /convert/edit/text/encoding/detect | Detect text encoding of file
 [**edit_text_trim_whitespace**](EditTextApi.md#edit_text_trim_whitespace) | **POST** /convert/edit/text/remove/whitespace/trim | Trim leading and trailing whitespace from text string
 
@@ -38,7 +42,7 @@ configuration.api_key['Apikey'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = cloudmersive_convert_api_client.EditTextApi(cloudmersive_convert_api_client.ApiClient(configuration))
-request = cloudmersive_convert_api_client.Base64DecodeRequest() # Base64DecodeRequest | 
+request = cloudmersive_convert_api_client.Base64DecodeRequest() # Base64DecodeRequest | Input request
 
 try:
     # Base 64 decode, convert base 64 string to binary content
@@ -52,7 +56,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**Base64DecodeRequest**](Base64DecodeRequest.md)|  | 
+ **request** | [**Base64DecodeRequest**](Base64DecodeRequest.md)| Input request | 
 
 ### Return type
 
@@ -92,7 +96,7 @@ configuration.api_key['Apikey'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = cloudmersive_convert_api_client.EditTextApi(cloudmersive_convert_api_client.ApiClient(configuration))
-request = cloudmersive_convert_api_client.Base64DetectRequest() # Base64DetectRequest | 
+request = cloudmersive_convert_api_client.Base64DetectRequest() # Base64DetectRequest | Input request
 
 try:
     # Detect, check if text string is base 64 encoded
@@ -106,7 +110,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**Base64DetectRequest**](Base64DetectRequest.md)|  | 
+ **request** | [**Base64DetectRequest**](Base64DetectRequest.md)| Input request | 
 
 ### Return type
 
@@ -146,7 +150,7 @@ configuration.api_key['Apikey'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = cloudmersive_convert_api_client.EditTextApi(cloudmersive_convert_api_client.ApiClient(configuration))
-request = cloudmersive_convert_api_client.Base64EncodeRequest() # Base64EncodeRequest | 
+request = cloudmersive_convert_api_client.Base64EncodeRequest() # Base64EncodeRequest | Input request
 
 try:
     # Base 64 encode, convert binary or file data to a text string
@@ -160,7 +164,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**Base64EncodeRequest**](Base64EncodeRequest.md)|  | 
+ **request** | [**Base64EncodeRequest**](Base64EncodeRequest.md)| Input request | 
 
 ### Return type
 
@@ -287,6 +291,114 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **edit_text_find_regex**
+> FindStringRegexResponse edit_text_find_regex(request)
+
+Find a regular expression regex in text input
+
+Find all occurrences of the input regular expression in the input content, and returns the matches
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_convert_api_client
+from cloudmersive_convert_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_convert_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_convert_api_client.EditTextApi(cloudmersive_convert_api_client.ApiClient(configuration))
+request = cloudmersive_convert_api_client.FindStringRegexRequest() # FindStringRegexRequest | Input request
+
+try:
+    # Find a regular expression regex in text input
+    api_response = api_instance.edit_text_find_regex(request)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EditTextApi->edit_text_find_regex: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**FindStringRegexRequest**](FindStringRegexRequest.md)| Input request | 
+
+### Return type
+
+[**FindStringRegexResponse**](FindStringRegexResponse.md)
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **edit_text_find_simple**
+> FindStringSimpleResponse edit_text_find_simple(request)
+
+Find a string in text input
+
+Finds all occurrences of the input string in the input content, and returns the matches
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_convert_api_client
+from cloudmersive_convert_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_convert_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_convert_api_client.EditTextApi(cloudmersive_convert_api_client.ApiClient(configuration))
+request = cloudmersive_convert_api_client.FindStringSimpleRequest() # FindStringSimpleRequest | Input request
+
+try:
+    # Find a string in text input
+    api_response = api_instance.edit_text_find_simple(request)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EditTextApi->edit_text_find_simple: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**FindStringSimpleRequest**](FindStringSimpleRequest.md)| Input request | 
+
+### Return type
+
+[**FindStringSimpleResponse**](FindStringSimpleResponse.md)
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **edit_text_remove_all_whitespace**
 > RemoveWhitespaceFromTextResponse edit_text_remove_all_whitespace(request)
 
@@ -310,7 +422,7 @@ configuration.api_key['Apikey'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = cloudmersive_convert_api_client.EditTextApi(cloudmersive_convert_api_client.ApiClient(configuration))
-request = cloudmersive_convert_api_client.RemoveWhitespaceFromTextRequest() # RemoveWhitespaceFromTextRequest | 
+request = cloudmersive_convert_api_client.RemoveWhitespaceFromTextRequest() # RemoveWhitespaceFromTextRequest | Input request
 
 try:
     # Remove whitespace from text string
@@ -324,7 +436,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**RemoveWhitespaceFromTextRequest**](RemoveWhitespaceFromTextRequest.md)|  | 
+ **request** | [**RemoveWhitespaceFromTextRequest**](RemoveWhitespaceFromTextRequest.md)| Input request | 
 
 ### Return type
 
@@ -364,7 +476,7 @@ configuration.api_key['Apikey'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = cloudmersive_convert_api_client.EditTextApi(cloudmersive_convert_api_client.ApiClient(configuration))
-request = cloudmersive_convert_api_client.RemoveHtmlFromTextRequest() # RemoveHtmlFromTextRequest | 
+request = cloudmersive_convert_api_client.RemoveHtmlFromTextRequest() # RemoveHtmlFromTextRequest | Input request
 
 try:
     # Remove HTML from text string
@@ -378,11 +490,119 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**RemoveHtmlFromTextRequest**](RemoveHtmlFromTextRequest.md)|  | 
+ **request** | [**RemoveHtmlFromTextRequest**](RemoveHtmlFromTextRequest.md)| Input request | 
 
 ### Return type
 
 [**RemoveHtmlFromTextResponse**](RemoveHtmlFromTextResponse.md)
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **edit_text_replace_regex**
+> ReplaceStringRegexResponse edit_text_replace_regex(request)
+
+Replace a string in text with a regex regular expression string
+
+Replaces all occurrences of the input regular expression regex string in the input content, and returns the result
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_convert_api_client
+from cloudmersive_convert_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_convert_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_convert_api_client.EditTextApi(cloudmersive_convert_api_client.ApiClient(configuration))
+request = cloudmersive_convert_api_client.ReplaceStringRegexRequest() # ReplaceStringRegexRequest | Input request
+
+try:
+    # Replace a string in text with a regex regular expression string
+    api_response = api_instance.edit_text_replace_regex(request)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EditTextApi->edit_text_replace_regex: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**ReplaceStringRegexRequest**](ReplaceStringRegexRequest.md)| Input request | 
+
+### Return type
+
+[**ReplaceStringRegexResponse**](ReplaceStringRegexResponse.md)
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **edit_text_replace_simple**
+> ReplaceStringSimpleResponse edit_text_replace_simple(request)
+
+Replace a string in text with another string value
+
+Replaces all occurrences of the input string in the input content, and returns the result
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_convert_api_client
+from cloudmersive_convert_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_convert_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_convert_api_client.EditTextApi(cloudmersive_convert_api_client.ApiClient(configuration))
+request = cloudmersive_convert_api_client.ReplaceStringSimpleRequest() # ReplaceStringSimpleRequest | Input request
+
+try:
+    # Replace a string in text with another string value
+    api_response = api_instance.edit_text_replace_simple(request)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EditTextApi->edit_text_replace_simple: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**ReplaceStringSimpleRequest**](ReplaceStringSimpleRequest.md)| Input request | 
+
+### Return type
+
+[**ReplaceStringSimpleResponse**](ReplaceStringSimpleResponse.md)
 
 ### Authorization
 
@@ -472,7 +692,7 @@ configuration.api_key['Apikey'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = cloudmersive_convert_api_client.EditTextApi(cloudmersive_convert_api_client.ApiClient(configuration))
-request = cloudmersive_convert_api_client.RemoveWhitespaceFromTextRequest() # RemoveWhitespaceFromTextRequest | 
+request = cloudmersive_convert_api_client.RemoveWhitespaceFromTextRequest() # RemoveWhitespaceFromTextRequest | Input request
 
 try:
     # Trim leading and trailing whitespace from text string
@@ -486,7 +706,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**RemoveWhitespaceFromTextRequest**](RemoveWhitespaceFromTextRequest.md)|  | 
+ **request** | [**RemoveWhitespaceFromTextRequest**](RemoveWhitespaceFromTextRequest.md)| Input request | 
 
 ### Return type
 

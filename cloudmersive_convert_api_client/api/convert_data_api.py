@@ -142,7 +142,7 @@ class ConvertDataApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param object json_object: (required)
+        :param object json_object: Input JSON to convert to XML (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -164,7 +164,7 @@ class ConvertDataApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param object json_object: (required)
+        :param object json_object: Input JSON to convert to XML (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.

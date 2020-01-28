@@ -98,7 +98,7 @@ configuration.api_key['Apikey'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = cloudmersive_convert_api_client.ConvertDataApi(cloudmersive_convert_api_client.ApiClient(configuration))
-json_object = NULL # object | 
+json_object = NULL # object | Input JSON to convert to XML
 
 try:
     # Convert JSON to XML conversion
@@ -112,7 +112,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **json_object** | **object**|  | 
+ **json_object** | **object**| Input JSON to convert to XML | 
 
 ### Return type
 

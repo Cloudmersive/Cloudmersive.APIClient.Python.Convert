@@ -16,3 +16,4 @@ from cloudmersive_convert_api_client.api.merge_document_api import MergeDocument
 from cloudmersive_convert_api_client.api.split_document_api import SplitDocumentApi
 from cloudmersive_convert_api_client.api.validate_document_api import ValidateDocumentApi
 from cloudmersive_convert_api_client.api.viewer_tools_api import ViewerToolsApi
+from cloudmersive_convert_api_client.api.zip_archive_api import ZipArchiveApi

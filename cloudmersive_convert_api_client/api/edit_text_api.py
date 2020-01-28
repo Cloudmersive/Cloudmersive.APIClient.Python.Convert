@@ -43,7 +43,7 @@ class EditTextApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Base64DecodeRequest request: (required)
+        :param Base64DecodeRequest request: Input request (required)
         :return: Base64DecodeResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -65,7 +65,7 @@ class EditTextApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Base64DecodeRequest request: (required)
+        :param Base64DecodeRequest request: Input request (required)
         :return: Base64DecodeResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -142,7 +142,7 @@ class EditTextApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Base64DetectRequest request: (required)
+        :param Base64DetectRequest request: Input request (required)
         :return: Base64DetectResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -164,7 +164,7 @@ class EditTextApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Base64DetectRequest request: (required)
+        :param Base64DetectRequest request: Input request (required)
         :return: Base64DetectResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -241,7 +241,7 @@ class EditTextApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Base64EncodeRequest request: (required)
+        :param Base64EncodeRequest request: Input request (required)
         :return: Base64EncodeResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -263,7 +263,7 @@ class EditTextApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Base64EncodeRequest request: (required)
+        :param Base64EncodeRequest request: Input request (required)
         :return: Base64EncodeResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -536,6 +536,204 @@ class EditTextApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def edit_text_find_regex(self, request, **kwargs):  # noqa: E501
+        """Find a regular expression regex in text input  # noqa: E501
+
+        Find all occurrences of the input regular expression in the input content, and returns the matches  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_text_find_regex(request, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param FindStringRegexRequest request: Input request (required)
+        :return: FindStringRegexResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.edit_text_find_regex_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.edit_text_find_regex_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def edit_text_find_regex_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Find a regular expression regex in text input  # noqa: E501
+
+        Find all occurrences of the input regular expression in the input content, and returns the matches  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_text_find_regex_with_http_info(request, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param FindStringRegexRequest request: Input request (required)
+        :return: FindStringRegexResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['request']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method edit_text_find_regex" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'request' is set
+        if ('request' not in params or
+                params['request'] is None):
+            raise ValueError("Missing the required parameter `request` when calling `edit_text_find_regex`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'request' in params:
+            body_params = params['request']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/edit/text/find/regex', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='FindStringRegexResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def edit_text_find_simple(self, request, **kwargs):  # noqa: E501
+        """Find a string in text input  # noqa: E501
+
+        Finds all occurrences of the input string in the input content, and returns the matches  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_text_find_simple(request, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param FindStringSimpleRequest request: Input request (required)
+        :return: FindStringSimpleResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.edit_text_find_simple_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.edit_text_find_simple_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def edit_text_find_simple_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Find a string in text input  # noqa: E501
+
+        Finds all occurrences of the input string in the input content, and returns the matches  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_text_find_simple_with_http_info(request, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param FindStringSimpleRequest request: Input request (required)
+        :return: FindStringSimpleResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['request']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method edit_text_find_simple" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'request' is set
+        if ('request' not in params or
+                params['request'] is None):
+            raise ValueError("Missing the required parameter `request` when calling `edit_text_find_simple`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'request' in params:
+            body_params = params['request']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/edit/text/find/string', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='FindStringSimpleResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def edit_text_remove_all_whitespace(self, request, **kwargs):  # noqa: E501
         """Remove whitespace from text string  # noqa: E501
 
@@ -546,7 +744,7 @@ class EditTextApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param RemoveWhitespaceFromTextRequest request: (required)
+        :param RemoveWhitespaceFromTextRequest request: Input request (required)
         :return: RemoveWhitespaceFromTextResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -568,7 +766,7 @@ class EditTextApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param RemoveWhitespaceFromTextRequest request: (required)
+        :param RemoveWhitespaceFromTextRequest request: Input request (required)
         :return: RemoveWhitespaceFromTextResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -645,7 +843,7 @@ class EditTextApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param RemoveHtmlFromTextRequest request: (required)
+        :param RemoveHtmlFromTextRequest request: Input request (required)
         :return: RemoveHtmlFromTextResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -667,7 +865,7 @@ class EditTextApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param RemoveHtmlFromTextRequest request: (required)
+        :param RemoveHtmlFromTextRequest request: Input request (required)
         :return: RemoveHtmlFromTextResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -727,6 +925,204 @@ class EditTextApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='RemoveHtmlFromTextResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def edit_text_replace_regex(self, request, **kwargs):  # noqa: E501
+        """Replace a string in text with a regex regular expression string  # noqa: E501
+
+        Replaces all occurrences of the input regular expression regex string in the input content, and returns the result  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_text_replace_regex(request, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param ReplaceStringRegexRequest request: Input request (required)
+        :return: ReplaceStringRegexResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.edit_text_replace_regex_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.edit_text_replace_regex_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def edit_text_replace_regex_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Replace a string in text with a regex regular expression string  # noqa: E501
+
+        Replaces all occurrences of the input regular expression regex string in the input content, and returns the result  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_text_replace_regex_with_http_info(request, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param ReplaceStringRegexRequest request: Input request (required)
+        :return: ReplaceStringRegexResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['request']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method edit_text_replace_regex" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'request' is set
+        if ('request' not in params or
+                params['request'] is None):
+            raise ValueError("Missing the required parameter `request` when calling `edit_text_replace_regex`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'request' in params:
+            body_params = params['request']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/edit/text/replace/regex', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='ReplaceStringRegexResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def edit_text_replace_simple(self, request, **kwargs):  # noqa: E501
+        """Replace a string in text with another string value  # noqa: E501
+
+        Replaces all occurrences of the input string in the input content, and returns the result  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_text_replace_simple(request, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param ReplaceStringSimpleRequest request: Input request (required)
+        :return: ReplaceStringSimpleResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.edit_text_replace_simple_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.edit_text_replace_simple_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def edit_text_replace_simple_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Replace a string in text with another string value  # noqa: E501
+
+        Replaces all occurrences of the input string in the input content, and returns the result  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_text_replace_simple_with_http_info(request, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param ReplaceStringSimpleRequest request: Input request (required)
+        :return: ReplaceStringSimpleResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['request']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method edit_text_replace_simple" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'request' is set
+        if ('request' not in params or
+                params['request'] is None):
+            raise ValueError("Missing the required parameter `request` when calling `edit_text_replace_simple`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'request' in params:
+            body_params = params['request']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/edit/text/replace/string', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='ReplaceStringSimpleResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -843,7 +1239,7 @@ class EditTextApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param RemoveWhitespaceFromTextRequest request: (required)
+        :param RemoveWhitespaceFromTextRequest request: Input request (required)
         :return: RemoveWhitespaceFromTextResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -865,7 +1261,7 @@ class EditTextApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param RemoveWhitespaceFromTextRequest request: (required)
+        :param RemoveWhitespaceFromTextRequest request: Input request (required)
         :return: RemoveWhitespaceFromTextResponse
                  If the method is called asynchronously,
                  returns the request thread.
