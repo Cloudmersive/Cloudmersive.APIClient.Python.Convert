@@ -240,7 +240,7 @@ class EditPdfApi(object):
             collection_formats=collection_formats)
 
     def edit_pdf_delete_pages(self, input_file, page_start, page_end, **kwargs):  # noqa: E501
-        """Remove / delete pages from a PDF document  # noqa: E501
+        """Remove, delete pages from a PDF document  # noqa: E501
 
         Remove one or more pages from a PDF document  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -264,7 +264,7 @@ class EditPdfApi(object):
             return data
 
     def edit_pdf_delete_pages_with_http_info(self, input_file, page_start, page_end, **kwargs):  # noqa: E501
-        """Remove / delete pages from a PDF document  # noqa: E501
+        """Remove, delete pages from a PDF document  # noqa: E501
 
         Remove one or more pages from a PDF document  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -862,7 +862,7 @@ class EditPdfApi(object):
             collection_formats=collection_formats)
 
     def edit_pdf_insert_pages(self, source_file, destination_file, page_start_source, page_end_source, page_insert_before_desitnation, **kwargs):  # noqa: E501
-        """Insert / copy pages from one PDF document into another  # noqa: E501
+        """Insert, copy pages from one PDF document into another  # noqa: E501
 
         Copy one or more pages from one PDF document (source document) and insert them into a second PDF document (destination document).  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -888,7 +888,7 @@ class EditPdfApi(object):
             return data
 
     def edit_pdf_insert_pages_with_http_info(self, source_file, destination_file, page_start_source, page_end_source, page_insert_before_desitnation, **kwargs):  # noqa: E501
-        """Insert / copy pages from one PDF document into another  # noqa: E501
+        """Insert, copy pages from one PDF document into another  # noqa: E501
 
         Copy one or more pages from one PDF document (source document) and insert them into a second PDF document (destination document).  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an

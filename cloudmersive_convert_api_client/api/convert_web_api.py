@@ -538,7 +538,7 @@ class ConvertWebApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ScreenshotRequest input: URL to PDF request parameters (required)
+        :param UrlToPdfRequest input: URL to PDF request parameters (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -560,7 +560,7 @@ class ConvertWebApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ScreenshotRequest input: URL to PDF request parameters (required)
+        :param UrlToPdfRequest input: URL to PDF request parameters (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.

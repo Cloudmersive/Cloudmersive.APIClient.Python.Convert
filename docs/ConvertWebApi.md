@@ -307,7 +307,7 @@ configuration.api_key['Apikey'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = cloudmersive_convert_api_client.ConvertWebApi(cloudmersive_convert_api_client.ApiClient(configuration))
-input = cloudmersive_convert_api_client.ScreenshotRequest() # ScreenshotRequest | URL to PDF request parameters
+input = cloudmersive_convert_api_client.UrlToPdfRequest() # UrlToPdfRequest | URL to PDF request parameters
 
 try:
     # Convert a URL to PDF
@@ -321,7 +321,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **input** | [**ScreenshotRequest**](ScreenshotRequest.md)| URL to PDF request parameters | 
+ **input** | [**UrlToPdfRequest**](UrlToPdfRequest.md)| URL to PDF request parameters | 
 
 ### Return type
 

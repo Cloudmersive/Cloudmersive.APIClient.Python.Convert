@@ -42,7 +42,7 @@ Method | HTTP request | Description
 [**edit_document_xlsx_delete_worksheet**](EditDocumentApi.md#edit_document_xlsx_delete_worksheet) | **POST** /convert/edit/xlsx/delete-worksheet | Delete, remove worksheet from an Excel XLSX spreadsheet document
 [**edit_document_xlsx_get_cell_by_identifier**](EditDocumentApi.md#edit_document_xlsx_get_cell_by_identifier) | **POST** /convert/edit/xlsx/get-cell/by-identifier | Get cell from an Excel XLSX spreadsheet, worksheet by cell identifier
 [**edit_document_xlsx_get_cell_by_index**](EditDocumentApi.md#edit_document_xlsx_get_cell_by_index) | **POST** /convert/edit/xlsx/get-cell/by-index | Get cell from an Excel XLSX spreadsheet, worksheet by index
-[**edit_document_xlsx_get_columns**](EditDocumentApi.md#edit_document_xlsx_get_columns) | **POST** /convert/edit/xlsx/get-columns | Get rows and cells from a Excel XLSX spreadsheet, worksheet
+[**edit_document_xlsx_get_columns**](EditDocumentApi.md#edit_document_xlsx_get_columns) | **POST** /convert/edit/xlsx/get-columns | Get columns from a Excel XLSX spreadsheet, worksheet
 [**edit_document_xlsx_get_images**](EditDocumentApi.md#edit_document_xlsx_get_images) | **POST** /convert/edit/xlsx/get-images | Get images from a Excel XLSX spreadsheet, worksheet
 [**edit_document_xlsx_get_rows_and_cells**](EditDocumentApi.md#edit_document_xlsx_get_rows_and_cells) | **POST** /convert/edit/xlsx/get-rows-and-cells | Get rows and cells from a Excel XLSX spreadsheet, worksheet
 [**edit_document_xlsx_get_styles**](EditDocumentApi.md#edit_document_xlsx_get_styles) | **POST** /convert/edit/xlsx/get-styles | Get styles from a Excel XLSX spreadsheet, worksheet
@@ -2107,9 +2107,9 @@ Name | Type | Description  | Notes
 # **edit_document_xlsx_get_columns**
 > GetXlsxColumnsResponse edit_document_xlsx_get_columns(input)
 
-Get rows and cells from a Excel XLSX spreadsheet, worksheet
+Get columns from a Excel XLSX spreadsheet, worksheet
 
-Returns the rows and cells defined in the Excel Spreadsheet worksheet
+Returns the columns defined in the Excel Spreadsheet worksheet
 
 ### Example
 ```python
@@ -2130,7 +2130,7 @@ api_instance = cloudmersive_convert_api_client.EditDocumentApi(cloudmersive_conv
 input = cloudmersive_convert_api_client.GetXlsxColumnsRequest() # GetXlsxColumnsRequest | Document input request
 
 try:
-    # Get rows and cells from a Excel XLSX spreadsheet, worksheet
+    # Get columns from a Excel XLSX spreadsheet, worksheet
     api_response = api_instance.edit_document_xlsx_get_columns(input)
     pprint(api_response)
 except ApiException as e:

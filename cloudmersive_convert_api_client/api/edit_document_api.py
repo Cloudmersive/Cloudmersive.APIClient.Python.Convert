@@ -3796,9 +3796,9 @@ class EditDocumentApi(object):
             collection_formats=collection_formats)
 
     def edit_document_xlsx_get_columns(self, input, **kwargs):  # noqa: E501
-        """Get rows and cells from a Excel XLSX spreadsheet, worksheet  # noqa: E501
+        """Get columns from a Excel XLSX spreadsheet, worksheet  # noqa: E501
 
-        Returns the rows and cells defined in the Excel Spreadsheet worksheet  # noqa: E501
+        Returns the columns defined in the Excel Spreadsheet worksheet  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.edit_document_xlsx_get_columns(input, async_req=True)
@@ -3818,9 +3818,9 @@ class EditDocumentApi(object):
             return data
 
     def edit_document_xlsx_get_columns_with_http_info(self, input, **kwargs):  # noqa: E501
-        """Get rows and cells from a Excel XLSX spreadsheet, worksheet  # noqa: E501
+        """Get columns from a Excel XLSX spreadsheet, worksheet  # noqa: E501
 
-        Returns the rows and cells defined in the Excel Spreadsheet worksheet  # noqa: E501
+        Returns the columns defined in the Excel Spreadsheet worksheet  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.edit_document_xlsx_get_columns_with_http_info(input, async_req=True)

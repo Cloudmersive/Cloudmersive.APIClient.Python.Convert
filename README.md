@@ -4,7 +4,7 @@ Convert API lets you effortlessly convert file formats and types.
 This Python package provides a native API client for [Cloudmersive Document Conversion](https://www.cloudmersive.com/convert-api)
 
 - API version: v1
-- Package version: 2.3.7
+- Package version: 2.3.8
 - Build package: io.swagger.codegen.languages.PythonClientCodegen
 
 ## Requirements.
@@ -175,7 +175,7 @@ Class | Method | HTTP request | Description
 *EditDocumentApi* | [**edit_document_xlsx_delete_worksheet**](docs/EditDocumentApi.md#edit_document_xlsx_delete_worksheet) | **POST** /convert/edit/xlsx/delete-worksheet | Delete, remove worksheet from an Excel XLSX spreadsheet document
 *EditDocumentApi* | [**edit_document_xlsx_get_cell_by_identifier**](docs/EditDocumentApi.md#edit_document_xlsx_get_cell_by_identifier) | **POST** /convert/edit/xlsx/get-cell/by-identifier | Get cell from an Excel XLSX spreadsheet, worksheet by cell identifier
 *EditDocumentApi* | [**edit_document_xlsx_get_cell_by_index**](docs/EditDocumentApi.md#edit_document_xlsx_get_cell_by_index) | **POST** /convert/edit/xlsx/get-cell/by-index | Get cell from an Excel XLSX spreadsheet, worksheet by index
-*EditDocumentApi* | [**edit_document_xlsx_get_columns**](docs/EditDocumentApi.md#edit_document_xlsx_get_columns) | **POST** /convert/edit/xlsx/get-columns | Get rows and cells from a Excel XLSX spreadsheet, worksheet
+*EditDocumentApi* | [**edit_document_xlsx_get_columns**](docs/EditDocumentApi.md#edit_document_xlsx_get_columns) | **POST** /convert/edit/xlsx/get-columns | Get columns from a Excel XLSX spreadsheet, worksheet
 *EditDocumentApi* | [**edit_document_xlsx_get_images**](docs/EditDocumentApi.md#edit_document_xlsx_get_images) | **POST** /convert/edit/xlsx/get-images | Get images from a Excel XLSX spreadsheet, worksheet
 *EditDocumentApi* | [**edit_document_xlsx_get_rows_and_cells**](docs/EditDocumentApi.md#edit_document_xlsx_get_rows_and_cells) | **POST** /convert/edit/xlsx/get-rows-and-cells | Get rows and cells from a Excel XLSX spreadsheet, worksheet
 *EditDocumentApi* | [**edit_document_xlsx_get_styles**](docs/EditDocumentApi.md#edit_document_xlsx_get_styles) | **POST** /convert/edit/xlsx/get-styles | Get styles from a Excel XLSX spreadsheet, worksheet
@@ -185,13 +185,13 @@ Class | Method | HTTP request | Description
 *EditDocumentApi* | [**edit_document_xlsx_set_cell_by_index**](docs/EditDocumentApi.md#edit_document_xlsx_set_cell_by_index) | **POST** /convert/edit/xlsx/set-cell/by-index | Set, update cell contents in an Excel XLSX spreadsheet, worksheet by index
 *EditPdfApi* | [**edit_pdf_add_annotations**](docs/EditPdfApi.md#edit_pdf_add_annotations) | **POST** /convert/edit/pdf/annotations/add-item | Add one or more PDF annotations, comments in the PDF document
 *EditPdfApi* | [**edit_pdf_decrypt**](docs/EditPdfApi.md#edit_pdf_decrypt) | **POST** /convert/edit/pdf/decrypt | Decrypt and password-protect a PDF
-*EditPdfApi* | [**edit_pdf_delete_pages**](docs/EditPdfApi.md#edit_pdf_delete_pages) | **POST** /convert/edit/pdf/pages/delete | Remove / delete pages from a PDF document
+*EditPdfApi* | [**edit_pdf_delete_pages**](docs/EditPdfApi.md#edit_pdf_delete_pages) | **POST** /convert/edit/pdf/pages/delete | Remove, delete pages from a PDF document
 *EditPdfApi* | [**edit_pdf_encrypt**](docs/EditPdfApi.md#edit_pdf_encrypt) | **POST** /convert/edit/pdf/encrypt | Encrypt and password-protect a PDF
 *EditPdfApi* | [**edit_pdf_get_annotations**](docs/EditPdfApi.md#edit_pdf_get_annotations) | **POST** /convert/edit/pdf/annotations/list | Get PDF annotations, including comments in the document
 *EditPdfApi* | [**edit_pdf_get_form_fields**](docs/EditPdfApi.md#edit_pdf_get_form_fields) | **POST** /convert/edit/pdf/form/get-fields | Gets PDF Form fields and values
 *EditPdfApi* | [**edit_pdf_get_metadata**](docs/EditPdfApi.md#edit_pdf_get_metadata) | **POST** /convert/edit/pdf/get-metadata | Get PDF document metadata
 *EditPdfApi* | [**edit_pdf_get_pdf_text_by_pages**](docs/EditPdfApi.md#edit_pdf_get_pdf_text_by_pages) | **POST** /convert/edit/pdf/pages/get-text | Get text in a PDF document by page
-*EditPdfApi* | [**edit_pdf_insert_pages**](docs/EditPdfApi.md#edit_pdf_insert_pages) | **POST** /convert/edit/pdf/pages/insert | Insert / copy pages from one PDF document into another
+*EditPdfApi* | [**edit_pdf_insert_pages**](docs/EditPdfApi.md#edit_pdf_insert_pages) | **POST** /convert/edit/pdf/pages/insert | Insert, copy pages from one PDF document into another
 *EditPdfApi* | [**edit_pdf_rasterize**](docs/EditPdfApi.md#edit_pdf_rasterize) | **POST** /convert/edit/pdf/rasterize | Rasterize a PDF to an image-based PDF
 *EditPdfApi* | [**edit_pdf_remove_all_annotations**](docs/EditPdfApi.md#edit_pdf_remove_all_annotations) | **POST** /convert/edit/pdf/annotations/remove-all | Remove all PDF annotations, including comments in the document
 *EditPdfApi* | [**edit_pdf_remove_annotation_item**](docs/EditPdfApi.md#edit_pdf_remove_annotation_item) | **POST** /convert/edit/pdf/annotations/remove-item | Remove a specific PDF annotation, comment in the document
@@ -416,6 +416,7 @@ Class | Method | HTTP request | Description
  - [UpdateDocxTableCellResponse](docs/UpdateDocxTableCellResponse.md)
  - [UpdateDocxTableRowRequest](docs/UpdateDocxTableRowRequest.md)
  - [UpdateDocxTableRowResponse](docs/UpdateDocxTableRowResponse.md)
+ - [UrlToPdfRequest](docs/UrlToPdfRequest.md)
  - [UrlToTextRequest](docs/UrlToTextRequest.md)
  - [UrlToTextResponse](docs/UrlToTextResponse.md)
  - [ViewerResponse](docs/ViewerResponse.md)
