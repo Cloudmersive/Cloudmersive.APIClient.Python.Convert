@@ -4,7 +4,7 @@ Convert API lets you effortlessly convert file formats and types.
 This Python package provides a native API client for [Cloudmersive Document Conversion](https://www.cloudmersive.com/convert-api)
 
 - API version: v1
-- Package version: 2.3.8
+- Package version: 2.3.9
 - Build package: io.swagger.codegen.languages.PythonClientCodegen
 
 ## Requirements.
@@ -173,6 +173,7 @@ Class | Method | HTTP request | Description
 *EditDocumentApi* | [**edit_document_xlsx_create_blank_spreadsheet**](docs/EditDocumentApi.md#edit_document_xlsx_create_blank_spreadsheet) | **POST** /convert/edit/xlsx/create/blank | Create a blank Excel XLSX spreadsheet
 *EditDocumentApi* | [**edit_document_xlsx_create_spreadsheet_from_data**](docs/EditDocumentApi.md#edit_document_xlsx_create_spreadsheet_from_data) | **POST** /convert/edit/xlsx/create/from/data | Create a new Excel XLSX spreadsheet from column and row data
 *EditDocumentApi* | [**edit_document_xlsx_delete_worksheet**](docs/EditDocumentApi.md#edit_document_xlsx_delete_worksheet) | **POST** /convert/edit/xlsx/delete-worksheet | Delete, remove worksheet from an Excel XLSX spreadsheet document
+*EditDocumentApi* | [**edit_document_xlsx_enable_shared_workbook**](docs/EditDocumentApi.md#edit_document_xlsx_enable_shared_workbook) | **POST** /convert/edit/xlsx/configuration/enable-shared-workbook | Enable Shared Workbook (legacy) in Excel XLSX spreadsheet
 *EditDocumentApi* | [**edit_document_xlsx_get_cell_by_identifier**](docs/EditDocumentApi.md#edit_document_xlsx_get_cell_by_identifier) | **POST** /convert/edit/xlsx/get-cell/by-identifier | Get cell from an Excel XLSX spreadsheet, worksheet by cell identifier
 *EditDocumentApi* | [**edit_document_xlsx_get_cell_by_index**](docs/EditDocumentApi.md#edit_document_xlsx_get_cell_by_index) | **POST** /convert/edit/xlsx/get-cell/by-index | Get cell from an Excel XLSX spreadsheet, worksheet by index
 *EditDocumentApi* | [**edit_document_xlsx_get_columns**](docs/EditDocumentApi.md#edit_document_xlsx_get_columns) | **POST** /convert/edit/xlsx/get-columns | Get columns from a Excel XLSX spreadsheet, worksheet
@@ -304,6 +305,8 @@ Class | Method | HTTP request | Description
  - [DocxTemplateOperation](docs/DocxTemplateOperation.md)
  - [DocxText](docs/DocxText.md)
  - [DocxTopLevelComment](docs/DocxTopLevelComment.md)
+ - [EnableSharedWorkbookRequest](docs/EnableSharedWorkbookRequest.md)
+ - [EnableSharedWorkbookResponse](docs/EnableSharedWorkbookResponse.md)
  - [ExifValue](docs/ExifValue.md)
  - [FindRegexMatch](docs/FindRegexMatch.md)
  - [FindStringMatch](docs/FindStringMatch.md)
