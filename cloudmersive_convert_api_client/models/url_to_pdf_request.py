@@ -33,21 +33,24 @@ class UrlToPdfRequest(object):
     swagger_types = {
         'url': 'str',
         'extra_loading_wait': 'int',
-        'include_background_graphics': 'bool'
+        'include_background_graphics': 'bool',
+        'scale_factor': 'int'
     }
 
     attribute_map = {
         'url': 'Url',
         'extra_loading_wait': 'ExtraLoadingWait',
-        'include_background_graphics': 'IncludeBackgroundGraphics'
+        'include_background_graphics': 'IncludeBackgroundGraphics',
+        'scale_factor': 'ScaleFactor'
     }
 
-    def __init__(self, url=None, extra_loading_wait=None, include_background_graphics=None):  # noqa: E501
+    def __init__(self, url=None, extra_loading_wait=None, include_background_graphics=None, scale_factor=None):  # noqa: E501
         """UrlToPdfRequest - a model defined in Swagger"""  # noqa: E501
 
         self._url = None
         self._extra_loading_wait = None
         self._include_background_graphics = None
+        self._scale_factor = None
         self.discriminator = None
 
         if url is not None:
@@ -56,6 +59,8 @@ class UrlToPdfRequest(object):
             self.extra_loading_wait = extra_loading_wait
         if include_background_graphics is not None:
             self.include_background_graphics = include_background_graphics
+        if scale_factor is not None:
+            self.scale_factor = scale_factor
 
     @property
     def url(self):
@@ -125,6 +130,29 @@ class UrlToPdfRequest(object):
         """
 
         self._include_background_graphics = include_background_graphics
+
+    @property
+    def scale_factor(self):
+        """Gets the scale_factor of this UrlToPdfRequest.  # noqa: E501
+
+        Optional: Set to 100 to scale at 100%, set to 50% to scale down to 50% scale, set to 200% to scale up to 200% scale, etc.  Default is 100%  # noqa: E501
+
+        :return: The scale_factor of this UrlToPdfRequest.  # noqa: E501
+        :rtype: int
+        """
+        return self._scale_factor
+
+    @scale_factor.setter
+    def scale_factor(self, scale_factor):
+        """Sets the scale_factor of this UrlToPdfRequest.
+
+        Optional: Set to 100 to scale at 100%, set to 50% to scale down to 50% scale, set to 200% to scale up to 200% scale, etc.  Default is 100%  # noqa: E501
+
+        :param scale_factor: The scale_factor of this UrlToPdfRequest.  # noqa: E501
+        :type: int
+        """
+
+        self._scale_factor = scale_factor
 
     def to_dict(self):
         """Returns the model properties as a dict"""
