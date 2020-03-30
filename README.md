@@ -4,7 +4,7 @@ Convert API lets you effortlessly convert file formats and types.
 This Python package provides a native API client for [Cloudmersive Document Conversion](https://www.cloudmersive.com/convert-api)
 
 - API version: v1
-- Package version: 2.4.1
+- Package version: 2.4.2
 - Build package: io.swagger.codegen.languages.PythonClientCodegen
 
 ## Requirements.
@@ -220,7 +220,8 @@ Class | Method | HTTP request | Description
 *MergeDocumentApi* | [**merge_document_docx_multi**](docs/MergeDocumentApi.md#merge_document_docx_multi) | **POST** /convert/merge/docx/multi | Merge Multple Word DOCX Together
 *MergeDocumentApi* | [**merge_document_pdf**](docs/MergeDocumentApi.md#merge_document_pdf) | **POST** /convert/merge/pdf | Merge Two PDF Files Together
 *MergeDocumentApi* | [**merge_document_pdf_multi**](docs/MergeDocumentApi.md#merge_document_pdf_multi) | **POST** /convert/merge/pdf/multi | Merge Multple PDF Files Together
-*MergeDocumentApi* | [**merge_document_png**](docs/MergeDocumentApi.md#merge_document_png) | **POST** /convert/merge/png/vertical | Merge Multple PNG Files Together
+*MergeDocumentApi* | [**merge_document_png**](docs/MergeDocumentApi.md#merge_document_png) | **POST** /convert/merge/png/vertical | Merge Two PNG Files Together
+*MergeDocumentApi* | [**merge_document_png_multi**](docs/MergeDocumentApi.md#merge_document_png_multi) | **POST** /convert/merge/png/vertical/multi | Merge Multple PNG Files Together
 *MergeDocumentApi* | [**merge_document_pptx**](docs/MergeDocumentApi.md#merge_document_pptx) | **POST** /convert/merge/pptx | Merge Two PowerPoint PPTX Together
 *MergeDocumentApi* | [**merge_document_pptx_multi**](docs/MergeDocumentApi.md#merge_document_pptx_multi) | **POST** /convert/merge/pptx/multi | Merge Multple PowerPoint PPTX Together
 *MergeDocumentApi* | [**merge_document_txt**](docs/MergeDocumentApi.md#merge_document_txt) | **POST** /convert/merge/txt | Merge Two Text (TXT) Files Together

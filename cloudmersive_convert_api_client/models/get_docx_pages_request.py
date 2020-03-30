@@ -32,25 +32,30 @@ class GetDocxPagesRequest(object):
     """
     swagger_types = {
         'input_file_bytes': 'str',
-        'input_file_url': 'str'
+        'input_file_url': 'str',
+        'maximum_pages': 'int'
     }
 
     attribute_map = {
         'input_file_bytes': 'InputFileBytes',
-        'input_file_url': 'InputFileUrl'
+        'input_file_url': 'InputFileUrl',
+        'maximum_pages': 'MaximumPages'
     }
 
-    def __init__(self, input_file_bytes=None, input_file_url=None):  # noqa: E501
+    def __init__(self, input_file_bytes=None, input_file_url=None, maximum_pages=None):  # noqa: E501
         """GetDocxPagesRequest - a model defined in Swagger"""  # noqa: E501
 
         self._input_file_bytes = None
         self._input_file_url = None
+        self._maximum_pages = None
         self.discriminator = None
 
         if input_file_bytes is not None:
             self.input_file_bytes = input_file_bytes
         if input_file_url is not None:
             self.input_file_url = input_file_url
+        if maximum_pages is not None:
+            self.maximum_pages = maximum_pages
 
     @property
     def input_file_bytes(self):
@@ -99,6 +104,29 @@ class GetDocxPagesRequest(object):
         """
 
         self._input_file_url = input_file_url
+
+    @property
+    def maximum_pages(self):
+        """Gets the maximum_pages of this GetDocxPagesRequest.  # noqa: E501
+
+        Optional: Maximum number of pages to return; set to 0 or do not supply to return all pages  # noqa: E501
+
+        :return: The maximum_pages of this GetDocxPagesRequest.  # noqa: E501
+        :rtype: int
+        """
+        return self._maximum_pages
+
+    @maximum_pages.setter
+    def maximum_pages(self, maximum_pages):
+        """Sets the maximum_pages of this GetDocxPagesRequest.
+
+        Optional: Maximum number of pages to return; set to 0 or do not supply to return all pages  # noqa: E501
+
+        :param maximum_pages: The maximum_pages of this GetDocxPagesRequest.  # noqa: E501
+        :type: int
+        """
+
+        self._maximum_pages = maximum_pages
 
     def to_dict(self):
         """Returns the model properties as a dict"""
