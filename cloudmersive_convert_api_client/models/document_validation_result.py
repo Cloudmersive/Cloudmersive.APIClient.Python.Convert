@@ -34,6 +34,7 @@ class DocumentValidationResult(object):
     """
     swagger_types = {
         'document_is_valid': 'bool',
+        'password_protected': 'bool',
         'error_count': 'int',
         'warning_count': 'int',
         'errors_and_warnings': 'list[DocumentValidationError]'
@@ -41,15 +42,17 @@ class DocumentValidationResult(object):
 
     attribute_map = {
         'document_is_valid': 'DocumentIsValid',
+        'password_protected': 'PasswordProtected',
         'error_count': 'ErrorCount',
         'warning_count': 'WarningCount',
         'errors_and_warnings': 'ErrorsAndWarnings'
     }
 
-    def __init__(self, document_is_valid=None, error_count=None, warning_count=None, errors_and_warnings=None):  # noqa: E501
+    def __init__(self, document_is_valid=None, password_protected=None, error_count=None, warning_count=None, errors_and_warnings=None):  # noqa: E501
         """DocumentValidationResult - a model defined in Swagger"""  # noqa: E501
 
         self._document_is_valid = None
+        self._password_protected = None
         self._error_count = None
         self._warning_count = None
         self._errors_and_warnings = None
@@ -57,6 +60,8 @@ class DocumentValidationResult(object):
 
         if document_is_valid is not None:
             self.document_is_valid = document_is_valid
+        if password_protected is not None:
+            self.password_protected = password_protected
         if error_count is not None:
             self.error_count = error_count
         if warning_count is not None:
@@ -86,6 +91,29 @@ class DocumentValidationResult(object):
         """
 
         self._document_is_valid = document_is_valid
+
+    @property
+    def password_protected(self):
+        """Gets the password_protected of this DocumentValidationResult.  # noqa: E501
+
+        True if the document is password protected, false otherwise  # noqa: E501
+
+        :return: The password_protected of this DocumentValidationResult.  # noqa: E501
+        :rtype: bool
+        """
+        return self._password_protected
+
+    @password_protected.setter
+    def password_protected(self, password_protected):
+        """Sets the password_protected of this DocumentValidationResult.
+
+        True if the document is password protected, false otherwise  # noqa: E501
+
+        :param password_protected: The password_protected of this DocumentValidationResult.  # noqa: E501
+        :type: bool
+        """
+
+        self._password_protected = password_protected
 
     @property
     def error_count(self):

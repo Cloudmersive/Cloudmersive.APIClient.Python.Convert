@@ -432,7 +432,7 @@ class ValidateDocumentApi(object):
     def validate_document_pdf_validation(self, input_file, **kwargs):  # noqa: E501
         """Validate a PDF document file  # noqa: E501
 
-        Validate a PDF document; if the document is not valid, identifies the errors in the document  # noqa: E501
+        Validate a PDF document; if the document is not valid, identifies the errors in the document.  Also checks if the PDF is password protected.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.validate_document_pdf_validation(input_file, async_req=True)
@@ -454,7 +454,7 @@ class ValidateDocumentApi(object):
     def validate_document_pdf_validation_with_http_info(self, input_file, **kwargs):  # noqa: E501
         """Validate a PDF document file  # noqa: E501
 
-        Validate a PDF document; if the document is not valid, identifies the errors in the document  # noqa: E501
+        Validate a PDF document; if the document is not valid, identifies the errors in the document.  Also checks if the PDF is password protected.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.validate_document_pdf_validation_with_http_info(input_file, async_req=True)
