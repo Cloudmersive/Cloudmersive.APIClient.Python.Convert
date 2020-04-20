@@ -4,7 +4,7 @@ Convert API lets you effortlessly convert file formats and types.
 This Python package provides a native API client for [Cloudmersive Document Conversion](https://www.cloudmersive.com/convert-api)
 
 - API version: v1
-- Package version: 2.4.3
+- Package version: 2.4.4
 - Build package: io.swagger.codegen.languages.PythonClientCodegen
 
 ## Requirements.
@@ -144,6 +144,7 @@ Class | Method | HTTP request | Description
 *EditDocumentApi* | [**edit_document_docx_delete_pages**](docs/EditDocumentApi.md#edit_document_docx_delete_pages) | **POST** /convert/edit/docx/delete-pages | Delete, remove pages from a Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_delete_table_row**](docs/EditDocumentApi.md#edit_document_docx_delete_table_row) | **POST** /convert/edit/docx/delete-table-row | Deletes a table row in an existing table in a Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_delete_table_row_range**](docs/EditDocumentApi.md#edit_document_docx_delete_table_row_range) | **POST** /convert/edit/docx/delete-table-row/range | Deletes a range of multiple table rows in an existing table in a Word DOCX document
+*EditDocumentApi* | [**edit_document_docx_find_paragraph**](docs/EditDocumentApi.md#edit_document_docx_find_paragraph) | **POST** /convert/edit/docx/find/paragraph | Find matching paragraphs in a Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_get_comments**](docs/EditDocumentApi.md#edit_document_docx_get_comments) | **POST** /convert/edit/docx/get-comments/flat-list | Get comments from a Word DOCX document as a flat list
 *EditDocumentApi* | [**edit_document_docx_get_comments_hierarchical**](docs/EditDocumentApi.md#edit_document_docx_get_comments_hierarchical) | **POST** /convert/edit/docx/get-comments/hierarchical | Get comments from a Word DOCX document hierarchically
 *EditDocumentApi* | [**edit_document_docx_get_headers_and_footers**](docs/EditDocumentApi.md#edit_document_docx_get_headers_and_footers) | **POST** /convert/edit/docx/get-headers-and-footers | Get content of a footer from a Word DOCX document
@@ -162,6 +163,7 @@ Class | Method | HTTP request | Description
 *EditDocumentApi* | [**edit_document_docx_remove_headers_and_footers**](docs/EditDocumentApi.md#edit_document_docx_remove_headers_and_footers) | **POST** /convert/edit/docx/remove-headers-and-footers | Remove headers and footers from Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_remove_object**](docs/EditDocumentApi.md#edit_document_docx_remove_object) | **POST** /convert/edit/docx/remove-object | Delete any object in a Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_replace**](docs/EditDocumentApi.md#edit_document_docx_replace) | **POST** /convert/edit/docx/replace-all | Replace string in Word DOCX document
+*EditDocumentApi* | [**edit_document_docx_replace_paragraph**](docs/EditDocumentApi.md#edit_document_docx_replace_paragraph) | **POST** /convert/edit/docx/replace/paragraph | Replace matching paragraphs in a Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_set_footer**](docs/EditDocumentApi.md#edit_document_docx_set_footer) | **POST** /convert/edit/docx/set-footer | Set the footer in a Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_set_footer_add_page_number**](docs/EditDocumentApi.md#edit_document_docx_set_footer_add_page_number) | **POST** /convert/edit/docx/set-footer/add-page-number | Add page number to footer in a Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_set_header**](docs/EditDocumentApi.md#edit_document_docx_set_header) | **POST** /convert/edit/docx/set-header | Set the header in a Word DOCX document
@@ -238,14 +240,20 @@ Class | Method | HTTP request | Description
 *ValidateDocumentApi* | [**validate_document_autodetect_validation**](docs/ValidateDocumentApi.md#validate_document_autodetect_validation) | **POST** /convert/validate/autodetect | Autodetect content type and validate
 *ValidateDocumentApi* | [**validate_document_docx_validation**](docs/ValidateDocumentApi.md#validate_document_docx_validation) | **POST** /convert/validate/docx | Validate a Word document (DOCX)
 *ValidateDocumentApi* | [**validate_document_executable_validation**](docs/ValidateDocumentApi.md#validate_document_executable_validation) | **POST** /convert/validate/executable | Validate if a file is executable
+*ValidateDocumentApi* | [**validate_document_g_zip_validation**](docs/ValidateDocumentApi.md#validate_document_g_zip_validation) | **POST** /convert/validate/gzip | Validate a GZip Archive file (gzip or gz)
 *ValidateDocumentApi* | [**validate_document_json_validation**](docs/ValidateDocumentApi.md#validate_document_json_validation) | **POST** /convert/validate/json | Validate a JSON file
 *ValidateDocumentApi* | [**validate_document_pdf_validation**](docs/ValidateDocumentApi.md#validate_document_pdf_validation) | **POST** /convert/validate/pdf | Validate a PDF document file
 *ValidateDocumentApi* | [**validate_document_pptx_validation**](docs/ValidateDocumentApi.md#validate_document_pptx_validation) | **POST** /convert/validate/pptx | Validate a PowerPoint presentation (PPTX)
+*ValidateDocumentApi* | [**validate_document_rar_validation**](docs/ValidateDocumentApi.md#validate_document_rar_validation) | **POST** /convert/validate/rar | Validate a RAR Archive file (RAR)
+*ValidateDocumentApi* | [**validate_document_tar_validation**](docs/ValidateDocumentApi.md#validate_document_tar_validation) | **POST** /convert/validate/tar | Validate a TAR Tarball Archive file (TAR)
 *ValidateDocumentApi* | [**validate_document_xlsx_validation**](docs/ValidateDocumentApi.md#validate_document_xlsx_validation) | **POST** /convert/validate/xlsx | Validate a Excel document (XLSX)
 *ValidateDocumentApi* | [**validate_document_xml_validation**](docs/ValidateDocumentApi.md#validate_document_xml_validation) | **POST** /convert/validate/xml | Validate an XML file
+*ValidateDocumentApi* | [**validate_document_zip_validation**](docs/ValidateDocumentApi.md#validate_document_zip_validation) | **POST** /convert/validate/zip | Validate a Zip Archive file (zip)
 *ViewerToolsApi* | [**viewer_tools_create_simple**](docs/ViewerToolsApi.md#viewer_tools_create_simple) | **POST** /convert/viewer/create/web/simple | Create a web-based viewer
 *ZipArchiveApi* | [**zip_archive_zip_create**](docs/ZipArchiveApi.md#zip_archive_zip_create) | **POST** /convert/archive/zip/create | Compress files to create a new zip archive
 *ZipArchiveApi* | [**zip_archive_zip_create_advanced**](docs/ZipArchiveApi.md#zip_archive_zip_create_advanced) | **POST** /convert/archive/zip/create/advanced | Compress files and folders to create a new zip archive with advanced options
+*ZipArchiveApi* | [**zip_archive_zip_decrypt**](docs/ZipArchiveApi.md#zip_archive_zip_decrypt) | **POST** /convert/archive/zip/decrypt | Decrypt and remove password protection on a zip file
+*ZipArchiveApi* | [**zip_archive_zip_encrypt_advanced**](docs/ZipArchiveApi.md#zip_archive_zip_encrypt_advanced) | **POST** /convert/archive/zip/encrypt/advanced | Encrypt and password protect a zip file
 *ZipArchiveApi* | [**zip_archive_zip_extract**](docs/ZipArchiveApi.md#zip_archive_zip_extract) | **POST** /convert/archive/zip/extract | Extract, decompress files and folders from a zip archive
 
 
@@ -315,6 +323,8 @@ Class | Method | HTTP request | Description
  - [EnableSharedWorkbookRequest](docs/EnableSharedWorkbookRequest.md)
  - [EnableSharedWorkbookResponse](docs/EnableSharedWorkbookResponse.md)
  - [ExifValue](docs/ExifValue.md)
+ - [FindDocxParagraphRequest](docs/FindDocxParagraphRequest.md)
+ - [FindDocxParagraphResponse](docs/FindDocxParagraphResponse.md)
  - [FindRegexMatch](docs/FindRegexMatch.md)
  - [FindStringMatch](docs/FindStringMatch.md)
  - [FindStringRegexRequest](docs/FindStringRegexRequest.md)
@@ -398,6 +408,8 @@ Class | Method | HTTP request | Description
  - [RemoveWhitespaceFromTextRequest](docs/RemoveWhitespaceFromTextRequest.md)
  - [RemoveWhitespaceFromTextResponse](docs/RemoveWhitespaceFromTextResponse.md)
  - [RemoveXlsxWorksheetRequest](docs/RemoveXlsxWorksheetRequest.md)
+ - [ReplaceDocxParagraphRequest](docs/ReplaceDocxParagraphRequest.md)
+ - [ReplaceDocxParagraphResponse](docs/ReplaceDocxParagraphResponse.md)
  - [ReplaceStringRegexRequest](docs/ReplaceStringRegexRequest.md)
  - [ReplaceStringRegexResponse](docs/ReplaceStringRegexResponse.md)
  - [ReplaceStringRequest](docs/ReplaceStringRequest.md)
@@ -446,6 +458,7 @@ Class | Method | HTTP request | Description
  - [XmlReplaceWithXPathResult](docs/XmlReplaceWithXPathResult.md)
  - [XmlSetValueWithXPathResult](docs/XmlSetValueWithXPathResult.md)
  - [ZipDirectory](docs/ZipDirectory.md)
+ - [ZipEncryptionAdvancedRequest](docs/ZipEncryptionAdvancedRequest.md)
  - [ZipExtractResponse](docs/ZipExtractResponse.md)
  - [ZipFile](docs/ZipFile.md)
 

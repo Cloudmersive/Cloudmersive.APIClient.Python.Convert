@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **paragraph_index** | **int** | The index of the paragraph; 0-based | [optional] 
-**path** | **str** | The Path of the location of this object; leave blank for new tables | [optional] 
+**path** | **str** | The Path of the location of this Paragraph object; leave blank during creation | [optional] 
 **content_runs** | [**list[DocxRun]**](DocxRun.md) | The content runs in the paragraph - this is where text is stored; similar to a span in HTML | [optional] 
 **style_id** | **str** | Style ID of the style applied to the paragraph; null if no style is applied | [optional] 
 

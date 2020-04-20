@@ -111,7 +111,7 @@ class DocxRun(object):
     def path(self):
         """Gets the path of this DocxRun.  # noqa: E501
 
-        The Path of the location of this object; leave blank for new tables  # noqa: E501
+        The Path of the location of this Run object; leave blank for creation  # noqa: E501
 
         :return: The path of this DocxRun.  # noqa: E501
         :rtype: str
@@ -122,7 +122,7 @@ class DocxRun(object):
     def path(self, path):
         """Sets the path of this DocxRun.
 
-        The Path of the location of this object; leave blank for new tables  # noqa: E501
+        The Path of the location of this Run object; leave blank for creation  # noqa: E501
 
         :param path: The path of this DocxRun.  # noqa: E501
         :type: str

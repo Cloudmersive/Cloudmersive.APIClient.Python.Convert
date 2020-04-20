@@ -91,7 +91,7 @@ class DocxParagraph(object):
     def path(self):
         """Gets the path of this DocxParagraph.  # noqa: E501
 
-        The Path of the location of this object; leave blank for new tables  # noqa: E501
+        The Path of the location of this Paragraph object; leave blank during creation  # noqa: E501
 
         :return: The path of this DocxParagraph.  # noqa: E501
         :rtype: str
@@ -102,7 +102,7 @@ class DocxParagraph(object):
     def path(self, path):
         """Sets the path of this DocxParagraph.
 
-        The Path of the location of this object; leave blank for new tables  # noqa: E501
+        The Path of the location of this Paragraph object; leave blank during creation  # noqa: E501
 
         :param path: The path of this DocxParagraph.  # noqa: E501
         :type: str

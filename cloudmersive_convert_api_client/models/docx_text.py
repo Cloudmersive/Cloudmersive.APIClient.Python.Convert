@@ -84,7 +84,7 @@ class DocxText(object):
     def path(self):
         """Gets the path of this DocxText.  # noqa: E501
 
-        The Path of the location of this object; leave blank for new tables  # noqa: E501
+        The Path of the location of this Text object; leave blank for creation  # noqa: E501
 
         :return: The path of this DocxText.  # noqa: E501
         :rtype: str
@@ -95,7 +95,7 @@ class DocxText(object):
     def path(self, path):
         """Sets the path of this DocxText.
 
-        The Path of the location of this object; leave blank for new tables  # noqa: E501
+        The Path of the location of this Text object; leave blank for creation  # noqa: E501
 
         :param path: The path of this DocxText.  # noqa: E501
         :type: str
