@@ -44,6 +44,7 @@ class ConvertDataApi(object):
 
         :param async_req bool
         :param file input_file: Input file to perform the operation on. (required)
+        :param bool column_names_from_first_row: Optional; If true, the first row will be used as the labels for the columns; if false, columns will be named Column0, Column1, etc.  Default is true.  Set to false if you are not using column headings, or have an irregular column structure.
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
@@ -66,12 +67,13 @@ class ConvertDataApi(object):
 
         :param async_req bool
         :param file input_file: Input file to perform the operation on. (required)
+        :param bool column_names_from_first_row: Optional; If true, the first row will be used as the labels for the columns; if false, columns will be named Column0, Column1, etc.  Default is true.  Set to false if you are not using column headings, or have an irregular column structure.
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['input_file']  # noqa: E501
+        all_params = ['input_file', 'column_names_from_first_row']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -98,6 +100,8 @@ class ConvertDataApi(object):
         query_params = []
 
         header_params = {}
+        if 'column_names_from_first_row' in params:
+            header_params['columnNamesFromFirstRow'] = params['column_names_from_first_row']  # noqa: E501
 
         form_params = []
         local_var_files = {}

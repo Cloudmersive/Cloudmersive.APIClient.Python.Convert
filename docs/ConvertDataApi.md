@@ -22,7 +22,7 @@ Method | HTTP request | Description
 
 
 # **convert_data_csv_to_json**
-> object convert_data_csv_to_json(input_file)
+> object convert_data_csv_to_json(input_file, column_names_from_first_row=column_names_from_first_row)
 
 Convert CSV to JSON conversion
 
@@ -45,10 +45,11 @@ configuration.api_key['Apikey'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = cloudmersive_convert_api_client.ConvertDataApi(cloudmersive_convert_api_client.ApiClient(configuration))
 input_file = '/path/to/file.txt' # file | Input file to perform the operation on.
+column_names_from_first_row = true # bool | Optional; If true, the first row will be used as the labels for the columns; if false, columns will be named Column0, Column1, etc.  Default is true.  Set to false if you are not using column headings, or have an irregular column structure. (optional)
 
 try:
     # Convert CSV to JSON conversion
-    api_response = api_instance.convert_data_csv_to_json(input_file)
+    api_response = api_instance.convert_data_csv_to_json(input_file, column_names_from_first_row=column_names_from_first_row)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConvertDataApi->convert_data_csv_to_json: %s\n" % e)
@@ -59,6 +60,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **input_file** | **file**| Input file to perform the operation on. | 
+ **column_names_from_first_row** | **bool**| Optional; If true, the first row will be used as the labels for the columns; if false, columns will be named Column0, Column1, etc.  Default is true.  Set to false if you are not using column headings, or have an irregular column structure. | [optional] 
 
 ### Return type
 
