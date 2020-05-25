@@ -330,6 +330,232 @@ class ConvertDocumentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def convert_document_autodetect_to_thumbnail(self, input_file, **kwargs):  # noqa: E501
+        """Convert File to Thumbnail Image  # noqa: E501
+
+        Automatically detect file type and convert it to a PNG thumbnail. Supports all of the major Office document file formats including Word (DOCX, DOC), Excel (XLSX, XLS), PowerPoint (PPTX, PPT), over 100 image formats, HTML files, and even multi-page TIFF files. Returns a generic PNG thumbnail for unsupported formats.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_autodetect_to_thumbnail(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :param int max_width: Optional; Maximum width of the output thumbnail - final image will be as large as possible while less than or equal to this width. Default is 128.
+        :param int max_height: Optional; Maximum height of the output thumbnail - final image will be as large as possible while less than or equal to this width. Default is 128.
+        :param str extension: Optional; Specify the file extension of the inputFile. This will improve the response time in most cases. Also allows unsupported files without extensions to still return a corresponding generic icon.
+        :return: object
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_autodetect_to_thumbnail_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_autodetect_to_thumbnail_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_autodetect_to_thumbnail_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Convert File to Thumbnail Image  # noqa: E501
+
+        Automatically detect file type and convert it to a PNG thumbnail. Supports all of the major Office document file formats including Word (DOCX, DOC), Excel (XLSX, XLS), PowerPoint (PPTX, PPT), over 100 image formats, HTML files, and even multi-page TIFF files. Returns a generic PNG thumbnail for unsupported formats.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_autodetect_to_thumbnail_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :param int max_width: Optional; Maximum width of the output thumbnail - final image will be as large as possible while less than or equal to this width. Default is 128.
+        :param int max_height: Optional; Maximum height of the output thumbnail - final image will be as large as possible while less than or equal to this width. Default is 128.
+        :param str extension: Optional; Specify the file extension of the inputFile. This will improve the response time in most cases. Also allows unsupported files without extensions to still return a corresponding generic icon.
+        :return: object
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file', 'max_width', 'max_height', 'extension']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_autodetect_to_thumbnail" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_autodetect_to_thumbnail`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'max_width' in params:
+            header_params['maxWidth'] = params['max_width']  # noqa: E501
+        if 'max_height' in params:
+            header_params['maxHeight'] = params['max_height']  # noqa: E501
+        if 'extension' in params:
+            header_params['extension'] = params['extension']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/autodetect/to/thumbnail', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='object',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def convert_document_autodetect_to_thumbnails_advanced(self, input_file, **kwargs):  # noqa: E501
+        """Convert File to Thumbnail Image Object  # noqa: E501
+
+        Automatically detect file type and convert it to an array of PNG thumbnails, returned as an object. May specify the number of pages for multiple thumbnails; default is one thumbnail. Supports all of the major Office document file formats including Word (DOCX, DOC), Excel (XLSX, XLS), PowerPoint (PPTX, PPT), over 100 image formats, HTML files, and even multi-page TIFF files. Returns a generic PNG thumbnail for unsupported formats.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_autodetect_to_thumbnails_advanced(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :param int pages: Optional; Specify how many pages of the document will be converted to thumbnails. Default is 1 page.
+        :param int max_width: Optional; Maximum width of the output thumbnail - final image will be as large as possible while less than or equal to this width. Default is 128.
+        :param int max_height: Optional; Maximum height of the output thumbnail - final image will be as large as possible while less than or equal to this width. Default is 128.
+        :param str extension: Optional; Specify the file extension of the inputFile. This will improve the response time in most cases. Also allows unsupported files without extensions to still return a corresponding generic icon.
+        :return: AutodetectToThumbnailsResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_autodetect_to_thumbnails_advanced_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_autodetect_to_thumbnails_advanced_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_autodetect_to_thumbnails_advanced_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Convert File to Thumbnail Image Object  # noqa: E501
+
+        Automatically detect file type and convert it to an array of PNG thumbnails, returned as an object. May specify the number of pages for multiple thumbnails; default is one thumbnail. Supports all of the major Office document file formats including Word (DOCX, DOC), Excel (XLSX, XLS), PowerPoint (PPTX, PPT), over 100 image formats, HTML files, and even multi-page TIFF files. Returns a generic PNG thumbnail for unsupported formats.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_autodetect_to_thumbnails_advanced_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :param int pages: Optional; Specify how many pages of the document will be converted to thumbnails. Default is 1 page.
+        :param int max_width: Optional; Maximum width of the output thumbnail - final image will be as large as possible while less than or equal to this width. Default is 128.
+        :param int max_height: Optional; Maximum height of the output thumbnail - final image will be as large as possible while less than or equal to this width. Default is 128.
+        :param str extension: Optional; Specify the file extension of the inputFile. This will improve the response time in most cases. Also allows unsupported files without extensions to still return a corresponding generic icon.
+        :return: AutodetectToThumbnailsResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file', 'pages', 'max_width', 'max_height', 'extension']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_autodetect_to_thumbnails_advanced" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_autodetect_to_thumbnails_advanced`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'pages' in params:
+            header_params['pages'] = params['pages']  # noqa: E501
+        if 'max_width' in params:
+            header_params['maxWidth'] = params['max_width']  # noqa: E501
+        if 'max_height' in params:
+            header_params['maxHeight'] = params['max_height']  # noqa: E501
+        if 'extension' in params:
+            header_params['extension'] = params['extension']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/autodetect/to/thumbnail/advanced', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='AutodetectToThumbnailsResult',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def convert_document_autodetect_to_txt(self, input_file, **kwargs):  # noqa: E501
         """Convert Document to Text (txt)  # noqa: E501
 
@@ -928,6 +1154,105 @@ class ConvertDocumentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def convert_document_docx_to_png(self, input_file, **kwargs):  # noqa: E501
+        """Convert DOCX document to PNG image array  # noqa: E501
+
+        Converts an Office Word Document (DOCX) file to an array of PNG images, one for each page.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_docx_to_png(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: DocxToPngResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_docx_to_png_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_docx_to_png_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_docx_to_png_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Convert DOCX document to PNG image array  # noqa: E501
+
+        Converts an Office Word Document (DOCX) file to an array of PNG images, one for each page.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_docx_to_png_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: DocxToPngResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_docx_to_png" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_docx_to_png`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/docx/to/png', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='DocxToPngResult',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def convert_document_docx_to_txt(self, input_file, **kwargs):  # noqa: E501
         """Convert Word DOCX Document to Text (txt)  # noqa: E501
 
@@ -1024,6 +1349,414 @@ class ConvertDocumentApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='TextConversionResult',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def convert_document_eml_to_html(self, input_file, **kwargs):  # noqa: E501
+        """Convert Email EML file to HTML string  # noqa: E501
+
+        Convert Outlook Email EML file to HTML string and attachments. Supports images if they are base 64 inline.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_eml_to_html(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :param bool body_only: Optional; If true, the HTML string will only include the body of the email. Other information such as subject will still be given as properties in the response object. Default is false.
+        :param bool include_attachments: Optional; If false, the response object will not include any attachment files from the input file. Default is true.
+        :return: EmlToHtmlResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_eml_to_html_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_eml_to_html_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_eml_to_html_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Convert Email EML file to HTML string  # noqa: E501
+
+        Convert Outlook Email EML file to HTML string and attachments. Supports images if they are base 64 inline.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_eml_to_html_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :param bool body_only: Optional; If true, the HTML string will only include the body of the email. Other information such as subject will still be given as properties in the response object. Default is false.
+        :param bool include_attachments: Optional; If false, the response object will not include any attachment files from the input file. Default is true.
+        :return: EmlToHtmlResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file', 'body_only', 'include_attachments']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_eml_to_html" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_eml_to_html`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'body_only' in params:
+            header_params['bodyOnly'] = params['body_only']  # noqa: E501
+        if 'include_attachments' in params:
+            header_params['includeAttachments'] = params['include_attachments']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/eml/to/html', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='EmlToHtmlResult',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def convert_document_eml_to_pdf(self, input_file, **kwargs):  # noqa: E501
+        """Convert Email EML file to PDF document  # noqa: E501
+
+        Convert Outlook Email EML file to PDF document. Supports images if they are base 64 inline.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_eml_to_pdf(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :param bool body_only: Optional; If true, the HTML string will only include the body of the email. Other information such as subject will still be given as properties in the response object. Default is false.
+        :return: object
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_eml_to_pdf_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_eml_to_pdf_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_eml_to_pdf_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Convert Email EML file to PDF document  # noqa: E501
+
+        Convert Outlook Email EML file to PDF document. Supports images if they are base 64 inline.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_eml_to_pdf_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :param bool body_only: Optional; If true, the HTML string will only include the body of the email. Other information such as subject will still be given as properties in the response object. Default is false.
+        :return: object
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file', 'body_only']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_eml_to_pdf" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_eml_to_pdf`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'body_only' in params:
+            header_params['bodyOnly'] = params['body_only']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/eml/to/pdf', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='object',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def convert_document_get_file_type_icon(self, file_extension, **kwargs):  # noqa: E501
+        """Get PNG icon file for the file extension  # noqa: E501
+
+        Returns a PNG icon for the given file format extension as a file for download. User may specify the icon size. Supports over 100 file formats, with a generic icon for unsupported formats.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_get_file_type_icon(file_extension, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str file_extension: Required; The file extension to be used for the icon. Limited to 4 AlphaNumeric characters. (required)
+        :param int icon_size: Optional; The desired width of the icon, preserving its aspect ratio.
+        :return: object
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_get_file_type_icon_with_http_info(file_extension, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_get_file_type_icon_with_http_info(file_extension, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_get_file_type_icon_with_http_info(self, file_extension, **kwargs):  # noqa: E501
+        """Get PNG icon file for the file extension  # noqa: E501
+
+        Returns a PNG icon for the given file format extension as a file for download. User may specify the icon size. Supports over 100 file formats, with a generic icon for unsupported formats.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_get_file_type_icon_with_http_info(file_extension, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str file_extension: Required; The file extension to be used for the icon. Limited to 4 AlphaNumeric characters. (required)
+        :param int icon_size: Optional; The desired width of the icon, preserving its aspect ratio.
+        :return: object
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['file_extension', 'icon_size']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_get_file_type_icon" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'file_extension' is set
+        if ('file_extension' not in params or
+                params['file_extension'] is None):
+            raise ValueError("Missing the required parameter `file_extension` when calling `convert_document_get_file_type_icon`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'file_extension' in params:
+            header_params['fileExtension'] = params['file_extension']  # noqa: E501
+        if 'icon_size' in params:
+            header_params['iconSize'] = params['icon_size']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/autodetect/get-icon', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='object',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def convert_document_get_file_type_icon_advanced(self, file_extension, **kwargs):  # noqa: E501
+        """Get PNG icon byte array for the file extension  # noqa: E501
+
+        Returns a PNG icon for the given file format extension directly as a byte array. User may specify the icon size. Supports over 100 file formats, with a generic icon for unsupported formats.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_get_file_type_icon_advanced(file_extension, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str file_extension: Required; The file extension to be used for the icon. Limited to 4 AlphaNumeric characters. (required)
+        :param int icon_size: Optional; The desired width of the icon, preserving its aspect ratio.
+        :return: GetFileTypeIconResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_get_file_type_icon_advanced_with_http_info(file_extension, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_get_file_type_icon_advanced_with_http_info(file_extension, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_get_file_type_icon_advanced_with_http_info(self, file_extension, **kwargs):  # noqa: E501
+        """Get PNG icon byte array for the file extension  # noqa: E501
+
+        Returns a PNG icon for the given file format extension directly as a byte array. User may specify the icon size. Supports over 100 file formats, with a generic icon for unsupported formats.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_get_file_type_icon_advanced_with_http_info(file_extension, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str file_extension: Required; The file extension to be used for the icon. Limited to 4 AlphaNumeric characters. (required)
+        :param int icon_size: Optional; The desired width of the icon, preserving its aspect ratio.
+        :return: GetFileTypeIconResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['file_extension', 'icon_size']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_get_file_type_icon_advanced" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'file_extension' is set
+        if ('file_extension' not in params or
+                params['file_extension'] is None):
+            raise ValueError("Missing the required parameter `file_extension` when calling `convert_document_get_file_type_icon_advanced`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'file_extension' in params:
+            header_params['fileExtension'] = params['file_extension']  # noqa: E501
+        if 'icon_size' in params:
+            header_params['iconSize'] = params['icon_size']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/autodetect/get-icon-advanced', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='GetFileTypeIconResult',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1321,6 +2054,216 @@ class ConvertDocumentApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='TextConversionResult',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def convert_document_msg_to_html(self, input_file, **kwargs):  # noqa: E501
+        """Convert Email MSG file to HTML string  # noqa: E501
+
+        Convert Outlook Email MSG file to HTML string and attachments. Supports images if they are base 64 inline. Supports most, but not all, RTF bodied MSG files.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_msg_to_html(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :param bool body_only: Optional; If true, the HTML string will only include the body of the MSG. Other information such as subject will still be given as properties in the response object. Default is false.
+        :param bool include_attachments: Optional; If false, the response object will not include any attachment files from the input file. Default is true.
+        :return: MsgToHtmlResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_msg_to_html_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_msg_to_html_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_msg_to_html_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Convert Email MSG file to HTML string  # noqa: E501
+
+        Convert Outlook Email MSG file to HTML string and attachments. Supports images if they are base 64 inline. Supports most, but not all, RTF bodied MSG files.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_msg_to_html_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :param bool body_only: Optional; If true, the HTML string will only include the body of the MSG. Other information such as subject will still be given as properties in the response object. Default is false.
+        :param bool include_attachments: Optional; If false, the response object will not include any attachment files from the input file. Default is true.
+        :return: MsgToHtmlResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file', 'body_only', 'include_attachments']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_msg_to_html" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_msg_to_html`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'body_only' in params:
+            header_params['bodyOnly'] = params['body_only']  # noqa: E501
+        if 'include_attachments' in params:
+            header_params['includeAttachments'] = params['include_attachments']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/msg/to/html', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='MsgToHtmlResult',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def convert_document_msg_to_pdf(self, input_file, **kwargs):  # noqa: E501
+        """Convert Email MSG file to PDF document  # noqa: E501
+
+        Convert Outlook Email MSG file to PDF document. Supports images if they are base 64 inline. Supports most, but not all, RTF bodied MSG files.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_msg_to_pdf(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :param bool body_only: Optional; If true, the HTML string will only include the body of the email. Other information such as subject will still be given as properties in the response object. Default is false.
+        :return: object
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_msg_to_pdf_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_msg_to_pdf_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_msg_to_pdf_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Convert Email MSG file to PDF document  # noqa: E501
+
+        Convert Outlook Email MSG file to PDF document. Supports images if they are base 64 inline. Supports most, but not all, RTF bodied MSG files.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_msg_to_pdf_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :param bool body_only: Optional; If true, the HTML string will only include the body of the email. Other information such as subject will still be given as properties in the response object. Default is false.
+        :return: object
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file', 'body_only']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_msg_to_pdf" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_msg_to_pdf`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'body_only' in params:
+            header_params['bodyOnly'] = params['body_only']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/msg/to/pdf', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='object',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2362,6 +3305,105 @@ class ConvertDocumentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def convert_document_pptx_to_png(self, input_file, **kwargs):  # noqa: E501
+        """Convert PowerPoint PPTX to PNG image array  # noqa: E501
+
+        Converts a PowerPoint Presentation (PPTX) file to an array of PNG images, one for each page.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_pptx_to_png(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: PptxToPngResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_pptx_to_png_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_pptx_to_png_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_pptx_to_png_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Convert PowerPoint PPTX to PNG image array  # noqa: E501
+
+        Converts a PowerPoint Presentation (PPTX) file to an array of PNG images, one for each page.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_pptx_to_png_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: PptxToPngResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_pptx_to_png" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_pptx_to_png`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/pptx/to/png', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='PptxToPngResult',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def convert_document_pptx_to_txt(self, input_file, **kwargs):  # noqa: E501
         """Convert PowerPoint PPTX Presentation to Text (txt)  # noqa: E501
 
@@ -3056,6 +4098,105 @@ class ConvertDocumentApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def convert_document_xlsx_to_png(self, input_file, **kwargs):  # noqa: E501
+        """Convert Excel XLSX spreadsheet to PNG image array  # noqa: E501
+
+        Converts an Excel Spreadsheet (XLSX) file to an array of PNG images, one for each page.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_xlsx_to_png(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: XlsxToPngResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_xlsx_to_png_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_xlsx_to_png_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_xlsx_to_png_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Convert Excel XLSX spreadsheet to PNG image array  # noqa: E501
+
+        Converts an Excel Spreadsheet (XLSX) file to an array of PNG images, one for each page.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_xlsx_to_png_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: XlsxToPngResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_xlsx_to_png" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_xlsx_to_png`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/xlsx/to/png', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='XlsxToPngResult',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

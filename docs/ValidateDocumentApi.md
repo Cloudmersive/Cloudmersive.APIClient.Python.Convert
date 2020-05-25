@@ -7,9 +7,11 @@ Method | HTTP request | Description
 [**validate_document_autodetect_validation**](ValidateDocumentApi.md#validate_document_autodetect_validation) | **POST** /convert/validate/autodetect | Autodetect content type and validate
 [**validate_document_csv_validation**](ValidateDocumentApi.md#validate_document_csv_validation) | **POST** /convert/validate/csv | Validate a CSV file document (CSV)
 [**validate_document_docx_validation**](ValidateDocumentApi.md#validate_document_docx_validation) | **POST** /convert/validate/docx | Validate a Word document (DOCX)
+[**validate_document_eml_validation**](ValidateDocumentApi.md#validate_document_eml_validation) | **POST** /convert/validate/eml | Validate if an EML file is executable
 [**validate_document_executable_validation**](ValidateDocumentApi.md#validate_document_executable_validation) | **POST** /convert/validate/executable | Validate if a file is executable
 [**validate_document_g_zip_validation**](ValidateDocumentApi.md#validate_document_g_zip_validation) | **POST** /convert/validate/gzip | Validate a GZip Archive file (gzip or gz)
 [**validate_document_json_validation**](ValidateDocumentApi.md#validate_document_json_validation) | **POST** /convert/validate/json | Validate a JSON file
+[**validate_document_msg_validation**](ValidateDocumentApi.md#validate_document_msg_validation) | **POST** /convert/validate/msg | Validate if an MSG file is executable
 [**validate_document_pdf_validation**](ValidateDocumentApi.md#validate_document_pdf_validation) | **POST** /convert/validate/pdf | Validate a PDF document file
 [**validate_document_pptx_validation**](ValidateDocumentApi.md#validate_document_pptx_validation) | **POST** /convert/validate/pptx | Validate a PowerPoint presentation (PPTX)
 [**validate_document_rar_validation**](ValidateDocumentApi.md#validate_document_rar_validation) | **POST** /convert/validate/rar | Validate a RAR Archive file (RAR)
@@ -181,6 +183,60 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **validate_document_eml_validation**
+> DocumentValidationResult validate_document_eml_validation(input_file)
+
+Validate if an EML file is executable
+
+Validate if an input file is an EML email file; if the document is not valid
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_convert_api_client
+from cloudmersive_convert_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_convert_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_convert_api_client.ValidateDocumentApi(cloudmersive_convert_api_client.ApiClient(configuration))
+input_file = '/path/to/file.txt' # file | Input file to perform the operation on.
+
+try:
+    # Validate if an EML file is executable
+    api_response = api_instance.validate_document_eml_validation(input_file)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ValidateDocumentApi->validate_document_eml_validation: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **input_file** | **file**| Input file to perform the operation on. | 
+
+### Return type
+
+[**DocumentValidationResult**](DocumentValidationResult.md)
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **validate_document_executable_validation**
 > DocumentValidationResult validate_document_executable_validation(input_file)
 
@@ -320,6 +376,60 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ValidateDocumentApi->validate_document_json_validation: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **input_file** | **file**| Input file to perform the operation on. | 
+
+### Return type
+
+[**DocumentValidationResult**](DocumentValidationResult.md)
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **validate_document_msg_validation**
+> DocumentValidationResult validate_document_msg_validation(input_file)
+
+Validate if an MSG file is executable
+
+Validate if an input file is an MSG email file; if the document is not valid
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_convert_api_client
+from cloudmersive_convert_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_convert_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_convert_api_client.ValidateDocumentApi(cloudmersive_convert_api_client.ApiClient(configuration))
+input_file = '/path/to/file.txt' # file | Input file to perform the operation on.
+
+try:
+    # Validate if an MSG file is executable
+    api_response = api_instance.validate_document_msg_validation(input_file)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ValidateDocumentApi->validate_document_msg_validation: %s\n" % e)
 ```
 
 ### Parameters

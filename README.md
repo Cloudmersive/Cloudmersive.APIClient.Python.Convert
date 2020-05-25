@@ -4,7 +4,7 @@ Convert API lets you effortlessly convert file formats and types.
 This Python package provides a native API client for [Cloudmersive Document Conversion](https://www.cloudmersive.com/convert-api)
 
 - API version: v1
-- Package version: 2.4.5
+- Package version: 2.4.6
 - Build package: io.swagger.codegen.languages.PythonClientCodegen
 
 ## Requirements.
@@ -96,16 +96,25 @@ Class | Method | HTTP request | Description
 *ConvertDocumentApi* | [**convert_document_autodetect_get_info**](docs/ConvertDocumentApi.md#convert_document_autodetect_get_info) | **POST** /convert/autodetect/get-info | Get document type information
 *ConvertDocumentApi* | [**convert_document_autodetect_to_pdf**](docs/ConvertDocumentApi.md#convert_document_autodetect_to_pdf) | **POST** /convert/autodetect/to/pdf | Convert Document to PDF
 *ConvertDocumentApi* | [**convert_document_autodetect_to_png_array**](docs/ConvertDocumentApi.md#convert_document_autodetect_to_png_array) | **POST** /convert/autodetect/to/png | Convert Document to PNG array
+*ConvertDocumentApi* | [**convert_document_autodetect_to_thumbnail**](docs/ConvertDocumentApi.md#convert_document_autodetect_to_thumbnail) | **POST** /convert/autodetect/to/thumbnail | Convert File to Thumbnail Image
+*ConvertDocumentApi* | [**convert_document_autodetect_to_thumbnails_advanced**](docs/ConvertDocumentApi.md#convert_document_autodetect_to_thumbnails_advanced) | **POST** /convert/autodetect/to/thumbnail/advanced | Convert File to Thumbnail Image Object
 *ConvertDocumentApi* | [**convert_document_autodetect_to_txt**](docs/ConvertDocumentApi.md#convert_document_autodetect_to_txt) | **POST** /convert/autodetect/to/txt | Convert Document to Text (txt)
 *ConvertDocumentApi* | [**convert_document_csv_to_xlsx**](docs/ConvertDocumentApi.md#convert_document_csv_to_xlsx) | **POST** /convert/csv/to/xlsx | Convert CSV to Excel XLSX Spreadsheet
 *ConvertDocumentApi* | [**convert_document_doc_to_docx**](docs/ConvertDocumentApi.md#convert_document_doc_to_docx) | **POST** /convert/doc/to/docx | Convert Word DOC (97-03) Document to DOCX
 *ConvertDocumentApi* | [**convert_document_doc_to_pdf**](docs/ConvertDocumentApi.md#convert_document_doc_to_pdf) | **POST** /convert/doc/to/pdf | Convert Word DOC (97-03) Document to PDF
 *ConvertDocumentApi* | [**convert_document_doc_to_txt**](docs/ConvertDocumentApi.md#convert_document_doc_to_txt) | **POST** /convert/doc/to/txt | Convert Word DOC (97-03) Document to Text (txt)
 *ConvertDocumentApi* | [**convert_document_docx_to_pdf**](docs/ConvertDocumentApi.md#convert_document_docx_to_pdf) | **POST** /convert/docx/to/pdf | Convert Word DOCX Document to PDF
+*ConvertDocumentApi* | [**convert_document_docx_to_png**](docs/ConvertDocumentApi.md#convert_document_docx_to_png) | **POST** /convert/docx/to/png | Convert DOCX document to PNG image array
 *ConvertDocumentApi* | [**convert_document_docx_to_txt**](docs/ConvertDocumentApi.md#convert_document_docx_to_txt) | **POST** /convert/docx/to/txt | Convert Word DOCX Document to Text (txt)
+*ConvertDocumentApi* | [**convert_document_eml_to_html**](docs/ConvertDocumentApi.md#convert_document_eml_to_html) | **POST** /convert/eml/to/html | Convert Email EML file to HTML string
+*ConvertDocumentApi* | [**convert_document_eml_to_pdf**](docs/ConvertDocumentApi.md#convert_document_eml_to_pdf) | **POST** /convert/eml/to/pdf | Convert Email EML file to PDF document
+*ConvertDocumentApi* | [**convert_document_get_file_type_icon**](docs/ConvertDocumentApi.md#convert_document_get_file_type_icon) | **POST** /convert/autodetect/get-icon | Get PNG icon file for the file extension
+*ConvertDocumentApi* | [**convert_document_get_file_type_icon_advanced**](docs/ConvertDocumentApi.md#convert_document_get_file_type_icon_advanced) | **POST** /convert/autodetect/get-icon-advanced | Get PNG icon byte array for the file extension
 *ConvertDocumentApi* | [**convert_document_html_to_pdf**](docs/ConvertDocumentApi.md#convert_document_html_to_pdf) | **POST** /convert/html/to/pdf | Convert HTML document file to PDF Document
 *ConvertDocumentApi* | [**convert_document_html_to_png**](docs/ConvertDocumentApi.md#convert_document_html_to_png) | **POST** /convert/html/to/png | Convert HTML document file to PNG image array
 *ConvertDocumentApi* | [**convert_document_html_to_txt**](docs/ConvertDocumentApi.md#convert_document_html_to_txt) | **POST** /convert/html/to/txt | HTML Document file to Text (txt)
+*ConvertDocumentApi* | [**convert_document_msg_to_html**](docs/ConvertDocumentApi.md#convert_document_msg_to_html) | **POST** /convert/msg/to/html | Convert Email MSG file to HTML string
+*ConvertDocumentApi* | [**convert_document_msg_to_pdf**](docs/ConvertDocumentApi.md#convert_document_msg_to_pdf) | **POST** /convert/msg/to/pdf | Convert Email MSG file to PDF document
 *ConvertDocumentApi* | [**convert_document_pdf_to_docx**](docs/ConvertDocumentApi.md#convert_document_pdf_to_docx) | **POST** /convert/pdf/to/docx | Convert PDF to Word DOCX Document
 *ConvertDocumentApi* | [**convert_document_pdf_to_docx_rasterize**](docs/ConvertDocumentApi.md#convert_document_pdf_to_docx_rasterize) | **POST** /convert/pdf/to/docx/rasterize | Convert PDF to Word DOCX Document based on rasterized version of the PDF
 *ConvertDocumentApi* | [**convert_document_pdf_to_png_array**](docs/ConvertDocumentApi.md#convert_document_pdf_to_png_array) | **POST** /convert/pdf/to/png | Convert PDF to PNG Image Array
@@ -116,6 +125,7 @@ Class | Method | HTTP request | Description
 *ConvertDocumentApi* | [**convert_document_ppt_to_pdf**](docs/ConvertDocumentApi.md#convert_document_ppt_to_pdf) | **POST** /convert/ppt/to/pdf | Convert PowerPoint PPT (97-03) Presentation to PDF
 *ConvertDocumentApi* | [**convert_document_ppt_to_pptx**](docs/ConvertDocumentApi.md#convert_document_ppt_to_pptx) | **POST** /convert/ppt/to/pptx | Convert PowerPoint PPT (97-03) Presentation to PPTX
 *ConvertDocumentApi* | [**convert_document_pptx_to_pdf**](docs/ConvertDocumentApi.md#convert_document_pptx_to_pdf) | **POST** /convert/pptx/to/pdf | Convert PowerPoint PPTX Presentation to PDF
+*ConvertDocumentApi* | [**convert_document_pptx_to_png**](docs/ConvertDocumentApi.md#convert_document_pptx_to_png) | **POST** /convert/pptx/to/png | Convert PowerPoint PPTX to PNG image array
 *ConvertDocumentApi* | [**convert_document_pptx_to_txt**](docs/ConvertDocumentApi.md#convert_document_pptx_to_txt) | **POST** /convert/pptx/to/txt | Convert PowerPoint PPTX Presentation to Text (txt)
 *ConvertDocumentApi* | [**convert_document_xls_to_csv**](docs/ConvertDocumentApi.md#convert_document_xls_to_csv) | **POST** /convert/xls/to/csv | Convert Excel XLS (97-03) Spreadsheet to CSV
 *ConvertDocumentApi* | [**convert_document_xls_to_pdf**](docs/ConvertDocumentApi.md#convert_document_xls_to_pdf) | **POST** /convert/xls/to/pdf | Convert Excel XLS (97-03) Spreadsheet to PDF
@@ -123,6 +133,7 @@ Class | Method | HTTP request | Description
 *ConvertDocumentApi* | [**convert_document_xlsx_to_csv**](docs/ConvertDocumentApi.md#convert_document_xlsx_to_csv) | **POST** /convert/xlsx/to/csv | Convert Excel XLSX Spreadsheet to CSV, Single Worksheet
 *ConvertDocumentApi* | [**convert_document_xlsx_to_csv_multi**](docs/ConvertDocumentApi.md#convert_document_xlsx_to_csv_multi) | **POST** /convert/xlsx/to/csv/multi | Convert Excel XLSX Spreadsheet to CSV, Multiple Worksheets
 *ConvertDocumentApi* | [**convert_document_xlsx_to_pdf**](docs/ConvertDocumentApi.md#convert_document_xlsx_to_pdf) | **POST** /convert/xlsx/to/pdf | Convert Excel XLSX Spreadsheet to PDF
+*ConvertDocumentApi* | [**convert_document_xlsx_to_png**](docs/ConvertDocumentApi.md#convert_document_xlsx_to_png) | **POST** /convert/xlsx/to/png | Convert Excel XLSX spreadsheet to PNG image array
 *ConvertDocumentApi* | [**convert_document_xlsx_to_txt**](docs/ConvertDocumentApi.md#convert_document_xlsx_to_txt) | **POST** /convert/xlsx/to/txt | Convert Excel XLSX Spreadsheet to Text (txt)
 *ConvertImageApi* | [**convert_image_get_image_info**](docs/ConvertImageApi.md#convert_image_get_image_info) | **POST** /convert/image/get-info | Get information about an image
 *ConvertImageApi* | [**convert_image_image_format_convert**](docs/ConvertImageApi.md#convert_image_image_format_convert) | **POST** /convert/image/{format1}/to/{format2} | Image format conversion
@@ -240,9 +251,11 @@ Class | Method | HTTP request | Description
 *ValidateDocumentApi* | [**validate_document_autodetect_validation**](docs/ValidateDocumentApi.md#validate_document_autodetect_validation) | **POST** /convert/validate/autodetect | Autodetect content type and validate
 *ValidateDocumentApi* | [**validate_document_csv_validation**](docs/ValidateDocumentApi.md#validate_document_csv_validation) | **POST** /convert/validate/csv | Validate a CSV file document (CSV)
 *ValidateDocumentApi* | [**validate_document_docx_validation**](docs/ValidateDocumentApi.md#validate_document_docx_validation) | **POST** /convert/validate/docx | Validate a Word document (DOCX)
+*ValidateDocumentApi* | [**validate_document_eml_validation**](docs/ValidateDocumentApi.md#validate_document_eml_validation) | **POST** /convert/validate/eml | Validate if an EML file is executable
 *ValidateDocumentApi* | [**validate_document_executable_validation**](docs/ValidateDocumentApi.md#validate_document_executable_validation) | **POST** /convert/validate/executable | Validate if a file is executable
 *ValidateDocumentApi* | [**validate_document_g_zip_validation**](docs/ValidateDocumentApi.md#validate_document_g_zip_validation) | **POST** /convert/validate/gzip | Validate a GZip Archive file (gzip or gz)
 *ValidateDocumentApi* | [**validate_document_json_validation**](docs/ValidateDocumentApi.md#validate_document_json_validation) | **POST** /convert/validate/json | Validate a JSON file
+*ValidateDocumentApi* | [**validate_document_msg_validation**](docs/ValidateDocumentApi.md#validate_document_msg_validation) | **POST** /convert/validate/msg | Validate if an MSG file is executable
 *ValidateDocumentApi* | [**validate_document_pdf_validation**](docs/ValidateDocumentApi.md#validate_document_pdf_validation) | **POST** /convert/validate/pdf | Validate a PDF document file
 *ValidateDocumentApi* | [**validate_document_pptx_validation**](docs/ValidateDocumentApi.md#validate_document_pptx_validation) | **POST** /convert/validate/pptx | Validate a PowerPoint presentation (PPTX)
 *ValidateDocumentApi* | [**validate_document_rar_validation**](docs/ValidateDocumentApi.md#validate_document_rar_validation) | **POST** /convert/validate/rar | Validate a RAR Archive file (RAR)
@@ -265,6 +278,7 @@ Class | Method | HTTP request | Description
  - [AutodetectDocumentValidationResult](docs/AutodetectDocumentValidationResult.md)
  - [AutodetectGetInfoResult](docs/AutodetectGetInfoResult.md)
  - [AutodetectToPngResult](docs/AutodetectToPngResult.md)
+ - [AutodetectToThumbnailsResult](docs/AutodetectToThumbnailsResult.md)
  - [Base64DecodeRequest](docs/Base64DecodeRequest.md)
  - [Base64DecodeResponse](docs/Base64DecodeResponse.md)
  - [Base64DetectRequest](docs/Base64DetectRequest.md)
@@ -320,7 +334,10 @@ Class | Method | HTTP request | Description
  - [DocxTemplateApplicationRequest](docs/DocxTemplateApplicationRequest.md)
  - [DocxTemplateOperation](docs/DocxTemplateOperation.md)
  - [DocxText](docs/DocxText.md)
+ - [DocxToPngResult](docs/DocxToPngResult.md)
  - [DocxTopLevelComment](docs/DocxTopLevelComment.md)
+ - [EmlAttachment](docs/EmlAttachment.md)
+ - [EmlToHtmlResult](docs/EmlToHtmlResult.md)
  - [EnableSharedWorkbookRequest](docs/EnableSharedWorkbookRequest.md)
  - [EnableSharedWorkbookResponse](docs/EnableSharedWorkbookResponse.md)
  - [ExifValue](docs/ExifValue.md)
@@ -355,6 +372,7 @@ Class | Method | HTTP request | Description
  - [GetDocxTableRowResponse](docs/GetDocxTableRowResponse.md)
  - [GetDocxTablesRequest](docs/GetDocxTablesRequest.md)
  - [GetDocxTablesResponse](docs/GetDocxTablesResponse.md)
+ - [GetFileTypeIconResult](docs/GetFileTypeIconResult.md)
  - [GetImageInfoResult](docs/GetImageInfoResult.md)
  - [GetPdfAnnotationsResult](docs/GetPdfAnnotationsResult.md)
  - [GetXlsxCellByIdentifierRequest](docs/GetXlsxCellByIdentifierRequest.md)
@@ -389,6 +407,8 @@ Class | Method | HTTP request | Description
  - [InsertDocxTablesResponse](docs/InsertDocxTablesResponse.md)
  - [InsertXlsxWorksheetRequest](docs/InsertXlsxWorksheetRequest.md)
  - [InsertXlsxWorksheetResponse](docs/InsertXlsxWorksheetResponse.md)
+ - [MsgAttachment](docs/MsgAttachment.md)
+ - [MsgToHtmlResult](docs/MsgToHtmlResult.md)
  - [MultipageImageFormatConversionResult](docs/MultipageImageFormatConversionResult.md)
  - [PageConversionResult](docs/PageConversionResult.md)
  - [PdfAnnotation](docs/PdfAnnotation.md)
@@ -399,6 +419,7 @@ Class | Method | HTTP request | Description
  - [PdfPageText](docs/PdfPageText.md)
  - [PdfTextByPageResult](docs/PdfTextByPageResult.md)
  - [PdfToPngResult](docs/PdfToPngResult.md)
+ - [PptxToPngResult](docs/PptxToPngResult.md)
  - [PresentationResult](docs/PresentationResult.md)
  - [RemoveDocxHeadersAndFootersRequest](docs/RemoveDocxHeadersAndFootersRequest.md)
  - [RemoveDocxHeadersAndFootersResponse](docs/RemoveDocxHeadersAndFootersResponse.md)
@@ -435,6 +456,7 @@ Class | Method | HTTP request | Description
  - [TextDocumentElement](docs/TextDocumentElement.md)
  - [TextDocumentLine](docs/TextDocumentLine.md)
  - [TextEncodingDetectResponse](docs/TextEncodingDetectResponse.md)
+ - [Thumbnail](docs/Thumbnail.md)
  - [UpdateDocxTableCellRequest](docs/UpdateDocxTableCellRequest.md)
  - [UpdateDocxTableCellResponse](docs/UpdateDocxTableCellResponse.md)
  - [UpdateDocxTableRowRequest](docs/UpdateDocxTableRowRequest.md)
@@ -448,6 +470,7 @@ Class | Method | HTTP request | Description
  - [XlsxSpreadsheetCell](docs/XlsxSpreadsheetCell.md)
  - [XlsxSpreadsheetColumn](docs/XlsxSpreadsheetColumn.md)
  - [XlsxSpreadsheetRow](docs/XlsxSpreadsheetRow.md)
+ - [XlsxToPngResult](docs/XlsxToPngResult.md)
  - [XlsxWorksheet](docs/XlsxWorksheet.md)
  - [XmlAddAttributeWithXPathResult](docs/XmlAddAttributeWithXPathResult.md)
  - [XmlAddChildWithXPathResult](docs/XmlAddChildWithXPathResult.md)
