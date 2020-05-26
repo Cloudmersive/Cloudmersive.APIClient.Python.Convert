@@ -20,7 +20,7 @@ Method | HTTP request | Description
 [**convert_document_eml_to_html**](ConvertDocumentApi.md#convert_document_eml_to_html) | **POST** /convert/eml/to/html | Convert Email EML file to HTML string
 [**convert_document_eml_to_pdf**](ConvertDocumentApi.md#convert_document_eml_to_pdf) | **POST** /convert/eml/to/pdf | Convert Email EML file to PDF document
 [**convert_document_get_file_type_icon**](ConvertDocumentApi.md#convert_document_get_file_type_icon) | **POST** /convert/autodetect/get-icon | Get PNG icon file for the file extension
-[**convert_document_get_file_type_icon_advanced**](ConvertDocumentApi.md#convert_document_get_file_type_icon_advanced) | **POST** /convert/autodetect/get-icon-advanced | Get PNG icon byte array for the file extension
+[**convert_document_get_file_type_icon_advanced**](ConvertDocumentApi.md#convert_document_get_file_type_icon_advanced) | **POST** /convert/autodetect/get-icon/advanced | Get PNG icon byte array for the file extension
 [**convert_document_html_to_pdf**](ConvertDocumentApi.md#convert_document_html_to_pdf) | **POST** /convert/html/to/pdf | Convert HTML document file to PDF Document
 [**convert_document_html_to_png**](ConvertDocumentApi.md#convert_document_html_to_png) | **POST** /convert/html/to/png | Convert HTML document file to PNG image array
 [**convert_document_html_to_txt**](ConvertDocumentApi.md#convert_document_html_to_txt) | **POST** /convert/html/to/txt | HTML Document file to Text (txt)
@@ -211,7 +211,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **convert_document_autodetect_to_thumbnail**
-> object convert_document_autodetect_to_thumbnail(input_file, max_width=max_width, max_height=max_height, extension=extension)
+> str convert_document_autodetect_to_thumbnail(input_file, max_width=max_width, max_height=max_height, extension=extension)
 
 Convert File to Thumbnail Image
 
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+**str**
 
 ### Authorization
 
@@ -827,7 +827,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **convert_document_eml_to_pdf**
-> object convert_document_eml_to_pdf(input_file, body_only=body_only)
+> str convert_document_eml_to_pdf(input_file, body_only=body_only)
 
 Convert Email EML file to PDF document
 
@@ -869,7 +869,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+**str**
 
 ### Authorization
 
@@ -883,7 +883,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **convert_document_get_file_type_icon**
-> object convert_document_get_file_type_icon(file_extension, icon_size=icon_size)
+> str convert_document_get_file_type_icon(file_extension, icon_size=icon_size)
 
 Get PNG icon file for the file extension
 
@@ -925,7 +925,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+**str**
 
 ### Authorization
 
@@ -1215,7 +1215,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **convert_document_msg_to_pdf**
-> object convert_document_msg_to_pdf(input_file, body_only=body_only)
+> str convert_document_msg_to_pdf(input_file, body_only=body_only)
 
 Convert Email MSG file to PDF document
 
@@ -1257,7 +1257,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+**str**
 
 ### Authorization
 

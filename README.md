@@ -4,7 +4,7 @@ Convert API lets you effortlessly convert file formats and types.
 This Python package provides a native API client for [Cloudmersive Document Conversion](https://www.cloudmersive.com/convert-api)
 
 - API version: v1
-- Package version: 2.4.6
+- Package version: 2.4.7
 - Build package: io.swagger.codegen.languages.PythonClientCodegen
 
 ## Requirements.
@@ -109,7 +109,7 @@ Class | Method | HTTP request | Description
 *ConvertDocumentApi* | [**convert_document_eml_to_html**](docs/ConvertDocumentApi.md#convert_document_eml_to_html) | **POST** /convert/eml/to/html | Convert Email EML file to HTML string
 *ConvertDocumentApi* | [**convert_document_eml_to_pdf**](docs/ConvertDocumentApi.md#convert_document_eml_to_pdf) | **POST** /convert/eml/to/pdf | Convert Email EML file to PDF document
 *ConvertDocumentApi* | [**convert_document_get_file_type_icon**](docs/ConvertDocumentApi.md#convert_document_get_file_type_icon) | **POST** /convert/autodetect/get-icon | Get PNG icon file for the file extension
-*ConvertDocumentApi* | [**convert_document_get_file_type_icon_advanced**](docs/ConvertDocumentApi.md#convert_document_get_file_type_icon_advanced) | **POST** /convert/autodetect/get-icon-advanced | Get PNG icon byte array for the file extension
+*ConvertDocumentApi* | [**convert_document_get_file_type_icon_advanced**](docs/ConvertDocumentApi.md#convert_document_get_file_type_icon_advanced) | **POST** /convert/autodetect/get-icon/advanced | Get PNG icon byte array for the file extension
 *ConvertDocumentApi* | [**convert_document_html_to_pdf**](docs/ConvertDocumentApi.md#convert_document_html_to_pdf) | **POST** /convert/html/to/pdf | Convert HTML document file to PDF Document
 *ConvertDocumentApi* | [**convert_document_html_to_png**](docs/ConvertDocumentApi.md#convert_document_html_to_png) | **POST** /convert/html/to/png | Convert HTML document file to PNG image array
 *ConvertDocumentApi* | [**convert_document_html_to_txt**](docs/ConvertDocumentApi.md#convert_document_html_to_txt) | **POST** /convert/html/to/txt | HTML Document file to Text (txt)

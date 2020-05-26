@@ -344,7 +344,7 @@ class ConvertDocumentApi(object):
         :param int max_width: Optional; Maximum width of the output thumbnail - final image will be as large as possible while less than or equal to this width. Default is 128.
         :param int max_height: Optional; Maximum height of the output thumbnail - final image will be as large as possible while less than or equal to this width. Default is 128.
         :param str extension: Optional; Specify the file extension of the inputFile. This will improve the response time in most cases. Also allows unsupported files without extensions to still return a corresponding generic icon.
-        :return: object
+        :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -369,7 +369,7 @@ class ConvertDocumentApi(object):
         :param int max_width: Optional; Maximum width of the output thumbnail - final image will be as large as possible while less than or equal to this width. Default is 128.
         :param int max_height: Optional; Maximum height of the output thumbnail - final image will be as large as possible while less than or equal to this width. Default is 128.
         :param str extension: Optional; Specify the file extension of the inputFile. This will improve the response time in most cases. Also allows unsupported files without extensions to still return a corresponding generic icon.
-        :return: object
+        :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -433,7 +433,7 @@ class ConvertDocumentApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='str',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1475,7 +1475,7 @@ class ConvertDocumentApi(object):
         :param async_req bool
         :param file input_file: Input file to perform the operation on. (required)
         :param bool body_only: Optional; If true, the HTML string will only include the body of the email. Other information such as subject will still be given as properties in the response object. Default is false.
-        :return: object
+        :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1498,7 +1498,7 @@ class ConvertDocumentApi(object):
         :param async_req bool
         :param file input_file: Input file to perform the operation on. (required)
         :param bool body_only: Optional; If true, the HTML string will only include the body of the email. Other information such as subject will still be given as properties in the response object. Default is false.
-        :return: object
+        :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1558,7 +1558,7 @@ class ConvertDocumentApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='str',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1578,7 +1578,7 @@ class ConvertDocumentApi(object):
         :param async_req bool
         :param str file_extension: Required; The file extension to be used for the icon. Limited to 4 AlphaNumeric characters. (required)
         :param int icon_size: Optional; The desired width of the icon, preserving its aspect ratio.
-        :return: object
+        :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1601,7 +1601,7 @@ class ConvertDocumentApi(object):
         :param async_req bool
         :param str file_extension: Required; The file extension to be used for the icon. Limited to 4 AlphaNumeric characters. (required)
         :param int icon_size: Optional; The desired width of the icon, preserving its aspect ratio.
-        :return: object
+        :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1657,7 +1657,7 @@ class ConvertDocumentApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='str',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1749,7 +1749,7 @@ class ConvertDocumentApi(object):
         auth_settings = ['Apikey']  # noqa: E501
 
         return self.api_client.call_api(
-            '/convert/autodetect/get-icon-advanced', 'POST',
+            '/convert/autodetect/get-icon/advanced', 'POST',
             path_params,
             query_params,
             header_params,
@@ -2180,7 +2180,7 @@ class ConvertDocumentApi(object):
         :param async_req bool
         :param file input_file: Input file to perform the operation on. (required)
         :param bool body_only: Optional; If true, the HTML string will only include the body of the email. Other information such as subject will still be given as properties in the response object. Default is false.
-        :return: object
+        :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2203,7 +2203,7 @@ class ConvertDocumentApi(object):
         :param async_req bool
         :param file input_file: Input file to perform the operation on. (required)
         :param bool body_only: Optional; If true, the HTML string will only include the body of the email. Other information such as subject will still be given as properties in the response object. Default is false.
-        :return: object
+        :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2263,7 +2263,7 @@ class ConvertDocumentApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='str',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

@@ -39,10 +39,8 @@ class EmlToHtmlResult(object):
         '_from': 'str',
         'to': 'str',
         'cc': 'str',
-        'bcc': 'str',
-        'received_time': 'str',
+        'date_sent': 'str',
         'subject': 'str',
-        'organization': 'str',
         'attachments': 'list[EmlAttachment]'
     }
 
@@ -53,14 +51,12 @@ class EmlToHtmlResult(object):
         '_from': 'From',
         'to': 'To',
         'cc': 'Cc',
-        'bcc': 'Bcc',
-        'received_time': 'ReceivedTime',
+        'date_sent': 'DateSent',
         'subject': 'Subject',
-        'organization': 'Organization',
         'attachments': 'Attachments'
     }
 
-    def __init__(self, successful=None, content=None, body=None, _from=None, to=None, cc=None, bcc=None, received_time=None, subject=None, organization=None, attachments=None):  # noqa: E501
+    def __init__(self, successful=None, content=None, body=None, _from=None, to=None, cc=None, date_sent=None, subject=None, attachments=None):  # noqa: E501
         """EmlToHtmlResult - a model defined in Swagger"""  # noqa: E501
 
         self._successful = None
@@ -69,10 +65,8 @@ class EmlToHtmlResult(object):
         self.__from = None
         self._to = None
         self._cc = None
-        self._bcc = None
-        self._received_time = None
+        self._date_sent = None
         self._subject = None
-        self._organization = None
         self._attachments = None
         self.discriminator = None
 
@@ -88,14 +82,10 @@ class EmlToHtmlResult(object):
             self.to = to
         if cc is not None:
             self.cc = cc
-        if bcc is not None:
-            self.bcc = bcc
-        if received_time is not None:
-            self.received_time = received_time
+        if date_sent is not None:
+            self.date_sent = date_sent
         if subject is not None:
             self.subject = subject
-        if organization is not None:
-            self.organization = organization
         if attachments is not None:
             self.attachments = attachments
 
@@ -238,50 +228,27 @@ class EmlToHtmlResult(object):
         self._cc = cc
 
     @property
-    def bcc(self):
-        """Gets the bcc of this EmlToHtmlResult.  # noqa: E501
+    def date_sent(self):
+        """Gets the date_sent of this EmlToHtmlResult.  # noqa: E501
 
-        The BCC recipients of the EML file's email  # noqa: E501
+        The date and time that the EML file's email was sent  # noqa: E501
 
-        :return: The bcc of this EmlToHtmlResult.  # noqa: E501
+        :return: The date_sent of this EmlToHtmlResult.  # noqa: E501
         :rtype: str
         """
-        return self._bcc
+        return self._date_sent
 
-    @bcc.setter
-    def bcc(self, bcc):
-        """Sets the bcc of this EmlToHtmlResult.
+    @date_sent.setter
+    def date_sent(self, date_sent):
+        """Sets the date_sent of this EmlToHtmlResult.
 
-        The BCC recipients of the EML file's email  # noqa: E501
+        The date and time that the EML file's email was sent  # noqa: E501
 
-        :param bcc: The bcc of this EmlToHtmlResult.  # noqa: E501
+        :param date_sent: The date_sent of this EmlToHtmlResult.  # noqa: E501
         :type: str
         """
 
-        self._bcc = bcc
-
-    @property
-    def received_time(self):
-        """Gets the received_time of this EmlToHtmlResult.  # noqa: E501
-
-        The time that the EML file's email was received  # noqa: E501
-
-        :return: The received_time of this EmlToHtmlResult.  # noqa: E501
-        :rtype: str
-        """
-        return self._received_time
-
-    @received_time.setter
-    def received_time(self, received_time):
-        """Sets the received_time of this EmlToHtmlResult.
-
-        The time that the EML file's email was received  # noqa: E501
-
-        :param received_time: The received_time of this EmlToHtmlResult.  # noqa: E501
-        :type: str
-        """
-
-        self._received_time = received_time
+        self._date_sent = date_sent
 
     @property
     def subject(self):
@@ -305,29 +272,6 @@ class EmlToHtmlResult(object):
         """
 
         self._subject = subject
-
-    @property
-    def organization(self):
-        """Gets the organization of this EmlToHtmlResult.  # noqa: E501
-
-        The Organization of the EML file's email  # noqa: E501
-
-        :return: The organization of this EmlToHtmlResult.  # noqa: E501
-        :rtype: str
-        """
-        return self._organization
-
-    @organization.setter
-    def organization(self, organization):
-        """Sets the organization of this EmlToHtmlResult.
-
-        The Organization of the EML file's email  # noqa: E501
-
-        :param organization: The organization of this EmlToHtmlResult.  # noqa: E501
-        :type: str
-        """
-
-        self._organization = organization
 
     @property
     def attachments(self):
