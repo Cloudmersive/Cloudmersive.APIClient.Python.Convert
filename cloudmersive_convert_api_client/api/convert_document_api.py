@@ -2061,6 +2061,105 @@ class ConvertDocumentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def convert_document_keynote_to_pdf(self, input_file, **kwargs):  # noqa: E501
+        """Convert Keynote Presentation (KEY) to PDF  # noqa: E501
+
+        Convert Mac Keynote Presentation (KEY) to standard PDF  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_keynote_to_pdf(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_keynote_to_pdf_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_keynote_to_pdf_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_keynote_to_pdf_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Convert Keynote Presentation (KEY) to PDF  # noqa: E501
+
+        Convert Mac Keynote Presentation (KEY) to standard PDF  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_keynote_to_pdf_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_keynote_to_pdf" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_keynote_to_pdf`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/keynote/to/pdf', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def convert_document_msg_to_html(self, input_file, **kwargs):  # noqa: E501
         """Convert Email MSG file to HTML string  # noqa: E501
 
@@ -2257,6 +2356,402 @@ class ConvertDocumentApi(object):
 
         return self.api_client.call_api(
             '/convert/msg/to/pdf', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def convert_document_odp_to_pdf(self, input_file, **kwargs):  # noqa: E501
+        """Convert Office Open Document Presentation ODP to PDF  # noqa: E501
+
+        Convert Office Open Document Presentation (ODP) to standard PDF  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_odp_to_pdf(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_odp_to_pdf_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_odp_to_pdf_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_odp_to_pdf_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Convert Office Open Document Presentation ODP to PDF  # noqa: E501
+
+        Convert Office Open Document Presentation (ODP) to standard PDF  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_odp_to_pdf_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_odp_to_pdf" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_odp_to_pdf`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/odp/to/pdf', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def convert_document_ods_to_pdf(self, input_file, **kwargs):  # noqa: E501
+        """Convert Office Open Document Spreadsheet ODS to PDF  # noqa: E501
+
+        Convert Office Open Document Spreadsheet (ODS) to standard PDF  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_ods_to_pdf(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_ods_to_pdf_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_ods_to_pdf_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_ods_to_pdf_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Convert Office Open Document Spreadsheet ODS to PDF  # noqa: E501
+
+        Convert Office Open Document Spreadsheet (ODS) to standard PDF  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_ods_to_pdf_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_ods_to_pdf" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_ods_to_pdf`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/ods/to/pdf', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def convert_document_odt_to_docx(self, input_file, **kwargs):  # noqa: E501
+        """Convert Office Open Document ODT to Word DOCX  # noqa: E501
+
+        Convert Office Open Document Text File (ODT) to Word DOCX Document  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_odt_to_docx(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_odt_to_docx_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_odt_to_docx_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_odt_to_docx_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Convert Office Open Document ODT to Word DOCX  # noqa: E501
+
+        Convert Office Open Document Text File (ODT) to Word DOCX Document  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_odt_to_docx_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_odt_to_docx" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_odt_to_docx`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/odt/to/docx', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def convert_document_odt_to_pdf(self, input_file, **kwargs):  # noqa: E501
+        """Convert Office Open Document ODT to PDF  # noqa: E501
+
+        Convert Office Open Document Text File (ODT) to standard PDF  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_odt_to_pdf(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_odt_to_pdf_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_odt_to_pdf_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_odt_to_pdf_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Convert Office Open Document ODT to PDF  # noqa: E501
+
+        Convert Office Open Document Text File (ODT) to standard PDF  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_odt_to_pdf_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_odt_to_pdf" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_odt_to_pdf`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/odt/to/pdf', 'POST',
             path_params,
             query_params,
             header_params,
@@ -3496,6 +3991,105 @@ class ConvertDocumentApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='TextConversionResult',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def convert_document_rtf_to_pdf(self, input_file, **kwargs):  # noqa: E501
+        """Convert Rich Text Format RTF to PDF  # noqa: E501
+
+        Convert Rich Text Format Document (RTF) to standard PDF  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_rtf_to_pdf(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_rtf_to_pdf_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_rtf_to_pdf_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_rtf_to_pdf_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Convert Rich Text Format RTF to PDF  # noqa: E501
+
+        Convert Rich Text Format Document (RTF) to standard PDF  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_rtf_to_pdf_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_rtf_to_pdf" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_rtf_to_pdf`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/rtf/to/pdf', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

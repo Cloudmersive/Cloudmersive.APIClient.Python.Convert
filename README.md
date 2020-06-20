@@ -4,7 +4,7 @@ Convert API lets you effortlessly convert file formats and types.
 This Python package provides a native API client for [Cloudmersive Document Conversion](https://www.cloudmersive.com/convert-api)
 
 - API version: v1
-- Package version: 2.4.8
+- Package version: 2.4.9
 - Build package: io.swagger.codegen.languages.PythonClientCodegen
 
 ## Requirements.
@@ -113,8 +113,13 @@ Class | Method | HTTP request | Description
 *ConvertDocumentApi* | [**convert_document_html_to_pdf**](docs/ConvertDocumentApi.md#convert_document_html_to_pdf) | **POST** /convert/html/to/pdf | Convert HTML document file to PDF Document
 *ConvertDocumentApi* | [**convert_document_html_to_png**](docs/ConvertDocumentApi.md#convert_document_html_to_png) | **POST** /convert/html/to/png | Convert HTML document file to PNG image array
 *ConvertDocumentApi* | [**convert_document_html_to_txt**](docs/ConvertDocumentApi.md#convert_document_html_to_txt) | **POST** /convert/html/to/txt | HTML Document file to Text (txt)
+*ConvertDocumentApi* | [**convert_document_keynote_to_pdf**](docs/ConvertDocumentApi.md#convert_document_keynote_to_pdf) | **POST** /convert/keynote/to/pdf | Convert Keynote Presentation (KEY) to PDF
 *ConvertDocumentApi* | [**convert_document_msg_to_html**](docs/ConvertDocumentApi.md#convert_document_msg_to_html) | **POST** /convert/msg/to/html | Convert Email MSG file to HTML string
 *ConvertDocumentApi* | [**convert_document_msg_to_pdf**](docs/ConvertDocumentApi.md#convert_document_msg_to_pdf) | **POST** /convert/msg/to/pdf | Convert Email MSG file to PDF document
+*ConvertDocumentApi* | [**convert_document_odp_to_pdf**](docs/ConvertDocumentApi.md#convert_document_odp_to_pdf) | **POST** /convert/odp/to/pdf | Convert Office Open Document Presentation ODP to PDF
+*ConvertDocumentApi* | [**convert_document_ods_to_pdf**](docs/ConvertDocumentApi.md#convert_document_ods_to_pdf) | **POST** /convert/ods/to/pdf | Convert Office Open Document Spreadsheet ODS to PDF
+*ConvertDocumentApi* | [**convert_document_odt_to_docx**](docs/ConvertDocumentApi.md#convert_document_odt_to_docx) | **POST** /convert/odt/to/docx | Convert Office Open Document ODT to Word DOCX
+*ConvertDocumentApi* | [**convert_document_odt_to_pdf**](docs/ConvertDocumentApi.md#convert_document_odt_to_pdf) | **POST** /convert/odt/to/pdf | Convert Office Open Document ODT to PDF
 *ConvertDocumentApi* | [**convert_document_pdf_to_docx**](docs/ConvertDocumentApi.md#convert_document_pdf_to_docx) | **POST** /convert/pdf/to/docx | Convert PDF to Word DOCX Document
 *ConvertDocumentApi* | [**convert_document_pdf_to_docx_rasterize**](docs/ConvertDocumentApi.md#convert_document_pdf_to_docx_rasterize) | **POST** /convert/pdf/to/docx/rasterize | Convert PDF to Word DOCX Document based on rasterized version of the PDF
 *ConvertDocumentApi* | [**convert_document_pdf_to_png_array**](docs/ConvertDocumentApi.md#convert_document_pdf_to_png_array) | **POST** /convert/pdf/to/png | Convert PDF to PNG Image Array
@@ -127,6 +132,7 @@ Class | Method | HTTP request | Description
 *ConvertDocumentApi* | [**convert_document_pptx_to_pdf**](docs/ConvertDocumentApi.md#convert_document_pptx_to_pdf) | **POST** /convert/pptx/to/pdf | Convert PowerPoint PPTX Presentation to PDF
 *ConvertDocumentApi* | [**convert_document_pptx_to_png**](docs/ConvertDocumentApi.md#convert_document_pptx_to_png) | **POST** /convert/pptx/to/png | Convert PowerPoint PPTX to PNG image array
 *ConvertDocumentApi* | [**convert_document_pptx_to_txt**](docs/ConvertDocumentApi.md#convert_document_pptx_to_txt) | **POST** /convert/pptx/to/txt | Convert PowerPoint PPTX Presentation to Text (txt)
+*ConvertDocumentApi* | [**convert_document_rtf_to_pdf**](docs/ConvertDocumentApi.md#convert_document_rtf_to_pdf) | **POST** /convert/rtf/to/pdf | Convert Rich Text Format RTF to PDF
 *ConvertDocumentApi* | [**convert_document_xls_to_csv**](docs/ConvertDocumentApi.md#convert_document_xls_to_csv) | **POST** /convert/xls/to/csv | Convert Excel XLS (97-03) Spreadsheet to CSV
 *ConvertDocumentApi* | [**convert_document_xls_to_pdf**](docs/ConvertDocumentApi.md#convert_document_xls_to_pdf) | **POST** /convert/xls/to/pdf | Convert Excel XLS (97-03) Spreadsheet to PDF
 *ConvertDocumentApi* | [**convert_document_xls_to_xlsx**](docs/ConvertDocumentApi.md#convert_document_xls_to_xlsx) | **POST** /convert/xls/to/xlsx | Convert Excel XLS (97-03) Spreadsheet to XLSX
