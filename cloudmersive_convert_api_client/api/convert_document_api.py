@@ -132,6 +132,109 @@ class ConvertDocumentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def convert_document_autodetect_to_jpg(self, input_file, **kwargs):  # noqa: E501
+        """Convert Document to JPG/JPEG image array  # noqa: E501
+
+        Automatically detect file type and convert it to an array of JPG/JPEG Images.  Supports all of the major Office document file formats including Word (DOCX, DOC), Excel (XLSX, XLS), PowerPoint (PPTX, PPT), over 100 image formats, HTML files, and even multi-page TIFF files. Customize image quality using quality header.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_autodetect_to_jpg(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :param int quality: Optional; Set the JPEG quality level; lowest quality is 1 (highest compression), highest quality (lowest compression) is 100; recommended value is 75. Default value is 75.
+        :return: AutodetectToJpgResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_autodetect_to_jpg_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_autodetect_to_jpg_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_autodetect_to_jpg_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Convert Document to JPG/JPEG image array  # noqa: E501
+
+        Automatically detect file type and convert it to an array of JPG/JPEG Images.  Supports all of the major Office document file formats including Word (DOCX, DOC), Excel (XLSX, XLS), PowerPoint (PPTX, PPT), over 100 image formats, HTML files, and even multi-page TIFF files. Customize image quality using quality header.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_autodetect_to_jpg_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :param int quality: Optional; Set the JPEG quality level; lowest quality is 1 (highest compression), highest quality (lowest compression) is 100; recommended value is 75. Default value is 75.
+        :return: AutodetectToJpgResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file', 'quality']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_autodetect_to_jpg" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_autodetect_to_jpg`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'quality' in params:
+            header_params['quality'] = params['quality']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/autodetect/to/jpg', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='AutodetectToJpgResult',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def convert_document_autodetect_to_pdf(self, input_file, **kwargs):  # noqa: E501
         """Convert Document to PDF  # noqa: E501
 
@@ -333,7 +436,7 @@ class ConvertDocumentApi(object):
     def convert_document_autodetect_to_thumbnail(self, input_file, **kwargs):  # noqa: E501
         """Convert File to Thumbnail Image  # noqa: E501
 
-        Automatically detect file type and convert it to a PNG thumbnail. Supports all of the major Office document file formats including Word (DOCX, DOC), Excel (XLSX, XLS), PowerPoint (PPTX, PPT), over 100 image formats, HTML files, and even multi-page TIFF files. Returns a generic PNG thumbnail for unsupported formats.  # noqa: E501
+        Automatically detect file type and convert it to a PNG thumbnail. Supports all of the major Office document file formats including Word (DOCX, DOC), Excel (XLSX, XLS), PowerPoint (PPTX, PPT), over 100 image formats, HTML files, and even multi-page TIFF files. Returns a generic PNG thumbnail for unsupported formats. Maximum thumbnail size is 2048x2048.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.convert_document_autodetect_to_thumbnail(input_file, async_req=True)
@@ -358,7 +461,7 @@ class ConvertDocumentApi(object):
     def convert_document_autodetect_to_thumbnail_with_http_info(self, input_file, **kwargs):  # noqa: E501
         """Convert File to Thumbnail Image  # noqa: E501
 
-        Automatically detect file type and convert it to a PNG thumbnail. Supports all of the major Office document file formats including Word (DOCX, DOC), Excel (XLSX, XLS), PowerPoint (PPTX, PPT), over 100 image formats, HTML files, and even multi-page TIFF files. Returns a generic PNG thumbnail for unsupported formats.  # noqa: E501
+        Automatically detect file type and convert it to a PNG thumbnail. Supports all of the major Office document file formats including Word (DOCX, DOC), Excel (XLSX, XLS), PowerPoint (PPTX, PPT), over 100 image formats, HTML files, and even multi-page TIFF files. Returns a generic PNG thumbnail for unsupported formats. Maximum thumbnail size is 2048x2048.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.convert_document_autodetect_to_thumbnail_with_http_info(input_file, async_req=True)
@@ -444,7 +547,7 @@ class ConvertDocumentApi(object):
     def convert_document_autodetect_to_thumbnails_advanced(self, input_file, **kwargs):  # noqa: E501
         """Convert File to Thumbnail Image Object  # noqa: E501
 
-        Automatically detect file type and convert it to an array of PNG thumbnails, returned as an object. May specify the number of pages for multiple thumbnails; default is one thumbnail. Supports all of the major Office document file formats including Word (DOCX, DOC), Excel (XLSX, XLS), PowerPoint (PPTX, PPT), over 100 image formats, HTML files, and even multi-page TIFF files. Returns a generic PNG thumbnail for unsupported formats.  # noqa: E501
+        Automatically detect file type and convert it to an array of PNG thumbnails, returned as an object. May specify the number of pages for multiple thumbnails; default is one thumbnail. Supports all of the major Office document file formats including Word (DOCX, DOC), Excel (XLSX, XLS), PowerPoint (PPTX, PPT), over 100 image formats, HTML files, and even multi-page TIFF files. Returns a generic PNG thumbnail for unsupported formats. Maximum thumbnail size is 2048x2048.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.convert_document_autodetect_to_thumbnails_advanced(input_file, async_req=True)
@@ -470,7 +573,7 @@ class ConvertDocumentApi(object):
     def convert_document_autodetect_to_thumbnails_advanced_with_http_info(self, input_file, **kwargs):  # noqa: E501
         """Convert File to Thumbnail Image Object  # noqa: E501
 
-        Automatically detect file type and convert it to an array of PNG thumbnails, returned as an object. May specify the number of pages for multiple thumbnails; default is one thumbnail. Supports all of the major Office document file formats including Word (DOCX, DOC), Excel (XLSX, XLS), PowerPoint (PPTX, PPT), over 100 image formats, HTML files, and even multi-page TIFF files. Returns a generic PNG thumbnail for unsupported formats.  # noqa: E501
+        Automatically detect file type and convert it to an array of PNG thumbnails, returned as an object. May specify the number of pages for multiple thumbnails; default is one thumbnail. Supports all of the major Office document file formats including Word (DOCX, DOC), Excel (XLSX, XLS), PowerPoint (PPTX, PPT), over 100 image formats, HTML files, and even multi-page TIFF files. Returns a generic PNG thumbnail for unsupported formats. Maximum thumbnail size is 2048x2048.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.convert_document_autodetect_to_thumbnails_advanced_with_http_info(input_file, async_req=True)
@@ -1055,6 +1158,208 @@ class ConvertDocumentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def convert_document_docx_to_html(self, input_file, **kwargs):  # noqa: E501
+        """Convert Word DOCX Document to HTML Document  # noqa: E501
+
+        Convert Office Word Document (DOCX) to HTML Document  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_docx_to_html(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_docx_to_html_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_docx_to_html_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_docx_to_html_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Convert Word DOCX Document to HTML Document  # noqa: E501
+
+        Convert Office Word Document (DOCX) to HTML Document  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_docx_to_html_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_docx_to_html" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_docx_to_html`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/docx/to/html', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def convert_document_docx_to_jpg(self, input_file, **kwargs):  # noqa: E501
+        """Convert Word DOCX Document to JPG/JPEG image array  # noqa: E501
+
+        Converts an Office Word Document (DOCX) to an array of JPG/JPEG images, one for each page. Customize image quality using quality header.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_docx_to_jpg(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :param int quality: Optional; Set the JPEG quality level; lowest quality is 1 (highest compression), highest quality (lowest compression) is 100; recommended value is 75. Default value is 75.
+        :return: DocxToJpgResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_docx_to_jpg_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_docx_to_jpg_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_docx_to_jpg_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Convert Word DOCX Document to JPG/JPEG image array  # noqa: E501
+
+        Converts an Office Word Document (DOCX) to an array of JPG/JPEG images, one for each page. Customize image quality using quality header.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_docx_to_jpg_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :param int quality: Optional; Set the JPEG quality level; lowest quality is 1 (highest compression), highest quality (lowest compression) is 100; recommended value is 75. Default value is 75.
+        :return: DocxToJpgResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file', 'quality']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_docx_to_jpg" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_docx_to_jpg`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'quality' in params:
+            header_params['quality'] = params['quality']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/docx/to/jpg', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='DocxToJpgResult',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def convert_document_docx_to_pdf(self, input_file, **kwargs):  # noqa: E501
         """Convert Word DOCX Document to PDF  # noqa: E501
 
@@ -1155,7 +1460,7 @@ class ConvertDocumentApi(object):
             collection_formats=collection_formats)
 
     def convert_document_docx_to_png(self, input_file, **kwargs):  # noqa: E501
-        """Convert DOCX document to PNG image array  # noqa: E501
+        """Convert Word DOCX Document to PNG image array  # noqa: E501
 
         Converts an Office Word Document (DOCX) file to an array of PNG images, one for each page.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1177,7 +1482,7 @@ class ConvertDocumentApi(object):
             return data
 
     def convert_document_docx_to_png_with_http_info(self, input_file, **kwargs):  # noqa: E501
-        """Convert DOCX document to PNG image array  # noqa: E501
+        """Convert Word DOCX Document to PNG image array  # noqa: E501
 
         Converts an Office Word Document (DOCX) file to an array of PNG images, one for each page.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1246,6 +1551,105 @@ class ConvertDocumentApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='DocxToPngResult',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def convert_document_docx_to_rtf(self, input_file, **kwargs):  # noqa: E501
+        """Convert Word DOCX Document to RTF  # noqa: E501
+
+        Convert an Office Word Document (DOCX) to Rich Text Format Document (RTF)  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_docx_to_rtf(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_docx_to_rtf_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_docx_to_rtf_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_docx_to_rtf_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Convert Word DOCX Document to RTF  # noqa: E501
+
+        Convert an Office Word Document (DOCX) to Rich Text Format Document (RTF)  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_docx_to_rtf_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_docx_to_rtf" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_docx_to_rtf`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/docx/to/rtf', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1463,6 +1867,109 @@ class ConvertDocumentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def convert_document_eml_to_jpg(self, input_file, **kwargs):  # noqa: E501
+        """Convert Email EML file to JPG/JPEG image array  # noqa: E501
+
+        Converts an Outlook Email File (EML) to an array of JPG/JPEG images, one for each page. Customize image quality using quality header.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_eml_to_jpg(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :param int quality: Optional; Set the JPEG quality level; lowest quality is 1 (highest compression), highest quality (lowest compression) is 100; recommended value is 75. Default value is 75.
+        :return: EmlToJpgResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_eml_to_jpg_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_eml_to_jpg_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_eml_to_jpg_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Convert Email EML file to JPG/JPEG image array  # noqa: E501
+
+        Converts an Outlook Email File (EML) to an array of JPG/JPEG images, one for each page. Customize image quality using quality header.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_eml_to_jpg_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :param int quality: Optional; Set the JPEG quality level; lowest quality is 1 (highest compression), highest quality (lowest compression) is 100; recommended value is 75. Default value is 75.
+        :return: EmlToJpgResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file', 'quality']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_eml_to_jpg" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_eml_to_jpg`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'quality' in params:
+            header_params['quality'] = params['quality']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/eml/to/jpg', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='EmlToJpgResult',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def convert_document_eml_to_pdf(self, input_file, **kwargs):  # noqa: E501
         """Convert Email EML file to PDF document  # noqa: E501
 
@@ -1559,6 +2066,105 @@ class ConvertDocumentApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def convert_document_eml_to_png(self, input_file, **kwargs):  # noqa: E501
+        """Convert Email EML file to PNG image array  # noqa: E501
+
+        Converts an Outlook Email File (EML) to an array of PNG images, one for each page.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_eml_to_png(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: EmlToPngResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_eml_to_png_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_eml_to_png_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_eml_to_png_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Convert Email EML file to PNG image array  # noqa: E501
+
+        Converts an Outlook Email File (EML) to an array of PNG images, one for each page.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_eml_to_png_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: EmlToPngResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_eml_to_png" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_eml_to_png`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/eml/to/png', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='EmlToPngResult',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2061,6 +2667,109 @@ class ConvertDocumentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def convert_document_keynote_to_jpg(self, input_file, **kwargs):  # noqa: E501
+        """Convert Keynote Presentation (KEY) to JPG/JPEG image array  # noqa: E501
+
+        Converts a Mac Keynote Presentation (KEY) to an array of JPG/JPEG images, one for each page. Customize image quality using quality header.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_keynote_to_jpg(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :param int quality: Optional; Set the JPEG quality level; lowest quality is 1 (highest compression), highest quality (lowest compression) is 100; recommended value is 75. Default value is 75.
+        :return: KeynoteToJpgResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_keynote_to_jpg_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_keynote_to_jpg_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_keynote_to_jpg_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Convert Keynote Presentation (KEY) to JPG/JPEG image array  # noqa: E501
+
+        Converts a Mac Keynote Presentation (KEY) to an array of JPG/JPEG images, one for each page. Customize image quality using quality header.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_keynote_to_jpg_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :param int quality: Optional; Set the JPEG quality level; lowest quality is 1 (highest compression), highest quality (lowest compression) is 100; recommended value is 75. Default value is 75.
+        :return: KeynoteToJpgResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file', 'quality']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_keynote_to_jpg" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_keynote_to_jpg`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'quality' in params:
+            header_params['quality'] = params['quality']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/key/to/jpg', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='KeynoteToJpgResult',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def convert_document_keynote_to_pdf(self, input_file, **kwargs):  # noqa: E501
         """Convert Keynote Presentation (KEY) to PDF  # noqa: E501
 
@@ -2145,7 +2854,205 @@ class ConvertDocumentApi(object):
         auth_settings = ['Apikey']  # noqa: E501
 
         return self.api_client.call_api(
-            '/convert/keynote/to/pdf', 'POST',
+            '/convert/key/to/pdf', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def convert_document_keynote_to_png(self, input_file, **kwargs):  # noqa: E501
+        """Convert Keynote Presentation (KEY) to PNG image array  # noqa: E501
+
+        Converts a Mac Keynote Presentation (KEY) to an array of PNG images, one for each page.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_keynote_to_png(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: KeynoteToPngResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_keynote_to_png_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_keynote_to_png_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_keynote_to_png_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Convert Keynote Presentation (KEY) to PNG image array  # noqa: E501
+
+        Converts a Mac Keynote Presentation (KEY) to an array of PNG images, one for each page.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_keynote_to_png_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: KeynoteToPngResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_keynote_to_png" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_keynote_to_png`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/key/to/png', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='KeynoteToPngResult',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def convert_document_keynote_to_pptx(self, input_file, **kwargs):  # noqa: E501
+        """Convert Keynote Presentation (KEY) to PPTX  # noqa: E501
+
+        Convert Mac Keynote Presentation (KEY) to PowerPoint Presentation (PPTX)  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_keynote_to_pptx(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_keynote_to_pptx_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_keynote_to_pptx_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_keynote_to_pptx_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Convert Keynote Presentation (KEY) to PPTX  # noqa: E501
+
+        Convert Mac Keynote Presentation (KEY) to PowerPoint Presentation (PPTX)  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_keynote_to_pptx_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_keynote_to_pptx" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_keynote_to_pptx`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/key/to/pptx', 'POST',
             path_params,
             query_params,
             header_params,
@@ -2267,6 +3174,109 @@ class ConvertDocumentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def convert_document_msg_to_jpg(self, input_file, **kwargs):  # noqa: E501
+        """Convert Email MSG file to JPG/JPEG image array  # noqa: E501
+
+        Converts an Outlook Message File (MSG) to an array of JPG/JPEG images, one for each page. Customize image quality using quality header.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_msg_to_jpg(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :param int quality: Optional; Set the JPEG quality level; lowest quality is 1 (highest compression), highest quality (lowest compression) is 100; recommended value is 75. Default value is 75.
+        :return: MsgToJpgResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_msg_to_jpg_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_msg_to_jpg_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_msg_to_jpg_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Convert Email MSG file to JPG/JPEG image array  # noqa: E501
+
+        Converts an Outlook Message File (MSG) to an array of JPG/JPEG images, one for each page. Customize image quality using quality header.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_msg_to_jpg_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :param int quality: Optional; Set the JPEG quality level; lowest quality is 1 (highest compression), highest quality (lowest compression) is 100; recommended value is 75. Default value is 75.
+        :return: MsgToJpgResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file', 'quality']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_msg_to_jpg" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_msg_to_jpg`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'quality' in params:
+            header_params['quality'] = params['quality']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/msg/to/jpg', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='MsgToJpgResult',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def convert_document_msg_to_pdf(self, input_file, **kwargs):  # noqa: E501
         """Convert Email MSG file to PDF document  # noqa: E501
 
@@ -2370,8 +3380,210 @@ class ConvertDocumentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def convert_document_msg_to_png(self, input_file, **kwargs):  # noqa: E501
+        """Convert Email MSG file to PNG image array  # noqa: E501
+
+        Converts an Outlook Email Message File (MSG) to an array of PNG images, one for each page.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_msg_to_png(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: MsgToPngResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_msg_to_png_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_msg_to_png_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_msg_to_png_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Convert Email MSG file to PNG image array  # noqa: E501
+
+        Converts an Outlook Email Message File (MSG) to an array of PNG images, one for each page.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_msg_to_png_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: MsgToPngResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_msg_to_png" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_msg_to_png`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/msg/to/png', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='MsgToPngResult',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def convert_document_odp_to_jpg(self, input_file, **kwargs):  # noqa: E501
+        """Convert ODP Presentation to JPG/JPEG image array  # noqa: E501
+
+        Converts an Open Document Presentation (ODP) to an array of JPG/JPEG images, one for each page. Customize image quality using quality header.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_odp_to_jpg(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :param int quality: Optional; Set the JPEG quality level; lowest quality is 1 (highest compression), highest quality (lowest compression) is 100; recommended value is 75. Default value is 75.
+        :return: OdpToJpgResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_odp_to_jpg_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_odp_to_jpg_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_odp_to_jpg_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Convert ODP Presentation to JPG/JPEG image array  # noqa: E501
+
+        Converts an Open Document Presentation (ODP) to an array of JPG/JPEG images, one for each page. Customize image quality using quality header.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_odp_to_jpg_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :param int quality: Optional; Set the JPEG quality level; lowest quality is 1 (highest compression), highest quality (lowest compression) is 100; recommended value is 75. Default value is 75.
+        :return: OdpToJpgResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file', 'quality']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_odp_to_jpg" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_odp_to_jpg`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'quality' in params:
+            header_params['quality'] = params['quality']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/odp/to/jpg', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='OdpToJpgResult',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def convert_document_odp_to_pdf(self, input_file, **kwargs):  # noqa: E501
-        """Convert Office Open Document Presentation ODP to PDF  # noqa: E501
+        """Convert ODP Presentation to PDF  # noqa: E501
 
         Convert Office Open Document Presentation (ODP) to standard PDF  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2393,7 +3605,7 @@ class ConvertDocumentApi(object):
             return data
 
     def convert_document_odp_to_pdf_with_http_info(self, input_file, **kwargs):  # noqa: E501
-        """Convert Office Open Document Presentation ODP to PDF  # noqa: E501
+        """Convert ODP Presentation to PDF  # noqa: E501
 
         Convert Office Open Document Presentation (ODP) to standard PDF  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2469,8 +3681,309 @@ class ConvertDocumentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def convert_document_odp_to_png(self, input_file, **kwargs):  # noqa: E501
+        """Convert ODP Presentation to PNG image array  # noqa: E501
+
+        Converts an Office Open Document Presentation (ODP) to an array of PNG images, one for each page.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_odp_to_png(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: OdpToPngResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_odp_to_png_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_odp_to_png_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_odp_to_png_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Convert ODP Presentation to PNG image array  # noqa: E501
+
+        Converts an Office Open Document Presentation (ODP) to an array of PNG images, one for each page.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_odp_to_png_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: OdpToPngResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_odp_to_png" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_odp_to_png`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/odp/to/png', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='OdpToPngResult',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def convert_document_odp_to_pptx(self, input_file, **kwargs):  # noqa: E501
+        """Convert ODP Presentation to PPTX  # noqa: E501
+
+        Convert Office Open Document Presentation (ODP) to PowerPoint Presentation (PPTX)  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_odp_to_pptx(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_odp_to_pptx_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_odp_to_pptx_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_odp_to_pptx_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Convert ODP Presentation to PPTX  # noqa: E501
+
+        Convert Office Open Document Presentation (ODP) to PowerPoint Presentation (PPTX)  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_odp_to_pptx_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_odp_to_pptx" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_odp_to_pptx`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/odp/to/pptx', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def convert_document_ods_to_jpg(self, input_file, **kwargs):  # noqa: E501
+        """Convert ODS Spreadsheet to JPG/JPEG image array  # noqa: E501
+
+        Converts an Open Document Spreadsheet (ODS) to an array of JPG/JPEG images, one for each page. Customize image quality using quality header.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_ods_to_jpg(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :param int quality: Optional; Set the JPEG quality level; lowest quality is 1 (highest compression), highest quality (lowest compression) is 100; recommended value is 75. Default value is 75.
+        :return: OdsToJpgResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_ods_to_jpg_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_ods_to_jpg_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_ods_to_jpg_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Convert ODS Spreadsheet to JPG/JPEG image array  # noqa: E501
+
+        Converts an Open Document Spreadsheet (ODS) to an array of JPG/JPEG images, one for each page. Customize image quality using quality header.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_ods_to_jpg_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :param int quality: Optional; Set the JPEG quality level; lowest quality is 1 (highest compression), highest quality (lowest compression) is 100; recommended value is 75. Default value is 75.
+        :return: OdsToJpgResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file', 'quality']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_ods_to_jpg" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_ods_to_jpg`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'quality' in params:
+            header_params['quality'] = params['quality']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/ods/to/jpg', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='OdsToJpgResult',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def convert_document_ods_to_pdf(self, input_file, **kwargs):  # noqa: E501
-        """Convert Office Open Document Spreadsheet ODS to PDF  # noqa: E501
+        """Convert ODS Spreadsheet to PDF  # noqa: E501
 
         Convert Office Open Document Spreadsheet (ODS) to standard PDF  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2492,7 +4005,7 @@ class ConvertDocumentApi(object):
             return data
 
     def convert_document_ods_to_pdf_with_http_info(self, input_file, **kwargs):  # noqa: E501
-        """Convert Office Open Document Spreadsheet ODS to PDF  # noqa: E501
+        """Convert ODS Spreadsheet to PDF  # noqa: E501
 
         Convert Office Open Document Spreadsheet (ODS) to standard PDF  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2568,8 +4081,206 @@ class ConvertDocumentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def convert_document_ods_to_png(self, input_file, **kwargs):  # noqa: E501
+        """Convert ODS Spreadsheet to PNG image array  # noqa: E501
+
+        Converts an Office Open Document Spreadsheet (ODS) to an array of PNG images, one for each page.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_ods_to_png(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: OdsToPngResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_ods_to_png_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_ods_to_png_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_ods_to_png_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Convert ODS Spreadsheet to PNG image array  # noqa: E501
+
+        Converts an Office Open Document Spreadsheet (ODS) to an array of PNG images, one for each page.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_ods_to_png_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: OdsToPngResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_ods_to_png" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_ods_to_png`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/ods/to/png', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='OdsToPngResult',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def convert_document_ods_to_xlsx(self, input_file, **kwargs):  # noqa: E501
+        """Convert ODS Spreadsheet to XLSX  # noqa: E501
+
+        Convert Office Open Document Spreadsheet (ODS) to Excel Spreadsheet (XLSX)  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_ods_to_xlsx(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_ods_to_xlsx_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_ods_to_xlsx_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_ods_to_xlsx_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Convert ODS Spreadsheet to XLSX  # noqa: E501
+
+        Convert Office Open Document Spreadsheet (ODS) to Excel Spreadsheet (XLSX)  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_ods_to_xlsx_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_ods_to_xlsx" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_ods_to_xlsx`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/ods/to/xlsx', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def convert_document_odt_to_docx(self, input_file, **kwargs):  # noqa: E501
-        """Convert Office Open Document ODT to Word DOCX  # noqa: E501
+        """Convert ODT Text File to Word DOCX  # noqa: E501
 
         Convert Office Open Document Text File (ODT) to Word DOCX Document  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2591,7 +4302,7 @@ class ConvertDocumentApi(object):
             return data
 
     def convert_document_odt_to_docx_with_http_info(self, input_file, **kwargs):  # noqa: E501
-        """Convert Office Open Document ODT to Word DOCX  # noqa: E501
+        """Convert ODT Text File to Word DOCX  # noqa: E501
 
         Convert Office Open Document Text File (ODT) to Word DOCX Document  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2667,8 +4378,111 @@ class ConvertDocumentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def convert_document_odt_to_jpg(self, input_file, **kwargs):  # noqa: E501
+        """Convert ODT Text File to JPG/JPEG image array  # noqa: E501
+
+        Converts an Open Document Text File (ODT) to an array of JPG/JPEG images, one for each page. Customize image quality using quality header.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_odt_to_jpg(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :param int quality: Optional; Set the JPEG quality level; lowest quality is 1 (highest compression), highest quality (lowest compression) is 100; recommended value is 75. Default value is 75.
+        :return: OdtToJpgResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_odt_to_jpg_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_odt_to_jpg_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_odt_to_jpg_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Convert ODT Text File to JPG/JPEG image array  # noqa: E501
+
+        Converts an Open Document Text File (ODT) to an array of JPG/JPEG images, one for each page. Customize image quality using quality header.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_odt_to_jpg_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :param int quality: Optional; Set the JPEG quality level; lowest quality is 1 (highest compression), highest quality (lowest compression) is 100; recommended value is 75. Default value is 75.
+        :return: OdtToJpgResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file', 'quality']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_odt_to_jpg" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_odt_to_jpg`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'quality' in params:
+            header_params['quality'] = params['quality']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/odt/to/jpg', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='OdtToJpgResult',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def convert_document_odt_to_pdf(self, input_file, **kwargs):  # noqa: E501
-        """Convert Office Open Document ODT to PDF  # noqa: E501
+        """Convert ODT Text File to PDF  # noqa: E501
 
         Convert Office Open Document Text File (ODT) to standard PDF  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2690,7 +4504,7 @@ class ConvertDocumentApi(object):
             return data
 
     def convert_document_odt_to_pdf_with_http_info(self, input_file, **kwargs):  # noqa: E501
-        """Convert Office Open Document ODT to PDF  # noqa: E501
+        """Convert ODT Text File to PDF  # noqa: E501
 
         Convert Office Open Document Text File (ODT) to standard PDF  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2759,6 +4573,105 @@ class ConvertDocumentApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def convert_document_odt_to_png(self, input_file, **kwargs):  # noqa: E501
+        """Convert ODT Text File to PNG image array  # noqa: E501
+
+        Converts an Office Open Document Text File (ODT) to an array of PNG images, one for each page.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_odt_to_png(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: OdtToPngResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_odt_to_png_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_odt_to_png_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_odt_to_png_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Convert ODT Text File to PNG image array  # noqa: E501
+
+        Converts an Office Open Document Text File (ODT) to an array of PNG images, one for each page.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_odt_to_png_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: OdtToPngResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_odt_to_png" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_odt_to_png`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/odt/to/png', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='OdtToPngResult',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -3998,6 +5911,307 @@ class ConvertDocumentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def convert_document_rtf_to_docx(self, input_file, **kwargs):  # noqa: E501
+        """Convert Rich Text Format RTF to DOCX Document  # noqa: E501
+
+        Convert Rich Text Format Document (RTF) to Word DOCX Document  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_rtf_to_docx(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_rtf_to_docx_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_rtf_to_docx_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_rtf_to_docx_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Convert Rich Text Format RTF to DOCX Document  # noqa: E501
+
+        Convert Rich Text Format Document (RTF) to Word DOCX Document  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_rtf_to_docx_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_rtf_to_docx" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_rtf_to_docx`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/rtf/to/docx', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def convert_document_rtf_to_html(self, input_file, **kwargs):  # noqa: E501
+        """Convert Rich Text Format RTF to HTML Document  # noqa: E501
+
+        Convert Rich Text Format Document (RTF) to HTML Document  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_rtf_to_html(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_rtf_to_html_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_rtf_to_html_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_rtf_to_html_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Convert Rich Text Format RTF to HTML Document  # noqa: E501
+
+        Convert Rich Text Format Document (RTF) to HTML Document  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_rtf_to_html_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_rtf_to_html" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_rtf_to_html`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/rtf/to/html', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def convert_document_rtf_to_jpg(self, input_file, **kwargs):  # noqa: E501
+        """Convert Rich Text Format RTF to JPG/JPEG image array  # noqa: E501
+
+        Converts a Rich Text Format Document (RTF) to an array of JPG/JPEG images, one for each page. Customize image quality using quality header.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_rtf_to_jpg(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :param int quality: Optional; Set the JPEG quality level; lowest quality is 1 (highest compression), highest quality (lowest compression) is 100; recommended value is 75. Default value is 75.
+        :return: RtfToJpgResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_rtf_to_jpg_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_rtf_to_jpg_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_rtf_to_jpg_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Convert Rich Text Format RTF to JPG/JPEG image array  # noqa: E501
+
+        Converts a Rich Text Format Document (RTF) to an array of JPG/JPEG images, one for each page. Customize image quality using quality header.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_rtf_to_jpg_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :param int quality: Optional; Set the JPEG quality level; lowest quality is 1 (highest compression), highest quality (lowest compression) is 100; recommended value is 75. Default value is 75.
+        :return: RtfToJpgResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file', 'quality']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_rtf_to_jpg" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_rtf_to_jpg`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'quality' in params:
+            header_params['quality'] = params['quality']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/rtf/to/jpg', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='RtfToJpgResult',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def convert_document_rtf_to_pdf(self, input_file, **kwargs):  # noqa: E501
         """Convert Rich Text Format RTF to PDF  # noqa: E501
 
@@ -4090,6 +6304,105 @@ class ConvertDocumentApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def convert_document_rtf_to_png(self, input_file, **kwargs):  # noqa: E501
+        """Convert Rich Text Format RTF to PNG image array  # noqa: E501
+
+        Converts a Rich Text Format Document (RTF) to an array of PNG images, one for each page.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_rtf_to_png(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: RtfToPngResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_rtf_to_png_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_rtf_to_png_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_rtf_to_png_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Convert Rich Text Format RTF to PNG image array  # noqa: E501
+
+        Converts a Rich Text Format Document (RTF) to an array of PNG images, one for each page.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_rtf_to_png_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: RtfToPngResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_rtf_to_png" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_rtf_to_png`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/rtf/to/png', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='RtfToPngResult',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
