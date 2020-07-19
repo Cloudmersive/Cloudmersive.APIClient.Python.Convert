@@ -4,7 +4,7 @@ Convert API lets you effortlessly convert file formats and types.
 This Python package provides a native API client for [Cloudmersive Document Conversion](https://www.cloudmersive.com/convert-api)
 
 - API version: v1
-- Package version: 3.0.2
+- Package version: 3.0.3
 - Build package: io.swagger.codegen.languages.PythonClientCodegen
 
 ## Requirements.
@@ -141,6 +141,7 @@ Class | Method | HTTP request | Description
 *ConvertDocumentApi* | [**convert_document_odt_to_png**](docs/ConvertDocumentApi.md#convert_document_odt_to_png) | **POST** /convert/odt/to/png | Convert ODT Text File to PNG image array
 *ConvertDocumentApi* | [**convert_document_pdf_to_docx**](docs/ConvertDocumentApi.md#convert_document_pdf_to_docx) | **POST** /convert/pdf/to/docx | Convert PDF to Word DOCX Document
 *ConvertDocumentApi* | [**convert_document_pdf_to_docx_rasterize**](docs/ConvertDocumentApi.md#convert_document_pdf_to_docx_rasterize) | **POST** /convert/pdf/to/docx/rasterize | Convert PDF to Word DOCX Document based on rasterized version of the PDF
+*ConvertDocumentApi* | [**convert_document_pdf_to_jpg**](docs/ConvertDocumentApi.md#convert_document_pdf_to_jpg) | **POST** /convert/pdf/to/jpg | Convert PDF to JPG/JPEG image array
 *ConvertDocumentApi* | [**convert_document_pdf_to_png_array**](docs/ConvertDocumentApi.md#convert_document_pdf_to_png_array) | **POST** /convert/pdf/to/png | Convert PDF to PNG Image Array
 *ConvertDocumentApi* | [**convert_document_pdf_to_png_single**](docs/ConvertDocumentApi.md#convert_document_pdf_to_png_single) | **POST** /convert/pdf/to/png/merge-single | Convert PDF to Single PNG image
 *ConvertDocumentApi* | [**convert_document_pdf_to_pptx**](docs/ConvertDocumentApi.md#convert_document_pdf_to_pptx) | **POST** /convert/pdf/to/pptx | Convert PDF to PowerPoint PPTX Presentation
@@ -472,6 +473,7 @@ Class | Method | HTTP request | Description
  - [PdfMetadata](docs/PdfMetadata.md)
  - [PdfPageText](docs/PdfPageText.md)
  - [PdfTextByPageResult](docs/PdfTextByPageResult.md)
+ - [PdfToJpgResult](docs/PdfToJpgResult.md)
  - [PdfToPngResult](docs/PdfToPngResult.md)
  - [PptxToPngResult](docs/PptxToPngResult.md)
  - [PresentationResult](docs/PresentationResult.md)

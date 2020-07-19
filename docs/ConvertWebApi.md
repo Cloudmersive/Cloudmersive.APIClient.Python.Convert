@@ -37,7 +37,7 @@ configuration.api_key['Apikey'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = cloudmersive_convert_api_client.ConvertWebApi(cloudmersive_convert_api_client.ApiClient(configuration))
-input_request = cloudmersive_convert_api_client.HtmlToOfficeRequest() # HtmlToOfficeRequest | HTL input to convert to DOCX
+input_request = cloudmersive_convert_api_client.HtmlToOfficeRequest() # HtmlToOfficeRequest | HTML input to convert to DOCX
 
 try:
     # Convert HTML to Word DOCX Document
@@ -51,7 +51,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **input_request** | [**HtmlToOfficeRequest**](HtmlToOfficeRequest.md)| HTL input to convert to DOCX | 
+ **input_request** | [**HtmlToOfficeRequest**](HtmlToOfficeRequest.md)| HTML input to convert to DOCX | 
 
 ### Return type
 

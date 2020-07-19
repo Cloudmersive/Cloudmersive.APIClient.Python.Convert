@@ -43,7 +43,7 @@ class ConvertWebApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param HtmlToOfficeRequest input_request: HTL input to convert to DOCX (required)
+        :param HtmlToOfficeRequest input_request: HTML input to convert to DOCX (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -65,7 +65,7 @@ class ConvertWebApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param HtmlToOfficeRequest input_request: HTL input to convert to DOCX (required)
+        :param HtmlToOfficeRequest input_request: HTML input to convert to DOCX (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
