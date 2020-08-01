@@ -89,7 +89,7 @@ class UrlToPdfRequest(object):
     def extra_loading_wait(self):
         """Gets the extra_loading_wait of this UrlToPdfRequest.  # noqa: E501
 
-        Optional: Additional number of milliseconds to wait once the web page has finished loading before taking the screenshot.  Can be helpful for highly asynchronous websites.  Provide a value of 0 for the default of 5000 milliseconds (5 seconds)  # noqa: E501
+        Optional: Additional number of milliseconds to wait once the web page has finished loading before taking the screenshot.  Can be helpful for highly asynchronous websites.  Provide a value of 0 for the default of 5000 milliseconds (5 seconds). Maximum is 20000 milliseconds (20 seconds).  # noqa: E501
 
         :return: The extra_loading_wait of this UrlToPdfRequest.  # noqa: E501
         :rtype: int
@@ -100,7 +100,7 @@ class UrlToPdfRequest(object):
     def extra_loading_wait(self, extra_loading_wait):
         """Sets the extra_loading_wait of this UrlToPdfRequest.
 
-        Optional: Additional number of milliseconds to wait once the web page has finished loading before taking the screenshot.  Can be helpful for highly asynchronous websites.  Provide a value of 0 for the default of 5000 milliseconds (5 seconds)  # noqa: E501
+        Optional: Additional number of milliseconds to wait once the web page has finished loading before taking the screenshot.  Can be helpful for highly asynchronous websites.  Provide a value of 0 for the default of 5000 milliseconds (5 seconds). Maximum is 20000 milliseconds (20 seconds).  # noqa: E501
 
         :param extra_loading_wait: The extra_loading_wait of this UrlToPdfRequest.  # noqa: E501
         :type: int
@@ -135,7 +135,7 @@ class UrlToPdfRequest(object):
     def scale_factor(self):
         """Gets the scale_factor of this UrlToPdfRequest.  # noqa: E501
 
-        Optional: Set to 100 to scale at 100%, set to 50% to scale down to 50% scale, set to 200% to scale up to 200% scale, etc.  Default is 100%  # noqa: E501
+        Optional: Set to 100 to scale at 100%, set to 50% to scale down to 50% scale, set to 200% to scale up to 200% scale, etc.  Default is 100%. Maximum is 1000%  # noqa: E501
 
         :return: The scale_factor of this UrlToPdfRequest.  # noqa: E501
         :rtype: int
@@ -146,7 +146,7 @@ class UrlToPdfRequest(object):
     def scale_factor(self, scale_factor):
         """Sets the scale_factor of this UrlToPdfRequest.
 
-        Optional: Set to 100 to scale at 100%, set to 50% to scale down to 50% scale, set to 200% to scale up to 200% scale, etc.  Default is 100%  # noqa: E501
+        Optional: Set to 100 to scale at 100%, set to 50% to scale down to 50% scale, set to 200% to scale up to 200% scale, etc.  Default is 100%. Maximum is 1000%  # noqa: E501
 
         :param scale_factor: The scale_factor of this UrlToPdfRequest.  # noqa: E501
         :type: int

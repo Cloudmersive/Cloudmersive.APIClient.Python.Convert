@@ -32,25 +32,35 @@ class HtmlToPdfRequest(object):
     """
     swagger_types = {
         'html': 'str',
-        'extra_loading_wait': 'int'
+        'extra_loading_wait': 'int',
+        'include_background_graphics': 'bool',
+        'scale_factor': 'int'
     }
 
     attribute_map = {
         'html': 'Html',
-        'extra_loading_wait': 'ExtraLoadingWait'
+        'extra_loading_wait': 'ExtraLoadingWait',
+        'include_background_graphics': 'IncludeBackgroundGraphics',
+        'scale_factor': 'ScaleFactor'
     }
 
-    def __init__(self, html=None, extra_loading_wait=None):  # noqa: E501
+    def __init__(self, html=None, extra_loading_wait=None, include_background_graphics=None, scale_factor=None):  # noqa: E501
         """HtmlToPdfRequest - a model defined in Swagger"""  # noqa: E501
 
         self._html = None
         self._extra_loading_wait = None
+        self._include_background_graphics = None
+        self._scale_factor = None
         self.discriminator = None
 
         if html is not None:
             self.html = html
         if extra_loading_wait is not None:
             self.extra_loading_wait = extra_loading_wait
+        if include_background_graphics is not None:
+            self.include_background_graphics = include_background_graphics
+        if scale_factor is not None:
+            self.scale_factor = scale_factor
 
     @property
     def html(self):
@@ -79,7 +89,7 @@ class HtmlToPdfRequest(object):
     def extra_loading_wait(self):
         """Gets the extra_loading_wait of this HtmlToPdfRequest.  # noqa: E501
 
-        Optional: Additional number of milliseconds to wait once the web page has finished loading before taking the screenshot.  Can be helpful for highly asynchronous websites.  # noqa: E501
+        Optional: Additional number of milliseconds to wait once the web page has finished loading before taking the screenshot.  Can be helpful for highly asynchronous websites. Provide a value of 0 for the default of 5000 milliseconds (5 seconds). Maximum is 30000 milliseconds (30 seconds).  # noqa: E501
 
         :return: The extra_loading_wait of this HtmlToPdfRequest.  # noqa: E501
         :rtype: int
@@ -90,13 +100,59 @@ class HtmlToPdfRequest(object):
     def extra_loading_wait(self, extra_loading_wait):
         """Sets the extra_loading_wait of this HtmlToPdfRequest.
 
-        Optional: Additional number of milliseconds to wait once the web page has finished loading before taking the screenshot.  Can be helpful for highly asynchronous websites.  # noqa: E501
+        Optional: Additional number of milliseconds to wait once the web page has finished loading before taking the screenshot.  Can be helpful for highly asynchronous websites. Provide a value of 0 for the default of 5000 milliseconds (5 seconds). Maximum is 30000 milliseconds (30 seconds).  # noqa: E501
 
         :param extra_loading_wait: The extra_loading_wait of this HtmlToPdfRequest.  # noqa: E501
         :type: int
         """
 
         self._extra_loading_wait = extra_loading_wait
+
+    @property
+    def include_background_graphics(self):
+        """Gets the include_background_graphics of this HtmlToPdfRequest.  # noqa: E501
+
+        Optional: Set to true to include background graphics in the PDF, or false to not include.  Default is true.  # noqa: E501
+
+        :return: The include_background_graphics of this HtmlToPdfRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._include_background_graphics
+
+    @include_background_graphics.setter
+    def include_background_graphics(self, include_background_graphics):
+        """Sets the include_background_graphics of this HtmlToPdfRequest.
+
+        Optional: Set to true to include background graphics in the PDF, or false to not include.  Default is true.  # noqa: E501
+
+        :param include_background_graphics: The include_background_graphics of this HtmlToPdfRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._include_background_graphics = include_background_graphics
+
+    @property
+    def scale_factor(self):
+        """Gets the scale_factor of this HtmlToPdfRequest.  # noqa: E501
+
+        Optional: Set to 100 to scale at 100%, set to 50% to scale down to 50% scale, set to 200% to scale up to 200% scale, etc.  Default is 100%. Maximum is 1000%.  # noqa: E501
+
+        :return: The scale_factor of this HtmlToPdfRequest.  # noqa: E501
+        :rtype: int
+        """
+        return self._scale_factor
+
+    @scale_factor.setter
+    def scale_factor(self, scale_factor):
+        """Sets the scale_factor of this HtmlToPdfRequest.
+
+        Optional: Set to 100 to scale at 100%, set to 50% to scale down to 50% scale, set to 200% to scale up to 200% scale, etc.  Default is 100%. Maximum is 1000%.  # noqa: E501
+
+        :param scale_factor: The scale_factor of this HtmlToPdfRequest.  # noqa: E501
+        :type: int
+        """
+
+        self._scale_factor = scale_factor
 
     def to_dict(self):
         """Returns the model properties as a dict"""

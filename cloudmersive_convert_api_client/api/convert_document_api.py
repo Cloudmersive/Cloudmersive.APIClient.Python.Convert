@@ -762,6 +762,347 @@ class ConvertDocumentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def convert_document_csv_multi_to_xlsx(self, input_file1, input_file2, **kwargs):  # noqa: E501
+        """Convert Multiple CSV Files into a Single XLSX Spreadsheet  # noqa: E501
+
+        Convert multiple Comma-Separated Values (CSV) files into a single Excel XLSX Spreadsheet, with one worksheet corresponding to each CSV file.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_csv_multi_to_xlsx(input_file1, input_file2, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file1: First input file to perform the operation on. (required)
+        :param file input_file2: Second input file to perform the operation on. (required)
+        :param file input_file3: Third input file to perform the operation on.
+        :param file input_file4: Fourth input file to perform the operation on.
+        :param file input_file5: Fifth input file to perform the operation on.
+        :param file input_file6: Sixth input file to perform the operation on.
+        :param file input_file7: Seventh input file to perform the operation on.
+        :param file input_file8: Eighth input file to perform the operation on.
+        :param file input_file9: Ninth input file to perform the operation on.
+        :param file input_file10: Tenth input file to perform the operation on.
+        :param str worksheet_names: Optional; Specify the name of each CSV's worksheet in order, separated with commas (e.g. \"worksheet1,worksheet2,worksheet3\"). Defaults to the names of the input CSV files. Recommended when inputting the files directly, without file names.
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_csv_multi_to_xlsx_with_http_info(input_file1, input_file2, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_csv_multi_to_xlsx_with_http_info(input_file1, input_file2, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_csv_multi_to_xlsx_with_http_info(self, input_file1, input_file2, **kwargs):  # noqa: E501
+        """Convert Multiple CSV Files into a Single XLSX Spreadsheet  # noqa: E501
+
+        Convert multiple Comma-Separated Values (CSV) files into a single Excel XLSX Spreadsheet, with one worksheet corresponding to each CSV file.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_csv_multi_to_xlsx_with_http_info(input_file1, input_file2, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file1: First input file to perform the operation on. (required)
+        :param file input_file2: Second input file to perform the operation on. (required)
+        :param file input_file3: Third input file to perform the operation on.
+        :param file input_file4: Fourth input file to perform the operation on.
+        :param file input_file5: Fifth input file to perform the operation on.
+        :param file input_file6: Sixth input file to perform the operation on.
+        :param file input_file7: Seventh input file to perform the operation on.
+        :param file input_file8: Eighth input file to perform the operation on.
+        :param file input_file9: Ninth input file to perform the operation on.
+        :param file input_file10: Tenth input file to perform the operation on.
+        :param str worksheet_names: Optional; Specify the name of each CSV's worksheet in order, separated with commas (e.g. \"worksheet1,worksheet2,worksheet3\"). Defaults to the names of the input CSV files. Recommended when inputting the files directly, without file names.
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file1', 'input_file2', 'input_file3', 'input_file4', 'input_file5', 'input_file6', 'input_file7', 'input_file8', 'input_file9', 'input_file10', 'worksheet_names']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_csv_multi_to_xlsx" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file1' is set
+        if ('input_file1' not in params or
+                params['input_file1'] is None):
+            raise ValueError("Missing the required parameter `input_file1` when calling `convert_document_csv_multi_to_xlsx`")  # noqa: E501
+        # verify the required parameter 'input_file2' is set
+        if ('input_file2' not in params or
+                params['input_file2'] is None):
+            raise ValueError("Missing the required parameter `input_file2` when calling `convert_document_csv_multi_to_xlsx`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'worksheet_names' in params:
+            header_params['worksheetNames'] = params['worksheet_names']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file1' in params:
+            local_var_files['inputFile1'] = params['input_file1']  # noqa: E501
+        if 'input_file2' in params:
+            local_var_files['inputFile2'] = params['input_file2']  # noqa: E501
+        if 'input_file3' in params:
+            local_var_files['inputFile3'] = params['input_file3']  # noqa: E501
+        if 'input_file4' in params:
+            local_var_files['inputFile4'] = params['input_file4']  # noqa: E501
+        if 'input_file5' in params:
+            local_var_files['inputFile5'] = params['input_file5']  # noqa: E501
+        if 'input_file6' in params:
+            local_var_files['inputFile6'] = params['input_file6']  # noqa: E501
+        if 'input_file7' in params:
+            local_var_files['inputFile7'] = params['input_file7']  # noqa: E501
+        if 'input_file8' in params:
+            local_var_files['inputFile8'] = params['input_file8']  # noqa: E501
+        if 'input_file9' in params:
+            local_var_files['inputFile9'] = params['input_file9']  # noqa: E501
+        if 'input_file10' in params:
+            local_var_files['inputFile10'] = params['input_file10']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/csv/multi/to/xlsx', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def convert_document_csv_to_html(self, input_file, **kwargs):  # noqa: E501
+        """Convert CSV to HTML document  # noqa: E501
+
+        Convert Comma-Separated Values (CSV) file to HTML document.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_csv_to_html(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_csv_to_html_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_csv_to_html_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_csv_to_html_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Convert CSV to HTML document  # noqa: E501
+
+        Convert Comma-Separated Values (CSV) file to HTML document.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_csv_to_html_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_csv_to_html" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_csv_to_html`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/csv/to/html', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def convert_document_csv_to_pdf(self, input_file, **kwargs):  # noqa: E501
+        """Convert CSV to PDF document  # noqa: E501
+
+        Convert Comma-Separated Values (CSV) file to PDF document.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_csv_to_pdf(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_csv_to_pdf_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_csv_to_pdf_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_csv_to_pdf_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Convert CSV to PDF document  # noqa: E501
+
+        Convert Comma-Separated Values (CSV) file to PDF document.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_csv_to_pdf_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_csv_to_pdf" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_csv_to_pdf`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/csv/to/pdf', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def convert_document_csv_to_xlsx(self, input_file, **kwargs):  # noqa: E501
         """Convert CSV to Excel XLSX Spreadsheet  # noqa: E501
 
@@ -2381,6 +2722,8 @@ class ConvertDocumentApi(object):
 
         :param async_req bool
         :param file input_file: Input file to perform the operation on. (required)
+        :param bool include_background_graphics: Optional: Set to true to include background graphics in the PDF, or false to not include.  Default is true.
+        :param int scale_factor: Optional: Set to 100 to scale at 100%, set to 50% to scale down to 50% scale, set to 200% to scale up to 200% scale, etc.  Default is 100%. Maximum is 1000%.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2403,12 +2746,14 @@ class ConvertDocumentApi(object):
 
         :param async_req bool
         :param file input_file: Input file to perform the operation on. (required)
+        :param bool include_background_graphics: Optional: Set to true to include background graphics in the PDF, or false to not include.  Default is true.
+        :param int scale_factor: Optional: Set to 100 to scale at 100%, set to 50% to scale down to 50% scale, set to 200% to scale up to 200% scale, etc.  Default is 100%. Maximum is 1000%.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['input_file']  # noqa: E501
+        all_params = ['input_file', 'include_background_graphics', 'scale_factor']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2435,6 +2780,10 @@ class ConvertDocumentApi(object):
         query_params = []
 
         header_params = {}
+        if 'include_background_graphics' in params:
+            header_params['includeBackgroundGraphics'] = params['include_background_graphics']  # noqa: E501
+        if 'scale_factor' in params:
+            header_params['scaleFactor'] = params['scale_factor']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -7009,6 +7358,105 @@ class ConvertDocumentApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='CsvCollection',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def convert_document_xlsx_to_html(self, input_file, **kwargs):  # noqa: E501
+        """Convert Excel XLSX Spreadsheet to HTML Document  # noqa: E501
+
+        Convert Office Excel Spreadsheet (XLSX) to HTML Document.  Converts all worksheets to HTML.  Supports both XLSX and XLSB Excel file formats.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_xlsx_to_html(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_xlsx_to_html_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_xlsx_to_html_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_xlsx_to_html_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Convert Excel XLSX Spreadsheet to HTML Document  # noqa: E501
+
+        Convert Office Excel Spreadsheet (XLSX) to HTML Document.  Converts all worksheets to HTML.  Supports both XLSX and XLSB Excel file formats.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_xlsx_to_html_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_xlsx_to_html" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_xlsx_to_html`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/xlsx/to/html', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

@@ -4,7 +4,7 @@ Convert API lets you effortlessly convert file formats and types.
 This Python package provides a native API client for [Cloudmersive Document Conversion](https://www.cloudmersive.com/convert-api)
 
 - API version: v1
-- Package version: 3.0.3
+- Package version: 3.0.4
 - Build package: io.swagger.codegen.languages.PythonClientCodegen
 
 ## Requirements.
@@ -100,6 +100,9 @@ Class | Method | HTTP request | Description
 *ConvertDocumentApi* | [**convert_document_autodetect_to_thumbnail**](docs/ConvertDocumentApi.md#convert_document_autodetect_to_thumbnail) | **POST** /convert/autodetect/to/thumbnail | Convert File to Thumbnail Image
 *ConvertDocumentApi* | [**convert_document_autodetect_to_thumbnails_advanced**](docs/ConvertDocumentApi.md#convert_document_autodetect_to_thumbnails_advanced) | **POST** /convert/autodetect/to/thumbnail/advanced | Convert File to Thumbnail Image Object
 *ConvertDocumentApi* | [**convert_document_autodetect_to_txt**](docs/ConvertDocumentApi.md#convert_document_autodetect_to_txt) | **POST** /convert/autodetect/to/txt | Convert Document to Text (txt)
+*ConvertDocumentApi* | [**convert_document_csv_multi_to_xlsx**](docs/ConvertDocumentApi.md#convert_document_csv_multi_to_xlsx) | **POST** /convert/csv/multi/to/xlsx | Convert Multiple CSV Files into a Single XLSX Spreadsheet
+*ConvertDocumentApi* | [**convert_document_csv_to_html**](docs/ConvertDocumentApi.md#convert_document_csv_to_html) | **POST** /convert/csv/to/html | Convert CSV to HTML document
+*ConvertDocumentApi* | [**convert_document_csv_to_pdf**](docs/ConvertDocumentApi.md#convert_document_csv_to_pdf) | **POST** /convert/csv/to/pdf | Convert CSV to PDF document
 *ConvertDocumentApi* | [**convert_document_csv_to_xlsx**](docs/ConvertDocumentApi.md#convert_document_csv_to_xlsx) | **POST** /convert/csv/to/xlsx | Convert CSV to Excel XLSX Spreadsheet
 *ConvertDocumentApi* | [**convert_document_doc_to_docx**](docs/ConvertDocumentApi.md#convert_document_doc_to_docx) | **POST** /convert/doc/to/docx | Convert Word DOC (97-03) Document to DOCX
 *ConvertDocumentApi* | [**convert_document_doc_to_pdf**](docs/ConvertDocumentApi.md#convert_document_doc_to_pdf) | **POST** /convert/doc/to/pdf | Convert Word DOC (97-03) Document to PDF
@@ -162,6 +165,7 @@ Class | Method | HTTP request | Description
 *ConvertDocumentApi* | [**convert_document_xls_to_xlsx**](docs/ConvertDocumentApi.md#convert_document_xls_to_xlsx) | **POST** /convert/xls/to/xlsx | Convert Excel XLS (97-03) Spreadsheet to XLSX
 *ConvertDocumentApi* | [**convert_document_xlsx_to_csv**](docs/ConvertDocumentApi.md#convert_document_xlsx_to_csv) | **POST** /convert/xlsx/to/csv | Convert Excel XLSX Spreadsheet to CSV, Single Worksheet
 *ConvertDocumentApi* | [**convert_document_xlsx_to_csv_multi**](docs/ConvertDocumentApi.md#convert_document_xlsx_to_csv_multi) | **POST** /convert/xlsx/to/csv/multi | Convert Excel XLSX Spreadsheet to CSV, Multiple Worksheets
+*ConvertDocumentApi* | [**convert_document_xlsx_to_html**](docs/ConvertDocumentApi.md#convert_document_xlsx_to_html) | **POST** /convert/xlsx/to/html | Convert Excel XLSX Spreadsheet to HTML Document
 *ConvertDocumentApi* | [**convert_document_xlsx_to_pdf**](docs/ConvertDocumentApi.md#convert_document_xlsx_to_pdf) | **POST** /convert/xlsx/to/pdf | Convert Excel XLSX Spreadsheet to PDF
 *ConvertDocumentApi* | [**convert_document_xlsx_to_png**](docs/ConvertDocumentApi.md#convert_document_xlsx_to_png) | **POST** /convert/xlsx/to/png | Convert Excel XLSX spreadsheet to PNG image array
 *ConvertDocumentApi* | [**convert_document_xlsx_to_txt**](docs/ConvertDocumentApi.md#convert_document_xlsx_to_txt) | **POST** /convert/xlsx/to/txt | Convert Excel XLSX Spreadsheet to Text (txt)
@@ -204,6 +208,7 @@ Class | Method | HTTP request | Description
 *EditDocumentApi* | [**edit_document_docx_remove_headers_and_footers**](docs/EditDocumentApi.md#edit_document_docx_remove_headers_and_footers) | **POST** /convert/edit/docx/remove-headers-and-footers | Remove headers and footers from Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_remove_object**](docs/EditDocumentApi.md#edit_document_docx_remove_object) | **POST** /convert/edit/docx/remove-object | Delete any object in a Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_replace**](docs/EditDocumentApi.md#edit_document_docx_replace) | **POST** /convert/edit/docx/replace-all | Replace string in Word DOCX document
+*EditDocumentApi* | [**edit_document_docx_replace_multi**](docs/EditDocumentApi.md#edit_document_docx_replace_multi) | **POST** /convert/edit/docx/replace-all/multi | Replace multiple strings in Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_replace_paragraph**](docs/EditDocumentApi.md#edit_document_docx_replace_paragraph) | **POST** /convert/edit/docx/replace/paragraph | Replace matching paragraphs in a Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_set_footer**](docs/EditDocumentApi.md#edit_document_docx_set_footer) | **POST** /convert/edit/docx/set-footer | Set the footer in a Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_set_footer_add_page_number**](docs/EditDocumentApi.md#edit_document_docx_set_footer_add_page_number) | **POST** /convert/edit/docx/set-footer/add-page-number | Add page number to footer in a Word DOCX document
@@ -233,6 +238,10 @@ Class | Method | HTTP request | Description
 *EditDocumentApi* | [**edit_document_xlsx_rename_worksheet**](docs/EditDocumentApi.md#edit_document_xlsx_rename_worksheet) | **POST** /convert/edit/xlsx/rename-worksheet | Rename a specific worksheet in a Excel XLSX spreadsheet
 *EditDocumentApi* | [**edit_document_xlsx_set_cell_by_identifier**](docs/EditDocumentApi.md#edit_document_xlsx_set_cell_by_identifier) | **POST** /convert/edit/xlsx/set-cell/by-identifier | Set, update cell contents in an Excel XLSX spreadsheet, worksheet by cell identifier
 *EditDocumentApi* | [**edit_document_xlsx_set_cell_by_index**](docs/EditDocumentApi.md#edit_document_xlsx_set_cell_by_index) | **POST** /convert/edit/xlsx/set-cell/by-index | Set, update cell contents in an Excel XLSX spreadsheet, worksheet by index
+*EditHtmlApi* | [**edit_html_html_append_heading**](docs/EditHtmlApi.md#edit_html_html_append_heading) | **POST** /convert/edit/html/append/heading | Append a Heading to an HTML Document
+*EditHtmlApi* | [**edit_html_html_append_image_from_url**](docs/EditHtmlApi.md#edit_html_html_append_image_from_url) | **POST** /convert/edit/html/append/image/from-url | Append an Image to an HTML Document from a URL
+*EditHtmlApi* | [**edit_html_html_append_image_inline**](docs/EditHtmlApi.md#edit_html_html_append_image_inline) | **POST** /convert/edit/html/append/image/inline | Append a Base64 Inline Image to an HTML Document
+*EditHtmlApi* | [**edit_html_html_append_paragraph**](docs/EditHtmlApi.md#edit_html_html_append_paragraph) | **POST** /convert/edit/html/append/paragraph | Append a Paragraph to an HTML Document
 *EditPdfApi* | [**edit_pdf_add_annotations**](docs/EditPdfApi.md#edit_pdf_add_annotations) | **POST** /convert/edit/pdf/annotations/add-item | Add one or more PDF annotations, comments in the PDF document
 *EditPdfApi* | [**edit_pdf_decrypt**](docs/EditPdfApi.md#edit_pdf_decrypt) | **POST** /convert/edit/pdf/decrypt | Decrypt and password-protect a PDF
 *EditPdfApi* | [**edit_pdf_delete_pages**](docs/EditPdfApi.md#edit_pdf_delete_pages) | **POST** /convert/edit/pdf/pages/delete | Remove, delete pages from a PDF document
@@ -282,6 +291,8 @@ Class | Method | HTTP request | Description
 *SplitDocumentApi* | [**split_document_txt_by_line**](docs/SplitDocumentApi.md#split_document_txt_by_line) | **POST** /convert/split/txt/by-line | Split a single Text file (txt) into lines
 *SplitDocumentApi* | [**split_document_txt_by_string**](docs/SplitDocumentApi.md#split_document_txt_by_string) | **POST** /convert/split/txt/by-string | Split a single Text file (txt) by a string delimiter
 *SplitDocumentApi* | [**split_document_xlsx**](docs/SplitDocumentApi.md#split_document_xlsx) | **POST** /convert/split/xlsx | Split a single Excel XLSX into Separate Worksheets
+*TransformDocumentApi* | [**transform_document_docx_replace**](docs/TransformDocumentApi.md#transform_document_docx_replace) | **POST** /convert/transform/docx/replace-all | Replace string in Word DOCX document
+*TransformDocumentApi* | [**transform_document_pptx_replace**](docs/TransformDocumentApi.md#transform_document_pptx_replace) | **POST** /convert/transform/pptx/replace-all | Replace string in PowerPoint PPTX presentation
 *ValidateDocumentApi* | [**validate_document_autodetect_validation**](docs/ValidateDocumentApi.md#validate_document_autodetect_validation) | **POST** /convert/validate/autodetect | Autodetect content type and validate
 *ValidateDocumentApi* | [**validate_document_csv_validation**](docs/ValidateDocumentApi.md#validate_document_csv_validation) | **POST** /convert/validate/csv | Validate a CSV file document (CSV)
 *ValidateDocumentApi* | [**validate_document_docx_validation**](docs/ValidateDocumentApi.md#validate_document_docx_validation) | **POST** /convert/validate/docx | Validate a Word document (DOCX)
@@ -458,6 +469,7 @@ Class | Method | HTTP request | Description
  - [MsgToHtmlResult](docs/MsgToHtmlResult.md)
  - [MsgToJpgResult](docs/MsgToJpgResult.md)
  - [MsgToPngResult](docs/MsgToPngResult.md)
+ - [MultiReplaceStringRequest](docs/MultiReplaceStringRequest.md)
  - [MultipageImageFormatConversionResult](docs/MultipageImageFormatConversionResult.md)
  - [OdpToJpgResult](docs/OdpToJpgResult.md)
  - [OdpToPngResult](docs/OdpToPngResult.md)
@@ -505,6 +517,7 @@ Class | Method | HTTP request | Description
  - [SetXlsxCellByIdentifierResponse](docs/SetXlsxCellByIdentifierResponse.md)
  - [SetXlsxCellRequest](docs/SetXlsxCellRequest.md)
  - [SetXlsxCellResponse](docs/SetXlsxCellResponse.md)
+ - [SingleReplaceString](docs/SingleReplaceString.md)
  - [SplitDocumentResult](docs/SplitDocumentResult.md)
  - [SplitDocxDocumentResult](docs/SplitDocxDocumentResult.md)
  - [SplitPdfResult](docs/SplitPdfResult.md)

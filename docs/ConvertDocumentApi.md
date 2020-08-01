@@ -11,6 +11,9 @@ Method | HTTP request | Description
 [**convert_document_autodetect_to_thumbnail**](ConvertDocumentApi.md#convert_document_autodetect_to_thumbnail) | **POST** /convert/autodetect/to/thumbnail | Convert File to Thumbnail Image
 [**convert_document_autodetect_to_thumbnails_advanced**](ConvertDocumentApi.md#convert_document_autodetect_to_thumbnails_advanced) | **POST** /convert/autodetect/to/thumbnail/advanced | Convert File to Thumbnail Image Object
 [**convert_document_autodetect_to_txt**](ConvertDocumentApi.md#convert_document_autodetect_to_txt) | **POST** /convert/autodetect/to/txt | Convert Document to Text (txt)
+[**convert_document_csv_multi_to_xlsx**](ConvertDocumentApi.md#convert_document_csv_multi_to_xlsx) | **POST** /convert/csv/multi/to/xlsx | Convert Multiple CSV Files into a Single XLSX Spreadsheet
+[**convert_document_csv_to_html**](ConvertDocumentApi.md#convert_document_csv_to_html) | **POST** /convert/csv/to/html | Convert CSV to HTML document
+[**convert_document_csv_to_pdf**](ConvertDocumentApi.md#convert_document_csv_to_pdf) | **POST** /convert/csv/to/pdf | Convert CSV to PDF document
 [**convert_document_csv_to_xlsx**](ConvertDocumentApi.md#convert_document_csv_to_xlsx) | **POST** /convert/csv/to/xlsx | Convert CSV to Excel XLSX Spreadsheet
 [**convert_document_doc_to_docx**](ConvertDocumentApi.md#convert_document_doc_to_docx) | **POST** /convert/doc/to/docx | Convert Word DOC (97-03) Document to DOCX
 [**convert_document_doc_to_pdf**](ConvertDocumentApi.md#convert_document_doc_to_pdf) | **POST** /convert/doc/to/pdf | Convert Word DOC (97-03) Document to PDF
@@ -73,6 +76,7 @@ Method | HTTP request | Description
 [**convert_document_xls_to_xlsx**](ConvertDocumentApi.md#convert_document_xls_to_xlsx) | **POST** /convert/xls/to/xlsx | Convert Excel XLS (97-03) Spreadsheet to XLSX
 [**convert_document_xlsx_to_csv**](ConvertDocumentApi.md#convert_document_xlsx_to_csv) | **POST** /convert/xlsx/to/csv | Convert Excel XLSX Spreadsheet to CSV, Single Worksheet
 [**convert_document_xlsx_to_csv_multi**](ConvertDocumentApi.md#convert_document_xlsx_to_csv_multi) | **POST** /convert/xlsx/to/csv/multi | Convert Excel XLSX Spreadsheet to CSV, Multiple Worksheets
+[**convert_document_xlsx_to_html**](ConvertDocumentApi.md#convert_document_xlsx_to_html) | **POST** /convert/xlsx/to/html | Convert Excel XLSX Spreadsheet to HTML Document
 [**convert_document_xlsx_to_pdf**](ConvertDocumentApi.md#convert_document_xlsx_to_pdf) | **POST** /convert/xlsx/to/pdf | Convert Excel XLSX Spreadsheet to PDF
 [**convert_document_xlsx_to_png**](ConvertDocumentApi.md#convert_document_xlsx_to_png) | **POST** /convert/xlsx/to/png | Convert Excel XLSX spreadsheet to PNG image array
 [**convert_document_xlsx_to_txt**](ConvertDocumentApi.md#convert_document_xlsx_to_txt) | **POST** /convert/xlsx/to/txt | Convert Excel XLSX Spreadsheet to Text (txt)
@@ -471,6 +475,188 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: multipart/form-data
  - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **convert_document_csv_multi_to_xlsx**
+> str convert_document_csv_multi_to_xlsx(input_file1, input_file2, input_file3=input_file3, input_file4=input_file4, input_file5=input_file5, input_file6=input_file6, input_file7=input_file7, input_file8=input_file8, input_file9=input_file9, input_file10=input_file10, worksheet_names=worksheet_names)
+
+Convert Multiple CSV Files into a Single XLSX Spreadsheet
+
+Convert multiple Comma-Separated Values (CSV) files into a single Excel XLSX Spreadsheet, with one worksheet corresponding to each CSV file.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_convert_api_client
+from cloudmersive_convert_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_convert_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_convert_api_client.ConvertDocumentApi(cloudmersive_convert_api_client.ApiClient(configuration))
+input_file1 = '/path/to/file.txt' # file | First input file to perform the operation on.
+input_file2 = '/path/to/file.txt' # file | Second input file to perform the operation on.
+input_file3 = '/path/to/file.txt' # file | Third input file to perform the operation on. (optional)
+input_file4 = '/path/to/file.txt' # file | Fourth input file to perform the operation on. (optional)
+input_file5 = '/path/to/file.txt' # file | Fifth input file to perform the operation on. (optional)
+input_file6 = '/path/to/file.txt' # file | Sixth input file to perform the operation on. (optional)
+input_file7 = '/path/to/file.txt' # file | Seventh input file to perform the operation on. (optional)
+input_file8 = '/path/to/file.txt' # file | Eighth input file to perform the operation on. (optional)
+input_file9 = '/path/to/file.txt' # file | Ninth input file to perform the operation on. (optional)
+input_file10 = '/path/to/file.txt' # file | Tenth input file to perform the operation on. (optional)
+worksheet_names = 'worksheet_names_example' # str | Optional; Specify the name of each CSV's worksheet in order, separated with commas (e.g. \"worksheet1,worksheet2,worksheet3\"). Defaults to the names of the input CSV files. Recommended when inputting the files directly, without file names. (optional)
+
+try:
+    # Convert Multiple CSV Files into a Single XLSX Spreadsheet
+    api_response = api_instance.convert_document_csv_multi_to_xlsx(input_file1, input_file2, input_file3=input_file3, input_file4=input_file4, input_file5=input_file5, input_file6=input_file6, input_file7=input_file7, input_file8=input_file8, input_file9=input_file9, input_file10=input_file10, worksheet_names=worksheet_names)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConvertDocumentApi->convert_document_csv_multi_to_xlsx: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **input_file1** | **file**| First input file to perform the operation on. | 
+ **input_file2** | **file**| Second input file to perform the operation on. | 
+ **input_file3** | **file**| Third input file to perform the operation on. | [optional] 
+ **input_file4** | **file**| Fourth input file to perform the operation on. | [optional] 
+ **input_file5** | **file**| Fifth input file to perform the operation on. | [optional] 
+ **input_file6** | **file**| Sixth input file to perform the operation on. | [optional] 
+ **input_file7** | **file**| Seventh input file to perform the operation on. | [optional] 
+ **input_file8** | **file**| Eighth input file to perform the operation on. | [optional] 
+ **input_file9** | **file**| Ninth input file to perform the operation on. | [optional] 
+ **input_file10** | **file**| Tenth input file to perform the operation on. | [optional] 
+ **worksheet_names** | **str**| Optional; Specify the name of each CSV&#39;s worksheet in order, separated with commas (e.g. \&quot;worksheet1,worksheet2,worksheet3\&quot;). Defaults to the names of the input CSV files. Recommended when inputting the files directly, without file names. | [optional] 
+
+### Return type
+
+**str**
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/octet-stream
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **convert_document_csv_to_html**
+> str convert_document_csv_to_html(input_file)
+
+Convert CSV to HTML document
+
+Convert Comma-Separated Values (CSV) file to HTML document.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_convert_api_client
+from cloudmersive_convert_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_convert_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_convert_api_client.ConvertDocumentApi(cloudmersive_convert_api_client.ApiClient(configuration))
+input_file = '/path/to/file.txt' # file | Input file to perform the operation on.
+
+try:
+    # Convert CSV to HTML document
+    api_response = api_instance.convert_document_csv_to_html(input_file)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConvertDocumentApi->convert_document_csv_to_html: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **input_file** | **file**| Input file to perform the operation on. | 
+
+### Return type
+
+**str**
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/octet-stream
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **convert_document_csv_to_pdf**
+> str convert_document_csv_to_pdf(input_file)
+
+Convert CSV to PDF document
+
+Convert Comma-Separated Values (CSV) file to PDF document.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_convert_api_client
+from cloudmersive_convert_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_convert_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_convert_api_client.ConvertDocumentApi(cloudmersive_convert_api_client.ApiClient(configuration))
+input_file = '/path/to/file.txt' # file | Input file to perform the operation on.
+
+try:
+    # Convert CSV to PDF document
+    api_response = api_instance.convert_document_csv_to_pdf(input_file)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConvertDocumentApi->convert_document_csv_to_pdf: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **input_file** | **file**| Input file to perform the operation on. | 
+
+### Return type
+
+**str**
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/octet-stream
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1355,7 +1541,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **convert_document_html_to_pdf**
-> str convert_document_html_to_pdf(input_file)
+> str convert_document_html_to_pdf(input_file, include_background_graphics=include_background_graphics, scale_factor=scale_factor)
 
 Convert HTML document file to PDF Document
 
@@ -1378,10 +1564,12 @@ configuration.api_key['Apikey'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = cloudmersive_convert_api_client.ConvertDocumentApi(cloudmersive_convert_api_client.ApiClient(configuration))
 input_file = '/path/to/file.txt' # file | Input file to perform the operation on.
+include_background_graphics = true # bool | Optional: Set to true to include background graphics in the PDF, or false to not include.  Default is true. (optional)
+scale_factor = 56 # int | Optional: Set to 100 to scale at 100%, set to 50% to scale down to 50% scale, set to 200% to scale up to 200% scale, etc.  Default is 100%. Maximum is 1000%. (optional)
 
 try:
     # Convert HTML document file to PDF Document
-    api_response = api_instance.convert_document_html_to_pdf(input_file)
+    api_response = api_instance.convert_document_html_to_pdf(input_file, include_background_graphics=include_background_graphics, scale_factor=scale_factor)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConvertDocumentApi->convert_document_html_to_pdf: %s\n" % e)
@@ -1392,6 +1580,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **input_file** | **file**| Input file to perform the operation on. | 
+ **include_background_graphics** | **bool**| Optional: Set to true to include background graphics in the PDF, or false to not include.  Default is true. | [optional] 
+ **scale_factor** | **int**| Optional: Set to 100 to scale at 100%, set to 50% to scale down to 50% scale, set to 200% to scale up to 200% scale, etc.  Default is 100%. Maximum is 1000%. | [optional] 
 
 ### Return type
 
@@ -3870,6 +4060,60 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CsvCollection**](CsvCollection.md)
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/octet-stream
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **convert_document_xlsx_to_html**
+> str convert_document_xlsx_to_html(input_file)
+
+Convert Excel XLSX Spreadsheet to HTML Document
+
+Convert Office Excel Spreadsheet (XLSX) to HTML Document.  Converts all worksheets to HTML.  Supports both XLSX and XLSB Excel file formats.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_convert_api_client
+from cloudmersive_convert_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_convert_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_convert_api_client.ConvertDocumentApi(cloudmersive_convert_api_client.ApiClient(configuration))
+input_file = '/path/to/file.txt' # file | Input file to perform the operation on.
+
+try:
+    # Convert Excel XLSX Spreadsheet to HTML Document
+    api_response = api_instance.convert_document_xlsx_to_html(input_file)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConvertDocumentApi->convert_document_xlsx_to_html: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **input_file** | **file**| Input file to perform the operation on. | 
+
+### Return type
+
+**str**
 
 ### Authorization
 

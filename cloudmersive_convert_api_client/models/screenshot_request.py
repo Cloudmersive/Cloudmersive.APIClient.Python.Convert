@@ -89,7 +89,7 @@ class ScreenshotRequest(object):
     def extra_loading_wait(self):
         """Gets the extra_loading_wait of this ScreenshotRequest.  # noqa: E501
 
-        Optional: Additional number of milliseconds to wait once the web page has finished loading before taking the screenshot.  Can be helpful for highly asynchronous websites.  Provide a value of 0 for the default of 5000 milliseconds (5 seconds)  # noqa: E501
+        Optional: Additional number of milliseconds to wait once the web page has finished loading before taking the screenshot.  Can be helpful for highly asynchronous websites.  Provide a value of 0 for the default of 5000 milliseconds (5 seconds). Maximum is 20000 milliseconds (20 seconds).  # noqa: E501
 
         :return: The extra_loading_wait of this ScreenshotRequest.  # noqa: E501
         :rtype: int
@@ -100,7 +100,7 @@ class ScreenshotRequest(object):
     def extra_loading_wait(self, extra_loading_wait):
         """Sets the extra_loading_wait of this ScreenshotRequest.
 
-        Optional: Additional number of milliseconds to wait once the web page has finished loading before taking the screenshot.  Can be helpful for highly asynchronous websites.  Provide a value of 0 for the default of 5000 milliseconds (5 seconds)  # noqa: E501
+        Optional: Additional number of milliseconds to wait once the web page has finished loading before taking the screenshot.  Can be helpful for highly asynchronous websites.  Provide a value of 0 for the default of 5000 milliseconds (5 seconds). Maximum is 20000 milliseconds (20 seconds).  # noqa: E501
 
         :param extra_loading_wait: The extra_loading_wait of this ScreenshotRequest.  # noqa: E501
         :type: int
