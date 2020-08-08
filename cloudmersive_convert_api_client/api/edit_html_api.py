@@ -45,8 +45,9 @@ class EditHtmlApi(object):
         :param async_req bool
         :param str heading_text: The text content to be used in the header. (required)
         :param file input_file: Optional: Input file to perform the operation on.
-        :param str input_file_url: Optional: URL of a file to operate on as input.  This can be a public URL, or you can also use the begin-editing API (part of EditDocumentApi) to upload a document and pass in the secure URL result from that operation as the URL here (this URL is not public).
-        :param int heading_size: Optional: The heading size number. Default is 1.
+        :param str input_file_url: Optional: URL of a file to operate on as input.
+        :param int heading_size: Optional: The heading size number. Default is 1. Accepts values between 1 and 6.
+        :param str css_style: Optional: The CSS style for the heading.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -70,14 +71,15 @@ class EditHtmlApi(object):
         :param async_req bool
         :param str heading_text: The text content to be used in the header. (required)
         :param file input_file: Optional: Input file to perform the operation on.
-        :param str input_file_url: Optional: URL of a file to operate on as input.  This can be a public URL, or you can also use the begin-editing API (part of EditDocumentApi) to upload a document and pass in the secure URL result from that operation as the URL here (this URL is not public).
-        :param int heading_size: Optional: The heading size number. Default is 1.
+        :param str input_file_url: Optional: URL of a file to operate on as input.
+        :param int heading_size: Optional: The heading size number. Default is 1. Accepts values between 1 and 6.
+        :param str css_style: Optional: The CSS style for the heading.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['heading_text', 'input_file', 'input_file_url', 'heading_size']  # noqa: E501
+        all_params = ['heading_text', 'input_file', 'input_file_url', 'heading_size', 'css_style']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -110,6 +112,8 @@ class EditHtmlApi(object):
             header_params['headingText'] = params['heading_text']  # noqa: E501
         if 'heading_size' in params:
             header_params['headingSize'] = params['heading_size']  # noqa: E501
+        if 'css_style' in params:
+            header_params['cssStyle'] = params['css_style']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -152,7 +156,7 @@ class EditHtmlApi(object):
         :param async_req bool
         :param str image_url: The URL for the image. (required)
         :param file input_file: Optional: Input file to perform the operation on.
-        :param str input_file_url: Optional: URL of a file to operate on as input.  This can be a public URL, or you can also use the begin-editing API (part of EditDocumentApi) to upload a document and pass in the secure URL result from that operation as the URL here (this URL is not public).
+        :param str input_file_url: Optional: URL of a file to operate on as input.
         :param str css_style: Optional: CSS style for the image.
         :return: str
                  If the method is called asynchronously,
@@ -177,7 +181,7 @@ class EditHtmlApi(object):
         :param async_req bool
         :param str image_url: The URL for the image. (required)
         :param file input_file: Optional: Input file to perform the operation on.
-        :param str input_file_url: Optional: URL of a file to operate on as input.  This can be a public URL, or you can also use the begin-editing API (part of EditDocumentApi) to upload a document and pass in the secure URL result from that operation as the URL here (this URL is not public).
+        :param str input_file_url: Optional: URL of a file to operate on as input.
         :param str css_style: Optional: CSS style for the image.
         :return: str
                  If the method is called asynchronously,
@@ -258,11 +262,11 @@ class EditHtmlApi(object):
 
         :param async_req bool
         :param file input_file: Optional: Input file to perform the operation on.
-        :param str input_file_url: Optional: URL of a file to operate on as input.  This can be a public URL, or you can also use the begin-editing API (part of EditDocumentApi) to upload a document and pass in the secure URL result from that operation as the URL here (this URL is not public).
+        :param str input_file_url: Optional: URL of a file to operate on as input.
         :param file image_file: Optional: Image file to be appended as base64 inline image.
         :param str image_url: Optional: Image URL to be appended as base64 inline image.
         :param str css_style: Optional: CSS style for the image.
-        :param str image_extension: Optional: The extension (JPG, PNG, GIF, etc.) of the image file. Recommended if uploading a file directly, such as with a byte array. If no extension can be determined, will default to JPG.
+        :param str image_extension: Optional: The extension (JPG, PNG, GIF, etc.) of the image file. Recommended if uploading an imageFile directly, instead of using imageUrl. If no extension can be determined, will default to JPG.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -285,11 +289,11 @@ class EditHtmlApi(object):
 
         :param async_req bool
         :param file input_file: Optional: Input file to perform the operation on.
-        :param str input_file_url: Optional: URL of a file to operate on as input.  This can be a public URL, or you can also use the begin-editing API (part of EditDocumentApi) to upload a document and pass in the secure URL result from that operation as the URL here (this URL is not public).
+        :param str input_file_url: Optional: URL of a file to operate on as input.
         :param file image_file: Optional: Image file to be appended as base64 inline image.
         :param str image_url: Optional: Image URL to be appended as base64 inline image.
         :param str css_style: Optional: CSS style for the image.
-        :param str image_extension: Optional: The extension (JPG, PNG, GIF, etc.) of the image file. Recommended if uploading a file directly, such as with a byte array. If no extension can be determined, will default to JPG.
+        :param str image_extension: Optional: The extension (JPG, PNG, GIF, etc.) of the image file. Recommended if uploading an imageFile directly, instead of using imageUrl. If no extension can be determined, will default to JPG.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -339,6 +343,10 @@ class EditHtmlApi(object):
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
 
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
         # Authentication setting
         auth_settings = ['Apikey']  # noqa: E501
 
@@ -370,7 +378,8 @@ class EditHtmlApi(object):
         :param async_req bool
         :param str paragraph_text: The text content to be used in the paragraph. (required)
         :param file input_file: Optional: Input file to perform the operation on.
-        :param str input_file_url: Optional: URL of a file to operate on as input.  This can be a public URL, or you can also use the begin-editing API (part of EditDocumentApi) to upload a document and pass in the secure URL result from that operation as the URL here (this URL is not public).
+        :param str input_file_url: Optional: URL of a file to operate on as input.
+        :param str css_style: Optional: The CSS style for the paragraph.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -394,13 +403,14 @@ class EditHtmlApi(object):
         :param async_req bool
         :param str paragraph_text: The text content to be used in the paragraph. (required)
         :param file input_file: Optional: Input file to perform the operation on.
-        :param str input_file_url: Optional: URL of a file to operate on as input.  This can be a public URL, or you can also use the begin-editing API (part of EditDocumentApi) to upload a document and pass in the secure URL result from that operation as the URL here (this URL is not public).
+        :param str input_file_url: Optional: URL of a file to operate on as input.
+        :param str css_style: Optional: The CSS style for the paragraph.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['paragraph_text', 'input_file', 'input_file_url']  # noqa: E501
+        all_params = ['paragraph_text', 'input_file', 'input_file_url', 'css_style']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -431,6 +441,8 @@ class EditHtmlApi(object):
             header_params['inputFileUrl'] = params['input_file_url']  # noqa: E501
         if 'paragraph_text' in params:
             header_params['paragraphText'] = params['paragraph_text']  # noqa: E501
+        if 'css_style' in params:
+            header_params['cssStyle'] = params['css_style']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -447,6 +459,113 @@ class EditHtmlApi(object):
 
         return self.api_client.call_api(
             '/convert/edit/html/append/paragraph', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def edit_html_html_create_blank_document(self, **kwargs):  # noqa: E501
+        """Create a Blank HTML Document  # noqa: E501
+
+        Returns a blank HTML Document format file.  The file is blank, with no contents by default.  Use the optional input parameters to add various starting elements.  Use additional editing commands such as Append Header, Append Paragraph or Append Image from URL to populate the document.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_html_html_create_blank_document(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str title: Optional: The title of the HTML document
+        :param str css_url: Optional: A CSS style URL to be added to the document.
+        :param str css_inline: Optional: An inline CSS style to be added to the document.
+        :param str javascript_url: Optional: Javascript URL to be added to the document.
+        :param str javascript_inline: Optional: Inline Javascript to be added to the document.
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.edit_html_html_create_blank_document_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.edit_html_html_create_blank_document_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def edit_html_html_create_blank_document_with_http_info(self, **kwargs):  # noqa: E501
+        """Create a Blank HTML Document  # noqa: E501
+
+        Returns a blank HTML Document format file.  The file is blank, with no contents by default.  Use the optional input parameters to add various starting elements.  Use additional editing commands such as Append Header, Append Paragraph or Append Image from URL to populate the document.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_html_html_create_blank_document_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str title: Optional: The title of the HTML document
+        :param str css_url: Optional: A CSS style URL to be added to the document.
+        :param str css_inline: Optional: An inline CSS style to be added to the document.
+        :param str javascript_url: Optional: Javascript URL to be added to the document.
+        :param str javascript_inline: Optional: Inline Javascript to be added to the document.
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['title', 'css_url', 'css_inline', 'javascript_url', 'javascript_inline']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method edit_html_html_create_blank_document" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'title' in params:
+            header_params['title'] = params['title']  # noqa: E501
+        if 'css_url' in params:
+            header_params['cssUrl'] = params['css_url']  # noqa: E501
+        if 'css_inline' in params:
+            header_params['cssInline'] = params['css_inline']  # noqa: E501
+        if 'javascript_url' in params:
+            header_params['javascriptUrl'] = params['javascript_url']  # noqa: E501
+        if 'javascript_inline' in params:
+            header_params['javascriptInline'] = params['javascript_inline']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/edit/html/create/blank', 'POST',
             path_params,
             query_params,
             header_params,
