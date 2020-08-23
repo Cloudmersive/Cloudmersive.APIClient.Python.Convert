@@ -132,6 +132,105 @@ class EditDocumentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def edit_document_docx_accept_all_track_changes(self, input_file, **kwargs):  # noqa: E501
+        """Accept all tracked changes, revisions in a Word DOCX document  # noqa: E501
+
+        Accepts all tracked changes and revisions in a Word DOCX document.  This will accept all pending changes in the document when tracked changes is turned on.  Track changes will remain on (if it is on) after this oepration is completed.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_docx_accept_all_track_changes(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.edit_document_docx_accept_all_track_changes_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.edit_document_docx_accept_all_track_changes_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def edit_document_docx_accept_all_track_changes_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Accept all tracked changes, revisions in a Word DOCX document  # noqa: E501
+
+        Accepts all tracked changes and revisions in a Word DOCX document.  This will accept all pending changes in the document when tracked changes is turned on.  Track changes will remain on (if it is on) after this oepration is completed.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_docx_accept_all_track_changes_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method edit_document_docx_accept_all_track_changes" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `edit_document_docx_accept_all_track_changes`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/edit/docx/track-changes/accept-all', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def edit_document_docx_body(self, req_config, **kwargs):  # noqa: E501
         """Get body from a Word DOCX document  # noqa: E501
 
@@ -620,6 +719,204 @@ class EditDocumentApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='DeleteDocxTableRowRangeResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def edit_document_docx_disable_track_changes(self, input_file, **kwargs):  # noqa: E501
+        """Disable track changes, revisions in a Word DOCX document  # noqa: E501
+
+        Diables tracking of changes and revisions in a Word DOCX document, and accepts any pending changes.  Users editing the document will no longer see changes tracked automatically.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_docx_disable_track_changes(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.edit_document_docx_disable_track_changes_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.edit_document_docx_disable_track_changes_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def edit_document_docx_disable_track_changes_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Disable track changes, revisions in a Word DOCX document  # noqa: E501
+
+        Diables tracking of changes and revisions in a Word DOCX document, and accepts any pending changes.  Users editing the document will no longer see changes tracked automatically.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_docx_disable_track_changes_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method edit_document_docx_disable_track_changes" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `edit_document_docx_disable_track_changes`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/edit/docx/track-changes/disable', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def edit_document_docx_enable_track_changes(self, input_file, **kwargs):  # noqa: E501
+        """Enable track changes, revisions in a Word DOCX document  # noqa: E501
+
+        Enables tracking of changes and revisions in a Word DOCX document.  Users editing the document will see changes tracked automatically, with edits highlighted, and the ability to accept or reject changes made to the document.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_docx_enable_track_changes(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.edit_document_docx_enable_track_changes_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.edit_document_docx_enable_track_changes_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def edit_document_docx_enable_track_changes_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Enable track changes, revisions in a Word DOCX document  # noqa: E501
+
+        Enables tracking of changes and revisions in a Word DOCX document.  Users editing the document will see changes tracked automatically, with edits highlighted, and the ability to accept or reject changes made to the document.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_docx_enable_track_changes_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method edit_document_docx_enable_track_changes" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `edit_document_docx_enable_track_changes`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/edit/docx/track-changes/enable', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2204,6 +2501,105 @@ class EditDocumentApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='GetDocxPagesResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def edit_document_docx_remove_all_comments(self, input_file, **kwargs):  # noqa: E501
+        """Remove all comments from a Word DOCX document  # noqa: E501
+
+        Removes all of the comments from a Word Document.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_docx_remove_all_comments(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.edit_document_docx_remove_all_comments_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.edit_document_docx_remove_all_comments_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def edit_document_docx_remove_all_comments_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Remove all comments from a Word DOCX document  # noqa: E501
+
+        Removes all of the comments from a Word Document.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.edit_document_docx_remove_all_comments_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method edit_document_docx_remove_all_comments" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `edit_document_docx_remove_all_comments`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/edit/docx/comments/remove-all', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
