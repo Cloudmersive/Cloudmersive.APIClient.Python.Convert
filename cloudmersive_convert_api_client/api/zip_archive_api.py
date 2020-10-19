@@ -267,6 +267,153 @@ class ZipArchiveApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def zip_archive_zip_create_encrypted(self, password, input_file1, **kwargs):  # noqa: E501
+        """Compress files to create a new, encrypted and password-protected zip archive  # noqa: E501
+
+        Create a new zip archive by compressing input files, and also applies encryption and password protection to the zip.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.zip_archive_zip_create_encrypted(password, input_file1, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str password: Password to place on the Zip file; the longer the password, the more secure (required)
+        :param file input_file1: First input file to perform the operation on. (required)
+        :param str encryption_algorithm: Encryption algorithm to use; possible values are AES-256 (recommended), AES-128, and PK-Zip (not recommended; legacy, weak encryption algorithm). Default is AES-256.
+        :param file input_file2: Second input file to perform the operation on.
+        :param file input_file3: Third input file to perform the operation on.
+        :param file input_file4: Fourth input file to perform the operation on.
+        :param file input_file5: Fifth input file to perform the operation on.
+        :param file input_file6: Sixth input file to perform the operation on.
+        :param file input_file7: Seventh input file to perform the operation on.
+        :param file input_file8: Eighth input file to perform the operation on.
+        :param file input_file9: Ninth input file to perform the operation on.
+        :param file input_file10: Tenth input file to perform the operation on.
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.zip_archive_zip_create_encrypted_with_http_info(password, input_file1, **kwargs)  # noqa: E501
+        else:
+            (data) = self.zip_archive_zip_create_encrypted_with_http_info(password, input_file1, **kwargs)  # noqa: E501
+            return data
+
+    def zip_archive_zip_create_encrypted_with_http_info(self, password, input_file1, **kwargs):  # noqa: E501
+        """Compress files to create a new, encrypted and password-protected zip archive  # noqa: E501
+
+        Create a new zip archive by compressing input files, and also applies encryption and password protection to the zip.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.zip_archive_zip_create_encrypted_with_http_info(password, input_file1, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str password: Password to place on the Zip file; the longer the password, the more secure (required)
+        :param file input_file1: First input file to perform the operation on. (required)
+        :param str encryption_algorithm: Encryption algorithm to use; possible values are AES-256 (recommended), AES-128, and PK-Zip (not recommended; legacy, weak encryption algorithm). Default is AES-256.
+        :param file input_file2: Second input file to perform the operation on.
+        :param file input_file3: Third input file to perform the operation on.
+        :param file input_file4: Fourth input file to perform the operation on.
+        :param file input_file5: Fifth input file to perform the operation on.
+        :param file input_file6: Sixth input file to perform the operation on.
+        :param file input_file7: Seventh input file to perform the operation on.
+        :param file input_file8: Eighth input file to perform the operation on.
+        :param file input_file9: Ninth input file to perform the operation on.
+        :param file input_file10: Tenth input file to perform the operation on.
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['password', 'input_file1', 'encryption_algorithm', 'input_file2', 'input_file3', 'input_file4', 'input_file5', 'input_file6', 'input_file7', 'input_file8', 'input_file9', 'input_file10']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method zip_archive_zip_create_encrypted" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'password' is set
+        if ('password' not in params or
+                params['password'] is None):
+            raise ValueError("Missing the required parameter `password` when calling `zip_archive_zip_create_encrypted`")  # noqa: E501
+        # verify the required parameter 'input_file1' is set
+        if ('input_file1' not in params or
+                params['input_file1'] is None):
+            raise ValueError("Missing the required parameter `input_file1` when calling `zip_archive_zip_create_encrypted`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'password' in params:
+            header_params['password'] = params['password']  # noqa: E501
+        if 'encryption_algorithm' in params:
+            header_params['encryptionAlgorithm'] = params['encryption_algorithm']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file1' in params:
+            local_var_files['inputFile1'] = params['input_file1']  # noqa: E501
+        if 'input_file2' in params:
+            local_var_files['inputFile2'] = params['input_file2']  # noqa: E501
+        if 'input_file3' in params:
+            local_var_files['inputFile3'] = params['input_file3']  # noqa: E501
+        if 'input_file4' in params:
+            local_var_files['inputFile4'] = params['input_file4']  # noqa: E501
+        if 'input_file5' in params:
+            local_var_files['inputFile5'] = params['input_file5']  # noqa: E501
+        if 'input_file6' in params:
+            local_var_files['inputFile6'] = params['input_file6']  # noqa: E501
+        if 'input_file7' in params:
+            local_var_files['inputFile7'] = params['input_file7']  # noqa: E501
+        if 'input_file8' in params:
+            local_var_files['inputFile8'] = params['input_file8']  # noqa: E501
+        if 'input_file9' in params:
+            local_var_files['inputFile9'] = params['input_file9']  # noqa: E501
+        if 'input_file10' in params:
+            local_var_files['inputFile10'] = params['input_file10']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/archive/zip/create/encrypted', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def zip_archive_zip_decrypt(self, input_file, zip_password, **kwargs):  # noqa: E501
         """Decrypt and remove password protection on a zip file  # noqa: E501
 

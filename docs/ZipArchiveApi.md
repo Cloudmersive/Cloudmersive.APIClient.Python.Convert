@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**zip_archive_zip_create**](ZipArchiveApi.md#zip_archive_zip_create) | **POST** /convert/archive/zip/create | Compress files to create a new zip archive
 [**zip_archive_zip_create_advanced**](ZipArchiveApi.md#zip_archive_zip_create_advanced) | **POST** /convert/archive/zip/create/advanced | Compress files and folders to create a new zip archive with advanced options
+[**zip_archive_zip_create_encrypted**](ZipArchiveApi.md#zip_archive_zip_create_encrypted) | **POST** /convert/archive/zip/create/encrypted | Compress files to create a new, encrypted and password-protected zip archive
 [**zip_archive_zip_decrypt**](ZipArchiveApi.md#zip_archive_zip_decrypt) | **POST** /convert/archive/zip/decrypt | Decrypt and remove password protection on a zip file
 [**zip_archive_zip_encrypt_advanced**](ZipArchiveApi.md#zip_archive_zip_encrypt_advanced) | **POST** /convert/archive/zip/encrypt/advanced | Encrypt and password protect a zip file
 [**zip_archive_zip_extract**](ZipArchiveApi.md#zip_archive_zip_extract) | **POST** /convert/archive/zip/extract | Extract, decompress files and folders from a zip archive
@@ -133,6 +134,82 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
+ - **Accept**: application/octet-stream
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **zip_archive_zip_create_encrypted**
+> str zip_archive_zip_create_encrypted(password, input_file1, encryption_algorithm=encryption_algorithm, input_file2=input_file2, input_file3=input_file3, input_file4=input_file4, input_file5=input_file5, input_file6=input_file6, input_file7=input_file7, input_file8=input_file8, input_file9=input_file9, input_file10=input_file10)
+
+Compress files to create a new, encrypted and password-protected zip archive
+
+Create a new zip archive by compressing input files, and also applies encryption and password protection to the zip.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_convert_api_client
+from cloudmersive_convert_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_convert_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_convert_api_client.ZipArchiveApi(cloudmersive_convert_api_client.ApiClient(configuration))
+password = 'password_example' # str | Password to place on the Zip file; the longer the password, the more secure
+input_file1 = '/path/to/file.txt' # file | First input file to perform the operation on.
+encryption_algorithm = 'encryption_algorithm_example' # str | Encryption algorithm to use; possible values are AES-256 (recommended), AES-128, and PK-Zip (not recommended; legacy, weak encryption algorithm). Default is AES-256. (optional)
+input_file2 = '/path/to/file.txt' # file | Second input file to perform the operation on. (optional)
+input_file3 = '/path/to/file.txt' # file | Third input file to perform the operation on. (optional)
+input_file4 = '/path/to/file.txt' # file | Fourth input file to perform the operation on. (optional)
+input_file5 = '/path/to/file.txt' # file | Fifth input file to perform the operation on. (optional)
+input_file6 = '/path/to/file.txt' # file | Sixth input file to perform the operation on. (optional)
+input_file7 = '/path/to/file.txt' # file | Seventh input file to perform the operation on. (optional)
+input_file8 = '/path/to/file.txt' # file | Eighth input file to perform the operation on. (optional)
+input_file9 = '/path/to/file.txt' # file | Ninth input file to perform the operation on. (optional)
+input_file10 = '/path/to/file.txt' # file | Tenth input file to perform the operation on. (optional)
+
+try:
+    # Compress files to create a new, encrypted and password-protected zip archive
+    api_response = api_instance.zip_archive_zip_create_encrypted(password, input_file1, encryption_algorithm=encryption_algorithm, input_file2=input_file2, input_file3=input_file3, input_file4=input_file4, input_file5=input_file5, input_file6=input_file6, input_file7=input_file7, input_file8=input_file8, input_file9=input_file9, input_file10=input_file10)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ZipArchiveApi->zip_archive_zip_create_encrypted: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **password** | **str**| Password to place on the Zip file; the longer the password, the more secure | 
+ **input_file1** | **file**| First input file to perform the operation on. | 
+ **encryption_algorithm** | **str**| Encryption algorithm to use; possible values are AES-256 (recommended), AES-128, and PK-Zip (not recommended; legacy, weak encryption algorithm). Default is AES-256. | [optional] 
+ **input_file2** | **file**| Second input file to perform the operation on. | [optional] 
+ **input_file3** | **file**| Third input file to perform the operation on. | [optional] 
+ **input_file4** | **file**| Fourth input file to perform the operation on. | [optional] 
+ **input_file5** | **file**| Fifth input file to perform the operation on. | [optional] 
+ **input_file6** | **file**| Sixth input file to perform the operation on. | [optional] 
+ **input_file7** | **file**| Seventh input file to perform the operation on. | [optional] 
+ **input_file8** | **file**| Eighth input file to perform the operation on. | [optional] 
+ **input_file9** | **file**| Ninth input file to perform the operation on. | [optional] 
+ **input_file10** | **file**| Tenth input file to perform the operation on. | [optional] 
+
+### Return type
+
+**str**
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
  - **Accept**: application/octet-stream
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
