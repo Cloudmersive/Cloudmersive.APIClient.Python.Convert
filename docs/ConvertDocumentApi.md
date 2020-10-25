@@ -18,6 +18,7 @@ Method | HTTP request | Description
 [**convert_document_doc_to_docx**](ConvertDocumentApi.md#convert_document_doc_to_docx) | **POST** /convert/doc/to/docx | Convert Word DOC (97-03) Document to DOCX
 [**convert_document_doc_to_pdf**](ConvertDocumentApi.md#convert_document_doc_to_pdf) | **POST** /convert/doc/to/pdf | Convert Word DOC (97-03) Document to PDF
 [**convert_document_doc_to_txt**](ConvertDocumentApi.md#convert_document_doc_to_txt) | **POST** /convert/doc/to/txt | Convert Word DOC (97-03) Document to Text (txt)
+[**convert_document_docx_to_doc**](ConvertDocumentApi.md#convert_document_docx_to_doc) | **POST** /convert/docx/to/doc | Convert Word DOCX Document to Legacy Word DOC (97-03)
 [**convert_document_docx_to_html**](ConvertDocumentApi.md#convert_document_docx_to_html) | **POST** /convert/docx/to/html | Convert Word DOCX Document to HTML Document
 [**convert_document_docx_to_jpg**](ConvertDocumentApi.md#convert_document_docx_to_jpg) | **POST** /convert/docx/to/jpg | Convert Word DOCX Document to JPG/JPEG image array
 [**convert_document_docx_to_pdf**](ConvertDocumentApi.md#convert_document_docx_to_pdf) | **POST** /convert/docx/to/pdf | Convert Word DOCX Document to PDF
@@ -65,6 +66,7 @@ Method | HTTP request | Description
 [**convert_document_ppt_to_pptx**](ConvertDocumentApi.md#convert_document_ppt_to_pptx) | **POST** /convert/ppt/to/pptx | Convert PowerPoint PPT (97-03) Presentation to PPTX
 [**convert_document_pptx_to_pdf**](ConvertDocumentApi.md#convert_document_pptx_to_pdf) | **POST** /convert/pptx/to/pdf | Convert PowerPoint PPTX Presentation to PDF
 [**convert_document_pptx_to_png**](ConvertDocumentApi.md#convert_document_pptx_to_png) | **POST** /convert/pptx/to/png | Convert PowerPoint PPTX to PNG image array
+[**convert_document_pptx_to_ppt**](ConvertDocumentApi.md#convert_document_pptx_to_ppt) | **POST** /convert/pptx/to/ppt | Convert PowerPoint PPTX presentation to Legacy PowerPoint PPT (97-03)
 [**convert_document_pptx_to_txt**](ConvertDocumentApi.md#convert_document_pptx_to_txt) | **POST** /convert/pptx/to/txt | Convert PowerPoint PPTX Presentation to Text (txt)
 [**convert_document_rtf_to_docx**](ConvertDocumentApi.md#convert_document_rtf_to_docx) | **POST** /convert/rtf/to/docx | Convert Rich Text Format RTF to DOCX Document
 [**convert_document_rtf_to_html**](ConvertDocumentApi.md#convert_document_rtf_to_html) | **POST** /convert/rtf/to/html | Convert Rich Text Format RTF to HTML Document
@@ -80,6 +82,7 @@ Method | HTTP request | Description
 [**convert_document_xlsx_to_pdf**](ConvertDocumentApi.md#convert_document_xlsx_to_pdf) | **POST** /convert/xlsx/to/pdf | Convert Excel XLSX Spreadsheet to PDF
 [**convert_document_xlsx_to_png**](ConvertDocumentApi.md#convert_document_xlsx_to_png) | **POST** /convert/xlsx/to/png | Convert Excel XLSX spreadsheet to PNG image array
 [**convert_document_xlsx_to_txt**](ConvertDocumentApi.md#convert_document_xlsx_to_txt) | **POST** /convert/xlsx/to/txt | Convert Excel XLSX Spreadsheet to Text (txt)
+[**convert_document_xlsx_to_xls**](ConvertDocumentApi.md#convert_document_xlsx_to_xls) | **POST** /convert/xlsx/to/xls | Convert Excel XLSX Spreadsheet to Legacy Excel XLS (97-03)
 
 
 # **convert_document_autodetect_get_info**
@@ -873,6 +876,60 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: multipart/form-data
  - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **convert_document_docx_to_doc**
+> str convert_document_docx_to_doc(input_file)
+
+Convert Word DOCX Document to Legacy Word DOC (97-03)
+
+Convert/downgrade modern Office Word DOCX Documents (DOCX) to the legacy Word DOC (97-2003 Format) format
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_convert_api_client
+from cloudmersive_convert_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_convert_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_convert_api_client.ConvertDocumentApi(cloudmersive_convert_api_client.ApiClient(configuration))
+input_file = '/path/to/file.txt' # file | Input file to perform the operation on.
+
+try:
+    # Convert Word DOCX Document to Legacy Word DOC (97-03)
+    api_response = api_instance.convert_document_docx_to_doc(input_file)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConvertDocumentApi->convert_document_docx_to_doc: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **input_file** | **file**| Input file to perform the operation on. | 
+
+### Return type
+
+**str**
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/octet-stream
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3472,6 +3529,56 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **convert_document_pptx_to_ppt**
+> object convert_document_pptx_to_ppt()
+
+Convert PowerPoint PPTX presentation to Legacy PowerPoint PPT (97-03)
+
+Convert/downgrade modern Office PowerPoint PPTX Presentation to the legacy PowerPoint PPT (97-2003 Format) format
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_convert_api_client
+from cloudmersive_convert_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_convert_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_convert_api_client.ConvertDocumentApi(cloudmersive_convert_api_client.ApiClient(configuration))
+
+try:
+    # Convert PowerPoint PPTX presentation to Legacy PowerPoint PPT (97-03)
+    api_response = api_instance.convert_document_pptx_to_ppt()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConvertDocumentApi->convert_document_pptx_to_ppt: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+**object**
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/octet-stream
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **convert_document_pptx_to_txt**
 > TextConversionResult convert_document_pptx_to_txt(input_file)
 
@@ -4285,6 +4392,60 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: multipart/form-data
  - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **convert_document_xlsx_to_xls**
+> str convert_document_xlsx_to_xls(input_file)
+
+Convert Excel XLSX Spreadsheet to Legacy Excel XLS (97-03)
+
+Convert/downgrade modern Office Excel XLSX Spreadsheet to the legacy Excel XLS (97-2003 Format) format
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_convert_api_client
+from cloudmersive_convert_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_convert_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_convert_api_client.ConvertDocumentApi(cloudmersive_convert_api_client.ApiClient(configuration))
+input_file = '/path/to/file.txt' # file | Input file to perform the operation on.
+
+try:
+    # Convert Excel XLSX Spreadsheet to Legacy Excel XLS (97-03)
+    api_response = api_instance.convert_document_xlsx_to_xls(input_file)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConvertDocumentApi->convert_document_xlsx_to_xls: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **input_file** | **file**| Input file to perform the operation on. | 
+
+### Return type
+
+**str**
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/octet-stream
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

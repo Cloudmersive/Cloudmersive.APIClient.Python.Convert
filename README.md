@@ -4,7 +4,7 @@ Convert API lets you effortlessly convert file formats and types.
 This Python package provides a native API client for [Cloudmersive Document Conversion](https://www.cloudmersive.com/convert-api)
 
 - API version: v1
-- Package version: 3.0.7
+- Package version: 3.0.8
 - Build package: io.swagger.codegen.languages.PythonClientCodegen
 
 ## Requirements.
@@ -79,9 +79,11 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *CompareDocumentApi* | [**compare_document_docx**](docs/CompareDocumentApi.md#compare_document_docx) | **POST** /convert/compare/docx | Compare Two Word DOCX
 *ConvertDataApi* | [**convert_data_csv_to_json**](docs/ConvertDataApi.md#convert_data_csv_to_json) | **POST** /convert/csv/to/json | Convert CSV to JSON conversion
+*ConvertDataApi* | [**convert_data_csv_to_xml**](docs/ConvertDataApi.md#convert_data_csv_to_xml) | **POST** /convert/csv/to/xml | Convert CSV to XML conversion
 *ConvertDataApi* | [**convert_data_json_to_xml**](docs/ConvertDataApi.md#convert_data_json_to_xml) | **POST** /convert/json/to/xml | Convert JSON to XML conversion
 *ConvertDataApi* | [**convert_data_xls_to_json**](docs/ConvertDataApi.md#convert_data_xls_to_json) | **POST** /convert/xls/to/json | Convert Excel (97-2003) XLS to JSON conversion
 *ConvertDataApi* | [**convert_data_xlsx_to_json**](docs/ConvertDataApi.md#convert_data_xlsx_to_json) | **POST** /convert/xlsx/to/json | Convert Excel XLSX to JSON conversion
+*ConvertDataApi* | [**convert_data_xlsx_to_xml**](docs/ConvertDataApi.md#convert_data_xlsx_to_xml) | **POST** /convert/xlsx/to/xml | Convert Excel XLSX to XML conversion
 *ConvertDataApi* | [**convert_data_xml_edit_add_attribute_with_x_path**](docs/ConvertDataApi.md#convert_data_xml_edit_add_attribute_with_x_path) | **POST** /convert/xml/edit/xpath/add-attribute | Adds an attribute to all XML nodes matching XPath expression
 *ConvertDataApi* | [**convert_data_xml_edit_add_child_with_x_path**](docs/ConvertDataApi.md#convert_data_xml_edit_add_child_with_x_path) | **POST** /convert/xml/edit/xpath/add-child | Adds an XML node as a child to XML nodes matching XPath expression
 *ConvertDataApi* | [**convert_data_xml_edit_remove_all_child_nodes_with_x_path**](docs/ConvertDataApi.md#convert_data_xml_edit_remove_all_child_nodes_with_x_path) | **POST** /convert/xml/edit/xpath/remove-all-children | Removes, deletes all children of nodes matching XPath expression, but does not remove the nodes
@@ -107,6 +109,7 @@ Class | Method | HTTP request | Description
 *ConvertDocumentApi* | [**convert_document_doc_to_docx**](docs/ConvertDocumentApi.md#convert_document_doc_to_docx) | **POST** /convert/doc/to/docx | Convert Word DOC (97-03) Document to DOCX
 *ConvertDocumentApi* | [**convert_document_doc_to_pdf**](docs/ConvertDocumentApi.md#convert_document_doc_to_pdf) | **POST** /convert/doc/to/pdf | Convert Word DOC (97-03) Document to PDF
 *ConvertDocumentApi* | [**convert_document_doc_to_txt**](docs/ConvertDocumentApi.md#convert_document_doc_to_txt) | **POST** /convert/doc/to/txt | Convert Word DOC (97-03) Document to Text (txt)
+*ConvertDocumentApi* | [**convert_document_docx_to_doc**](docs/ConvertDocumentApi.md#convert_document_docx_to_doc) | **POST** /convert/docx/to/doc | Convert Word DOCX Document to Legacy Word DOC (97-03)
 *ConvertDocumentApi* | [**convert_document_docx_to_html**](docs/ConvertDocumentApi.md#convert_document_docx_to_html) | **POST** /convert/docx/to/html | Convert Word DOCX Document to HTML Document
 *ConvertDocumentApi* | [**convert_document_docx_to_jpg**](docs/ConvertDocumentApi.md#convert_document_docx_to_jpg) | **POST** /convert/docx/to/jpg | Convert Word DOCX Document to JPG/JPEG image array
 *ConvertDocumentApi* | [**convert_document_docx_to_pdf**](docs/ConvertDocumentApi.md#convert_document_docx_to_pdf) | **POST** /convert/docx/to/pdf | Convert Word DOCX Document to PDF
@@ -154,6 +157,7 @@ Class | Method | HTTP request | Description
 *ConvertDocumentApi* | [**convert_document_ppt_to_pptx**](docs/ConvertDocumentApi.md#convert_document_ppt_to_pptx) | **POST** /convert/ppt/to/pptx | Convert PowerPoint PPT (97-03) Presentation to PPTX
 *ConvertDocumentApi* | [**convert_document_pptx_to_pdf**](docs/ConvertDocumentApi.md#convert_document_pptx_to_pdf) | **POST** /convert/pptx/to/pdf | Convert PowerPoint PPTX Presentation to PDF
 *ConvertDocumentApi* | [**convert_document_pptx_to_png**](docs/ConvertDocumentApi.md#convert_document_pptx_to_png) | **POST** /convert/pptx/to/png | Convert PowerPoint PPTX to PNG image array
+*ConvertDocumentApi* | [**convert_document_pptx_to_ppt**](docs/ConvertDocumentApi.md#convert_document_pptx_to_ppt) | **POST** /convert/pptx/to/ppt | Convert PowerPoint PPTX presentation to Legacy PowerPoint PPT (97-03)
 *ConvertDocumentApi* | [**convert_document_pptx_to_txt**](docs/ConvertDocumentApi.md#convert_document_pptx_to_txt) | **POST** /convert/pptx/to/txt | Convert PowerPoint PPTX Presentation to Text (txt)
 *ConvertDocumentApi* | [**convert_document_rtf_to_docx**](docs/ConvertDocumentApi.md#convert_document_rtf_to_docx) | **POST** /convert/rtf/to/docx | Convert Rich Text Format RTF to DOCX Document
 *ConvertDocumentApi* | [**convert_document_rtf_to_html**](docs/ConvertDocumentApi.md#convert_document_rtf_to_html) | **POST** /convert/rtf/to/html | Convert Rich Text Format RTF to HTML Document
@@ -169,6 +173,7 @@ Class | Method | HTTP request | Description
 *ConvertDocumentApi* | [**convert_document_xlsx_to_pdf**](docs/ConvertDocumentApi.md#convert_document_xlsx_to_pdf) | **POST** /convert/xlsx/to/pdf | Convert Excel XLSX Spreadsheet to PDF
 *ConvertDocumentApi* | [**convert_document_xlsx_to_png**](docs/ConvertDocumentApi.md#convert_document_xlsx_to_png) | **POST** /convert/xlsx/to/png | Convert Excel XLSX spreadsheet to PNG image array
 *ConvertDocumentApi* | [**convert_document_xlsx_to_txt**](docs/ConvertDocumentApi.md#convert_document_xlsx_to_txt) | **POST** /convert/xlsx/to/txt | Convert Excel XLSX Spreadsheet to Text (txt)
+*ConvertDocumentApi* | [**convert_document_xlsx_to_xls**](docs/ConvertDocumentApi.md#convert_document_xlsx_to_xls) | **POST** /convert/xlsx/to/xls | Convert Excel XLSX Spreadsheet to Legacy Excel XLS (97-03)
 *ConvertImageApi* | [**convert_image_get_image_info**](docs/ConvertImageApi.md#convert_image_get_image_info) | **POST** /convert/image/get-info | Get information about an image
 *ConvertImageApi* | [**convert_image_image_format_convert**](docs/ConvertImageApi.md#convert_image_image_format_convert) | **POST** /convert/image/{format1}/to/{format2} | Image format conversion
 *ConvertImageApi* | [**convert_image_image_set_dpi**](docs/ConvertImageApi.md#convert_image_image_set_dpi) | **POST** /convert/image/set-dpi/{dpi} | Change image DPI
@@ -248,6 +253,7 @@ Class | Method | HTTP request | Description
 *EditHtmlApi* | [**edit_html_html_append_paragraph**](docs/EditHtmlApi.md#edit_html_html_append_paragraph) | **POST** /convert/edit/html/append/paragraph | Append a Paragraph to an HTML Document
 *EditHtmlApi* | [**edit_html_html_create_blank_document**](docs/EditHtmlApi.md#edit_html_html_create_blank_document) | **POST** /convert/edit/html/create/blank | Create a Blank HTML Document
 *EditPdfApi* | [**edit_pdf_add_annotations**](docs/EditPdfApi.md#edit_pdf_add_annotations) | **POST** /convert/edit/pdf/annotations/add-item | Add one or more PDF annotations, comments in the PDF document
+*EditPdfApi* | [**edit_pdf_convert_to_pdf_a**](docs/EditPdfApi.md#edit_pdf_convert_to_pdf_a) | **POST** /convert/edit/pdf/optimize/pdf-a | Convert a PDF file to PDF/A
 *EditPdfApi* | [**edit_pdf_decrypt**](docs/EditPdfApi.md#edit_pdf_decrypt) | **POST** /convert/edit/pdf/decrypt | Decrypt and password-protect a PDF
 *EditPdfApi* | [**edit_pdf_delete_pages**](docs/EditPdfApi.md#edit_pdf_delete_pages) | **POST** /convert/edit/pdf/pages/delete | Remove, delete pages from a PDF document
 *EditPdfApi* | [**edit_pdf_encrypt**](docs/EditPdfApi.md#edit_pdf_encrypt) | **POST** /convert/edit/pdf/encrypt | Encrypt and password-protect a PDF
@@ -256,7 +262,9 @@ Class | Method | HTTP request | Description
 *EditPdfApi* | [**edit_pdf_get_metadata**](docs/EditPdfApi.md#edit_pdf_get_metadata) | **POST** /convert/edit/pdf/get-metadata | Get PDF document metadata
 *EditPdfApi* | [**edit_pdf_get_pdf_text_by_pages**](docs/EditPdfApi.md#edit_pdf_get_pdf_text_by_pages) | **POST** /convert/edit/pdf/pages/get-text | Get text in a PDF document by page
 *EditPdfApi* | [**edit_pdf_insert_pages**](docs/EditPdfApi.md#edit_pdf_insert_pages) | **POST** /convert/edit/pdf/pages/insert | Insert, copy pages from one PDF document into another
+*EditPdfApi* | [**edit_pdf_linearize**](docs/EditPdfApi.md#edit_pdf_linearize) | **POST** /convert/edit/pdf/optimize/linearize | Linearize and optimize a PDF for streaming download
 *EditPdfApi* | [**edit_pdf_rasterize**](docs/EditPdfApi.md#edit_pdf_rasterize) | **POST** /convert/edit/pdf/rasterize | Rasterize a PDF to an image-based PDF
+*EditPdfApi* | [**edit_pdf_reduce_file_size**](docs/EditPdfApi.md#edit_pdf_reduce_file_size) | **POST** /convert/edit/pdf/optimize/reduce-file-size | Reduce the file size and optimize a PDF
 *EditPdfApi* | [**edit_pdf_remove_all_annotations**](docs/EditPdfApi.md#edit_pdf_remove_all_annotations) | **POST** /convert/edit/pdf/annotations/remove-all | Remove all PDF annotations, including comments in the document
 *EditPdfApi* | [**edit_pdf_remove_annotation_item**](docs/EditPdfApi.md#edit_pdf_remove_annotation_item) | **POST** /convert/edit/pdf/annotations/remove-item | Remove a specific PDF annotation, comment in the document
 *EditPdfApi* | [**edit_pdf_resize**](docs/EditPdfApi.md#edit_pdf_resize) | **POST** /convert/edit/pdf/resize | Change PDF Document&#39;s Paper Size
