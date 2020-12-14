@@ -44,6 +44,8 @@ class ViewerToolsApi(object):
 
         :param async_req bool
         :param file input_file: Input file to perform the operation on. (required)
+        :param int width: Optional; width of the output viewer in pixels
+        :param int height: Optional; height of the output viewer in pixels
         :return: ViewerResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -66,12 +68,14 @@ class ViewerToolsApi(object):
 
         :param async_req bool
         :param file input_file: Input file to perform the operation on. (required)
+        :param int width: Optional; width of the output viewer in pixels
+        :param int height: Optional; height of the output viewer in pixels
         :return: ViewerResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['input_file']  # noqa: E501
+        all_params = ['input_file', 'width', 'height']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -98,6 +102,10 @@ class ViewerToolsApi(object):
         query_params = []
 
         header_params = {}
+        if 'width' in params:
+            header_params['width'] = params['width']  # noqa: E501
+        if 'height' in params:
+            header_params['height'] = params['height']  # noqa: E501
 
         form_params = []
         local_var_files = {}

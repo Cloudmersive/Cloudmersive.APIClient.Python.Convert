@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **viewer_tools_create_simple**
-> ViewerResponse viewer_tools_create_simple(input_file)
+> ViewerResponse viewer_tools_create_simple(input_file, width=width, height=height)
 
 Create a web-based viewer
 
@@ -31,10 +31,12 @@ configuration.api_key['Apikey'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = cloudmersive_convert_api_client.ViewerToolsApi(cloudmersive_convert_api_client.ApiClient(configuration))
 input_file = '/path/to/file.txt' # file | Input file to perform the operation on.
+width = 56 # int | Optional; width of the output viewer in pixels (optional)
+height = 56 # int | Optional; height of the output viewer in pixels (optional)
 
 try:
     # Create a web-based viewer
-    api_response = api_instance.viewer_tools_create_simple(input_file)
+    api_response = api_instance.viewer_tools_create_simple(input_file, width=width, height=height)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ViewerToolsApi->viewer_tools_create_simple: %s\n" % e)
@@ -45,6 +47,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **input_file** | **file**| Input file to perform the operation on. | 
+ **width** | **int**| Optional; width of the output viewer in pixels | [optional] 
+ **height** | **int**| Optional; height of the output viewer in pixels | [optional] 
 
 ### Return type
 
