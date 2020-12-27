@@ -4,7 +4,7 @@ Convert API lets you effortlessly convert file formats and types.
 This Python package provides a native API client for [Cloudmersive Document Conversion](https://www.cloudmersive.com/convert-api)
 
 - API version: v1
-- Package version: 3.0.9
+- Package version: 3.1.0
 - Build package: io.swagger.codegen.languages.PythonClientCodegen
 
 ## Requirements.
@@ -202,6 +202,7 @@ Class | Method | HTTP request | Description
 *EditDocumentApi* | [**edit_document_docx_get_comments_hierarchical**](docs/EditDocumentApi.md#edit_document_docx_get_comments_hierarchical) | **POST** /convert/edit/docx/get-comments/hierarchical | Get comments from a Word DOCX document hierarchically
 *EditDocumentApi* | [**edit_document_docx_get_headers_and_footers**](docs/EditDocumentApi.md#edit_document_docx_get_headers_and_footers) | **POST** /convert/edit/docx/get-headers-and-footers | Get content of a footer from a Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_get_images**](docs/EditDocumentApi.md#edit_document_docx_get_images) | **POST** /convert/edit/docx/get-images | Get images from a Word DOCX document
+*EditDocumentApi* | [**edit_document_docx_get_metadata_properties**](docs/EditDocumentApi.md#edit_document_docx_get_metadata_properties) | **POST** /convert/edit/docx/get-metadata | Get all metadata properties in Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_get_sections**](docs/EditDocumentApi.md#edit_document_docx_get_sections) | **POST** /convert/edit/docx/get-sections | Get sections from a Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_get_styles**](docs/EditDocumentApi.md#edit_document_docx_get_styles) | **POST** /convert/edit/docx/get-styles | Get styles from a Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_get_table_by_index**](docs/EditDocumentApi.md#edit_document_docx_get_table_by_index) | **POST** /convert/edit/docx/get-table/by-index | Get a specific table by index in a Word DOCX document
@@ -219,6 +220,7 @@ Class | Method | HTTP request | Description
 *EditDocumentApi* | [**edit_document_docx_replace**](docs/EditDocumentApi.md#edit_document_docx_replace) | **POST** /convert/edit/docx/replace-all | Replace string in Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_replace_multi**](docs/EditDocumentApi.md#edit_document_docx_replace_multi) | **POST** /convert/edit/docx/replace-all/multi | Replace multiple strings in Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_replace_paragraph**](docs/EditDocumentApi.md#edit_document_docx_replace_paragraph) | **POST** /convert/edit/docx/replace/paragraph | Replace matching paragraphs in a Word DOCX document
+*EditDocumentApi* | [**edit_document_docx_set_custom_metadata_properties**](docs/EditDocumentApi.md#edit_document_docx_set_custom_metadata_properties) | **POST** /convert/edit/docx/set-metadata/custom-property | Set custom property metadata properties in Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_set_footer**](docs/EditDocumentApi.md#edit_document_docx_set_footer) | **POST** /convert/edit/docx/set-footer | Set the footer in a Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_set_footer_add_page_number**](docs/EditDocumentApi.md#edit_document_docx_set_footer_add_page_number) | **POST** /convert/edit/docx/set-footer/add-page-number | Add page number to footer in a Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_set_header**](docs/EditDocumentApi.md#edit_document_docx_set_header) | **POST** /convert/edit/docx/set-header | Set the header in a Word DOCX document
@@ -385,12 +387,14 @@ Class | Method | HTTP request | Description
  - [DocxInsertCommentOnParagraphRequest](docs/DocxInsertCommentOnParagraphRequest.md)
  - [DocxInsertImageRequest](docs/DocxInsertImageRequest.md)
  - [DocxInsertImageResponse](docs/DocxInsertImageResponse.md)
+ - [DocxMetadataCustomProperty](docs/DocxMetadataCustomProperty.md)
  - [DocxPage](docs/DocxPage.md)
  - [DocxParagraph](docs/DocxParagraph.md)
  - [DocxRemoveObjectRequest](docs/DocxRemoveObjectRequest.md)
  - [DocxRemoveObjectResponse](docs/DocxRemoveObjectResponse.md)
  - [DocxRun](docs/DocxRun.md)
  - [DocxSection](docs/DocxSection.md)
+ - [DocxSetCustomMetadataPropertiesRequest](docs/DocxSetCustomMetadataPropertiesRequest.md)
  - [DocxSetFooterAddPageNumberRequest](docs/DocxSetFooterAddPageNumberRequest.md)
  - [DocxSetFooterRequest](docs/DocxSetFooterRequest.md)
  - [DocxSetFooterResponse](docs/DocxSetFooterResponse.md)
@@ -432,6 +436,7 @@ Class | Method | HTTP request | Description
  - [GetDocxHeadersAndFootersResponse](docs/GetDocxHeadersAndFootersResponse.md)
  - [GetDocxImagesRequest](docs/GetDocxImagesRequest.md)
  - [GetDocxImagesResponse](docs/GetDocxImagesResponse.md)
+ - [GetDocxMetadataPropertiesResponse](docs/GetDocxMetadataPropertiesResponse.md)
  - [GetDocxPagesRequest](docs/GetDocxPagesRequest.md)
  - [GetDocxPagesResponse](docs/GetDocxPagesResponse.md)
  - [GetDocxSectionsRequest](docs/GetDocxSectionsRequest.md)
