@@ -6,6 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**merge_document_docx**](MergeDocumentApi.md#merge_document_docx) | **POST** /convert/merge/docx | Merge Two Word DOCX Together
 [**merge_document_docx_multi**](MergeDocumentApi.md#merge_document_docx_multi) | **POST** /convert/merge/docx/multi | Merge Multple Word DOCX Together
+[**merge_document_html**](MergeDocumentApi.md#merge_document_html) | **POST** /convert/merge/html | Merge Two HTML (HTM) Files Together
+[**merge_document_html_multi**](MergeDocumentApi.md#merge_document_html_multi) | **POST** /convert/merge/html/multi | Merge Multple HTML (HTM) Files Together
 [**merge_document_pdf**](MergeDocumentApi.md#merge_document_pdf) | **POST** /convert/merge/pdf | Merge Two PDF Files Together
 [**merge_document_pdf_multi**](MergeDocumentApi.md#merge_document_pdf_multi) | **POST** /convert/merge/pdf/multi | Merge Multple PDF Files Together
 [**merge_document_png**](MergeDocumentApi.md#merge_document_png) | **POST** /convert/merge/png/vertical | Merge Two PNG Files Together
@@ -114,6 +116,134 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling MergeDocumentApi->merge_document_docx_multi: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **input_file1** | **file**| First input file to perform the operation on. | 
+ **input_file2** | **file**| Second input file to perform the operation on. | 
+ **input_file3** | **file**| Third input file to perform the operation on. | [optional] 
+ **input_file4** | **file**| Fourth input file to perform the operation on. | [optional] 
+ **input_file5** | **file**| Fifth input file to perform the operation on. | [optional] 
+ **input_file6** | **file**| Sixth input file to perform the operation on. | [optional] 
+ **input_file7** | **file**| Seventh input file to perform the operation on. | [optional] 
+ **input_file8** | **file**| Eighth input file to perform the operation on. | [optional] 
+ **input_file9** | **file**| Ninth input file to perform the operation on. | [optional] 
+ **input_file10** | **file**| Tenth input file to perform the operation on. | [optional] 
+
+### Return type
+
+**str**
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/octet-stream
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **merge_document_html**
+> object merge_document_html(input_file1, input_file2)
+
+Merge Two HTML (HTM) Files Together
+
+Combine two HTML (.HTM) files into a single text document, preserving the order of the input documents in the combined document by stacking them vertically.  The title will be taken from the first document.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_convert_api_client
+from cloudmersive_convert_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_convert_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_convert_api_client.MergeDocumentApi(cloudmersive_convert_api_client.ApiClient(configuration))
+input_file1 = '/path/to/file.txt' # file | First input file to perform the operation on.
+input_file2 = '/path/to/file.txt' # file | Second input file to perform the operation on (more than 2 can be supplied).
+
+try:
+    # Merge Two HTML (HTM) Files Together
+    api_response = api_instance.merge_document_html(input_file1, input_file2)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling MergeDocumentApi->merge_document_html: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **input_file1** | **file**| First input file to perform the operation on. | 
+ **input_file2** | **file**| Second input file to perform the operation on (more than 2 can be supplied). | 
+
+### Return type
+
+**object**
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/octet-stream
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **merge_document_html_multi**
+> str merge_document_html_multi(input_file1, input_file2, input_file3=input_file3, input_file4=input_file4, input_file5=input_file5, input_file6=input_file6, input_file7=input_file7, input_file8=input_file8, input_file9=input_file9, input_file10=input_file10)
+
+Merge Multple HTML (HTM) Files Together
+
+Combine multiple HTML (.HTM) files into a single text document, preserving the order of the input documents in the combined document by stacking them vertically.  The title will be taken from the first document.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_convert_api_client
+from cloudmersive_convert_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_convert_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_convert_api_client.MergeDocumentApi(cloudmersive_convert_api_client.ApiClient(configuration))
+input_file1 = '/path/to/file.txt' # file | First input file to perform the operation on.
+input_file2 = '/path/to/file.txt' # file | Second input file to perform the operation on.
+input_file3 = '/path/to/file.txt' # file | Third input file to perform the operation on. (optional)
+input_file4 = '/path/to/file.txt' # file | Fourth input file to perform the operation on. (optional)
+input_file5 = '/path/to/file.txt' # file | Fifth input file to perform the operation on. (optional)
+input_file6 = '/path/to/file.txt' # file | Sixth input file to perform the operation on. (optional)
+input_file7 = '/path/to/file.txt' # file | Seventh input file to perform the operation on. (optional)
+input_file8 = '/path/to/file.txt' # file | Eighth input file to perform the operation on. (optional)
+input_file9 = '/path/to/file.txt' # file | Ninth input file to perform the operation on. (optional)
+input_file10 = '/path/to/file.txt' # file | Tenth input file to perform the operation on. (optional)
+
+try:
+    # Merge Multple HTML (HTM) Files Together
+    api_response = api_instance.merge_document_html_multi(input_file1, input_file2, input_file3=input_file3, input_file4=input_file4, input_file5=input_file5, input_file6=input_file6, input_file7=input_file7, input_file8=input_file8, input_file9=input_file9, input_file10=input_file10)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling MergeDocumentApi->merge_document_html_multi: %s\n" % e)
 ```
 
 ### Parameters

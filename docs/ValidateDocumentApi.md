@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**validate_document_eml_validation**](ValidateDocumentApi.md#validate_document_eml_validation) | **POST** /convert/validate/eml | Validate if an EML file is executable
 [**validate_document_executable_validation**](ValidateDocumentApi.md#validate_document_executable_validation) | **POST** /convert/validate/executable | Validate if a file is executable
 [**validate_document_g_zip_validation**](ValidateDocumentApi.md#validate_document_g_zip_validation) | **POST** /convert/validate/gzip | Validate a GZip Archive file (gzip or gz)
+[**validate_document_html_ssrf_validation**](ValidateDocumentApi.md#validate_document_html_ssrf_validation) | **POST** /convert/validate/html/ssrf-threat-check | Validate an HTML file and checks for SSRF threats
 [**validate_document_html_validation**](ValidateDocumentApi.md#validate_document_html_validation) | **POST** /convert/validate/html | Validate an HTML file
 [**validate_document_image_validation**](ValidateDocumentApi.md#validate_document_image_validation) | **POST** /convert/validate/image | Validate an Image File
 [**validate_document_jpg_validation**](ValidateDocumentApi.md#validate_document_jpg_validation) | **POST** /convert/validate/jpg | Validate a JPG File
@@ -338,6 +339,60 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**DocumentValidationResult**](DocumentValidationResult.md)
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **validate_document_html_ssrf_validation**
+> HtmlSsrfThreatCheckResult validate_document_html_ssrf_validation(input_file)
+
+Validate an HTML file and checks for SSRF threats
+
+Validate an HTML document file and checks for SSRF (Server-side Request Forgery) threats in the file; if the document is not valid, identifies the errors in the document
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_convert_api_client
+from cloudmersive_convert_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_convert_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_convert_api_client.ValidateDocumentApi(cloudmersive_convert_api_client.ApiClient(configuration))
+input_file = '/path/to/file.txt' # file | Input file to perform the operation on.
+
+try:
+    # Validate an HTML file and checks for SSRF threats
+    api_response = api_instance.validate_document_html_ssrf_validation(input_file)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ValidateDocumentApi->validate_document_html_ssrf_validation: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **input_file** | **file**| Input file to perform the operation on. | 
+
+### Return type
+
+[**HtmlSsrfThreatCheckResult**](HtmlSsrfThreatCheckResult.md)
 
 ### Authorization
 

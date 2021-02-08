@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**edit_html_html_append_image_inline**](EditHtmlApi.md#edit_html_html_append_image_inline) | **POST** /convert/edit/html/append/image/inline | Append a Base64 Inline Image to an HTML Document
 [**edit_html_html_append_paragraph**](EditHtmlApi.md#edit_html_html_append_paragraph) | **POST** /convert/edit/html/append/paragraph | Append a Paragraph to an HTML Document
 [**edit_html_html_create_blank_document**](EditHtmlApi.md#edit_html_html_create_blank_document) | **POST** /convert/edit/html/create/blank | Create a Blank HTML Document
+[**edit_html_html_get_links**](EditHtmlApi.md#edit_html_html_get_links) | **POST** /convert/edit/html/extract/links | Extract resolved link URLs from HTML File
 
 
 # **edit_html_html_append_heading**
@@ -307,6 +308,64 @@ Name | Type | Description  | Notes
 ### Return type
 
 **str**
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **edit_html_html_get_links**
+> HtmlGetLinksResponse edit_html_html_get_links(input_file=input_file, input_file_url=input_file_url, base_url=base_url)
+
+Extract resolved link URLs from HTML File
+
+Extracts the resolved link URLs, fully-qualified if possible, from an input HTML file.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_convert_api_client
+from cloudmersive_convert_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_convert_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_convert_api_client.EditHtmlApi(cloudmersive_convert_api_client.ApiClient(configuration))
+input_file = '/path/to/file.txt' # file | Optional: Input file to perform the operation on. (optional)
+input_file_url = 'input_file_url_example' # str | Optional: URL of a file to operate on as input. (optional)
+base_url = 'base_url_example' # str | Optional: Base URL of the page, such as https://mydomain.com (optional)
+
+try:
+    # Extract resolved link URLs from HTML File
+    api_response = api_instance.edit_html_html_get_links(input_file=input_file, input_file_url=input_file_url, base_url=base_url)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EditHtmlApi->edit_html_html_get_links: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **input_file** | **file**| Optional: Input file to perform the operation on. | [optional] 
+ **input_file_url** | **str**| Optional: URL of a file to operate on as input. | [optional] 
+ **base_url** | **str**| Optional: Base URL of the page, such as https://mydomain.com | [optional] 
+
+### Return type
+
+[**HtmlGetLinksResponse**](HtmlGetLinksResponse.md)
 
 ### Authorization
 
