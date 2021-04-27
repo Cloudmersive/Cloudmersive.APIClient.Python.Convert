@@ -414,43 +414,49 @@ class ZipArchiveApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def zip_archive_zip_create_quarantine(self, **kwargs):  # noqa: E501
+    def zip_archive_zip_create_quarantine(self, password, input_file1, **kwargs):  # noqa: E501
         """Create an encrypted zip file to quarantine a dangerous file  # noqa: E501
 
         Create a new zip archive by compressing input files, and also applies encryption and password protection to the zip, for the purposes of quarantining the underlyikng file.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.zip_archive_zip_create_quarantine(async_req=True)
+        >>> thread = api.zip_archive_zip_create_quarantine(password, input_file1, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param str password: Password to place on the Zip file; the longer the password, the more secure (required)
+        :param file input_file1: First input file to perform the operation on. (required)
+        :param str encryption_algorithm: Encryption algorithm to use; possible values are AES-256 (recommended), AES-128, and PK-Zip (not recommended; legacy, weak encryption algorithm). Default is AES-256.
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.zip_archive_zip_create_quarantine_with_http_info(**kwargs)  # noqa: E501
+            return self.zip_archive_zip_create_quarantine_with_http_info(password, input_file1, **kwargs)  # noqa: E501
         else:
-            (data) = self.zip_archive_zip_create_quarantine_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.zip_archive_zip_create_quarantine_with_http_info(password, input_file1, **kwargs)  # noqa: E501
             return data
 
-    def zip_archive_zip_create_quarantine_with_http_info(self, **kwargs):  # noqa: E501
+    def zip_archive_zip_create_quarantine_with_http_info(self, password, input_file1, **kwargs):  # noqa: E501
         """Create an encrypted zip file to quarantine a dangerous file  # noqa: E501
 
         Create a new zip archive by compressing input files, and also applies encryption and password protection to the zip, for the purposes of quarantining the underlyikng file.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.zip_archive_zip_create_quarantine_with_http_info(async_req=True)
+        >>> thread = api.zip_archive_zip_create_quarantine_with_http_info(password, input_file1, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param str password: Password to place on the Zip file; the longer the password, the more secure (required)
+        :param file input_file1: First input file to perform the operation on. (required)
+        :param str encryption_algorithm: Encryption algorithm to use; possible values are AES-256 (recommended), AES-128, and PK-Zip (not recommended; legacy, weak encryption algorithm). Default is AES-256.
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = []  # noqa: E501
+        all_params = ['password', 'input_file1', 'encryption_algorithm']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -465,6 +471,14 @@ class ZipArchiveApi(object):
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'password' is set
+        if ('password' not in params or
+                params['password'] is None):
+            raise ValueError("Missing the required parameter `password` when calling `zip_archive_zip_create_quarantine`")  # noqa: E501
+        # verify the required parameter 'input_file1' is set
+        if ('input_file1' not in params or
+                params['input_file1'] is None):
+            raise ValueError("Missing the required parameter `input_file1` when calling `zip_archive_zip_create_quarantine`")  # noqa: E501
 
         collection_formats = {}
 
@@ -473,9 +487,15 @@ class ZipArchiveApi(object):
         query_params = []
 
         header_params = {}
+        if 'password' in params:
+            header_params['password'] = params['password']  # noqa: E501
+        if 'encryption_algorithm' in params:
+            header_params['encryptionAlgorithm'] = params['encryption_algorithm']  # noqa: E501
 
         form_params = []
         local_var_files = {}
+        if 'input_file1' in params:
+            local_var_files['inputFile1'] = params['input_file1']  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`

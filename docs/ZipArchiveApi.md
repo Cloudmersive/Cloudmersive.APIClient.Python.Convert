@@ -216,7 +216,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **zip_archive_zip_create_quarantine**
-> object zip_archive_zip_create_quarantine()
+> object zip_archive_zip_create_quarantine(password, input_file1, encryption_algorithm=encryption_algorithm)
 
 Create an encrypted zip file to quarantine a dangerous file
 
@@ -238,17 +238,25 @@ configuration.api_key['Apikey'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = cloudmersive_convert_api_client.ZipArchiveApi(cloudmersive_convert_api_client.ApiClient(configuration))
+password = 'password_example' # str | Password to place on the Zip file; the longer the password, the more secure
+input_file1 = '/path/to/file.txt' # file | First input file to perform the operation on.
+encryption_algorithm = 'encryption_algorithm_example' # str | Encryption algorithm to use; possible values are AES-256 (recommended), AES-128, and PK-Zip (not recommended; legacy, weak encryption algorithm). Default is AES-256. (optional)
 
 try:
     # Create an encrypted zip file to quarantine a dangerous file
-    api_response = api_instance.zip_archive_zip_create_quarantine()
+    api_response = api_instance.zip_archive_zip_create_quarantine(password, input_file1, encryption_algorithm=encryption_algorithm)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ZipArchiveApi->zip_archive_zip_create_quarantine: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **password** | **str**| Password to place on the Zip file; the longer the password, the more secure | 
+ **input_file1** | **file**| First input file to perform the operation on. | 
+ **encryption_algorithm** | **str**| Encryption algorithm to use; possible values are AES-256 (recommended), AES-128, and PK-Zip (not recommended; legacy, weak encryption algorithm). Default is AES-256. | [optional] 
 
 ### Return type
 
