@@ -701,7 +701,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **edit_pdf_reduce_file_size**
-> str edit_pdf_reduce_file_size(input_file)
+> str edit_pdf_reduce_file_size(input_file, quality=quality)
 
 Reduce the file size and optimize a PDF
 
@@ -724,10 +724,11 @@ configuration.api_key['Apikey'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = cloudmersive_convert_api_client.EditPdfApi(cloudmersive_convert_api_client.ApiClient(configuration))
 input_file = '/path/to/file.txt' # file | Input file to perform the operation on.
+quality = 8.14 # float | Quality level for the images in the PDF, ranging from 0.0 (low quality) to 1.0 (high quality); default is 0.3 (optional)
 
 try:
     # Reduce the file size and optimize a PDF
-    api_response = api_instance.edit_pdf_reduce_file_size(input_file)
+    api_response = api_instance.edit_pdf_reduce_file_size(input_file, quality=quality)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EditPdfApi->edit_pdf_reduce_file_size: %s\n" % e)
@@ -738,6 +739,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **input_file** | **file**| Input file to perform the operation on. | 
+ **quality** | **float**| Quality level for the images in the PDF, ranging from 0.0 (low quality) to 1.0 (high quality); default is 0.3 | [optional] 
 
 ### Return type
 

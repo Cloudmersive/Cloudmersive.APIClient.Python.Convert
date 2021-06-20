@@ -4,13 +4,78 @@ All URIs are relative to *https://api.cloudmersive.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**edit_html_html_append_header_tag**](EditHtmlApi.md#edit_html_html_append_header_tag) | **POST** /convert/edit/html/head/append/tag | Append an HTML tag to the HEAD section of an HTML Document
 [**edit_html_html_append_heading**](EditHtmlApi.md#edit_html_html_append_heading) | **POST** /convert/edit/html/append/heading | Append a Heading to an HTML Document
 [**edit_html_html_append_image_from_url**](EditHtmlApi.md#edit_html_html_append_image_from_url) | **POST** /convert/edit/html/append/image/from-url | Append an Image to an HTML Document from a URL
 [**edit_html_html_append_image_inline**](EditHtmlApi.md#edit_html_html_append_image_inline) | **POST** /convert/edit/html/append/image/inline | Append a Base64 Inline Image to an HTML Document
 [**edit_html_html_append_paragraph**](EditHtmlApi.md#edit_html_html_append_paragraph) | **POST** /convert/edit/html/append/paragraph | Append a Paragraph to an HTML Document
 [**edit_html_html_create_blank_document**](EditHtmlApi.md#edit_html_html_create_blank_document) | **POST** /convert/edit/html/create/blank | Create a Blank HTML Document
+[**edit_html_html_get_language**](EditHtmlApi.md#edit_html_html_get_language) | **POST** /convert/edit/html/head/get/language | Gets the language for the HTML document
 [**edit_html_html_get_links**](EditHtmlApi.md#edit_html_html_get_links) | **POST** /convert/edit/html/extract/links | Extract resolved link URLs from HTML File
+[**edit_html_html_get_rel_canonical**](EditHtmlApi.md#edit_html_html_get_rel_canonical) | **POST** /convert/edit/html/head/get/rel-canonical-url | Gets the rel canonical URL for the HTML document
+[**edit_html_html_get_sitemap**](EditHtmlApi.md#edit_html_html_get_sitemap) | **POST** /convert/edit/html/head/get/sitemap-url | Gets the sitemap URL for the HTML document
+[**edit_html_html_set_language**](EditHtmlApi.md#edit_html_html_set_language) | **POST** /convert/edit/html/head/set/language | Sets the language for the HTML document
+[**edit_html_html_set_rel_canonical**](EditHtmlApi.md#edit_html_html_set_rel_canonical) | **POST** /convert/edit/html/head/set/rel-canonical-url | Sets the rel canonical URL for the HTML document
+[**edit_html_html_set_sitemap_url**](EditHtmlApi.md#edit_html_html_set_sitemap_url) | **POST** /convert/edit/html/head/set/sitemap-url | Sets the sitemap URL for the HTML document
 
+
+# **edit_html_html_append_header_tag**
+> str edit_html_html_append_header_tag(html_tag, input_file=input_file, input_file_url=input_file_url)
+
+Append an HTML tag to the HEAD section of an HTML Document
+
+Appends an HTML tag to the HEAD section of an HTML document.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_convert_api_client
+from cloudmersive_convert_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_convert_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_convert_api_client.EditHtmlApi(cloudmersive_convert_api_client.ApiClient(configuration))
+html_tag = 'html_tag_example' # str | The HTML tag to append.
+input_file = '/path/to/file.txt' # file | Optional: Input file to perform the operation on. (optional)
+input_file_url = 'input_file_url_example' # str | Optional: URL of a file to operate on as input. (optional)
+
+try:
+    # Append an HTML tag to the HEAD section of an HTML Document
+    api_response = api_instance.edit_html_html_append_header_tag(html_tag, input_file=input_file, input_file_url=input_file_url)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EditHtmlApi->edit_html_html_append_header_tag: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **html_tag** | **str**| The HTML tag to append. | 
+ **input_file** | **file**| Optional: Input file to perform the operation on. | [optional] 
+ **input_file_url** | **str**| Optional: URL of a file to operate on as input. | [optional] 
+
+### Return type
+
+**str**
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **edit_html_html_append_heading**
 > str edit_html_html_append_heading(heading_text, input_file=input_file, input_file_url=input_file_url, heading_size=heading_size, css_style=css_style)
@@ -320,6 +385,62 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **edit_html_html_get_language**
+> HtmlGetLanguageResult edit_html_html_get_language(input_file=input_file, input_file_url=input_file_url)
+
+Gets the language for the HTML document
+
+Retrieves the language code (e.g. \"en\" or \"de\") of an HTML document.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_convert_api_client
+from cloudmersive_convert_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_convert_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_convert_api_client.EditHtmlApi(cloudmersive_convert_api_client.ApiClient(configuration))
+input_file = '/path/to/file.txt' # file | Optional: Input file to perform the operation on. (optional)
+input_file_url = 'input_file_url_example' # str | Optional: URL of a file to operate on as input. (optional)
+
+try:
+    # Gets the language for the HTML document
+    api_response = api_instance.edit_html_html_get_language(input_file=input_file, input_file_url=input_file_url)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EditHtmlApi->edit_html_html_get_language: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **input_file** | **file**| Optional: Input file to perform the operation on. | [optional] 
+ **input_file_url** | **str**| Optional: URL of a file to operate on as input. | [optional] 
+
+### Return type
+
+[**HtmlGetLanguageResult**](HtmlGetLanguageResult.md)
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **edit_html_html_get_links**
 > HtmlGetLinksResponse edit_html_html_get_links(input_file=input_file, input_file_url=input_file_url, base_url=base_url)
 
@@ -366,6 +487,292 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**HtmlGetLinksResponse**](HtmlGetLinksResponse.md)
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **edit_html_html_get_rel_canonical**
+> HtmlGetRelCanonicalUrlResult edit_html_html_get_rel_canonical(input_file=input_file, input_file_url=input_file_url)
+
+Gets the rel canonical URL for the HTML document
+
+Gets the rel canonical URL of an HTML document.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_convert_api_client
+from cloudmersive_convert_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_convert_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_convert_api_client.EditHtmlApi(cloudmersive_convert_api_client.ApiClient(configuration))
+input_file = '/path/to/file.txt' # file | Optional: Input file to perform the operation on. (optional)
+input_file_url = 'input_file_url_example' # str | Optional: URL of a file to operate on as input. (optional)
+
+try:
+    # Gets the rel canonical URL for the HTML document
+    api_response = api_instance.edit_html_html_get_rel_canonical(input_file=input_file, input_file_url=input_file_url)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EditHtmlApi->edit_html_html_get_rel_canonical: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **input_file** | **file**| Optional: Input file to perform the operation on. | [optional] 
+ **input_file_url** | **str**| Optional: URL of a file to operate on as input. | [optional] 
+
+### Return type
+
+[**HtmlGetRelCanonicalUrlResult**](HtmlGetRelCanonicalUrlResult.md)
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **edit_html_html_get_sitemap**
+> HtmlGetSitemapUrlResult edit_html_html_get_sitemap(input_file=input_file, input_file_url=input_file_url)
+
+Gets the sitemap URL for the HTML document
+
+Gets the sitemap link URL of an HTML document.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_convert_api_client
+from cloudmersive_convert_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_convert_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_convert_api_client.EditHtmlApi(cloudmersive_convert_api_client.ApiClient(configuration))
+input_file = '/path/to/file.txt' # file | Optional: Input file to perform the operation on. (optional)
+input_file_url = 'input_file_url_example' # str | Optional: URL of a file to operate on as input. (optional)
+
+try:
+    # Gets the sitemap URL for the HTML document
+    api_response = api_instance.edit_html_html_get_sitemap(input_file=input_file, input_file_url=input_file_url)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EditHtmlApi->edit_html_html_get_sitemap: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **input_file** | **file**| Optional: Input file to perform the operation on. | [optional] 
+ **input_file_url** | **str**| Optional: URL of a file to operate on as input. | [optional] 
+
+### Return type
+
+[**HtmlGetSitemapUrlResult**](HtmlGetSitemapUrlResult.md)
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **edit_html_html_set_language**
+> str edit_html_html_set_language(language_code, input_file=input_file, input_file_url=input_file_url)
+
+Sets the language for the HTML document
+
+Sets the language code of an HTML document.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_convert_api_client
+from cloudmersive_convert_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_convert_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_convert_api_client.EditHtmlApi(cloudmersive_convert_api_client.ApiClient(configuration))
+language_code = 'language_code_example' # str | The HTML langauge code to set.
+input_file = '/path/to/file.txt' # file | Optional: Input file to perform the operation on. (optional)
+input_file_url = 'input_file_url_example' # str | Optional: URL of a file to operate on as input. (optional)
+
+try:
+    # Sets the language for the HTML document
+    api_response = api_instance.edit_html_html_set_language(language_code, input_file=input_file, input_file_url=input_file_url)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EditHtmlApi->edit_html_html_set_language: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **language_code** | **str**| The HTML langauge code to set. | 
+ **input_file** | **file**| Optional: Input file to perform the operation on. | [optional] 
+ **input_file_url** | **str**| Optional: URL of a file to operate on as input. | [optional] 
+
+### Return type
+
+**str**
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **edit_html_html_set_rel_canonical**
+> str edit_html_html_set_rel_canonical(canonical_url, input_file=input_file, input_file_url=input_file_url)
+
+Sets the rel canonical URL for the HTML document
+
+Sets the rel canonical URL of an HTML document.  This is useful for telling search engines and other indexers which pages are duplicates of eachother; any pages with the rel=canonical tag will be treated as duplicates of the canonical URL.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_convert_api_client
+from cloudmersive_convert_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_convert_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_convert_api_client.EditHtmlApi(cloudmersive_convert_api_client.ApiClient(configuration))
+canonical_url = 'canonical_url_example' # str | The HTML canonical URL to set.
+input_file = '/path/to/file.txt' # file | Optional: Input file to perform the operation on. (optional)
+input_file_url = 'input_file_url_example' # str | Optional: URL of a file to operate on as input. (optional)
+
+try:
+    # Sets the rel canonical URL for the HTML document
+    api_response = api_instance.edit_html_html_set_rel_canonical(canonical_url, input_file=input_file, input_file_url=input_file_url)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EditHtmlApi->edit_html_html_set_rel_canonical: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **canonical_url** | **str**| The HTML canonical URL to set. | 
+ **input_file** | **file**| Optional: Input file to perform the operation on. | [optional] 
+ **input_file_url** | **str**| Optional: URL of a file to operate on as input. | [optional] 
+
+### Return type
+
+**str**
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **edit_html_html_set_sitemap_url**
+> str edit_html_html_set_sitemap_url(sitemap_url, input_file=input_file, input_file_url=input_file_url)
+
+Sets the sitemap URL for the HTML document
+
+Sets the sitemap URL of an HTML document.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_convert_api_client
+from cloudmersive_convert_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_convert_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_convert_api_client.EditHtmlApi(cloudmersive_convert_api_client.ApiClient(configuration))
+sitemap_url = 'sitemap_url_example' # str | The HTML sitemap URL to set.
+input_file = '/path/to/file.txt' # file | Optional: Input file to perform the operation on. (optional)
+input_file_url = 'input_file_url_example' # str | Optional: URL of a file to operate on as input. (optional)
+
+try:
+    # Sets the sitemap URL for the HTML document
+    api_response = api_instance.edit_html_html_set_sitemap_url(sitemap_url, input_file=input_file, input_file_url=input_file_url)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EditHtmlApi->edit_html_html_set_sitemap_url: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **sitemap_url** | **str**| The HTML sitemap URL to set. | 
+ **input_file** | **file**| Optional: Input file to perform the operation on. | [optional] 
+ **input_file_url** | **str**| Optional: URL of a file to operate on as input. | [optional] 
+
+### Return type
+
+**str**
 
 ### Authorization
 

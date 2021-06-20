@@ -4,7 +4,7 @@ Convert API lets you effortlessly convert file formats and types.
 This Python package provides a native API client for [Cloudmersive Document Conversion](https://www.cloudmersive.com/convert-api)
 
 - API version: v1
-- Package version: 3.1.5
+- Package version: 3.1.6
 - Build package: io.swagger.codegen.languages.PythonClientCodegen
 
 ## Requirements.
@@ -252,12 +252,19 @@ Class | Method | HTTP request | Description
 *EditDocumentApi* | [**edit_document_xlsx_rename_worksheet**](docs/EditDocumentApi.md#edit_document_xlsx_rename_worksheet) | **POST** /convert/edit/xlsx/rename-worksheet | Rename a specific worksheet in a Excel XLSX spreadsheet
 *EditDocumentApi* | [**edit_document_xlsx_set_cell_by_identifier**](docs/EditDocumentApi.md#edit_document_xlsx_set_cell_by_identifier) | **POST** /convert/edit/xlsx/set-cell/by-identifier | Set, update cell contents in an Excel XLSX spreadsheet, worksheet by cell identifier
 *EditDocumentApi* | [**edit_document_xlsx_set_cell_by_index**](docs/EditDocumentApi.md#edit_document_xlsx_set_cell_by_index) | **POST** /convert/edit/xlsx/set-cell/by-index | Set, update cell contents in an Excel XLSX spreadsheet, worksheet by index
+*EditHtmlApi* | [**edit_html_html_append_header_tag**](docs/EditHtmlApi.md#edit_html_html_append_header_tag) | **POST** /convert/edit/html/head/append/tag | Append an HTML tag to the HEAD section of an HTML Document
 *EditHtmlApi* | [**edit_html_html_append_heading**](docs/EditHtmlApi.md#edit_html_html_append_heading) | **POST** /convert/edit/html/append/heading | Append a Heading to an HTML Document
 *EditHtmlApi* | [**edit_html_html_append_image_from_url**](docs/EditHtmlApi.md#edit_html_html_append_image_from_url) | **POST** /convert/edit/html/append/image/from-url | Append an Image to an HTML Document from a URL
 *EditHtmlApi* | [**edit_html_html_append_image_inline**](docs/EditHtmlApi.md#edit_html_html_append_image_inline) | **POST** /convert/edit/html/append/image/inline | Append a Base64 Inline Image to an HTML Document
 *EditHtmlApi* | [**edit_html_html_append_paragraph**](docs/EditHtmlApi.md#edit_html_html_append_paragraph) | **POST** /convert/edit/html/append/paragraph | Append a Paragraph to an HTML Document
 *EditHtmlApi* | [**edit_html_html_create_blank_document**](docs/EditHtmlApi.md#edit_html_html_create_blank_document) | **POST** /convert/edit/html/create/blank | Create a Blank HTML Document
+*EditHtmlApi* | [**edit_html_html_get_language**](docs/EditHtmlApi.md#edit_html_html_get_language) | **POST** /convert/edit/html/head/get/language | Gets the language for the HTML document
 *EditHtmlApi* | [**edit_html_html_get_links**](docs/EditHtmlApi.md#edit_html_html_get_links) | **POST** /convert/edit/html/extract/links | Extract resolved link URLs from HTML File
+*EditHtmlApi* | [**edit_html_html_get_rel_canonical**](docs/EditHtmlApi.md#edit_html_html_get_rel_canonical) | **POST** /convert/edit/html/head/get/rel-canonical-url | Gets the rel canonical URL for the HTML document
+*EditHtmlApi* | [**edit_html_html_get_sitemap**](docs/EditHtmlApi.md#edit_html_html_get_sitemap) | **POST** /convert/edit/html/head/get/sitemap-url | Gets the sitemap URL for the HTML document
+*EditHtmlApi* | [**edit_html_html_set_language**](docs/EditHtmlApi.md#edit_html_html_set_language) | **POST** /convert/edit/html/head/set/language | Sets the language for the HTML document
+*EditHtmlApi* | [**edit_html_html_set_rel_canonical**](docs/EditHtmlApi.md#edit_html_html_set_rel_canonical) | **POST** /convert/edit/html/head/set/rel-canonical-url | Sets the rel canonical URL for the HTML document
+*EditHtmlApi* | [**edit_html_html_set_sitemap_url**](docs/EditHtmlApi.md#edit_html_html_set_sitemap_url) | **POST** /convert/edit/html/head/set/sitemap-url | Sets the sitemap URL for the HTML document
 *EditPdfApi* | [**edit_pdf_add_annotations**](docs/EditPdfApi.md#edit_pdf_add_annotations) | **POST** /convert/edit/pdf/annotations/add-item | Add one or more PDF annotations, comments in the PDF document
 *EditPdfApi* | [**edit_pdf_convert_to_pdf_a**](docs/EditPdfApi.md#edit_pdf_convert_to_pdf_a) | **POST** /convert/edit/pdf/optimize/pdf-a | Convert a PDF file to PDF/A
 *EditPdfApi* | [**edit_pdf_decrypt**](docs/EditPdfApi.md#edit_pdf_decrypt) | **POST** /convert/edit/pdf/decrypt | Decrypt and password-protect a PDF
@@ -480,7 +487,10 @@ Class | Method | HTTP request | Description
  - [GetXlsxStylesResponse](docs/GetXlsxStylesResponse.md)
  - [GetXlsxWorksheetsRequest](docs/GetXlsxWorksheetsRequest.md)
  - [GetXlsxWorksheetsResponse](docs/GetXlsxWorksheetsResponse.md)
+ - [HtmlGetLanguageResult](docs/HtmlGetLanguageResult.md)
  - [HtmlGetLinksResponse](docs/HtmlGetLinksResponse.md)
+ - [HtmlGetRelCanonicalUrlResult](docs/HtmlGetRelCanonicalUrlResult.md)
+ - [HtmlGetSitemapUrlResult](docs/HtmlGetSitemapUrlResult.md)
  - [HtmlHyperlink](docs/HtmlHyperlink.md)
  - [HtmlMdResult](docs/HtmlMdResult.md)
  - [HtmlSsrfThreatCheckResult](docs/HtmlSsrfThreatCheckResult.md)

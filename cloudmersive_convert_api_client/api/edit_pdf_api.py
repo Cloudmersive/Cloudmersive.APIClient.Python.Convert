@@ -1308,6 +1308,7 @@ class EditPdfApi(object):
 
         :param async_req bool
         :param file input_file: Input file to perform the operation on. (required)
+        :param float quality: Quality level for the images in the PDF, ranging from 0.0 (low quality) to 1.0 (high quality); default is 0.3
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1330,12 +1331,13 @@ class EditPdfApi(object):
 
         :param async_req bool
         :param file input_file: Input file to perform the operation on. (required)
+        :param float quality: Quality level for the images in the PDF, ranging from 0.0 (low quality) to 1.0 (high quality); default is 0.3
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['input_file']  # noqa: E501
+        all_params = ['input_file', 'quality']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1362,6 +1364,8 @@ class EditPdfApi(object):
         query_params = []
 
         header_params = {}
+        if 'quality' in params:
+            header_params['quality'] = params['quality']  # noqa: E501
 
         form_params = []
         local_var_files = {}
