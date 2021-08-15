@@ -4,7 +4,7 @@ Convert API lets you effortlessly convert file formats and types.
 This Python package provides a native API client for [Cloudmersive Document Conversion](https://www.cloudmersive.com/convert-api)
 
 - API version: v1
-- Package version: 3.1.8
+- Package version: 3.1.9
 - Build package: io.swagger.codegen.languages.PythonClientCodegen
 
 ## Requirements.
@@ -219,7 +219,8 @@ Class | Method | HTTP request | Description
 *EditDocumentApi* | [**edit_document_docx_remove_headers_and_footers**](docs/EditDocumentApi.md#edit_document_docx_remove_headers_and_footers) | **POST** /convert/edit/docx/remove-headers-and-footers | Remove headers and footers from Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_remove_object**](docs/EditDocumentApi.md#edit_document_docx_remove_object) | **POST** /convert/edit/docx/remove-object | Delete any object in a Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_replace**](docs/EditDocumentApi.md#edit_document_docx_replace) | **POST** /convert/edit/docx/replace-all | Replace string in Word DOCX document
-*EditDocumentApi* | [**edit_document_docx_replace_multi**](docs/EditDocumentApi.md#edit_document_docx_replace_multi) | **POST** /convert/edit/docx/replace-all/multi | Replace multiple strings in Word DOCX document
+*EditDocumentApi* | [**edit_document_docx_replace_multi**](docs/EditDocumentApi.md#edit_document_docx_replace_multi) | **POST** /convert/edit/docx/replace-all/multi | Replace multiple strings in Word DOCX document, return result
+*EditDocumentApi* | [**edit_document_docx_replace_multi_edit_session**](docs/EditDocumentApi.md#edit_document_docx_replace_multi_edit_session) | **POST** /convert/edit/docx/replace-all/multi/edit-session | Replace multiple strings in Word DOCX document, return edit session
 *EditDocumentApi* | [**edit_document_docx_replace_paragraph**](docs/EditDocumentApi.md#edit_document_docx_replace_paragraph) | **POST** /convert/edit/docx/replace/paragraph | Replace matching paragraphs in a Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_set_custom_metadata_properties**](docs/EditDocumentApi.md#edit_document_docx_set_custom_metadata_properties) | **POST** /convert/edit/docx/set-metadata/custom-property | Set custom property metadata properties in Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_set_footer**](docs/EditDocumentApi.md#edit_document_docx_set_footer) | **POST** /convert/edit/docx/set-footer | Set the footer in a Word DOCX document
@@ -320,9 +321,11 @@ Class | Method | HTTP request | Description
 *SplitDocumentApi* | [**split_document_txt_by_line**](docs/SplitDocumentApi.md#split_document_txt_by_line) | **POST** /convert/split/txt/by-line | Split a single Text file (txt) into lines
 *SplitDocumentApi* | [**split_document_txt_by_string**](docs/SplitDocumentApi.md#split_document_txt_by_string) | **POST** /convert/split/txt/by-string | Split a single Text file (txt) by a string delimiter
 *SplitDocumentApi* | [**split_document_xlsx**](docs/SplitDocumentApi.md#split_document_xlsx) | **POST** /convert/split/xlsx | Split a single Excel XLSX into Separate Worksheets
-*TransformDocumentApi* | [**transform_document_docx_replace**](docs/TransformDocumentApi.md#transform_document_docx_replace) | **POST** /convert/transform/docx/replace-all | Replace string in Word DOCX document
-*TransformDocumentApi* | [**transform_document_docx_table_fill_in**](docs/TransformDocumentApi.md#transform_document_docx_table_fill_in) | **POST** /convert/transform/docx/table/fill/data | Fill in data in a table in a Word DOCX document
-*TransformDocumentApi* | [**transform_document_pptx_replace**](docs/TransformDocumentApi.md#transform_document_pptx_replace) | **POST** /convert/transform/pptx/replace-all | Replace string in PowerPoint PPTX presentation
+*TransformDocumentApi* | [**transform_document_docx_replace**](docs/TransformDocumentApi.md#transform_document_docx_replace) | **POST** /convert/transform/docx/replace-all | Replace string in Word DOCX document, return result
+*TransformDocumentApi* | [**transform_document_docx_replace_edit_session**](docs/TransformDocumentApi.md#transform_document_docx_replace_edit_session) | **POST** /convert/transform/docx/replace-all/edit-session | Replace string in Word DOCX document, return edit session
+*TransformDocumentApi* | [**transform_document_docx_table_fill_in**](docs/TransformDocumentApi.md#transform_document_docx_table_fill_in) | **POST** /convert/transform/docx/table/fill/data | Fill in data in a table in a Word DOCX document, return result
+*TransformDocumentApi* | [**transform_document_docx_table_fill_in_edit_session**](docs/TransformDocumentApi.md#transform_document_docx_table_fill_in_edit_session) | **POST** /convert/transform/docx/table/fill/data/edit-session | Fill in data in a table in a Word DOCX document, return edit session
+*TransformDocumentApi* | [**transform_document_pptx_replace**](docs/TransformDocumentApi.md#transform_document_pptx_replace) | **POST** /convert/transform/pptx/replace-all | Replace string in PowerPoint PPTX presentation, return result
 *ValidateDocumentApi* | [**validate_document_autodetect_validation**](docs/ValidateDocumentApi.md#validate_document_autodetect_validation) | **POST** /convert/validate/autodetect | Autodetect content type and validate
 *ValidateDocumentApi* | [**validate_document_csv_validation**](docs/ValidateDocumentApi.md#validate_document_csv_validation) | **POST** /convert/validate/csv | Validate a CSV file document (CSV)
 *ValidateDocumentApi* | [**validate_document_docx_validation**](docs/ValidateDocumentApi.md#validate_document_docx_validation) | **POST** /convert/validate/docx | Validate a Word document (DOCX)
@@ -395,6 +398,8 @@ Class | Method | HTTP request | Description
  - [DetectLineEndingsResponse](docs/DetectLineEndingsResponse.md)
  - [DisableSharedWorkbookRequest](docs/DisableSharedWorkbookRequest.md)
  - [DisableSharedWorkbookResponse](docs/DisableSharedWorkbookResponse.md)
+ - [DocumentEditingEditSession](docs/DocumentEditingEditSession.md)
+ - [DocumentTransformEditSession](docs/DocumentTransformEditSession.md)
  - [DocumentValidationError](docs/DocumentValidationError.md)
  - [DocumentValidationResult](docs/DocumentValidationResult.md)
  - [DocxBody](docs/DocxBody.md)
