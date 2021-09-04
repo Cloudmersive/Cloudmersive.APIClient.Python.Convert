@@ -4,7 +4,7 @@ Convert API lets you effortlessly convert file formats and types.
 This Python package provides a native API client for [Cloudmersive Document Conversion](https://www.cloudmersive.com/convert-api)
 
 - API version: v1
-- Package version: 3.1.9
+- Package version: 3.2.0
 - Build package: io.swagger.codegen.languages.PythonClientCodegen
 
 ## Requirements.
@@ -325,6 +325,7 @@ Class | Method | HTTP request | Description
 *TransformDocumentApi* | [**transform_document_docx_replace_edit_session**](docs/TransformDocumentApi.md#transform_document_docx_replace_edit_session) | **POST** /convert/transform/docx/replace-all/edit-session | Replace string in Word DOCX document, return edit session
 *TransformDocumentApi* | [**transform_document_docx_table_fill_in**](docs/TransformDocumentApi.md#transform_document_docx_table_fill_in) | **POST** /convert/transform/docx/table/fill/data | Fill in data in a table in a Word DOCX document, return result
 *TransformDocumentApi* | [**transform_document_docx_table_fill_in_edit_session**](docs/TransformDocumentApi.md#transform_document_docx_table_fill_in_edit_session) | **POST** /convert/transform/docx/table/fill/data/edit-session | Fill in data in a table in a Word DOCX document, return edit session
+*TransformDocumentApi* | [**transform_document_docx_table_fill_in_multi**](docs/TransformDocumentApi.md#transform_document_docx_table_fill_in_multi) | **POST** /convert/transform/docx/table/fill/data/multi | Fill in data in multiple tables in a Word DOCX document, return result
 *TransformDocumentApi* | [**transform_document_pptx_replace**](docs/TransformDocumentApi.md#transform_document_pptx_replace) | **POST** /convert/transform/pptx/replace-all | Replace string in PowerPoint PPTX presentation, return result
 *ValidateDocumentApi* | [**validate_document_autodetect_validation**](docs/ValidateDocumentApi.md#validate_document_autodetect_validation) | **POST** /convert/validate/autodetect | Autodetect content type and validate
 *ValidateDocumentApi* | [**validate_document_csv_validation**](docs/ValidateDocumentApi.md#validate_document_csv_validation) | **POST** /convert/validate/csv | Validate a CSV file document (CSV)
@@ -428,6 +429,8 @@ Class | Method | HTTP request | Description
  - [DocxTable](docs/DocxTable.md)
  - [DocxTableCell](docs/DocxTableCell.md)
  - [DocxTableRow](docs/DocxTableRow.md)
+ - [DocxTableSingleTableFill](docs/DocxTableSingleTableFill.md)
+ - [DocxTableTableFillMultiRequest](docs/DocxTableTableFillMultiRequest.md)
  - [DocxTableTableFillRequest](docs/DocxTableTableFillRequest.md)
  - [DocxTableTableFillTableCell](docs/DocxTableTableFillTableCell.md)
  - [DocxTableTableFillTableRow](docs/DocxTableTableFillTableRow.md)
