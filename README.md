@@ -4,7 +4,7 @@ Convert API lets you effortlessly convert file formats and types.
 This Python package provides a native API client for [Cloudmersive Document Conversion](https://www.cloudmersive.com/convert-api)
 
 - API version: v1
-- Package version: 3.2.0
+- Package version: 3.2.1
 - Build package: io.swagger.codegen.languages.PythonClientCodegen
 
 ## Requirements.
@@ -200,6 +200,8 @@ Class | Method | HTTP request | Description
 *EditDocumentApi* | [**edit_document_docx_find_paragraph**](docs/EditDocumentApi.md#edit_document_docx_find_paragraph) | **POST** /convert/edit/docx/find/paragraph | Find matching paragraphs in a Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_get_comments**](docs/EditDocumentApi.md#edit_document_docx_get_comments) | **POST** /convert/edit/docx/get-comments/flat-list | Get comments from a Word DOCX document as a flat list
 *EditDocumentApi* | [**edit_document_docx_get_comments_hierarchical**](docs/EditDocumentApi.md#edit_document_docx_get_comments_hierarchical) | **POST** /convert/edit/docx/get-comments/hierarchical | Get comments from a Word DOCX document hierarchically
+*EditDocumentApi* | [**edit_document_docx_get_content_controls**](docs/EditDocumentApi.md#edit_document_docx_get_content_controls) | **POST** /convert/edit/docx/get-content-controls | Get all content controls (form fields) and values in a Word DOCX document
+*EditDocumentApi* | [**edit_document_docx_get_form_fields**](docs/EditDocumentApi.md#edit_document_docx_get_form_fields) | **POST** /convert/edit/docx/get-form-fields | Get all form fields in a Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_get_headers_and_footers**](docs/EditDocumentApi.md#edit_document_docx_get_headers_and_footers) | **POST** /convert/edit/docx/get-headers-and-footers | Get content of a footer from a Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_get_images**](docs/EditDocumentApi.md#edit_document_docx_get_images) | **POST** /convert/edit/docx/get-images | Get images from a Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_get_macro_information**](docs/EditDocumentApi.md#edit_document_docx_get_macro_information) | **POST** /convert/edit/docx/get-macros | Get macro information from a Word DOCX/DOCM document
@@ -225,6 +227,7 @@ Class | Method | HTTP request | Description
 *EditDocumentApi* | [**edit_document_docx_set_custom_metadata_properties**](docs/EditDocumentApi.md#edit_document_docx_set_custom_metadata_properties) | **POST** /convert/edit/docx/set-metadata/custom-property | Set custom property metadata properties in Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_set_footer**](docs/EditDocumentApi.md#edit_document_docx_set_footer) | **POST** /convert/edit/docx/set-footer | Set the footer in a Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_set_footer_add_page_number**](docs/EditDocumentApi.md#edit_document_docx_set_footer_add_page_number) | **POST** /convert/edit/docx/set-footer/add-page-number | Add page number to footer in a Word DOCX document
+*EditDocumentApi* | [**edit_document_docx_set_form_fields**](docs/EditDocumentApi.md#edit_document_docx_set_form_fields) | **POST** /convert/edit/docx/set-form-fields | Set and fill values for form fields in a Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_set_header**](docs/EditDocumentApi.md#edit_document_docx_set_header) | **POST** /convert/edit/docx/set-header | Set the header in a Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_update_table_cell**](docs/EditDocumentApi.md#edit_document_docx_update_table_cell) | **POST** /convert/edit/docx/update-table-cell | Update, set contents of a table cell in an existing table in a Word DOCX document
 *EditDocumentApi* | [**edit_document_docx_update_table_row**](docs/EditDocumentApi.md#edit_document_docx_update_table_row) | **POST** /convert/edit/docx/update-table-row | Update, set contents of a table row in an existing table in a Word DOCX document
@@ -406,6 +409,7 @@ Class | Method | HTTP request | Description
  - [DocxBody](docs/DocxBody.md)
  - [DocxCellStyle](docs/DocxCellStyle.md)
  - [DocxComment](docs/DocxComment.md)
+ - [DocxContentControl](docs/DocxContentControl.md)
  - [DocxFooter](docs/DocxFooter.md)
  - [DocxHeader](docs/DocxHeader.md)
  - [DocxImage](docs/DocxImage.md)
@@ -423,6 +427,7 @@ Class | Method | HTTP request | Description
  - [DocxSetFooterAddPageNumberRequest](docs/DocxSetFooterAddPageNumberRequest.md)
  - [DocxSetFooterRequest](docs/DocxSetFooterRequest.md)
  - [DocxSetFooterResponse](docs/DocxSetFooterResponse.md)
+ - [DocxSetFormFieldsRequest](docs/DocxSetFormFieldsRequest.md)
  - [DocxSetHeaderRequest](docs/DocxSetHeaderRequest.md)
  - [DocxSetHeaderResponse](docs/DocxSetHeaderResponse.md)
  - [DocxStyle](docs/DocxStyle.md)
@@ -447,6 +452,7 @@ Class | Method | HTTP request | Description
  - [EnableSharedWorkbookRequest](docs/EnableSharedWorkbookRequest.md)
  - [EnableSharedWorkbookResponse](docs/EnableSharedWorkbookResponse.md)
  - [ExifValue](docs/ExifValue.md)
+ - [FillHandlebarFormField](docs/FillHandlebarFormField.md)
  - [FindDocxParagraphRequest](docs/FindDocxParagraphRequest.md)
  - [FindDocxParagraphResponse](docs/FindDocxParagraphResponse.md)
  - [FindRegexMatch](docs/FindRegexMatch.md)
@@ -460,8 +466,10 @@ Class | Method | HTTP request | Description
  - [GetDocxBodyResponse](docs/GetDocxBodyResponse.md)
  - [GetDocxCommentsHierarchicalResponse](docs/GetDocxCommentsHierarchicalResponse.md)
  - [GetDocxCommentsResponse](docs/GetDocxCommentsResponse.md)
+ - [GetDocxContentControlsResponse](docs/GetDocxContentControlsResponse.md)
  - [GetDocxGetCommentsHierarchicalRequest](docs/GetDocxGetCommentsHierarchicalRequest.md)
  - [GetDocxGetCommentsRequest](docs/GetDocxGetCommentsRequest.md)
+ - [GetDocxGetFormFieldsResponse](docs/GetDocxGetFormFieldsResponse.md)
  - [GetDocxHeadersAndFootersRequest](docs/GetDocxHeadersAndFootersRequest.md)
  - [GetDocxHeadersAndFootersResponse](docs/GetDocxHeadersAndFootersResponse.md)
  - [GetDocxImagesRequest](docs/GetDocxImagesRequest.md)
@@ -499,6 +507,7 @@ Class | Method | HTTP request | Description
  - [GetXlsxStylesResponse](docs/GetXlsxStylesResponse.md)
  - [GetXlsxWorksheetsRequest](docs/GetXlsxWorksheetsRequest.md)
  - [GetXlsxWorksheetsResponse](docs/GetXlsxWorksheetsResponse.md)
+ - [HandlebarFormField](docs/HandlebarFormField.md)
  - [HtmlGetLanguageResult](docs/HtmlGetLanguageResult.md)
  - [HtmlGetLinksResponse](docs/HtmlGetLinksResponse.md)
  - [HtmlGetRelCanonicalUrlResult](docs/HtmlGetRelCanonicalUrlResult.md)

@@ -16,6 +16,8 @@ Method | HTTP request | Description
 [**edit_document_docx_find_paragraph**](EditDocumentApi.md#edit_document_docx_find_paragraph) | **POST** /convert/edit/docx/find/paragraph | Find matching paragraphs in a Word DOCX document
 [**edit_document_docx_get_comments**](EditDocumentApi.md#edit_document_docx_get_comments) | **POST** /convert/edit/docx/get-comments/flat-list | Get comments from a Word DOCX document as a flat list
 [**edit_document_docx_get_comments_hierarchical**](EditDocumentApi.md#edit_document_docx_get_comments_hierarchical) | **POST** /convert/edit/docx/get-comments/hierarchical | Get comments from a Word DOCX document hierarchically
+[**edit_document_docx_get_content_controls**](EditDocumentApi.md#edit_document_docx_get_content_controls) | **POST** /convert/edit/docx/get-content-controls | Get all content controls (form fields) and values in a Word DOCX document
+[**edit_document_docx_get_form_fields**](EditDocumentApi.md#edit_document_docx_get_form_fields) | **POST** /convert/edit/docx/get-form-fields | Get all form fields in a Word DOCX document
 [**edit_document_docx_get_headers_and_footers**](EditDocumentApi.md#edit_document_docx_get_headers_and_footers) | **POST** /convert/edit/docx/get-headers-and-footers | Get content of a footer from a Word DOCX document
 [**edit_document_docx_get_images**](EditDocumentApi.md#edit_document_docx_get_images) | **POST** /convert/edit/docx/get-images | Get images from a Word DOCX document
 [**edit_document_docx_get_macro_information**](EditDocumentApi.md#edit_document_docx_get_macro_information) | **POST** /convert/edit/docx/get-macros | Get macro information from a Word DOCX/DOCM document
@@ -41,6 +43,7 @@ Method | HTTP request | Description
 [**edit_document_docx_set_custom_metadata_properties**](EditDocumentApi.md#edit_document_docx_set_custom_metadata_properties) | **POST** /convert/edit/docx/set-metadata/custom-property | Set custom property metadata properties in Word DOCX document
 [**edit_document_docx_set_footer**](EditDocumentApi.md#edit_document_docx_set_footer) | **POST** /convert/edit/docx/set-footer | Set the footer in a Word DOCX document
 [**edit_document_docx_set_footer_add_page_number**](EditDocumentApi.md#edit_document_docx_set_footer_add_page_number) | **POST** /convert/edit/docx/set-footer/add-page-number | Add page number to footer in a Word DOCX document
+[**edit_document_docx_set_form_fields**](EditDocumentApi.md#edit_document_docx_set_form_fields) | **POST** /convert/edit/docx/set-form-fields | Set and fill values for form fields in a Word DOCX document
 [**edit_document_docx_set_header**](EditDocumentApi.md#edit_document_docx_set_header) | **POST** /convert/edit/docx/set-header | Set the header in a Word DOCX document
 [**edit_document_docx_update_table_cell**](EditDocumentApi.md#edit_document_docx_update_table_cell) | **POST** /convert/edit/docx/update-table-cell | Update, set contents of a table cell in an existing table in a Word DOCX document
 [**edit_document_docx_update_table_row**](EditDocumentApi.md#edit_document_docx_update_table_row) | **POST** /convert/edit/docx/update-table-row | Update, set contents of a table row in an existing table in a Word DOCX document
@@ -715,6 +718,114 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **edit_document_docx_get_content_controls**
+> GetDocxContentControlsResponse edit_document_docx_get_content_controls(input_file)
+
+Get all content controls (form fields) and values in a Word DOCX document
+
+Returns all the content controls, used for creating form fields, in a Office Word Document (docx)
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_convert_api_client
+from cloudmersive_convert_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_convert_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_convert_api_client.EditDocumentApi(cloudmersive_convert_api_client.ApiClient(configuration))
+input_file = '/path/to/file.txt' # file | Input file to perform the operation on.
+
+try:
+    # Get all content controls (form fields) and values in a Word DOCX document
+    api_response = api_instance.edit_document_docx_get_content_controls(input_file)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EditDocumentApi->edit_document_docx_get_content_controls: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **input_file** | **file**| Input file to perform the operation on. | 
+
+### Return type
+
+[**GetDocxContentControlsResponse**](GetDocxContentControlsResponse.md)
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **edit_document_docx_get_form_fields**
+> GetDocxGetFormFieldsResponse edit_document_docx_get_form_fields(input_file)
+
+Get all form fields in a Word DOCX document
+
+Returns all the content controls, used for creating form fields, as well as handlebar style text-based form fields such as \"{{FieldName}}\", in a Office Word Document (docx)
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_convert_api_client
+from cloudmersive_convert_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_convert_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_convert_api_client.EditDocumentApi(cloudmersive_convert_api_client.ApiClient(configuration))
+input_file = '/path/to/file.txt' # file | Input file to perform the operation on.
+
+try:
+    # Get all form fields in a Word DOCX document
+    api_response = api_instance.edit_document_docx_get_form_fields(input_file)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EditDocumentApi->edit_document_docx_get_form_fields: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **input_file** | **file**| Input file to perform the operation on. | 
+
+### Return type
+
+[**GetDocxGetFormFieldsResponse**](GetDocxGetFormFieldsResponse.md)
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
  - **Accept**: application/json, text/json, application/xml, text/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -2057,6 +2168,60 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**DocxSetFooterResponse**](DocxSetFooterResponse.md)
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **edit_document_docx_set_form_fields**
+> str edit_document_docx_set_form_fields(req_config)
+
+Set and fill values for form fields in a Word DOCX document
+
+Modifies a Office Word Document (docx) by filling in form fields using the provided values.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_convert_api_client
+from cloudmersive_convert_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_convert_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_convert_api_client.EditDocumentApi(cloudmersive_convert_api_client.ApiClient(configuration))
+req_config = cloudmersive_convert_api_client.DocxSetFormFieldsRequest() # DocxSetFormFieldsRequest | 
+
+try:
+    # Set and fill values for form fields in a Word DOCX document
+    api_response = api_instance.edit_document_docx_set_form_fields(req_config)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EditDocumentApi->edit_document_docx_set_form_fields: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **req_config** | [**DocxSetFormFieldsRequest**](DocxSetFormFieldsRequest.md)|  | 
+
+### Return type
+
+**str**
 
 ### Authorization
 
