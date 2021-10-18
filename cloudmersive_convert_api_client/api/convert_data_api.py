@@ -239,8 +239,103 @@ class ConvertDataApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def convert_data_json_string_to_xml(self, json_string, **kwargs):  # noqa: E501
+        """Convert JSON String to XML conversion  # noqa: E501
+
+        Convert a JSON object into XML  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_data_json_string_to_xml(json_string, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str json_string: Input JSON String to convert to XML (required)
+        :return: object
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_data_json_string_to_xml_with_http_info(json_string, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_data_json_string_to_xml_with_http_info(json_string, **kwargs)  # noqa: E501
+            return data
+
+    def convert_data_json_string_to_xml_with_http_info(self, json_string, **kwargs):  # noqa: E501
+        """Convert JSON String to XML conversion  # noqa: E501
+
+        Convert a JSON object into XML  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_data_json_string_to_xml_with_http_info(json_string, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str json_string: Input JSON String to convert to XML (required)
+        :return: object
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['json_string']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_data_json_string_to_xml" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'json_string' is set
+        if ('json_string' not in params or
+                params['json_string'] is None):
+            raise ValueError("Missing the required parameter `json_string` when calling `convert_data_json_string_to_xml`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'json_string' in params:
+            query_params.append(('JsonString', params['json_string']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/json-string/to/xml', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='object',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def convert_data_json_to_xml(self, json_object, **kwargs):  # noqa: E501
-        """Convert JSON to XML conversion  # noqa: E501
+        """Convert JSON Object to XML conversion  # noqa: E501
 
         Convert a JSON object into XML  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -249,7 +344,7 @@ class ConvertDataApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param object json_object: Input JSON to convert to XML (required)
+        :param object json_object: Input JSON Object to convert to XML (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -262,7 +357,7 @@ class ConvertDataApi(object):
             return data
 
     def convert_data_json_to_xml_with_http_info(self, json_object, **kwargs):  # noqa: E501
-        """Convert JSON to XML conversion  # noqa: E501
+        """Convert JSON Object to XML conversion  # noqa: E501
 
         Convert a JSON object into XML  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -271,7 +366,7 @@ class ConvertDataApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param object json_object: Input JSON to convert to XML (required)
+        :param object json_object: Input JSON Object to convert to XML (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
