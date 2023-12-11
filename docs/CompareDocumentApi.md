@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **compare_document_docx**
-> str compare_document_docx(input_file1, input_file2)
+> str compare_document_docx(input_file1, input_file2, autorepair=autorepair)
 
 Compare Two Word DOCX
 
@@ -32,10 +32,11 @@ configuration.api_key['Apikey'] = 'YOUR_API_KEY'
 api_instance = cloudmersive_convert_api_client.CompareDocumentApi(cloudmersive_convert_api_client.ApiClient(configuration))
 input_file1 = '/path/to/file.txt' # file | First input file to perform the operation on.
 input_file2 = '/path/to/file.txt' # file | Second input file to perform the operation on (more than 2 can be supplied).
+autorepair = true # bool | Optional; automatically repair input documents that have errors (default is true) (optional)
 
 try:
     # Compare Two Word DOCX
-    api_response = api_instance.compare_document_docx(input_file1, input_file2)
+    api_response = api_instance.compare_document_docx(input_file1, input_file2, autorepair=autorepair)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CompareDocumentApi->compare_document_docx: %s\n" % e)
@@ -47,6 +48,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **input_file1** | **file**| First input file to perform the operation on. | 
  **input_file2** | **file**| Second input file to perform the operation on (more than 2 can be supplied). | 
+ **autorepair** | **bool**| Optional; automatically repair input documents that have errors (default is true) | [optional] 
 
 ### Return type
 

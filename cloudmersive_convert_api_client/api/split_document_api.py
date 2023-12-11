@@ -33,6 +33,109 @@ class SplitDocumentApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
+    def split_document_batch_job_create(self, input_file, **kwargs):  # noqa: E501
+        """Split a single Document into Separate Documents by Page as a Batch Job  # noqa: E501
+
+        Split a Document (PPTX supported), comprised of multiple pages into separate files, with each containing exactly one page.  This API is designed for large jobs that could take a long time to create and so runs as a batch job that returns a Job ID that you can use with the GetAsyncJobStatus API to check on the status of the Job and ultimately get the output result.  This API automatically detects the document type and then performs the split by using the document type-specific API needed to perform the split.  This API is only available for Cloudmersive Managed Instance and Private Cloud deployments.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.split_document_batch_job_create(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :param bool return_document_contents: Set to true to return the contents of each presentation directly, set to false to only return URLs to each resulting presentation.  Default is true.
+        :return: SplitBatchJobCreateResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.split_document_batch_job_create_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.split_document_batch_job_create_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def split_document_batch_job_create_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Split a single Document into Separate Documents by Page as a Batch Job  # noqa: E501
+
+        Split a Document (PPTX supported), comprised of multiple pages into separate files, with each containing exactly one page.  This API is designed for large jobs that could take a long time to create and so runs as a batch job that returns a Job ID that you can use with the GetAsyncJobStatus API to check on the status of the Job and ultimately get the output result.  This API automatically detects the document type and then performs the split by using the document type-specific API needed to perform the split.  This API is only available for Cloudmersive Managed Instance and Private Cloud deployments.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.split_document_batch_job_create_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :param bool return_document_contents: Set to true to return the contents of each presentation directly, set to false to only return URLs to each resulting presentation.  Default is true.
+        :return: SplitBatchJobCreateResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file', 'return_document_contents']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method split_document_batch_job_create" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `split_document_batch_job_create`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'return_document_contents' in params:
+            header_params['returnDocumentContents'] = params['return_document_contents']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/split/batch-job/create', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='SplitBatchJobCreateResult',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def split_document_docx(self, input_file, **kwargs):  # noqa: E501
         """Split a single Word Document DOCX into Separate Documents by Page  # noqa: E501
 
@@ -129,6 +232,101 @@ class SplitDocumentApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='SplitDocxDocumentResult',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def split_document_get_async_job_status(self, async_job_id, **kwargs):  # noqa: E501
+        """Get the status and result of a Split Document Batch Job  # noqa: E501
+
+        Returns the result of the Async Job - possible states can be STARTED or COMPLETED.  This API is only available for Cloudmersive Managed Instance and Private Cloud deployments.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.split_document_get_async_job_status(async_job_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str async_job_id: (required)
+        :return: JobStatusResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.split_document_get_async_job_status_with_http_info(async_job_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.split_document_get_async_job_status_with_http_info(async_job_id, **kwargs)  # noqa: E501
+            return data
+
+    def split_document_get_async_job_status_with_http_info(self, async_job_id, **kwargs):  # noqa: E501
+        """Get the status and result of a Split Document Batch Job  # noqa: E501
+
+        Returns the result of the Async Job - possible states can be STARTED or COMPLETED.  This API is only available for Cloudmersive Managed Instance and Private Cloud deployments.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.split_document_get_async_job_status_with_http_info(async_job_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str async_job_id: (required)
+        :return: JobStatusResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['async_job_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method split_document_get_async_job_status" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'async_job_id' is set
+        if ('async_job_id' not in params or
+                params['async_job_id'] is None):
+            raise ValueError("Missing the required parameter `async_job_id` when calling `split_document_get_async_job_status`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'async_job_id' in params:
+            query_params.append(('AsyncJobID', params['async_job_id']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/split/batch-job/status', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='JobStatusResult',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -335,6 +533,105 @@ class SplitDocumentApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='SplitPptxPresentationResult',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def split_document_pptx_advanced(self, request, **kwargs):  # noqa: E501
+        """Split a single PowerPoint Presentation PPTX into Separate Presentations  # noqa: E501
+
+        Split a PowerPoint PPTX Presentation, comprised of multiple slides into separate PowerPoint PPTX presentations of customizeable size.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.split_document_pptx_advanced(request, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param PptxSplitAdvancedRequest request: (required)
+        :return: PptxSplitAdvancedResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.split_document_pptx_advanced_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.split_document_pptx_advanced_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def split_document_pptx_advanced_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Split a single PowerPoint Presentation PPTX into Separate Presentations  # noqa: E501
+
+        Split a PowerPoint PPTX Presentation, comprised of multiple slides into separate PowerPoint PPTX presentations of customizeable size.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.split_document_pptx_advanced_with_http_info(request, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param PptxSplitAdvancedRequest request: (required)
+        :return: PptxSplitAdvancedResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['request']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method split_document_pptx_advanced" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'request' is set
+        if ('request' not in params or
+                params['request'] is None):
+            raise ValueError("Missing the required parameter `request` when calling `split_document_pptx_advanced`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'request' in params:
+            body_params = params['request']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/split/pptx/advanced', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='PptxSplitAdvancedResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

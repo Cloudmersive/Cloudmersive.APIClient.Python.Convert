@@ -45,6 +45,7 @@ class CompareDocumentApi(object):
         :param async_req bool
         :param file input_file1: First input file to perform the operation on. (required)
         :param file input_file2: Second input file to perform the operation on (more than 2 can be supplied). (required)
+        :param bool autorepair: Optional; automatically repair input documents that have errors (default is true)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -68,12 +69,13 @@ class CompareDocumentApi(object):
         :param async_req bool
         :param file input_file1: First input file to perform the operation on. (required)
         :param file input_file2: Second input file to perform the operation on (more than 2 can be supplied). (required)
+        :param bool autorepair: Optional; automatically repair input documents that have errors (default is true)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['input_file1', 'input_file2']  # noqa: E501
+        all_params = ['input_file1', 'input_file2', 'autorepair']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -104,6 +106,8 @@ class CompareDocumentApi(object):
         query_params = []
 
         header_params = {}
+        if 'autorepair' in params:
+            header_params['autorepair'] = params['autorepair']  # noqa: E501
 
         form_params = []
         local_var_files = {}

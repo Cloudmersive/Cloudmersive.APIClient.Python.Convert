@@ -4,7 +4,7 @@ Convert API lets you effortlessly convert file formats and types.
 This Python package provides a native API client for [Cloudmersive Document Conversion](https://www.cloudmersive.com/convert-api)
 
 - API version: v1
-- Package version: 3.2.5
+- Package version: 3.3.0
 - Build package: io.swagger.codegen.languages.PythonClientCodegen
 
 ## Requirements.
@@ -61,10 +61,11 @@ configuration.api_key['Apikey'] = 'YOUR_API_KEY'
 api_instance = cloudmersive_convert_api_client.CompareDocumentApi(cloudmersive_convert_api_client.ApiClient(configuration))
 input_file1 = '/path/to/file.txt' # file | First input file to perform the operation on.
 input_file2 = '/path/to/file.txt' # file | Second input file to perform the operation on (more than 2 can be supplied).
+autorepair = true # bool | Optional; automatically repair input documents that have errors (default is true) (optional)
 
 try:
     # Compare Two Word DOCX
-    api_response = api_instance.compare_document_docx(input_file1, input_file2)
+    api_response = api_instance.compare_document_docx(input_file1, input_file2, autorepair=autorepair)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CompareDocumentApi->compare_document_docx: %s\n" % e)
@@ -99,6 +100,7 @@ Class | Method | HTTP request | Description
 *ConvertDocumentApi* | [**convert_document_autodetect_get_info**](docs/ConvertDocumentApi.md#convert_document_autodetect_get_info) | **POST** /convert/autodetect/get-info | Get document type information
 *ConvertDocumentApi* | [**convert_document_autodetect_to_jpg**](docs/ConvertDocumentApi.md#convert_document_autodetect_to_jpg) | **POST** /convert/autodetect/to/jpg | Convert Document to JPG/JPEG image array
 *ConvertDocumentApi* | [**convert_document_autodetect_to_pdf**](docs/ConvertDocumentApi.md#convert_document_autodetect_to_pdf) | **POST** /convert/autodetect/to/pdf | Convert Document to PDF
+*ConvertDocumentApi* | [**convert_document_autodetect_to_pdf_batch_job**](docs/ConvertDocumentApi.md#convert_document_autodetect_to_pdf_batch_job) | **POST** /convert/autodetect/to/pdf/batch-job | Convert Document to PDF as Batch Job
 *ConvertDocumentApi* | [**convert_document_autodetect_to_png_array**](docs/ConvertDocumentApi.md#convert_document_autodetect_to_png_array) | **POST** /convert/autodetect/to/png | Convert Document to PNG array
 *ConvertDocumentApi* | [**convert_document_autodetect_to_thumbnail**](docs/ConvertDocumentApi.md#convert_document_autodetect_to_thumbnail) | **POST** /convert/autodetect/to/thumbnail | Convert File to Thumbnail Image
 *ConvertDocumentApi* | [**convert_document_autodetect_to_thumbnails_advanced**](docs/ConvertDocumentApi.md#convert_document_autodetect_to_thumbnails_advanced) | **POST** /convert/autodetect/to/thumbnail/advanced | Convert File to Thumbnail Image Object
@@ -121,6 +123,7 @@ Class | Method | HTTP request | Description
 *ConvertDocumentApi* | [**convert_document_eml_to_jpg**](docs/ConvertDocumentApi.md#convert_document_eml_to_jpg) | **POST** /convert/eml/to/jpg | Convert Email EML file to JPG/JPEG image array
 *ConvertDocumentApi* | [**convert_document_eml_to_pdf**](docs/ConvertDocumentApi.md#convert_document_eml_to_pdf) | **POST** /convert/eml/to/pdf | Convert Email EML file to PDF document
 *ConvertDocumentApi* | [**convert_document_eml_to_png**](docs/ConvertDocumentApi.md#convert_document_eml_to_png) | **POST** /convert/eml/to/png | Convert Email EML file to PNG image array
+*ConvertDocumentApi* | [**convert_document_get_async_job_status**](docs/ConvertDocumentApi.md#convert_document_get_async_job_status) | **GET** /convert/batch-job/status | Get the status and result of a Convert Document Batch Job
 *ConvertDocumentApi* | [**convert_document_get_file_type_icon**](docs/ConvertDocumentApi.md#convert_document_get_file_type_icon) | **POST** /convert/autodetect/get-icon | Get PNG icon file for the file extension
 *ConvertDocumentApi* | [**convert_document_get_file_type_icon_advanced**](docs/ConvertDocumentApi.md#convert_document_get_file_type_icon_advanced) | **POST** /convert/autodetect/get-icon/advanced | Get PNG icon byte array for the file extension
 *ConvertDocumentApi* | [**convert_document_html_to_pdf**](docs/ConvertDocumentApi.md#convert_document_html_to_pdf) | **POST** /convert/html/to/pdf | Convert HTML document file to PDF Document
@@ -150,10 +153,13 @@ Class | Method | HTTP request | Description
 *ConvertDocumentApi* | [**convert_document_pdf_to_docx_rasterize**](docs/ConvertDocumentApi.md#convert_document_pdf_to_docx_rasterize) | **POST** /convert/pdf/to/docx/rasterize | Convert PDF to Word DOCX Document based on rasterized version of the PDF
 *ConvertDocumentApi* | [**convert_document_pdf_to_jpg**](docs/ConvertDocumentApi.md#convert_document_pdf_to_jpg) | **POST** /convert/pdf/to/jpg | Convert PDF to JPG/JPEG image array
 *ConvertDocumentApi* | [**convert_document_pdf_to_png_array**](docs/ConvertDocumentApi.md#convert_document_pdf_to_png_array) | **POST** /convert/pdf/to/png | Convert PDF to PNG Image Array
+*ConvertDocumentApi* | [**convert_document_pdf_to_png_array_direct**](docs/ConvertDocumentApi.md#convert_document_pdf_to_png_array_direct) | **POST** /convert/pdf/to/png/direct | Convert PDF to PNG Image Array (Direct)
 *ConvertDocumentApi* | [**convert_document_pdf_to_png_single**](docs/ConvertDocumentApi.md#convert_document_pdf_to_png_single) | **POST** /convert/pdf/to/png/merge-single | Convert PDF to Single PNG image
 *ConvertDocumentApi* | [**convert_document_pdf_to_pptx**](docs/ConvertDocumentApi.md#convert_document_pdf_to_pptx) | **POST** /convert/pdf/to/pptx | Convert PDF to PowerPoint PPTX Presentation
+*ConvertDocumentApi* | [**convert_document_pdf_to_tiff**](docs/ConvertDocumentApi.md#convert_document_pdf_to_tiff) | **POST** /convert/pdf/to/tiff | Convert PDF to TIFF image
 *ConvertDocumentApi* | [**convert_document_pdf_to_txt**](docs/ConvertDocumentApi.md#convert_document_pdf_to_txt) | **POST** /convert/pdf/to/txt | Convert PDF Document to Text (txt)
 *ConvertDocumentApi* | [**convert_document_png_array_to_pdf**](docs/ConvertDocumentApi.md#convert_document_png_array_to_pdf) | **POST** /convert/png/to/pdf | Convert PNG Array to PDF
+*ConvertDocumentApi* | [**convert_document_png_array_to_pdf_flatten_transparency**](docs/ConvertDocumentApi.md#convert_document_png_array_to_pdf_flatten_transparency) | **POST** /convert/png/to/pdf/remove-transparency | Convert PNG Array to PDF and remove transparency
 *ConvertDocumentApi* | [**convert_document_ppt_to_pdf**](docs/ConvertDocumentApi.md#convert_document_ppt_to_pdf) | **POST** /convert/ppt/to/pdf | Convert PowerPoint PPT (97-03) Presentation to PDF
 *ConvertDocumentApi* | [**convert_document_ppt_to_pptx**](docs/ConvertDocumentApi.md#convert_document_ppt_to_pptx) | **POST** /convert/ppt/to/pptx | Convert PowerPoint PPT (97-03) Presentation to PPTX
 *ConvertDocumentApi* | [**convert_document_pptx_to_pdf**](docs/ConvertDocumentApi.md#convert_document_pptx_to_pdf) | **POST** /convert/pptx/to/pdf | Convert PowerPoint PPTX Presentation to PDF
@@ -165,6 +171,7 @@ Class | Method | HTTP request | Description
 *ConvertDocumentApi* | [**convert_document_rtf_to_jpg**](docs/ConvertDocumentApi.md#convert_document_rtf_to_jpg) | **POST** /convert/rtf/to/jpg | Convert Rich Text Format RTF to JPG/JPEG image array
 *ConvertDocumentApi* | [**convert_document_rtf_to_pdf**](docs/ConvertDocumentApi.md#convert_document_rtf_to_pdf) | **POST** /convert/rtf/to/pdf | Convert Rich Text Format RTF to PDF
 *ConvertDocumentApi* | [**convert_document_rtf_to_png**](docs/ConvertDocumentApi.md#convert_document_rtf_to_png) | **POST** /convert/rtf/to/png | Convert Rich Text Format RTF to PNG image array
+*ConvertDocumentApi* | [**convert_document_txt_to_pdf**](docs/ConvertDocumentApi.md#convert_document_txt_to_pdf) | **POST** /convert/txt/to/pdf | Convert TXT text file to PDF Document
 *ConvertDocumentApi* | [**convert_document_xls_to_csv**](docs/ConvertDocumentApi.md#convert_document_xls_to_csv) | **POST** /convert/xls/to/csv | Convert Excel XLS (97-03) Spreadsheet to CSV
 *ConvertDocumentApi* | [**convert_document_xls_to_pdf**](docs/ConvertDocumentApi.md#convert_document_xls_to_pdf) | **POST** /convert/xls/to/pdf | Convert Excel XLS (97-03) Spreadsheet to PDF
 *ConvertDocumentApi* | [**convert_document_xls_to_xlsx**](docs/ConvertDocumentApi.md#convert_document_xls_to_xlsx) | **POST** /convert/xls/to/xlsx | Convert Excel XLS (97-03) Spreadsheet to XLSX
@@ -234,7 +241,9 @@ Class | Method | HTTP request | Description
 *EditDocumentApi* | [**edit_document_docx_update_table_row**](docs/EditDocumentApi.md#edit_document_docx_update_table_row) | **POST** /convert/edit/docx/update-table-row | Update, set contents of a table row in an existing table in a Word DOCX document
 *EditDocumentApi* | [**edit_document_finish_editing**](docs/EditDocumentApi.md#edit_document_finish_editing) | **POST** /convert/edit/finish-editing | Finish editing document, and download result from document editing
 *EditDocumentApi* | [**edit_document_pptx_delete_slides**](docs/EditDocumentApi.md#edit_document_pptx_delete_slides) | **POST** /convert/edit/pptx/delete-slides | Delete, remove slides from a PowerPoint PPTX presentation document
+*EditDocumentApi* | [**edit_document_pptx_edit_size_and_orientation**](docs/EditDocumentApi.md#edit_document_pptx_edit_size_and_orientation) | **POST** /convert/edit/pptx/set-size-and-orientation | Set the size and/or orientation of a PowerPoint PPTX presentation document
 *EditDocumentApi* | [**edit_document_pptx_get_macro_information**](docs/EditDocumentApi.md#edit_document_pptx_get_macro_information) | **POST** /convert/edit/pptx/get-macros | Get macro information from a PowerPoint PPTX/PPTM presentation document
+*EditDocumentApi* | [**edit_document_pptx_get_size_and_orientation**](docs/EditDocumentApi.md#edit_document_pptx_get_size_and_orientation) | **POST** /convert/edit/pptx/get-size-and-orientation | Get the page layout information, including size and orientation of a PowerPoint PPTX presentation document
 *EditDocumentApi* | [**edit_document_pptx_replace**](docs/EditDocumentApi.md#edit_document_pptx_replace) | **POST** /convert/edit/pptx/replace-all | Replace string in PowerPoint PPTX presentation
 *EditDocumentApi* | [**edit_document_xlsx_append_row**](docs/EditDocumentApi.md#edit_document_xlsx_append_row) | **POST** /convert/edit/xlsx/append-row | Append row to a Excel XLSX spreadsheet, worksheet
 *EditDocumentApi* | [**edit_document_xlsx_clear_cell_by_index**](docs/EditDocumentApi.md#edit_document_xlsx_clear_cell_by_index) | **POST** /convert/edit/xlsx/clear-cell/by-index | Clear cell contents in an Excel XLSX spreadsheet, worksheet by index
@@ -274,14 +283,18 @@ Class | Method | HTTP request | Description
 *EditPdfApi* | [**edit_pdf_convert_to_pdf_a**](docs/EditPdfApi.md#edit_pdf_convert_to_pdf_a) | **POST** /convert/edit/pdf/optimize/pdf-a | Convert a PDF file to PDF/A
 *EditPdfApi* | [**edit_pdf_decrypt**](docs/EditPdfApi.md#edit_pdf_decrypt) | **POST** /convert/edit/pdf/decrypt | Decrypt and password-protect a PDF
 *EditPdfApi* | [**edit_pdf_delete_pages**](docs/EditPdfApi.md#edit_pdf_delete_pages) | **POST** /convert/edit/pdf/pages/delete | Remove, delete pages from a PDF document
+*EditPdfApi* | [**edit_pdf_delete_pages_batch_job**](docs/EditPdfApi.md#edit_pdf_delete_pages_batch_job) | **POST** /convert/edit/pdf/pages/delete/batch-job | Remove, delete pages from a PDF document as Batch Job
 *EditPdfApi* | [**edit_pdf_encrypt**](docs/EditPdfApi.md#edit_pdf_encrypt) | **POST** /convert/edit/pdf/encrypt | Encrypt and password-protect a PDF
 *EditPdfApi* | [**edit_pdf_get_annotations**](docs/EditPdfApi.md#edit_pdf_get_annotations) | **POST** /convert/edit/pdf/annotations/list | Get PDF annotations, including comments in the document
+*EditPdfApi* | [**edit_pdf_get_async_job_status**](docs/EditPdfApi.md#edit_pdf_get_async_job_status) | **GET** /convert/edit/pdf/batch-job/status | Get the status and result of a PDF Batch Job
 *EditPdfApi* | [**edit_pdf_get_form_fields**](docs/EditPdfApi.md#edit_pdf_get_form_fields) | **POST** /convert/edit/pdf/form/get-fields | Gets PDF Form fields and values
 *EditPdfApi* | [**edit_pdf_get_metadata**](docs/EditPdfApi.md#edit_pdf_get_metadata) | **POST** /convert/edit/pdf/get-metadata | Get PDF document metadata
 *EditPdfApi* | [**edit_pdf_get_pdf_text_by_pages**](docs/EditPdfApi.md#edit_pdf_get_pdf_text_by_pages) | **POST** /convert/edit/pdf/pages/get-text | Get text in a PDF document by page
 *EditPdfApi* | [**edit_pdf_insert_pages**](docs/EditPdfApi.md#edit_pdf_insert_pages) | **POST** /convert/edit/pdf/pages/insert | Insert, copy pages from one PDF document into another
+*EditPdfApi* | [**edit_pdf_insert_pages_batch_job**](docs/EditPdfApi.md#edit_pdf_insert_pages_batch_job) | **POST** /convert/edit/pdf/pages/insert/batch-job | Insert, copy pages from one PDF document into another as a batch job
 *EditPdfApi* | [**edit_pdf_linearize**](docs/EditPdfApi.md#edit_pdf_linearize) | **POST** /convert/edit/pdf/optimize/linearize | Linearize and optimize a PDF for streaming download
 *EditPdfApi* | [**edit_pdf_rasterize**](docs/EditPdfApi.md#edit_pdf_rasterize) | **POST** /convert/edit/pdf/rasterize | Rasterize a PDF to an image-based PDF
+*EditPdfApi* | [**edit_pdf_rasterize_batch_job**](docs/EditPdfApi.md#edit_pdf_rasterize_batch_job) | **POST** /convert/edit/pdf/rasterize/batch-job | Rasterize a PDF to an image-based PDF as Batch Job
 *EditPdfApi* | [**edit_pdf_reduce_file_size**](docs/EditPdfApi.md#edit_pdf_reduce_file_size) | **POST** /convert/edit/pdf/optimize/reduce-file-size | Reduce the file size and optimize a PDF
 *EditPdfApi* | [**edit_pdf_remove_all_annotations**](docs/EditPdfApi.md#edit_pdf_remove_all_annotations) | **POST** /convert/edit/pdf/annotations/remove-all | Remove all PDF annotations, including comments in the document
 *EditPdfApi* | [**edit_pdf_remove_annotation_item**](docs/EditPdfApi.md#edit_pdf_remove_annotation_item) | **POST** /convert/edit/pdf/annotations/remove-item | Remove a specific PDF annotation, comment in the document
@@ -305,23 +318,34 @@ Class | Method | HTTP request | Description
 *EditTextApi* | [**edit_text_replace_simple**](docs/EditTextApi.md#edit_text_replace_simple) | **POST** /convert/edit/text/replace/string | Replace a string in text with another string value
 *EditTextApi* | [**edit_text_text_encoding_detect**](docs/EditTextApi.md#edit_text_text_encoding_detect) | **POST** /convert/edit/text/encoding/detect | Detect text encoding of file
 *EditTextApi* | [**edit_text_trim_whitespace**](docs/EditTextApi.md#edit_text_trim_whitespace) | **POST** /convert/edit/text/remove/whitespace/trim | Trim leading and trailing whitespace from text string
+*MergeDocumentApi* | [**merge_document_batch_job_create**](docs/MergeDocumentApi.md#merge_document_batch_job_create) | **POST** /convert/merge/batch-job/create | Merge an array of Documents into a Single Document by Page as a Batch Job
 *MergeDocumentApi* | [**merge_document_docx**](docs/MergeDocumentApi.md#merge_document_docx) | **POST** /convert/merge/docx | Merge Two Word DOCX Together
 *MergeDocumentApi* | [**merge_document_docx_multi**](docs/MergeDocumentApi.md#merge_document_docx_multi) | **POST** /convert/merge/docx/multi | Merge Multple Word DOCX Together
+*MergeDocumentApi* | [**merge_document_docx_multi_array**](docs/MergeDocumentApi.md#merge_document_docx_multi_array) | **POST** /convert/merge/docx/multi/array | Merge Multple Word DOCX Together from an array
+*MergeDocumentApi* | [**merge_document_get_async_job_status**](docs/MergeDocumentApi.md#merge_document_get_async_job_status) | **GET** /convert/merge/batch-job/status | Get the status and result of a Merge Document Batch Job
 *MergeDocumentApi* | [**merge_document_html**](docs/MergeDocumentApi.md#merge_document_html) | **POST** /convert/merge/html | Merge Two HTML (HTM) Files Together
 *MergeDocumentApi* | [**merge_document_html_multi**](docs/MergeDocumentApi.md#merge_document_html_multi) | **POST** /convert/merge/html/multi | Merge Multple HTML (HTM) Files Together
+*MergeDocumentApi* | [**merge_document_html_multi_array**](docs/MergeDocumentApi.md#merge_document_html_multi_array) | **POST** /convert/merge/html/multi/array | Merge Multple HTML (HTM) Files Together from an array
 *MergeDocumentApi* | [**merge_document_pdf**](docs/MergeDocumentApi.md#merge_document_pdf) | **POST** /convert/merge/pdf | Merge Two PDF Files Together
 *MergeDocumentApi* | [**merge_document_pdf_multi**](docs/MergeDocumentApi.md#merge_document_pdf_multi) | **POST** /convert/merge/pdf/multi | Merge Multple PDF Files Together
+*MergeDocumentApi* | [**merge_document_pdf_multi_array**](docs/MergeDocumentApi.md#merge_document_pdf_multi_array) | **POST** /convert/merge/pdf/multi/array | Merge Multple PDF Files Together from an array
 *MergeDocumentApi* | [**merge_document_png**](docs/MergeDocumentApi.md#merge_document_png) | **POST** /convert/merge/png/vertical | Merge Two PNG Files Together
 *MergeDocumentApi* | [**merge_document_png_multi**](docs/MergeDocumentApi.md#merge_document_png_multi) | **POST** /convert/merge/png/vertical/multi | Merge Multple PNG Files Together
+*MergeDocumentApi* | [**merge_document_png_multi_array**](docs/MergeDocumentApi.md#merge_document_png_multi_array) | **POST** /convert/merge/png/vertical/multi/array | Merge Multple PNG Files Together from an array
 *MergeDocumentApi* | [**merge_document_pptx**](docs/MergeDocumentApi.md#merge_document_pptx) | **POST** /convert/merge/pptx | Merge Two PowerPoint PPTX Together
 *MergeDocumentApi* | [**merge_document_pptx_multi**](docs/MergeDocumentApi.md#merge_document_pptx_multi) | **POST** /convert/merge/pptx/multi | Merge Multple PowerPoint PPTX Together
+*MergeDocumentApi* | [**merge_document_pptx_multi_array**](docs/MergeDocumentApi.md#merge_document_pptx_multi_array) | **POST** /convert/merge/pptx/multi/array | Merge Multple PowerPoint PPTX Together from an array
 *MergeDocumentApi* | [**merge_document_txt**](docs/MergeDocumentApi.md#merge_document_txt) | **POST** /convert/merge/txt | Merge Two Text (TXT) Files Together
 *MergeDocumentApi* | [**merge_document_txt_multi**](docs/MergeDocumentApi.md#merge_document_txt_multi) | **POST** /convert/merge/txt/multi | Merge Multple Text (TXT) Files Together
 *MergeDocumentApi* | [**merge_document_xlsx**](docs/MergeDocumentApi.md#merge_document_xlsx) | **POST** /convert/merge/xlsx | Merge Two Excel XLSX Together
 *MergeDocumentApi* | [**merge_document_xlsx_multi**](docs/MergeDocumentApi.md#merge_document_xlsx_multi) | **POST** /convert/merge/xlsx/multi | Merge Multple Excel XLSX Together
+*MergeDocumentApi* | [**merge_document_xlsx_multi_array**](docs/MergeDocumentApi.md#merge_document_xlsx_multi_array) | **POST** /convert/merge/xlsx/multi/array | Merge Multple Excel XLSX Together from an Array
+*SplitDocumentApi* | [**split_document_batch_job_create**](docs/SplitDocumentApi.md#split_document_batch_job_create) | **POST** /convert/split/batch-job/create | Split a single Document into Separate Documents by Page as a Batch Job
 *SplitDocumentApi* | [**split_document_docx**](docs/SplitDocumentApi.md#split_document_docx) | **POST** /convert/split/docx | Split a single Word Document DOCX into Separate Documents by Page
+*SplitDocumentApi* | [**split_document_get_async_job_status**](docs/SplitDocumentApi.md#split_document_get_async_job_status) | **GET** /convert/split/batch-job/status | Get the status and result of a Split Document Batch Job
 *SplitDocumentApi* | [**split_document_pdf_by_page**](docs/SplitDocumentApi.md#split_document_pdf_by_page) | **POST** /convert/split/pdf | Split a PDF file into separate PDF files, one per page
 *SplitDocumentApi* | [**split_document_pptx**](docs/SplitDocumentApi.md#split_document_pptx) | **POST** /convert/split/pptx | Split a single PowerPoint Presentation PPTX into Separate Slides
+*SplitDocumentApi* | [**split_document_pptx_advanced**](docs/SplitDocumentApi.md#split_document_pptx_advanced) | **POST** /convert/split/pptx/advanced | Split a single PowerPoint Presentation PPTX into Separate Presentations
 *SplitDocumentApi* | [**split_document_txt_by_line**](docs/SplitDocumentApi.md#split_document_txt_by_line) | **POST** /convert/split/txt/by-line | Split a single Text file (txt) into lines
 *SplitDocumentApi* | [**split_document_txt_by_string**](docs/SplitDocumentApi.md#split_document_txt_by_string) | **POST** /convert/split/txt/by-string | Split a single Text file (txt) by a string delimiter
 *SplitDocumentApi* | [**split_document_xlsx**](docs/SplitDocumentApi.md#split_document_xlsx) | **POST** /convert/split/xlsx | Split a single Excel XLSX into Separate Worksheets
@@ -334,8 +358,9 @@ Class | Method | HTTP request | Description
 *ValidateDocumentApi* | [**validate_document_autodetect_validation**](docs/ValidateDocumentApi.md#validate_document_autodetect_validation) | **POST** /convert/validate/autodetect | Autodetect content type and validate
 *ValidateDocumentApi* | [**validate_document_csv_validation**](docs/ValidateDocumentApi.md#validate_document_csv_validation) | **POST** /convert/validate/csv | Validate a CSV file document (CSV)
 *ValidateDocumentApi* | [**validate_document_doc_validation**](docs/ValidateDocumentApi.md#validate_document_doc_validation) | **POST** /convert/validate/doc | Validate a Word 97-2003 Legacy document (DOC)
+*ValidateDocumentApi* | [**validate_document_docx_repair**](docs/ValidateDocumentApi.md#validate_document_docx_repair) | **POST** /convert/validate/docx/repair | Repair a Word document (DOCX) that contains errors
 *ValidateDocumentApi* | [**validate_document_docx_validation**](docs/ValidateDocumentApi.md#validate_document_docx_validation) | **POST** /convert/validate/docx | Validate a Word document (DOCX)
-*ValidateDocumentApi* | [**validate_document_eml_validation**](docs/ValidateDocumentApi.md#validate_document_eml_validation) | **POST** /convert/validate/eml | Validate if an EML file is executable
+*ValidateDocumentApi* | [**validate_document_eml_validation**](docs/ValidateDocumentApi.md#validate_document_eml_validation) | **POST** /convert/validate/eml | Validate if input file is a valid EML file
 *ValidateDocumentApi* | [**validate_document_executable_validation**](docs/ValidateDocumentApi.md#validate_document_executable_validation) | **POST** /convert/validate/executable | Validate if a file is executable
 *ValidateDocumentApi* | [**validate_document_g_zip_validation**](docs/ValidateDocumentApi.md#validate_document_g_zip_validation) | **POST** /convert/validate/gzip | Validate a GZip Archive file (gzip or gz)
 *ValidateDocumentApi* | [**validate_document_html_ssrf_validation**](docs/ValidateDocumentApi.md#validate_document_html_ssrf_validation) | **POST** /convert/validate/html/ssrf-threat-check | Validate an HTML file and checks for SSRF threats
@@ -343,16 +368,18 @@ Class | Method | HTTP request | Description
 *ValidateDocumentApi* | [**validate_document_image_validation**](docs/ValidateDocumentApi.md#validate_document_image_validation) | **POST** /convert/validate/image | Validate an Image File
 *ValidateDocumentApi* | [**validate_document_jpg_validation**](docs/ValidateDocumentApi.md#validate_document_jpg_validation) | **POST** /convert/validate/jpg | Validate a JPG File
 *ValidateDocumentApi* | [**validate_document_json_validation**](docs/ValidateDocumentApi.md#validate_document_json_validation) | **POST** /convert/validate/json | Validate a JSON file
-*ValidateDocumentApi* | [**validate_document_msg_validation**](docs/ValidateDocumentApi.md#validate_document_msg_validation) | **POST** /convert/validate/msg | Validate if an MSG file is executable
+*ValidateDocumentApi* | [**validate_document_msg_validation**](docs/ValidateDocumentApi.md#validate_document_msg_validation) | **POST** /convert/validate/msg | Validate if input file is a valid MSG file
 *ValidateDocumentApi* | [**validate_document_pdf_validation**](docs/ValidateDocumentApi.md#validate_document_pdf_validation) | **POST** /convert/validate/pdf | Validate a PDF document file
 *ValidateDocumentApi* | [**validate_document_png_validation**](docs/ValidateDocumentApi.md#validate_document_png_validation) | **POST** /convert/validate/png | Validate a PNG File
 *ValidateDocumentApi* | [**validate_document_ppt_validation**](docs/ValidateDocumentApi.md#validate_document_ppt_validation) | **POST** /convert/validate/ppt | Validate a PowerPoint 97-2003 Legacy presentation (PPT)
+*ValidateDocumentApi* | [**validate_document_pptx_repair**](docs/ValidateDocumentApi.md#validate_document_pptx_repair) | **POST** /convert/validate/pptx/repair | Repair a PowerPoint presentation (PPTX) that contains errors
 *ValidateDocumentApi* | [**validate_document_pptx_validation**](docs/ValidateDocumentApi.md#validate_document_pptx_validation) | **POST** /convert/validate/pptx | Validate a PowerPoint presentation (PPTX)
 *ValidateDocumentApi* | [**validate_document_rar_validation**](docs/ValidateDocumentApi.md#validate_document_rar_validation) | **POST** /convert/validate/rar | Validate a RAR Archive file (RAR)
 *ValidateDocumentApi* | [**validate_document_rtf_validation**](docs/ValidateDocumentApi.md#validate_document_rtf_validation) | **POST** /convert/validate/rtf | Validate a Rich Text Format document (RTF)
 *ValidateDocumentApi* | [**validate_document_tar_validation**](docs/ValidateDocumentApi.md#validate_document_tar_validation) | **POST** /convert/validate/tar | Validate a TAR Tarball Archive file (TAR)
 *ValidateDocumentApi* | [**validate_document_txt_validation**](docs/ValidateDocumentApi.md#validate_document_txt_validation) | **POST** /convert/validate/txt | Validate an TXT file
 *ValidateDocumentApi* | [**validate_document_xls_validation**](docs/ValidateDocumentApi.md#validate_document_xls_validation) | **POST** /convert/validate/xls | Validate a Excel 97-2003 Legacy spreadsheet (XLS)
+*ValidateDocumentApi* | [**validate_document_xlsx_repair**](docs/ValidateDocumentApi.md#validate_document_xlsx_repair) | **POST** /convert/validate/xlsx/repair | Repair an Excel spreadsheet (XLSX) that contains errors
 *ValidateDocumentApi* | [**validate_document_xlsx_validation**](docs/ValidateDocumentApi.md#validate_document_xlsx_validation) | **POST** /convert/validate/xlsx | Validate a Excel document (XLSX)
 *ValidateDocumentApi* | [**validate_document_xml_validation**](docs/ValidateDocumentApi.md#validate_document_xml_validation) | **POST** /convert/validate/xml | Validate an XML file
 *ValidateDocumentApi* | [**validate_document_xml_xxe_threat_validation**](docs/ValidateDocumentApi.md#validate_document_xml_xxe_threat_validation) | **POST** /convert/validate/xml/xxe-threats | Validate an XML file for XML External Entity (XXE) threats
@@ -389,7 +416,10 @@ Class | Method | HTTP request | Description
  - [ClearXlsxCellResponse](docs/ClearXlsxCellResponse.md)
  - [ClearXlsxRowRequest](docs/ClearXlsxRowRequest.md)
  - [ClearXlsxRowResponse](docs/ClearXlsxRowResponse.md)
+ - [ConvertDocumentBatchJobCreateResult](docs/ConvertDocumentBatchJobCreateResult.md)
+ - [ConvertDocumentJobStatusResult](docs/ConvertDocumentJobStatusResult.md)
  - [ConvertedJpgPage](docs/ConvertedJpgPage.md)
+ - [ConvertedPngDirectPage](docs/ConvertedPngDirectPage.md)
  - [ConvertedPngPage](docs/ConvertedPngPage.md)
  - [CreateBlankDocxRequest](docs/CreateBlankDocxRequest.md)
  - [CreateBlankDocxResponse](docs/CreateBlankDocxResponse.md)
@@ -407,7 +437,9 @@ Class | Method | HTTP request | Description
  - [DetectLineEndingsResponse](docs/DetectLineEndingsResponse.md)
  - [DisableSharedWorkbookRequest](docs/DisableSharedWorkbookRequest.md)
  - [DisableSharedWorkbookResponse](docs/DisableSharedWorkbookResponse.md)
+ - [DocumentArrayInput](docs/DocumentArrayInput.md)
  - [DocumentEditingEditSession](docs/DocumentEditingEditSession.md)
+ - [DocumentItem](docs/DocumentItem.md)
  - [DocumentTransformEditSession](docs/DocumentTransformEditSession.md)
  - [DocumentValidationError](docs/DocumentValidationError.md)
  - [DocumentValidationResult](docs/DocumentValidationResult.md)
@@ -450,6 +482,8 @@ Class | Method | HTTP request | Description
  - [DocxToJpgResult](docs/DocxToJpgResult.md)
  - [DocxToPngResult](docs/DocxToPngResult.md)
  - [DocxTopLevelComment](docs/DocxTopLevelComment.md)
+ - [EditPdfBatchJobCreateResult](docs/EditPdfBatchJobCreateResult.md)
+ - [EditPdfJobStatusResult](docs/EditPdfJobStatusResult.md)
  - [EmlAttachment](docs/EmlAttachment.md)
  - [EmlToHtmlResult](docs/EmlToHtmlResult.md)
  - [EmlToJpgResult](docs/EmlToJpgResult.md)
@@ -538,8 +572,11 @@ Class | Method | HTTP request | Description
  - [InsertDocxTablesResponse](docs/InsertDocxTablesResponse.md)
  - [InsertXlsxWorksheetRequest](docs/InsertXlsxWorksheetRequest.md)
  - [InsertXlsxWorksheetResponse](docs/InsertXlsxWorksheetResponse.md)
+ - [JobStatusResult](docs/JobStatusResult.md)
  - [KeynoteToJpgResult](docs/KeynoteToJpgResult.md)
  - [KeynoteToPngResult](docs/KeynoteToPngResult.md)
+ - [MergeBatchJobCreateResult](docs/MergeBatchJobCreateResult.md)
+ - [MergeJobStatusResult](docs/MergeJobStatusResult.md)
  - [MsgAttachment](docs/MsgAttachment.md)
  - [MsgToHtmlResult](docs/MsgToHtmlResult.md)
  - [MsgToJpgResult](docs/MsgToJpgResult.md)
@@ -561,8 +598,13 @@ Class | Method | HTTP request | Description
  - [PdfPageText](docs/PdfPageText.md)
  - [PdfTextByPageResult](docs/PdfTextByPageResult.md)
  - [PdfToJpgResult](docs/PdfToJpgResult.md)
+ - [PdfToPngDirectResult](docs/PdfToPngDirectResult.md)
  - [PdfToPngResult](docs/PdfToPngResult.md)
+ - [PptxPageLayoutInformation](docs/PptxPageLayoutInformation.md)
+ - [PptxSplitAdvancedRequest](docs/PptxSplitAdvancedRequest.md)
+ - [PptxSplitAdvancedResponse](docs/PptxSplitAdvancedResponse.md)
  - [PptxToPngResult](docs/PptxToPngResult.md)
+ - [PresentationAdvancedResult](docs/PresentationAdvancedResult.md)
  - [PresentationResult](docs/PresentationResult.md)
  - [RemoveDocxHeadersAndFootersRequest](docs/RemoveDocxHeadersAndFootersRequest.md)
  - [RemoveDocxHeadersAndFootersResponse](docs/RemoveDocxHeadersAndFootersResponse.md)
@@ -593,6 +635,7 @@ Class | Method | HTTP request | Description
  - [SetXlsxCellRequest](docs/SetXlsxCellRequest.md)
  - [SetXlsxCellResponse](docs/SetXlsxCellResponse.md)
  - [SingleReplaceString](docs/SingleReplaceString.md)
+ - [SplitBatchJobCreateResult](docs/SplitBatchJobCreateResult.md)
  - [SplitDocumentResult](docs/SplitDocumentResult.md)
  - [SplitDocxDocumentResult](docs/SplitDocxDocumentResult.md)
  - [SplitPdfResult](docs/SplitPdfResult.md)

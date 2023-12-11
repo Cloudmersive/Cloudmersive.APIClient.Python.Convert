@@ -238,7 +238,7 @@ class ConvertDocumentApi(object):
     def convert_document_autodetect_to_pdf(self, input_file, **kwargs):  # noqa: E501
         """Convert Document to PDF  # noqa: E501
 
-        Automatically detect file type and convert it to PDF.  Supports all of the major Office document file formats including Word (DOCX, DOC), Excel (XLSX, XLS), PowerPoint (PPTX, PPT), over 100 image formats, HTML files, and even multi-page TIFF files.  # noqa: E501
+        Automatically detect file type and convert it to PDF.  Supports all of the major Office document file formats including Word (DOCX, DOC), Excel (XLSX, XLS), PowerPoint (PPTX, PPT), over 100 image formats, HTML files, text files, and even multi-page TIFF files.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.convert_document_autodetect_to_pdf(input_file, async_req=True)
@@ -260,7 +260,7 @@ class ConvertDocumentApi(object):
     def convert_document_autodetect_to_pdf_with_http_info(self, input_file, **kwargs):  # noqa: E501
         """Convert Document to PDF  # noqa: E501
 
-        Automatically detect file type and convert it to PDF.  Supports all of the major Office document file formats including Word (DOCX, DOC), Excel (XLSX, XLS), PowerPoint (PPTX, PPT), over 100 image formats, HTML files, and even multi-page TIFF files.  # noqa: E501
+        Automatically detect file type and convert it to PDF.  Supports all of the major Office document file formats including Word (DOCX, DOC), Excel (XLSX, XLS), PowerPoint (PPTX, PPT), over 100 image formats, HTML files, text files, and even multi-page TIFF files.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.convert_document_autodetect_to_pdf_with_http_info(input_file, async_req=True)
@@ -327,6 +327,105 @@ class ConvertDocumentApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def convert_document_autodetect_to_pdf_batch_job(self, input_file, **kwargs):  # noqa: E501
+        """Convert Document to PDF as Batch Job  # noqa: E501
+
+        Automatically detect file type and convert it to PDF.  Supports all of the major Office document file formats including Word (DOCX, DOC), Excel (XLSX, XLS), PowerPoint (PPTX, PPT), over 100 image formats, HTML files, text files, and even multi-page TIFF files.  This API is designed for large jobs that could take a long time to create and so runs as a batch job that returns a Job ID that you can use with the GetAsyncJobStatus API to check on the status of the Job and ultimately get the output result.  This API is only available for Cloudmersive Managed Instance and Private Cloud deployments.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_autodetect_to_pdf_batch_job(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: ConvertDocumentBatchJobCreateResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_autodetect_to_pdf_batch_job_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_autodetect_to_pdf_batch_job_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_autodetect_to_pdf_batch_job_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Convert Document to PDF as Batch Job  # noqa: E501
+
+        Automatically detect file type and convert it to PDF.  Supports all of the major Office document file formats including Word (DOCX, DOC), Excel (XLSX, XLS), PowerPoint (PPTX, PPT), over 100 image formats, HTML files, text files, and even multi-page TIFF files.  This API is designed for large jobs that could take a long time to create and so runs as a batch job that returns a Job ID that you can use with the GetAsyncJobStatus API to check on the status of the Job and ultimately get the output result.  This API is only available for Cloudmersive Managed Instance and Private Cloud deployments.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_autodetect_to_pdf_batch_job_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: ConvertDocumentBatchJobCreateResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_autodetect_to_pdf_batch_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_autodetect_to_pdf_batch_job`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/autodetect/to/pdf/batch-job', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='ConvertDocumentBatchJobCreateResult',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2605,6 +2704,101 @@ class ConvertDocumentApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='EmlToPngResult',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def convert_document_get_async_job_status(self, async_job_id, **kwargs):  # noqa: E501
+        """Get the status and result of a Convert Document Batch Job  # noqa: E501
+
+        Returns the result of the Async Job - possible states can be STARTED or COMPLETED.  This API is only available for Cloudmersive Managed Instance and Private Cloud deployments.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_get_async_job_status(async_job_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str async_job_id: (required)
+        :return: ConvertDocumentJobStatusResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_get_async_job_status_with_http_info(async_job_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_get_async_job_status_with_http_info(async_job_id, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_get_async_job_status_with_http_info(self, async_job_id, **kwargs):  # noqa: E501
+        """Get the status and result of a Convert Document Batch Job  # noqa: E501
+
+        Returns the result of the Async Job - possible states can be STARTED or COMPLETED.  This API is only available for Cloudmersive Managed Instance and Private Cloud deployments.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_get_async_job_status_with_http_info(async_job_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str async_job_id: (required)
+        :return: ConvertDocumentJobStatusResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['async_job_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_get_async_job_status" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'async_job_id' is set
+        if ('async_job_id' not in params or
+                params['async_job_id'] is None):
+            raise ValueError("Missing the required parameter `async_job_id` when calling `convert_document_get_async_job_status`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'async_job_id' in params:
+            query_params.append(('AsyncJobID', params['async_job_id']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/batch-job/status', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='ConvertDocumentJobStatusResult',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -5431,7 +5625,7 @@ class ConvertDocumentApi(object):
     def convert_document_pdf_to_png_array(self, input_file, **kwargs):  # noqa: E501
         """Convert PDF to PNG Image Array  # noqa: E501
 
-        Convert PDF document to PNG array, one image per page.  # noqa: E501
+        Convert PDF document to PNG array, one image per page.  Returns PNG images as temporary expiring URLs.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.convert_document_pdf_to_png_array(input_file, async_req=True)
@@ -5439,6 +5633,7 @@ class ConvertDocumentApi(object):
 
         :param async_req bool
         :param file input_file: Input file to perform the operation on. (required)
+        :param int dpi: Optional; configures the pixel density in Dots per Inch (DPI) (default is 300).  This parameter can only be used with Cloudmersive Managed Instance and Private Cloud.
         :return: PdfToPngResult
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5453,7 +5648,7 @@ class ConvertDocumentApi(object):
     def convert_document_pdf_to_png_array_with_http_info(self, input_file, **kwargs):  # noqa: E501
         """Convert PDF to PNG Image Array  # noqa: E501
 
-        Convert PDF document to PNG array, one image per page.  # noqa: E501
+        Convert PDF document to PNG array, one image per page.  Returns PNG images as temporary expiring URLs.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.convert_document_pdf_to_png_array_with_http_info(input_file, async_req=True)
@@ -5461,12 +5656,13 @@ class ConvertDocumentApi(object):
 
         :param async_req bool
         :param file input_file: Input file to perform the operation on. (required)
+        :param int dpi: Optional; configures the pixel density in Dots per Inch (DPI) (default is 300).  This parameter can only be used with Cloudmersive Managed Instance and Private Cloud.
         :return: PdfToPngResult
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['input_file']  # noqa: E501
+        all_params = ['input_file', 'dpi']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -5493,6 +5689,8 @@ class ConvertDocumentApi(object):
         query_params = []
 
         header_params = {}
+        if 'dpi' in params:
+            header_params['dpi'] = params['dpi']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -5520,6 +5718,109 @@ class ConvertDocumentApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='PdfToPngResult',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def convert_document_pdf_to_png_array_direct(self, input_file, **kwargs):  # noqa: E501
+        """Convert PDF to PNG Image Array (Direct)  # noqa: E501
+
+        Convert PDF document to PNG array, one image per page.  Returns PNG images directly in the response objects.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_pdf_to_png_array_direct(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :param int dpi: Optional; configures the pixel density in Dots per Inch (DPI) (default is 300).  This parameter can only be used with Cloudmersive Managed Instance and Private Cloud.
+        :return: PdfToPngDirectResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_pdf_to_png_array_direct_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_pdf_to_png_array_direct_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_pdf_to_png_array_direct_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Convert PDF to PNG Image Array (Direct)  # noqa: E501
+
+        Convert PDF document to PNG array, one image per page.  Returns PNG images directly in the response objects.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_pdf_to_png_array_direct_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :param int dpi: Optional; configures the pixel density in Dots per Inch (DPI) (default is 300).  This parameter can only be used with Cloudmersive Managed Instance and Private Cloud.
+        :return: PdfToPngDirectResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file', 'dpi']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_pdf_to_png_array_direct" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_pdf_to_png_array_direct`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'dpi' in params:
+            header_params['dpi'] = params['dpi']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/pdf/to/png/direct', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='PdfToPngDirectResult',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -5711,6 +6012,113 @@ class ConvertDocumentApi(object):
 
         return self.api_client.call_api(
             '/convert/pdf/to/pptx', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def convert_document_pdf_to_tiff(self, input_file, **kwargs):  # noqa: E501
+        """Convert PDF to TIFF image  # noqa: E501
+
+        Converts a PDF Document to a TIFF image.  If the PDF contains multiple pages, these pages will be represented as separate pages within the output TIFF image.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_pdf_to_tiff(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :param int dpi: Optional; configures the pixel density in Dots per Inch (DPI) (default is 300).  This parameter can only be used with Cloudmersive Managed Instance and Private Cloud.
+        :param bool lzw_compression: Optional; Enables LZW compression to reduce the size of the output image.
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_pdf_to_tiff_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_pdf_to_tiff_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_pdf_to_tiff_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Convert PDF to TIFF image  # noqa: E501
+
+        Converts a PDF Document to a TIFF image.  If the PDF contains multiple pages, these pages will be represented as separate pages within the output TIFF image.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_pdf_to_tiff_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :param int dpi: Optional; configures the pixel density in Dots per Inch (DPI) (default is 300).  This parameter can only be used with Cloudmersive Managed Instance and Private Cloud.
+        :param bool lzw_compression: Optional; Enables LZW compression to reduce the size of the output image.
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file', 'dpi', 'lzw_compression']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_pdf_to_tiff" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_pdf_to_tiff`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'dpi' in params:
+            header_params['dpi'] = params['dpi']  # noqa: E501
+        if 'lzw_compression' in params:
+            header_params['lzwCompression'] = params['lzw_compression']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/pdf/to/tiff', 'POST',
             path_params,
             query_params,
             header_params,
@@ -5960,6 +6368,93 @@ class ConvertDocumentApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def convert_document_png_array_to_pdf_flatten_transparency(self, **kwargs):  # noqa: E501
+        """Convert PNG Array to PDF and remove transparency  # noqa: E501
+
+        Convert an array of PNG images, remove transparency in source images, one image per page, into a newly-created PDF.  Supports images of different sizes as input.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_png_array_to_pdf_flatten_transparency(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :return: object
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_png_array_to_pdf_flatten_transparency_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_png_array_to_pdf_flatten_transparency_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def convert_document_png_array_to_pdf_flatten_transparency_with_http_info(self, **kwargs):  # noqa: E501
+        """Convert PNG Array to PDF and remove transparency  # noqa: E501
+
+        Convert an array of PNG images, remove transparency in source images, one image per page, into a newly-created PDF.  Supports images of different sizes as input.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_png_array_to_pdf_flatten_transparency_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :return: object
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_png_array_to_pdf_flatten_transparency" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/png/to/pdf/remove-transparency', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='object',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -6363,43 +6858,45 @@ class ConvertDocumentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def convert_document_pptx_to_ppt(self, **kwargs):  # noqa: E501
+    def convert_document_pptx_to_ppt(self, input_file, **kwargs):  # noqa: E501
         """Convert PowerPoint PPTX presentation to Legacy PowerPoint PPT (97-03)  # noqa: E501
 
         Convert/downgrade modern Office PowerPoint PPTX Presentation to the legacy PowerPoint PPT (97-2003 Format) format  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.convert_document_pptx_to_ppt(async_req=True)
+        >>> thread = api.convert_document_pptx_to_ppt(input_file, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: object
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.convert_document_pptx_to_ppt_with_http_info(**kwargs)  # noqa: E501
+            return self.convert_document_pptx_to_ppt_with_http_info(input_file, **kwargs)  # noqa: E501
         else:
-            (data) = self.convert_document_pptx_to_ppt_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.convert_document_pptx_to_ppt_with_http_info(input_file, **kwargs)  # noqa: E501
             return data
 
-    def convert_document_pptx_to_ppt_with_http_info(self, **kwargs):  # noqa: E501
+    def convert_document_pptx_to_ppt_with_http_info(self, input_file, **kwargs):  # noqa: E501
         """Convert PowerPoint PPTX presentation to Legacy PowerPoint PPT (97-03)  # noqa: E501
 
         Convert/downgrade modern Office PowerPoint PPTX Presentation to the legacy PowerPoint PPT (97-2003 Format) format  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.convert_document_pptx_to_ppt_with_http_info(async_req=True)
+        >>> thread = api.convert_document_pptx_to_ppt_with_http_info(input_file, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: object
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = []  # noqa: E501
+        all_params = ['input_file']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -6414,6 +6911,10 @@ class ConvertDocumentApi(object):
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_pptx_to_ppt`")  # noqa: E501
 
         collection_formats = {}
 
@@ -6425,11 +6926,17 @@ class ConvertDocumentApi(object):
 
         form_params = []
         local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['Apikey']  # noqa: E501
@@ -6442,7 +6949,7 @@ class ConvertDocumentApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='str',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -7048,6 +7555,109 @@ class ConvertDocumentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def convert_document_txt_to_pdf(self, input_file, **kwargs):  # noqa: E501
+        """Convert TXT text file to PDF Document  # noqa: E501
+
+        Convert simple text files to PDF.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_txt_to_pdf(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :param int scale_factor: Optional: Set to 100 to scale at 100%, set to 50% to scale down to 50% scale, set to 200% to scale up to 200% scale, etc.  Default is 100%. Maximum is 1000%.
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.convert_document_txt_to_pdf_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.convert_document_txt_to_pdf_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def convert_document_txt_to_pdf_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Convert TXT text file to PDF Document  # noqa: E501
+
+        Convert simple text files to PDF.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.convert_document_txt_to_pdf_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :param int scale_factor: Optional: Set to 100 to scale at 100%, set to 50% to scale down to 50% scale, set to 200% to scale up to 200% scale, etc.  Default is 100%. Maximum is 1000%.
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file', 'scale_factor']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_document_txt_to_pdf" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `convert_document_txt_to_pdf`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'scale_factor' in params:
+            header_params['scaleFactor'] = params['scale_factor']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/txt/to/pdf', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def convert_document_xls_to_csv(self, input_file, **kwargs):  # noqa: E501
         """Convert Excel XLS (97-03) Spreadsheet to CSV  # noqa: E501
 
@@ -7423,7 +8033,7 @@ class ConvertDocumentApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/octet-stream'])  # noqa: E501
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501

@@ -49,7 +49,9 @@ Method | HTTP request | Description
 [**edit_document_docx_update_table_row**](EditDocumentApi.md#edit_document_docx_update_table_row) | **POST** /convert/edit/docx/update-table-row | Update, set contents of a table row in an existing table in a Word DOCX document
 [**edit_document_finish_editing**](EditDocumentApi.md#edit_document_finish_editing) | **POST** /convert/edit/finish-editing | Finish editing document, and download result from document editing
 [**edit_document_pptx_delete_slides**](EditDocumentApi.md#edit_document_pptx_delete_slides) | **POST** /convert/edit/pptx/delete-slides | Delete, remove slides from a PowerPoint PPTX presentation document
+[**edit_document_pptx_edit_size_and_orientation**](EditDocumentApi.md#edit_document_pptx_edit_size_and_orientation) | **POST** /convert/edit/pptx/set-size-and-orientation | Set the size and/or orientation of a PowerPoint PPTX presentation document
 [**edit_document_pptx_get_macro_information**](EditDocumentApi.md#edit_document_pptx_get_macro_information) | **POST** /convert/edit/pptx/get-macros | Get macro information from a PowerPoint PPTX/PPTM presentation document
+[**edit_document_pptx_get_size_and_orientation**](EditDocumentApi.md#edit_document_pptx_get_size_and_orientation) | **POST** /convert/edit/pptx/get-size-and-orientation | Get the page layout information, including size and orientation of a PowerPoint PPTX presentation document
 [**edit_document_pptx_replace**](EditDocumentApi.md#edit_document_pptx_replace) | **POST** /convert/edit/pptx/replace-all | Replace string in PowerPoint PPTX presentation
 [**edit_document_xlsx_append_row**](EditDocumentApi.md#edit_document_xlsx_append_row) | **POST** /convert/edit/xlsx/append-row | Append row to a Excel XLSX spreadsheet, worksheet
 [**edit_document_xlsx_clear_cell_by_index**](EditDocumentApi.md#edit_document_xlsx_clear_cell_by_index) | **POST** /convert/edit/xlsx/clear-cell/by-index | Clear cell contents in an Excel XLSX spreadsheet, worksheet by index
@@ -129,7 +131,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **edit_document_docx_accept_all_track_changes**
-> str edit_document_docx_accept_all_track_changes(input_file)
+> str edit_document_docx_accept_all_track_changes(input_file, autorepair=autorepair)
 
 Accept all tracked changes, revisions in a Word DOCX document
 
@@ -152,10 +154,11 @@ configuration.api_key['Apikey'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = cloudmersive_convert_api_client.EditDocumentApi(cloudmersive_convert_api_client.ApiClient(configuration))
 input_file = '/path/to/file.txt' # file | Input file to perform the operation on.
+autorepair = true # bool | Optional; automatically repair input documents that have errors (default is true) (optional)
 
 try:
     # Accept all tracked changes, revisions in a Word DOCX document
-    api_response = api_instance.edit_document_docx_accept_all_track_changes(input_file)
+    api_response = api_instance.edit_document_docx_accept_all_track_changes(input_file, autorepair=autorepair)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EditDocumentApi->edit_document_docx_accept_all_track_changes: %s\n" % e)
@@ -166,6 +169,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **input_file** | **file**| Input file to perform the operation on. | 
+ **autorepair** | **bool**| Optional; automatically repair input documents that have errors (default is true) | [optional] 
 
 ### Return type
 
@@ -2504,6 +2508,66 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **edit_document_pptx_edit_size_and_orientation**
+> str edit_document_pptx_edit_size_and_orientation(input_file, orientation=orientation, width=width, height=height)
+
+Set the size and/or orientation of a PowerPoint PPTX presentation document
+
+Edits the input PowerPoint PPTX presentation document to be a different orientation and/or size
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_convert_api_client
+from cloudmersive_convert_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_convert_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_convert_api_client.EditDocumentApi(cloudmersive_convert_api_client.ApiClient(configuration))
+input_file = '/path/to/file.txt' # file | Input file to perform the operation on.
+orientation = 'orientation_example' # str | Optional: The desired slide orientation; can be landscape or portrait. (optional)
+width = 56 # int | Optional: The desired slide width in Emu, where 1 inch equals 914400 emu. (optional)
+height = 56 # int | Optional: The desired slide height in Emu, where 1 inch equals 914400 emu (optional)
+
+try:
+    # Set the size and/or orientation of a PowerPoint PPTX presentation document
+    api_response = api_instance.edit_document_pptx_edit_size_and_orientation(input_file, orientation=orientation, width=width, height=height)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EditDocumentApi->edit_document_pptx_edit_size_and_orientation: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **input_file** | **file**| Input file to perform the operation on. | 
+ **orientation** | **str**| Optional: The desired slide orientation; can be landscape or portrait. | [optional] 
+ **width** | **int**| Optional: The desired slide width in Emu, where 1 inch equals 914400 emu. | [optional] 
+ **height** | **int**| Optional: The desired slide height in Emu, where 1 inch equals 914400 emu | [optional] 
+
+### Return type
+
+**str**
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **edit_document_pptx_get_macro_information**
 > GetMacrosResponse edit_document_pptx_get_macro_information(input_file)
 
@@ -2546,6 +2610,60 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetMacrosResponse**](GetMacrosResponse.md)
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **edit_document_pptx_get_size_and_orientation**
+> PptxPageLayoutInformation edit_document_pptx_get_size_and_orientation(input_file)
+
+Get the page layout information, including size and orientation of a PowerPoint PPTX presentation document
+
+Gets size and orientation of an input PowerPoint PPTX presentation
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cloudmersive_convert_api_client
+from cloudmersive_convert_api_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Apikey
+configuration = cloudmersive_convert_api_client.Configuration()
+configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Apikey'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cloudmersive_convert_api_client.EditDocumentApi(cloudmersive_convert_api_client.ApiClient(configuration))
+input_file = '/path/to/file.txt' # file | Input file to perform the operation on.
+
+try:
+    # Get the page layout information, including size and orientation of a PowerPoint PPTX presentation document
+    api_response = api_instance.edit_document_pptx_get_size_and_orientation(input_file)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EditDocumentApi->edit_document_pptx_get_size_and_orientation: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **input_file** | **file**| Input file to perform the operation on. | 
+
+### Return type
+
+[**PptxPageLayoutInformation**](PptxPageLayoutInformation.md)
 
 ### Authorization
 

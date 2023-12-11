@@ -33,6 +33,105 @@ class MergeDocumentApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
+    def merge_document_batch_job_create(self, input, **kwargs):  # noqa: E501
+        """Merge an array of Documents into a Single Document by Page as a Batch Job  # noqa: E501
+
+        Merge an array of Documents (PDF supported), into a single document.  This API is designed for large jobs that could take a long time to create and so runs as a batch job that returns a Job ID that you can use with the GetAsyncJobStatus API to check on the status of the Job and ultimately get the output result.  This API automatically detects the document type and then performs the split by using the document type-specific API needed to perform the split.  This API is only available for Cloudmersive Managed Instance and Private Cloud deployments.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.merge_document_batch_job_create(input, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param DocumentArrayInput input: (required)
+        :return: MergeBatchJobCreateResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.merge_document_batch_job_create_with_http_info(input, **kwargs)  # noqa: E501
+        else:
+            (data) = self.merge_document_batch_job_create_with_http_info(input, **kwargs)  # noqa: E501
+            return data
+
+    def merge_document_batch_job_create_with_http_info(self, input, **kwargs):  # noqa: E501
+        """Merge an array of Documents into a Single Document by Page as a Batch Job  # noqa: E501
+
+        Merge an array of Documents (PDF supported), into a single document.  This API is designed for large jobs that could take a long time to create and so runs as a batch job that returns a Job ID that you can use with the GetAsyncJobStatus API to check on the status of the Job and ultimately get the output result.  This API automatically detects the document type and then performs the split by using the document type-specific API needed to perform the split.  This API is only available for Cloudmersive Managed Instance and Private Cloud deployments.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.merge_document_batch_job_create_with_http_info(input, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param DocumentArrayInput input: (required)
+        :return: MergeBatchJobCreateResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method merge_document_batch_job_create" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input' is set
+        if ('input' not in params or
+                params['input'] is None):
+            raise ValueError("Missing the required parameter `input` when calling `merge_document_batch_job_create`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'input' in params:
+            body_params = params['input']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/merge/batch-job/create', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='MergeBatchJobCreateResult',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def merge_document_docx(self, input_file1, input_file2, **kwargs):  # noqa: E501
         """Merge Two Word DOCX Together  # noqa: E501
 
@@ -272,6 +371,200 @@ class MergeDocumentApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def merge_document_docx_multi_array(self, input, **kwargs):  # noqa: E501
+        """Merge Multple Word DOCX Together from an array  # noqa: E501
+
+        Combine multiple Office Word Documents (docx), stored in an array, into one single Office Word document  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.merge_document_docx_multi_array(input, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param DocumentArrayInput input: Array of input files (required)
+        :return: object
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.merge_document_docx_multi_array_with_http_info(input, **kwargs)  # noqa: E501
+        else:
+            (data) = self.merge_document_docx_multi_array_with_http_info(input, **kwargs)  # noqa: E501
+            return data
+
+    def merge_document_docx_multi_array_with_http_info(self, input, **kwargs):  # noqa: E501
+        """Merge Multple Word DOCX Together from an array  # noqa: E501
+
+        Combine multiple Office Word Documents (docx), stored in an array, into one single Office Word document  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.merge_document_docx_multi_array_with_http_info(input, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param DocumentArrayInput input: Array of input files (required)
+        :return: object
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method merge_document_docx_multi_array" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input' is set
+        if ('input' not in params or
+                params['input'] is None):
+            raise ValueError("Missing the required parameter `input` when calling `merge_document_docx_multi_array`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'input' in params:
+            body_params = params['input']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/merge/docx/multi/array', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='object',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def merge_document_get_async_job_status(self, async_job_id, **kwargs):  # noqa: E501
+        """Get the status and result of a Merge Document Batch Job  # noqa: E501
+
+        Returns the result of the Async Job - possible states can be STARTED or COMPLETED.  This API is only available for Cloudmersive Managed Instance and Private Cloud deployments.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.merge_document_get_async_job_status(async_job_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str async_job_id: (required)
+        :return: MergeJobStatusResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.merge_document_get_async_job_status_with_http_info(async_job_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.merge_document_get_async_job_status_with_http_info(async_job_id, **kwargs)  # noqa: E501
+            return data
+
+    def merge_document_get_async_job_status_with_http_info(self, async_job_id, **kwargs):  # noqa: E501
+        """Get the status and result of a Merge Document Batch Job  # noqa: E501
+
+        Returns the result of the Async Job - possible states can be STARTED or COMPLETED.  This API is only available for Cloudmersive Managed Instance and Private Cloud deployments.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.merge_document_get_async_job_status_with_http_info(async_job_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str async_job_id: (required)
+        :return: MergeJobStatusResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['async_job_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method merge_document_get_async_job_status" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'async_job_id' is set
+        if ('async_job_id' not in params or
+                params['async_job_id'] is None):
+            raise ValueError("Missing the required parameter `async_job_id` when calling `merge_document_get_async_job_status`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'async_job_id' in params:
+            query_params.append(('AsyncJobID', params['async_job_id']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/merge/batch-job/status', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='MergeJobStatusResult',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -525,6 +818,105 @@ class MergeDocumentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def merge_document_html_multi_array(self, input, **kwargs):  # noqa: E501
+        """Merge Multple HTML (HTM) Files Together from an array  # noqa: E501
+
+        Combine multiple HTML (.HTM) files, from an array, into a single text document, preserving the order of the input documents in the combined document by stacking them vertically.  The title will be taken from the first document.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.merge_document_html_multi_array(input, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param DocumentArrayInput input: Array of input files (required)
+        :return: object
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.merge_document_html_multi_array_with_http_info(input, **kwargs)  # noqa: E501
+        else:
+            (data) = self.merge_document_html_multi_array_with_http_info(input, **kwargs)  # noqa: E501
+            return data
+
+    def merge_document_html_multi_array_with_http_info(self, input, **kwargs):  # noqa: E501
+        """Merge Multple HTML (HTM) Files Together from an array  # noqa: E501
+
+        Combine multiple HTML (.HTM) files, from an array, into a single text document, preserving the order of the input documents in the combined document by stacking them vertically.  The title will be taken from the first document.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.merge_document_html_multi_array_with_http_info(input, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param DocumentArrayInput input: Array of input files (required)
+        :return: object
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method merge_document_html_multi_array" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input' is set
+        if ('input' not in params or
+                params['input'] is None):
+            raise ValueError("Missing the required parameter `input` when calling `merge_document_html_multi_array`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'input' in params:
+            body_params = params['input']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/merge/html/multi/array', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='object',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def merge_document_pdf(self, input_file1, input_file2, **kwargs):  # noqa: E501
         """Merge Two PDF Files Together  # noqa: E501
 
@@ -764,6 +1156,105 @@ class MergeDocumentApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def merge_document_pdf_multi_array(self, input, **kwargs):  # noqa: E501
+        """Merge Multple PDF Files Together from an array  # noqa: E501
+
+        Combine multiple PDF files (pdf), as an array, into a single PDF document, preserving the order of the input documents in the combined document  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.merge_document_pdf_multi_array(input, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param DocumentArrayInput input: Array of input files (required)
+        :return: object
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.merge_document_pdf_multi_array_with_http_info(input, **kwargs)  # noqa: E501
+        else:
+            (data) = self.merge_document_pdf_multi_array_with_http_info(input, **kwargs)  # noqa: E501
+            return data
+
+    def merge_document_pdf_multi_array_with_http_info(self, input, **kwargs):  # noqa: E501
+        """Merge Multple PDF Files Together from an array  # noqa: E501
+
+        Combine multiple PDF files (pdf), as an array, into a single PDF document, preserving the order of the input documents in the combined document  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.merge_document_pdf_multi_array_with_http_info(input, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param DocumentArrayInput input: Array of input files (required)
+        :return: object
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method merge_document_pdf_multi_array" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input' is set
+        if ('input' not in params or
+                params['input'] is None):
+            raise ValueError("Missing the required parameter `input` when calling `merge_document_pdf_multi_array`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'input' in params:
+            body_params = params['input']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/merge/pdf/multi/array', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='object',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1017,6 +1508,105 @@ class MergeDocumentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def merge_document_png_multi_array(self, input, **kwargs):  # noqa: E501
+        """Merge Multple PNG Files Together from an array  # noqa: E501
+
+        Combine multiple PNG files, from an array, into a single PNG document, preserving the order of the input documents in the combined document by stacking them vertically  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.merge_document_png_multi_array(input, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param DocumentArrayInput input: Array of input files (required)
+        :return: object
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.merge_document_png_multi_array_with_http_info(input, **kwargs)  # noqa: E501
+        else:
+            (data) = self.merge_document_png_multi_array_with_http_info(input, **kwargs)  # noqa: E501
+            return data
+
+    def merge_document_png_multi_array_with_http_info(self, input, **kwargs):  # noqa: E501
+        """Merge Multple PNG Files Together from an array  # noqa: E501
+
+        Combine multiple PNG files, from an array, into a single PNG document, preserving the order of the input documents in the combined document by stacking them vertically  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.merge_document_png_multi_array_with_http_info(input, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param DocumentArrayInput input: Array of input files (required)
+        :return: object
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method merge_document_png_multi_array" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input' is set
+        if ('input' not in params or
+                params['input'] is None):
+            raise ValueError("Missing the required parameter `input` when calling `merge_document_png_multi_array`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'input' in params:
+            body_params = params['input']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/merge/png/vertical/multi/array', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='object',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def merge_document_pptx(self, input_file1, input_file2, **kwargs):  # noqa: E501
         """Merge Two PowerPoint PPTX Together  # noqa: E501
 
@@ -1256,6 +1846,105 @@ class MergeDocumentApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def merge_document_pptx_multi_array(self, input, **kwargs):  # noqa: E501
+        """Merge Multple PowerPoint PPTX Together from an array  # noqa: E501
+
+        Combine multiple Office PowerPoint presentations (pptx), from an array, into one single Office PowerPoint presentation  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.merge_document_pptx_multi_array(input, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param DocumentArrayInput input: Array of input files (required)
+        :return: object
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.merge_document_pptx_multi_array_with_http_info(input, **kwargs)  # noqa: E501
+        else:
+            (data) = self.merge_document_pptx_multi_array_with_http_info(input, **kwargs)  # noqa: E501
+            return data
+
+    def merge_document_pptx_multi_array_with_http_info(self, input, **kwargs):  # noqa: E501
+        """Merge Multple PowerPoint PPTX Together from an array  # noqa: E501
+
+        Combine multiple Office PowerPoint presentations (pptx), from an array, into one single Office PowerPoint presentation  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.merge_document_pptx_multi_array_with_http_info(input, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param DocumentArrayInput input: Array of input files (required)
+        :return: object
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method merge_document_pptx_multi_array" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input' is set
+        if ('input' not in params or
+                params['input'] is None):
+            raise ValueError("Missing the required parameter `input` when calling `merge_document_pptx_multi_array`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'input' in params:
+            body_params = params['input']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/merge/pptx/multi/array', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='object',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1748,6 +2437,105 @@ class MergeDocumentApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def merge_document_xlsx_multi_array(self, input, **kwargs):  # noqa: E501
+        """Merge Multple Excel XLSX Together from an Array  # noqa: E501
+
+        Combine multiple Office Excel spreadsheets (xlsx), as an array, into a single Office Excel spreadsheet  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.merge_document_xlsx_multi_array(input, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param DocumentArrayInput input: Array of input files (required)
+        :return: object
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.merge_document_xlsx_multi_array_with_http_info(input, **kwargs)  # noqa: E501
+        else:
+            (data) = self.merge_document_xlsx_multi_array_with_http_info(input, **kwargs)  # noqa: E501
+            return data
+
+    def merge_document_xlsx_multi_array_with_http_info(self, input, **kwargs):  # noqa: E501
+        """Merge Multple Excel XLSX Together from an Array  # noqa: E501
+
+        Combine multiple Office Excel spreadsheets (xlsx), as an array, into a single Office Excel spreadsheet  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.merge_document_xlsx_multi_array_with_http_info(input, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param DocumentArrayInput input: Array of input files (required)
+        :return: object
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method merge_document_xlsx_multi_array" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input' is set
+        if ('input' not in params or
+                params['input'] is None):
+            raise ValueError("Missing the required parameter `input` when calling `merge_document_xlsx_multi_array`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'input' in params:
+            body_params = params['input']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/merge/xlsx/multi/array', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='object',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

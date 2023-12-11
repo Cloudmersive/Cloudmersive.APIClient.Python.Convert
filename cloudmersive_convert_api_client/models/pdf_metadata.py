@@ -32,6 +32,7 @@ class PdfMetadata(object):
     """
     swagger_types = {
         'successful': 'bool',
+        'error_details': 'str',
         'title': 'str',
         'keywords': 'str',
         'subject': 'str',
@@ -39,11 +40,13 @@ class PdfMetadata(object):
         'creator': 'str',
         'date_modified': 'datetime',
         'date_created': 'datetime',
-        'page_count': 'int'
+        'page_count': 'int',
+        'encrypted': 'bool'
     }
 
     attribute_map = {
         'successful': 'Successful',
+        'error_details': 'ErrorDetails',
         'title': 'Title',
         'keywords': 'Keywords',
         'subject': 'Subject',
@@ -51,13 +54,15 @@ class PdfMetadata(object):
         'creator': 'Creator',
         'date_modified': 'DateModified',
         'date_created': 'DateCreated',
-        'page_count': 'PageCount'
+        'page_count': 'PageCount',
+        'encrypted': 'Encrypted'
     }
 
-    def __init__(self, successful=None, title=None, keywords=None, subject=None, author=None, creator=None, date_modified=None, date_created=None, page_count=None):  # noqa: E501
+    def __init__(self, successful=None, error_details=None, title=None, keywords=None, subject=None, author=None, creator=None, date_modified=None, date_created=None, page_count=None, encrypted=None):  # noqa: E501
         """PdfMetadata - a model defined in Swagger"""  # noqa: E501
 
         self._successful = None
+        self._error_details = None
         self._title = None
         self._keywords = None
         self._subject = None
@@ -66,10 +71,13 @@ class PdfMetadata(object):
         self._date_modified = None
         self._date_created = None
         self._page_count = None
+        self._encrypted = None
         self.discriminator = None
 
         if successful is not None:
             self.successful = successful
+        if error_details is not None:
+            self.error_details = error_details
         if title is not None:
             self.title = title
         if keywords is not None:
@@ -86,6 +94,8 @@ class PdfMetadata(object):
             self.date_created = date_created
         if page_count is not None:
             self.page_count = page_count
+        if encrypted is not None:
+            self.encrypted = encrypted
 
     @property
     def successful(self):
@@ -109,6 +119,29 @@ class PdfMetadata(object):
         """
 
         self._successful = successful
+
+    @property
+    def error_details(self):
+        """Gets the error_details of this PdfMetadata.  # noqa: E501
+
+        Details of any errors if the operation was unsucessful  # noqa: E501
+
+        :return: The error_details of this PdfMetadata.  # noqa: E501
+        :rtype: str
+        """
+        return self._error_details
+
+    @error_details.setter
+    def error_details(self, error_details):
+        """Sets the error_details of this PdfMetadata.
+
+        Details of any errors if the operation was unsucessful  # noqa: E501
+
+        :param error_details: The error_details of this PdfMetadata.  # noqa: E501
+        :type: str
+        """
+
+        self._error_details = error_details
 
     @property
     def title(self):
@@ -293,6 +326,29 @@ class PdfMetadata(object):
         """
 
         self._page_count = page_count
+
+    @property
+    def encrypted(self):
+        """Gets the encrypted of this PdfMetadata.  # noqa: E501
+
+        True if the PDF document is encrypted, false otherwise  # noqa: E501
+
+        :return: The encrypted of this PdfMetadata.  # noqa: E501
+        :rtype: bool
+        """
+        return self._encrypted
+
+    @encrypted.setter
+    def encrypted(self, encrypted):
+        """Sets the encrypted of this PdfMetadata.
+
+        True if the PDF document is encrypted, false otherwise  # noqa: E501
+
+        :param encrypted: The encrypted of this PdfMetadata.  # noqa: E501
+        :type: bool
+        """
+
+        self._encrypted = encrypted
 
     def to_dict(self):
         """Returns the model properties as a dict"""

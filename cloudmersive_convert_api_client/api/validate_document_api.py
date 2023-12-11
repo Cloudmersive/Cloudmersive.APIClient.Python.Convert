@@ -330,6 +330,109 @@ class ValidateDocumentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def validate_document_docx_repair(self, input_file, **kwargs):  # noqa: E501
+        """Repair a Word document (DOCX) that contains errors  # noqa: E501
+
+        Repair a Word document (DOCX) that contains errors or corruption, if possible.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.validate_document_docx_repair(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :param str repair_mode: Optional; Set to advanced to apply the most advanced repair mode, basic for basic repair mode.  Default is advanced.
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.validate_document_docx_repair_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.validate_document_docx_repair_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def validate_document_docx_repair_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Repair a Word document (DOCX) that contains errors  # noqa: E501
+
+        Repair a Word document (DOCX) that contains errors or corruption, if possible.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.validate_document_docx_repair_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :param str repair_mode: Optional; Set to advanced to apply the most advanced repair mode, basic for basic repair mode.  Default is advanced.
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file', 'repair_mode']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method validate_document_docx_repair" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `validate_document_docx_repair`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'repair_mode' in params:
+            header_params['repairMode'] = params['repair_mode']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/validate/docx/repair', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def validate_document_docx_validation(self, input_file, **kwargs):  # noqa: E501
         """Validate a Word document (DOCX)  # noqa: E501
 
@@ -430,7 +533,7 @@ class ValidateDocumentApi(object):
             collection_formats=collection_formats)
 
     def validate_document_eml_validation(self, input_file, **kwargs):  # noqa: E501
-        """Validate if an EML file is executable  # noqa: E501
+        """Validate if input file is a valid EML file  # noqa: E501
 
         Validate if an input file is an EML email file; if the document is not valid  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -452,7 +555,7 @@ class ValidateDocumentApi(object):
             return data
 
     def validate_document_eml_validation_with_http_info(self, input_file, **kwargs):  # noqa: E501
-        """Validate if an EML file is executable  # noqa: E501
+        """Validate if input file is a valid EML file  # noqa: E501
 
         Validate if an input file is an EML email file; if the document is not valid  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1222,7 +1325,7 @@ class ValidateDocumentApi(object):
             collection_formats=collection_formats)
 
     def validate_document_msg_validation(self, input_file, **kwargs):  # noqa: E501
-        """Validate if an MSG file is executable  # noqa: E501
+        """Validate if input file is a valid MSG file  # noqa: E501
 
         Validate if an input file is an MSG email file; if the document is not valid  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1244,7 +1347,7 @@ class ValidateDocumentApi(object):
             return data
 
     def validate_document_msg_validation_with_http_info(self, input_file, **kwargs):  # noqa: E501
-        """Validate if an MSG file is executable  # noqa: E501
+        """Validate if input file is a valid MSG file  # noqa: E501
 
         Validate if an input file is an MSG email file; if the document is not valid  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1610,6 +1713,105 @@ class ValidateDocumentApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='DocumentValidationResult',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def validate_document_pptx_repair(self, input_file, **kwargs):  # noqa: E501
+        """Repair a PowerPoint presentation (PPTX) that contains errors  # noqa: E501
+
+        Repair a PowerPoint presentation document (PPTX) that contains errors or corruption, if possible.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.validate_document_pptx_repair(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.validate_document_pptx_repair_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.validate_document_pptx_repair_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def validate_document_pptx_repair_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Repair a PowerPoint presentation (PPTX) that contains errors  # noqa: E501
+
+        Repair a PowerPoint presentation document (PPTX) that contains errors or corruption, if possible.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.validate_document_pptx_repair_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method validate_document_pptx_repair" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `validate_document_pptx_repair`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/validate/pptx/repair', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2204,6 +2406,105 @@ class ValidateDocumentApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='DocumentValidationResult',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def validate_document_xlsx_repair(self, input_file, **kwargs):  # noqa: E501
+        """Repair an Excel spreadsheet (XLSX) that contains errors  # noqa: E501
+
+        Repair an Excel spreadsheet document (XLSX) that contains errors or corruption, if possible.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.validate_document_xlsx_repair(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.validate_document_xlsx_repair_with_http_info(input_file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.validate_document_xlsx_repair_with_http_info(input_file, **kwargs)  # noqa: E501
+            return data
+
+    def validate_document_xlsx_repair_with_http_info(self, input_file, **kwargs):  # noqa: E501
+        """Repair an Excel spreadsheet (XLSX) that contains errors  # noqa: E501
+
+        Repair an Excel spreadsheet document (XLSX) that contains errors or corruption, if possible.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.validate_document_xlsx_repair_with_http_info(input_file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param file input_file: Input file to perform the operation on. (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['input_file']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method validate_document_xlsx_repair" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'input_file' is set
+        if ('input_file' not in params or
+                params['input_file'] is None):
+            raise ValueError("Missing the required parameter `input_file` when calling `validate_document_xlsx_repair`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'input_file' in params:
+            local_var_files['inputFile'] = params['input_file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json', 'application/xml', 'text/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['Apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/convert/validate/xlsx/repair', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
